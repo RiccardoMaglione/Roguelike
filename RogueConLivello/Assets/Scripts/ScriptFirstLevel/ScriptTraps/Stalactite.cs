@@ -1,0 +1,20 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Stalactite : MonoBehaviour
+{
+    public GameObject prefab;
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            GameObject stalactite = Instantiate(prefab, transform.localPosition + (transform.up * 7), transform.rotation);
+        }
+        if(other.gameObject.tag == "Stalactite")
+        {
+            Destroy(other.gameObject);
+        }
+    }
+}
