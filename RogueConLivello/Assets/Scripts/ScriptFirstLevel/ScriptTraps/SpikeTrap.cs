@@ -4,24 +4,30 @@ using UnityEngine;
 
 public class SpikeTrap : MonoBehaviour
 {
-    public GameObject Spike;
-    public GameObject Trap5;
-    public GameObject Trap7;
+    //public GameObject Spike;
+    public GameObject Trap5Normal;
+    public GameObject Trap5Spike;
+    public GameObject Trap7Normal;
+    public GameObject Trap7Spike;
     IEnumerator OnTriggerEnter(Collider other)
     {
-        if(Trap5)
+        if(Trap5Normal)
         {
             yield return new WaitForSeconds(0.5f);
-            Spike.transform.position = new Vector3(-21, 0.5f, -1);
+            //Spike.transform.position = new Vector3(-21, 0.5f, -1);
+            Trap5Spike.SetActive(true);
             yield return new WaitForSeconds(1f);
-            Spike.transform.position = new Vector3(-21, -0.5f, -1);
+            //Spike.transform.position = new Vector3(-21, -0.5f, -1);
+            Trap5Spike.SetActive(false);
         }
-        if(Trap7)
+        if(Trap7Normal)
         {
             yield return new WaitForSeconds(0.5f);
-            Spike.transform.position = new Vector3(-4, 0.5f, -3);
+            //Spike.transform.position = new Vector3(-4, 0.5f, -3);
+            Trap7Spike.SetActive(true);
             yield return new WaitForSeconds(1f);
-            Spike.transform.position = new Vector3(-4, -0.5f, -3);
+            //Spike.transform.position = new Vector3(-4, -0.5f, -3);
+            Trap7Spike.SetActive(false);
         }
     }
 }

@@ -12,6 +12,7 @@ public class MinionLookAt : MonoBehaviour
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
+        Destroy(gameObject, 10);
     }
 
     private void MoveSlime()

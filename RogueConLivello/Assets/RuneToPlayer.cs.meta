@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b7249a08c4ec268418dc675b5f119a79
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - RuneWow: {fileID: 797365303391990763, guid: 22d57b36de80c314ca96ea8ecdbd59ef,
+      type: 3}
+  - RuneValvran: {fileID: 5949859705594235032, guid: 05cee2754e2b90b47b129157bb928d42,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

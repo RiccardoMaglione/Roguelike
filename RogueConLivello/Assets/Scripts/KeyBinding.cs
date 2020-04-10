@@ -24,11 +24,12 @@ public class KeyBinding : MonoBehaviour
         keys.Add("Right", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Right", "D")));
         keys.Add("Jump", (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Jump", "Space")));
 
-        keys.Add("Up", KeyCode.W); 
-        keys.Add("Down", KeyCode.S);
-        keys.Add("Left", KeyCode.A);
-        keys.Add("Right", KeyCode.D);
-        keys.Add("Jump", KeyCode.Space);
+
+        //keys.Add("Up", KeyCode.W); 
+        //keys.Add("Down", KeyCode.S);
+        //keys.Add("Left", KeyCode.A);
+        //keys.Add("Right", KeyCode.D);
+        //keys.Add("Jump", KeyCode.Space);
 
         up.text = keys["Up"].ToString();
         down.text = keys["Down"].ToString();

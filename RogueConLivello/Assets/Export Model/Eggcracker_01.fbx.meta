@@ -8,12 +8,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Eggcracker
-    second: {fileID: 2100000, guid: b7a8bfc0104ca094a9804cedf98de309, type: 2}
+    second: {fileID: 2100000, guid: 59c7fc10ef2ef9c4095992d361b609e8, type: 2}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Eggcracker_Eggcracker_AlbedoTransparency
-    second: {fileID: 2800000, guid: ddbf613b528750e4c80327cb2797bfc0, type: 3}
+    second: {fileID: 2800000, guid: 7a37f79cafa266b42939152e606d4f70, type: 3}
   materials:
     importMaterials: 1
     materialName: 0

@@ -15,10 +15,21 @@ public class ChangeScene : MonoBehaviour
     public void GoToMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
+        Time.timeScale = 1;
+        WallTrigger.WallW = 1;
+        WallTrigger.WallD = 1;
+        WallTrigger.WallA = 1;
+        WallTrigger.WallS = 1;
+    }
+    public void GoToLoading()
+    {
+        SceneManager.LoadScene("LoadLevel");
+        Time.timeScale = 1;
     }
     public void GoToPlay()
     {
         SceneManager.LoadScene("FirstLevel");
+        Time.timeScale = 1;
     }
     /*public void GoToMonsterpedia()
     {
@@ -27,6 +38,7 @@ public class ChangeScene : MonoBehaviour
     public void GoToSettings()
     {
         SceneManager.LoadScene("SettingMenu");
+        Time.timeScale = 1;
     }
     /*public void GoToCredits()
     {
@@ -86,7 +98,7 @@ public class ChangeScene : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(GameManagerScript.GM.pause))
         {
             Pause(); //mette il pausa
             SwitchShowHide(); //fa vedere il menù di pausa

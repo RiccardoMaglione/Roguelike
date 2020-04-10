@@ -8,15 +8,16 @@ public class Chasm : MonoBehaviour
     public GameObject OneCameraReferences;
     public GameObject TwoCameraReferences;
     public GameObject ThreeCameraReferences;
+    public GameObject TrapBreak;
 
     public void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag=="Player")
         {
             //yield return new WaitForSeconds(0f);
-            Destroy(gameObject);
+            Destroy(TrapBreak);
             Player.transform.position = new Vector3(-55, 0.5f, 1);
-            
+
             if (TwoCameraReferences.activeSelf)
             {
                 TwoCameraReferences.SetActive(false);

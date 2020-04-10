@@ -549,6 +549,7 @@ GameObject:
   - component: {fileID: 1361930345}
   - component: {fileID: 1361930344}
   - component: {fileID: 1361930346}
+  - component: {fileID: 1361930347}
   m_Layer: 0
   m_Name: Music
   m_TagString: Music
@@ -680,6 +681,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Music: {fileID: 0}
   DifferentAudio: 0
+--- !u!114 &1361930347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361930343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 433a076b34243114db3d04a90c630f83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1659438122
 GameObject:
   m_ObjectHideFlags: 0
@@ -762,7 +775,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1912291266}
-  - component: {fileID: 1912291265}
   - component: {fileID: 1912291267}
   - component: {fileID: 1912291268}
   m_Layer: 0
@@ -772,38 +784,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!328 &1912291265
-VideoPlayer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1912291264}
-  m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 1e89fdd68db6a124baab2e09ccb094c5, type: 3}
-  m_TargetCameraAlpha: 1
-  m_TargetCamera3DLayout: 0
-  m_TargetCamera: {fileID: 0}
-  m_TargetTexture: {fileID: 8400000, guid: 50f1538ee68240248ba9642a6f71bed9, type: 2}
-  m_TimeReference: 0
-  m_TargetMaterialRenderer: {fileID: 0}
-  m_TargetMaterialProperty: _MainTex
-  m_RenderMode: 2
-  m_AspectRatio: 2
-  m_DataSource: 0
-  m_PlaybackSpeed: 1
-  m_AudioOutputMode: 2
-  m_TargetAudioSources: []
-  m_DirectAudioVolumes: []
-  m_Url: 
-  m_EnabledAudioTracks: 
-  m_DirectAudioMutes: 
-  m_ControlledAudioTrackCount: 0
-  m_PlayOnAwake: 1
-  m_SkipOnDrop: 1
-  m_Looping: 1
-  m_WaitForFirstFrame: 0
-  m_FrameReadyEventEnabled: 0
 --- !u!4 &1912291266
 Transform:
   m_ObjectHideFlags: 0

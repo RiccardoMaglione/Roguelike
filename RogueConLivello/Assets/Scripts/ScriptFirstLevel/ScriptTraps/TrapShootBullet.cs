@@ -10,7 +10,8 @@ public class TrapShootBullet : MonoBehaviour
     {
         while (true)
         {
-            GameObject stalactite = Instantiate(prefab, transform.localPosition, Quaternion.identity);
+            Quaternion rot = new Quaternion(0, 180, 0, 0);
+            GameObject stalactite = Instantiate(prefab, transform.localPosition, rot);
             yield return new WaitForSeconds(1);
         }
     }

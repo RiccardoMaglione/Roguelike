@@ -54,7 +54,7 @@ public class Drop : MonoBehaviour
                 {
                     string label = r.x + "x" + r.y;
                     if (r.x == Screen.width && r.y == Screen.height) label += "*";
-                    if (r.x == resolutionManager.DisplayResolution.width && r.y == resolutionManager.DisplayResolution.height) label += " (native)";
+                    ////////////////////////////////////if (r.x == resolutionManager.DisplayResolution.width && r.y == resolutionManager.DisplayResolution.height) label += " (native)";
                 
                     if (GUILayout.Button(label))
                         resolutionManager.SetResolution(i, Screen.fullScreen);

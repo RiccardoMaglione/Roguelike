@@ -5,12 +5,13 @@ using UnityEngine;
 public class Stalactite : MonoBehaviour
 {
     public GameObject prefab;
+    public GameObject TrapStalactite;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            GameObject stalactite = Instantiate(prefab, transform.localPosition + (transform.up * 7), transform.rotation);
+            GameObject stalactite = Instantiate(prefab, TrapStalactite.transform.position + (transform.up * 7), transform.rotation);
         }
         if(other.gameObject.tag == "Stalactite")
         {

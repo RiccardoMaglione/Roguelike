@@ -8,42 +8,42 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Gammur_beak
-    second: {fileID: 2100000, guid: 60934e551c8ca0b4581635de60f7b899, type: 2}
+    second: {fileID: 2100000, guid: 39189611f0069c34fb745443640c96b2, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Gammur_body
-    second: {fileID: 2100000, guid: 027d1a1e88a400b4cbcc237e58a384f4, type: 2}
+    second: {fileID: 2100000, guid: 44a12e60354ea8f4ea6289186ecd52e9, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Gammur_legs
-    second: {fileID: 2100000, guid: 8d0fd552515d4f94e91afc9e108758d4, type: 2}
+    second: {fileID: 2100000, guid: 1075f147e89da2e47a71b9e2e5e54394, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Gammur_wings
-    second: {fileID: 2100000, guid: c4752ca55d2608e4091fc5ff6a210587, type: 2}
+    second: {fileID: 2100000, guid: c484e706a1a2e7844927a0faa2c469b3, type: 2}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Gammur_Gammur_beak_AlbedoTransparency
-    second: {fileID: 2800000, guid: c2f7186616ce05d42b6b7bdb9475004e, type: 3}
+    second: {fileID: 2800000, guid: 87acb9220cb82d141a5351d2e74ff6be, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Gammur_Gammur_body_AlbedoTransparency
-    second: {fileID: 2800000, guid: f4f6bb31c3effc54d87203c14c17cae9, type: 3}
+    second: {fileID: 2800000, guid: 68fc777a52c22ea4ab6649b0db93e843, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Gammur_Gammur_legs_AlbedoTransparency
-    second: {fileID: 2800000, guid: 3ff5d346b6461a2439788a89daca66b5, type: 3}
+    second: {fileID: 2800000, guid: 5b4d8f1e978dec949a12ecdf509b2561, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Gammur_Gammur_wings_AlbedoTransparency
-    second: {fileID: 2800000, guid: 9121085e0cbb2c14faec0f2f61389e15, type: 3}
+    second: {fileID: 2800000, guid: ca47048acd65f0e479de9a712bd62a5e, type: 3}
   materials:
     importMaterials: 1
     materialName: 0

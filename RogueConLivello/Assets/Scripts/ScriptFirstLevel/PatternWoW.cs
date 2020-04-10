@@ -10,13 +10,13 @@ public class PatternWoW : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds((float)1f);
-            AttackShotAround();
+            //yield return new WaitForSeconds((float)1f);
+            //AttackShotAround();
             yield return new WaitForSeconds((float)1f);
             Attack3Angle();
-            yield return new WaitForSeconds((float)1f);
-            Attack3Shot();
-            yield return new WaitForSeconds((float)1f);
+            //yield return new WaitForSeconds((float)1f);
+            //Attack3Shot();
+            //yield return new WaitForSeconds((float)1f);
         }
     }
     void AttackShotAround()

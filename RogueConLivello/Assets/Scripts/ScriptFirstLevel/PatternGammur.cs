@@ -20,7 +20,7 @@ public class PatternGammur : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(isActive == true)
+        if(isActive == true && other.gameObject.tag == "Player")
         {
             StartCoroutine(GammurAttack());
             isActive = false;
