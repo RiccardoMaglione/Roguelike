@@ -5,6 +5,7 @@ using UnityEngine;
 public class PatternWoW : MonoBehaviour
 {
     public GameObject shotReference;
+    public GameObject WowContainer;
 
     public IEnumerator WowAttack()
     {
@@ -21,30 +22,30 @@ public class PatternWoW : MonoBehaviour
     }
     void AttackShotAround()
     {
-        GameObject newShot1 = Instantiate(shotReference, transform.position, Quaternion.Euler(0, 0, 0));
-        GameObject newShot2 = Instantiate(shotReference, transform.position, Quaternion.Euler(0, 45, 0));
-        GameObject newShot3 = Instantiate(shotReference, transform.position, Quaternion.Euler(0, 90, 0));
-        GameObject newShot4 = Instantiate(shotReference, transform.position, Quaternion.Euler(0, 135, 0));
-        GameObject newShot5 = Instantiate(shotReference, transform.position, Quaternion.Euler(0, 180, 0));
-        GameObject newShot6 = Instantiate(shotReference, transform.position, Quaternion.Euler(0, -135, 0));
-        GameObject newShot7 = Instantiate(shotReference, transform.position, Quaternion.Euler(0, -90, 0));
-        GameObject newShot8 = Instantiate(shotReference, transform.position, Quaternion.Euler(0, -45, 0));
+        GameObject newShot1 = Instantiate(shotReference, WowContainer.transform.position, Quaternion.Euler(0, 0, 0));
+        GameObject newShot2 = Instantiate(shotReference, WowContainer.transform.position, Quaternion.Euler(0, 45, 0));
+        GameObject newShot3 = Instantiate(shotReference, WowContainer.transform.position, Quaternion.Euler(0, 90, 0));
+        GameObject newShot4 = Instantiate(shotReference, WowContainer.transform.position, Quaternion.Euler(0, 135, 0));
+        GameObject newShot5 = Instantiate(shotReference, WowContainer.transform.position, Quaternion.Euler(0, 180, 0));
+        GameObject newShot6 = Instantiate(shotReference, WowContainer.transform.position, Quaternion.Euler(0, -135, 0));
+        GameObject newShot7 = Instantiate(shotReference, WowContainer.transform.position, Quaternion.Euler(0, -90, 0));
+        GameObject newShot8 = Instantiate(shotReference, WowContainer.transform.position, Quaternion.Euler(0, -45, 0));
     }
 
     void Attack3Angle()
     {
-        GameObject newShot1 = Instantiate(shotReference, transform.localPosition + (transform.forward * 0.6f), transform.rotation * Quaternion.Euler(0, 45, 0));
-        GameObject newShot2 = Instantiate(shotReference, transform.localPosition + (transform.forward * 0.6f), transform.rotation);
-        GameObject newShot3 = Instantiate(shotReference, transform.localPosition + (transform.forward * 0.6f), transform.rotation * Quaternion.Euler(0, -45, 0));
+        GameObject newShot1 = Instantiate(shotReference, WowContainer.transform.localPosition + (transform.forward * 0.6f), transform.rotation * Quaternion.Euler(0, 45, 0));
+        GameObject newShot2 = Instantiate(shotReference, WowContainer.transform.localPosition + (transform.forward * 0.6f), transform.rotation);
+        GameObject newShot3 = Instantiate(shotReference, WowContainer.transform.localPosition + (transform.forward * 0.6f), transform.rotation * Quaternion.Euler(0, -45, 0));
     }
 
     void Attack3Shot()
     {
 
 
-        GameObject newShot1 = Instantiate(shotReference, transform.position + (transform.forward * 0.6f), transform.rotation);
-        GameObject newShot2 = Instantiate(shotReference, transform.position + (transform.forward * 0.6f) + (transform.right * 0.6f), transform.rotation);
-        GameObject newShot3 = Instantiate(shotReference, transform.position + (transform.forward * 0.6f) + (transform.right * -0.6f), transform.rotation);
+        GameObject newShot1 = Instantiate(shotReference, WowContainer.transform.position + (transform.forward * 0.6f), transform.rotation);
+        GameObject newShot2 = Instantiate(shotReference, WowContainer.transform.position + (transform.forward * 0.6f) + (transform.right * 0.6f), transform.rotation);
+        GameObject newShot3 = Instantiate(shotReference, WowContainer.transform.position + (transform.forward * 0.6f) + (transform.right * -0.6f), transform.rotation);
 
     }
 

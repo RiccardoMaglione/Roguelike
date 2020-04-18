@@ -21,9 +21,13 @@ public class PlayerLife : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if ((other.gameObject.tag == "Shot" || other.gameObject.tag == "Scream" || other.gameObject.tag == "Stalactite") && timer == 0)
+        if ((other.gameObject.tag == "Shot" || other.gameObject.tag == "Scream" || other.gameObject.tag == "Stalactite" || other.gameObject.tag == "Spike" || other.gameObject.tag == "Egg" || other.gameObject.tag == "Eggcracker") && timer == 0)
         { 
-            Destroy(other.gameObject);
+            if(other.gameObject.tag == "Shot" || other.gameObject.tag == "Scream" || other.gameObject.tag == "Stalactite" || other.gameObject.tag == "Egg" || other.gameObject.tag == "Eggcracker")
+            {
+                Destroy(other.gameObject);
+            }
+
             health--;
             
             if (health == 5)

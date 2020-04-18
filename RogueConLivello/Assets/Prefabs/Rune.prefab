@@ -12,10 +12,13 @@ GameObject:
   - component: {fileID: 5532706840185246688}
   - component: {fileID: 5532706840185246691}
   - component: {fileID: 5532706840185246690}
-  - component: {fileID: 5532706840185246693}
+  - component: {fileID: -2055463400014740269}
+  - component: {fileID: 4867429560220248886}
+  - component: {fileID: -2090867280209260948}
+  - component: {fileID: 1327019828426965224}
   m_Layer: 0
   m_Name: Rune
-  m_TagString: Untagged
+  m_TagString: RuneGammur
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,13 +30,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5532706840185246692}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -29.857, y: 0.406, z: 0.000000029802322}
-  m_LocalScale: {x: 0.15158, y: 0.05492124, z: 0.17258829}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!33 &5532706840185246688
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -93,7 +96,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5532706840185246693
+--- !u!114 &-2055463400014740269
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -102,9 +105,50 @@ MonoBehaviour:
   m_GameObject: {fileID: 5532706840185246692}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6687e2aeb967f9f418d7055cb0f016a4, type: 3}
+  m_Script: {fileID: 11500000, guid: b7249a08c4ec268418dc675b5f119a79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shotReference: {fileID: 8936686088074422462, guid: 9df83678dfadb0e4a97064f69a1170c5,
+--- !u!114 &4867429560220248886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5532706840185246692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 102be52d2ca8be24cbe032a8f3cc9e40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ScreamPart: {fileID: 8936686088074422462, guid: 9df83678dfadb0e4a97064f69a1170c5,
     type: 3}
-  player: []
+  Player: []
+--- !u!114 &-2090867280209260948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5532706840185246692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d311e30cc1db4d4e94cdbdc87e15ed0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: []
+  Egg: {fileID: 6331931658972425886, guid: d77876cbe86a1d74aae6e89e0da2f1b2, type: 3}
+--- !u!114 &1327019828426965224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5532706840185246692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3634e25167d88584cb319f7bff818b50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: []
+  ChickenMinion: {fileID: 6412997541021832836, guid: e46d826e6da6c964b9ae46ec9255a826,
+    type: 3}

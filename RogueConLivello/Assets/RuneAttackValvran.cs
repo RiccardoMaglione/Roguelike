@@ -46,8 +46,8 @@ public class RuneAttackValvran : MonoBehaviour
         GameObject newShot3 = Instantiate(PeckReference, player[0].transform.position, player[0].transform.rotation * Quaternion.Euler(0, -45, 0));
         newShot3.tag = "ShotPlayer";
 
-        Destroy(newShot1, 0.5f);
-        Destroy(newShot2, 0.7f);
-        Destroy(newShot3, 0.9f);
+        Destroy(newShot1, 0.2f);
+        Destroy(newShot2, 0.4f);
+        Destroy(newShot3, 0.6f);
     }
 }

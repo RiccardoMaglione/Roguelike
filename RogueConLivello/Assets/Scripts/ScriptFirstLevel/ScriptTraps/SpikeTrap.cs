@@ -9,6 +9,7 @@ public class SpikeTrap : MonoBehaviour
     public GameObject Trap5Spike;
     public GameObject Trap7Normal;
     public GameObject Trap7Spike;
+
     IEnumerator OnTriggerEnter(Collider other)
     {
         if(Trap5Normal)

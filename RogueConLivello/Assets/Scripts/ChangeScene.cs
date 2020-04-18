@@ -20,6 +20,7 @@ public class ChangeScene : MonoBehaviour
         WallTrigger.WallD = 1;
         WallTrigger.WallA = 1;
         WallTrigger.WallS = 1;
+        Tutorial.open = false;
     }
     public void GoToLoading()
     {

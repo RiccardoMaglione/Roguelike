@@ -5,6 +5,7 @@ using UnityEngine;
 public class PatternValvran : MonoBehaviour
 {
     public GameObject PeckReference;
+    public GameObject ValvranContainer;
     bool s1 = false, s2 = false, s3 = false;
     float timer = 0;
     Transform target;
@@ -43,17 +44,17 @@ public class PatternValvran : MonoBehaviour
 
     void Peck1()
     {
-        GameObject newShot1 = Instantiate(PeckReference, transform.localPosition + (transform.forward * 0.6f), transform.rotation * Quaternion.Euler(0, 45, 0));
+        GameObject newShot1 = Instantiate(PeckReference, ValvranContainer.transform.localPosition + (transform.forward * 0.6f), transform.rotation * Quaternion.Euler(0, 45, 0));
         Destroy(newShot1, 0.5f);
     }
     void Peck2()
     {
-        GameObject newShot2 = Instantiate(PeckReference, transform.localPosition + (transform.forward * 0.6f), transform.rotation);
+        GameObject newShot2 = Instantiate(PeckReference, ValvranContainer.transform.localPosition + (transform.forward * 0.6f), transform.rotation);
         Destroy(newShot2, 0.5f);
     }
     void Peck3()
     {
-        GameObject newShot3 = Instantiate(PeckReference, transform.localPosition + (transform.forward * 0.6f), transform.rotation * Quaternion.Euler(0, -45, 0));
+        GameObject newShot3 = Instantiate(PeckReference, ValvranContainer.transform.localPosition + (transform.forward * 0.6f), transform.rotation * Quaternion.Euler(0, -45, 0));
         Destroy(newShot3, 0.5f);
     }
 }
