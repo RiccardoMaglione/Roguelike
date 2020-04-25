@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 7331615944691139551}
   - component: {fileID: 6335462247738819782}
   - component: {fileID: -2455872136223616647}
+  - component: {fileID: -8670593025428600486}
+  - component: {fileID: 1479490313750539196}
   m_Layer: 0
   m_Name: piccola
   m_TagString: RuneWow
@@ -117,8 +119,37 @@ MeshCollider:
   m_GameObject: {fileID: 797365303391990763}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 5302568919011541938, guid: 3300c0d94109eb643a09d2d2517aaa00, type: 3}
+--- !u!54 &-8670593025428600486
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797365303391990763}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1479490313750539196
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797365303391990763}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.080165885, y: 0.010137302, z: 0.080398604}
+  m_Center: {x: 0.00029376044, y: 4.6209334e-10, z: -0.000059002465}

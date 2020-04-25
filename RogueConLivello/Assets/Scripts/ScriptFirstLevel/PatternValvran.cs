@@ -10,6 +10,10 @@ public class PatternValvran : MonoBehaviour
     float timer = 0;
     Transform target;
 
+    public Material MaterialStandard;
+    public Material MaterialChange;
+    public Renderer GraphicsBase;
+
     private void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
@@ -21,6 +25,7 @@ public class PatternValvran : MonoBehaviour
         timer = timer + Time.deltaTime;
         if (timer >= 2 && s1 == false && s2 == false && s3 == false)
         {
+            StartCoroutine(flash());
             Peck1();
             s1 = true;
         }
@@ -56,5 +61,11 @@ public class PatternValvran : MonoBehaviour
     {
         GameObject newShot3 = Instantiate(PeckReference, ValvranContainer.transform.localPosition + (transform.forward * 0.6f), transform.rotation * Quaternion.Euler(0, -45, 0));
         Destroy(newShot3, 0.5f);
+    }
+    public IEnumerator flash()
+    {
+        GraphicsBase.material = MaterialChange;
+        yield return new WaitForSeconds(0.5f);
+        GraphicsBase.material = MaterialStandard;
     }
 }

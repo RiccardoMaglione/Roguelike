@@ -32,19 +32,19 @@ public class ChangeScene : MonoBehaviour
         SceneManager.LoadScene("FirstLevel");
         Time.timeScale = 1;
     }
-    /*public void GoToMonsterpedia()
+    public void GoToMonsterpedia()
     {
-        SceneManager.LoadScene("Monsterpedia");
-    }*/
+        SceneManager.LoadScene("MonsterpediaScene");
+    }
     public void GoToSettings()
     {
         SceneManager.LoadScene("SettingMenu");
         Time.timeScale = 1;
     }
-    /*public void GoToCredits()
+    public void GoToCredits()
     {
-        SceneManager.LoadScene("Credits");
-    }*/
+        SceneManager.LoadScene("CreditsScene");
+    }
     public void GoToBackMenu()                                                      //ripetere?
     {
         SceneManager.LoadScene("MainMenu");

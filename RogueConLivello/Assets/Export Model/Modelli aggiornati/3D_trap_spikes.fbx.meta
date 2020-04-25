@@ -18,12 +18,12 @@ ModelImporter:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: 3D_traps_spikes_lambert1_AlbedoTransparency
-    second: {fileID: 2800000, guid: 279c3d71ad3e2ca438cd6eab706a05ed, type: 3}
+    second: {fileID: 2800000, guid: 747ea75d165a72f41b68c623cc0b9fd1, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: 3Dspikes
-    second: {fileID: 2800000, guid: ba3c7de2b1747884fa6ae4837c396f82, type: 3}
+    second: {fileID: 2800000, guid: 573a5d15bf46fd342a0b2a44fd48267c, type: 3}
   materials:
     importMaterials: 1
     materialName: 0

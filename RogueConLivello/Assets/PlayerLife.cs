@@ -17,11 +17,17 @@ public class PlayerLife : MonoBehaviour
     public GameObject FullHeart2;
     public GameObject FullHeart3;
 
-    public float timer = 0;
+    bool damage = true;
+    public Material MaterialStandard;
+    public Material MaterialChange;
+    public Renderer GraphicsPlayer;
+    int tempHealth;
+
+    public GameObject DebugModeText;
 
     private void OnTriggerEnter(Collider other)
     {
-        if ((other.gameObject.tag == "Shot" || other.gameObject.tag == "Scream" || other.gameObject.tag == "Stalactite" || other.gameObject.tag == "Spike" || other.gameObject.tag == "Egg" || other.gameObject.tag == "Eggcracker") && timer == 0)
+        if ((other.gameObject.tag == "Shot" || other.gameObject.tag == "Scream" || other.gameObject.tag == "Stalactite" || other.gameObject.tag == "Spike" || other.gameObject.tag == "Egg" || other.gameObject.tag == "Eggcracker") && damage == true)
         { 
             if(other.gameObject.tag == "Shot" || other.gameObject.tag == "Scream" || other.gameObject.tag == "Stalactite" || other.gameObject.tag == "Egg" || other.gameObject.tag == "Eggcracker")
             {
@@ -29,6 +35,9 @@ public class PlayerLife : MonoBehaviour
             }
 
             health--;
+            damage = false;
+            StartCoroutine(invincibility());
+            StartCoroutine(flash());
             
             if (health == 5)
             {
@@ -60,7 +69,6 @@ public class PlayerLife : MonoBehaviour
                 HalfHeart1.SetActive(false);
                 EmptyHeart1.SetActive(true);
             }
-            timer = timer + Time.deltaTime;
         }
         if (other.gameObject.tag == "Rune")
         {
@@ -69,6 +77,18 @@ public class PlayerLife : MonoBehaviour
     }
     private void Update()
     {
+        if(Input.GetKeyDown(KeyCode.G))
+        {
+            tempHealth = health;
+            health = 2147483647;
+            DebugModeText.SetActive(true);
+        }
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            health = tempHealth;
+            DebugModeText.SetActive(false);
+        }
+
         if (health <= 0)
         {
             Destroy(gameObject);
@@ -88,10 +108,23 @@ public class PlayerLife : MonoBehaviour
             EmptyHeart2.SetActive(false);
             EmptyHeart3.SetActive(false);
         }
-        if (timer != 0)
-            timer = timer + Time.deltaTime;
+    }
 
-        if (timer >= 0.5f)
-            timer = 0;   
+    public IEnumerator flash()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            GraphicsPlayer.material = MaterialStandard;
+            yield return new WaitForSeconds(0.2f);
+            GraphicsPlayer.material = MaterialChange;
+            yield return new WaitForSeconds(0.2f);
+        }
+        GraphicsPlayer.material = MaterialStandard;
+    }
+
+    public IEnumerator invincibility()
+    {
+        yield return new WaitForSeconds(2);
+        damage = true;
     }
 }

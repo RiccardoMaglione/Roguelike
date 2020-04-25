@@ -1,21 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RuneAttackGammurThree : MonoBehaviour
 {
     public GameObject[] Player;
     public GameObject ChickenMinion;
+    bool SpellReady = true;
+    RawImage GammurCooldownThree;
 
     private void Start()
     {
         Player = GameObject.FindGameObjectsWithTag("Player");
+        GammurCooldownThree = GameObject.Find("RuneGammur3RawImageCooldown").GetComponent<RawImage>();
+        GammurCooldownThree.enabled = false;
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Joystick1Button3)) && SpellReady == true)
         {
             SpawnMinion();
+            SpellReady = false;
+            StartCoroutine(cooldown());
         }
     }
 
@@ -31,5 +38,12 @@ public class RuneAttackGammurThree : MonoBehaviour
             //go1.transform.SetParent(Player[0].transform);
             go1.AddComponent<MinionLookAtClosest>();
         }
+    }
+    public IEnumerator cooldown()
+    {
+        GammurCooldownThree.enabled = true;
+        yield return new WaitForSeconds(20);
+        SpellReady = true;
+        GammurCooldownThree.enabled = false;
     }
 }

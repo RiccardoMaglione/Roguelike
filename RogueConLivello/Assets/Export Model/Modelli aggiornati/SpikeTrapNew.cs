@@ -14,12 +14,14 @@ public class SpikeTrapNew : MonoBehaviour
     public float downSpeed = 1;
 
     private bool open = false;
-
+    static public bool isRune = true;
+    
     private void Start()
     {
         SpikeBaseBlood.SetActive(false);
         SpikeBlood.SetActive(false);
     }
+
     void Update()
     {
         if (open)
@@ -30,6 +32,17 @@ public class SpikeTrapNew : MonoBehaviour
         {
             SpikePos.position = Vector3.Lerp(SpikePos.position, new Vector3(SpikePos.transform.position.x, -1, SpikePos.transform.position.z), Time.deltaTime * downSpeed);
         }
+        Collider[] RuneOnTrap = Physics.OverlapSphere(transform.position, 1);
+        foreach (Collider other in RuneOnTrap)
+        {
+            if (other.gameObject.tag == "RuneWow")
+            {
+                SpikeDown();
+                SpikeNormal.SetActive(true);
+                SpikeBlood.SetActive(false);
+                SpikeBaseBlood.SetActive(false);
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -39,8 +52,19 @@ public class SpikeTrapNew : MonoBehaviour
             SpikeUp();
             SpikeNormal.SetActive(false);
             SpikeBlood.SetActive(true);
-            SpikeBaseBlood.SetActive(true);
-            
+            SpikeBaseBlood.SetActive(true);           
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        
+        if (other.tag == "RuneWow")
+        {
+            SpikeDown();
+            SpikeNormal.SetActive(true);
+            SpikeBlood.SetActive(false);
+            SpikeBaseBlood.SetActive(false);
         }
     }
 
@@ -55,6 +79,7 @@ public class SpikeTrapNew : MonoBehaviour
             SpikeBaseBlood.SetActive(false);
         }
     }
+
 
     public void SpikeUp()
     {

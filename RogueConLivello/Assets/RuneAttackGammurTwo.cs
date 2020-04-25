@@ -1,21 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RuneAttackGammurTwo : MonoBehaviour
 {
     public GameObject[] Player;
     public GameObject Egg;
+    bool SpellReady = true;
+    RawImage GammurCooldownTwo;
 
     private void Start()
     {
         Player = GameObject.FindGameObjectsWithTag("Player");
+        GammurCooldownTwo = GameObject.Find("RuneGammur2RawImageCooldown").GetComponent<RawImage>();
+        GammurCooldownTwo.enabled = false;
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Joystick1Button3)) && SpellReady == true)
         {
             EggBomb();
+            SpellReady = false;
+            StartCoroutine(cooldown());
         }
     }
 
@@ -51,7 +58,13 @@ public class RuneAttackGammurTwo : MonoBehaviour
     //    return gameObject;
     //}
 
-
+    public IEnumerator cooldown()
+    {
+        GammurCooldownTwo.enabled = true;
+        yield return new WaitForSeconds(10);
+        SpellReady = true;
+        GammurCooldownTwo.enabled = false;
+    }
 
     public void EggBomb()
     {

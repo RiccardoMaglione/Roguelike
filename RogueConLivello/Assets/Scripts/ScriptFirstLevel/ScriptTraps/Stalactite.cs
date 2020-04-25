@@ -12,8 +12,8 @@ public class Stalactite : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            TrapStalactite.SetActive(true);
-            StalactiteBreak.SetActive(false);
+            //TrapStalactite.SetActive(true);
+            //StalactiteBreak.SetActive(false);
             GameObject stalactite = Instantiate(prefab, TrapStalactite.transform.position + (transform.up * 7), transform.rotation);
         }
         if(other.gameObject.tag == "Stalactite")

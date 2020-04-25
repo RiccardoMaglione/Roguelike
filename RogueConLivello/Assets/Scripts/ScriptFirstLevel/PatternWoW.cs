@@ -6,6 +6,9 @@ public class PatternWoW : MonoBehaviour
 {
     public GameObject shotReference;
     public GameObject WowContainer;
+    public Material MaterialStandard;
+    public Material MaterialChange;
+    public Renderer GraphicsBase;
 
     public IEnumerator WowAttack()
     {
@@ -34,6 +37,7 @@ public class PatternWoW : MonoBehaviour
 
     void Attack3Angle()
     {
+        StartCoroutine(flash());
         GameObject newShot1 = Instantiate(shotReference, WowContainer.transform.localPosition + (transform.forward * 0.6f), transform.rotation * Quaternion.Euler(0, 45, 0));
         GameObject newShot2 = Instantiate(shotReference, WowContainer.transform.localPosition + (transform.forward * 0.6f), transform.rotation);
         GameObject newShot3 = Instantiate(shotReference, WowContainer.transform.localPosition + (transform.forward * 0.6f), transform.rotation * Quaternion.Euler(0, -45, 0));
@@ -59,4 +63,12 @@ public class PatternWoW : MonoBehaviour
     {
         transform.LookAt(target);
     }
+    public IEnumerator flash()
+    {
+        GraphicsBase.material = MaterialChange;
+        yield return new WaitForSeconds(0.5f);
+        GraphicsBase.material = MaterialStandard;
+    }
+
+
 }

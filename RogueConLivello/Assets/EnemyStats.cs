@@ -9,9 +9,21 @@ public class EnemyStats : MonoBehaviour
     public GameObject BossContainer;
     public GameObject RuneReference;
     public GameObject RuneBossGammur;
+
+    public GameObject RuneBossGammur1;
+    public GameObject RuneBossGammur2;
+    public GameObject RuneBossGammur3;
+
     public GameObject Player;
     public static int rangeGammur;
     //public static int rangeBergrisi;
+
+    public Material MaterialStandard;
+    public Material MaterialChange;
+    public Renderer GraphicsEnemy;
+
+    public GameObject DoorCollider;
+    public GameObject PrecedentCollider;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -22,6 +34,11 @@ public class EnemyStats : MonoBehaviour
                 Destroy(other.gameObject);
             }
             health--;
+
+
+            StartCoroutine(EnemyHit());
+
+
             if(gameObject.tag == "Boss")
             {
                 isBoss = true;
@@ -37,9 +54,14 @@ public class EnemyStats : MonoBehaviour
             #region WillOWisp
             if (this.gameObject.name == "WillOfWisp1" || this.gameObject.name == "WillOfWisp2" || this.gameObject.name == "WillOfWisp3")
             {
+                if(this.gameObject.name == "WillOfWisp1")
+                {
+                    SpikeTrapNew.isRune = true;
+                }
                 Quaternion rot = new Quaternion(0, 90, 0, 0);
                 GameObject rune = Instantiate(RuneReference, transform.position, rot);
                 rune.GetComponent<RuneAttack1>().enabled = false;
+//                DoorLock.EnemyNumber--;
             }
             #endregion
             #region Valvran
@@ -48,6 +70,7 @@ public class EnemyStats : MonoBehaviour
                 Quaternion rot = new Quaternion(0, 90, 0, 0);
                 GameObject rune = Instantiate(RuneReference, transform.position, rot);
                 rune.GetComponent<RuneAttackValvran>().enabled = false;
+//                DoorLock.EnemyNumber--;
             }
             #endregion
             #region Odin's Eye
@@ -101,9 +124,11 @@ public class EnemyStats : MonoBehaviour
         }
         if (health == 0 && gameObject.tag == "Boss" && isBoss == true)
         {
+            PrecedentCollider.SetActive(true);
+            DoorCollider.SetActive(false);
             Destroy(BossContainer);
             #region Gammur
-            if (this.gameObject.name == "3D_boss_gammur")
+            if (this.gameObject.name == "Tile_base")
             {
                 rangeGammur = Random.Range(1,4);
                 switch (rangeGammur)
@@ -112,7 +137,7 @@ public class EnemyStats : MonoBehaviour
                         {
                             Quaternion rot = new Quaternion(0, 90, 0, 0);
                             Vector3 pot = new Vector3(37, 0.5f, -1);
-;                           GameObject rune = Instantiate(RuneBossGammur, pot, rot);
+;                           GameObject rune = Instantiate(RuneBossGammur1, pot, rot);
                             rune.GetComponent<RuneAttackGammurOne>().enabled = false;
                             rune.GetComponent<RuneAttackGammurTwo>().enabled = false;
                             rune.GetComponent<RuneAttackGammurThree>().enabled = false;
@@ -122,7 +147,7 @@ public class EnemyStats : MonoBehaviour
                         {
                             Quaternion rot = new Quaternion(0, 0, 0, 0);
                             Vector3 pot = new Vector3(37, 0.5f, -1);
-                            GameObject rune = Instantiate(RuneBossGammur, pot, rot);
+                            GameObject rune = Instantiate(RuneBossGammur2, pot, rot);
                             rune.GetComponent<RuneAttackGammurOne>().enabled = false;
                             rune.GetComponent<RuneAttackGammurTwo>().enabled = false;
                             rune.GetComponent<RuneAttackGammurThree>().enabled = false;
@@ -132,7 +157,7 @@ public class EnemyStats : MonoBehaviour
                         {
                             Quaternion rot = new Quaternion(0, 0, 0, 0);
                             Vector3 pot = new Vector3(37, 0.5f, -1);
-                            GameObject rune = Instantiate(RuneBossGammur, pot, rot);
+                            GameObject rune = Instantiate(RuneBossGammur3, pot, rot);
                             rune.GetComponent<RuneAttackGammurOne>().enabled = false;
                             rune.GetComponent<RuneAttackGammurTwo>().enabled = false;
                             rune.GetComponent<RuneAttackGammurThree>().enabled = false;
@@ -184,5 +209,12 @@ public class EnemyStats : MonoBehaviour
             //}
             #endregion
         }
+    }
+
+    IEnumerator EnemyHit()
+    {
+        GraphicsEnemy.material = MaterialChange;
+        yield return new WaitForSeconds(0.5f);
+        GraphicsEnemy.material = MaterialStandard;
     }
 }

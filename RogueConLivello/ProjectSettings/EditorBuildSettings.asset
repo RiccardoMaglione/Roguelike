@@ -29,4 +29,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 08ed488cdb4d97f4fa5827236d29db4c
+  - enabled: 1
+    path: Assets/Scenes/MonsterpediaScene.unity
+    guid: 8693da616fd73604688c3cc3830f23f4
+  - enabled: 1
+    path: Assets/Scenes/CreditsScene.unity
+    guid: a864b06bae4b22941a1d90597b90f3ad
   m_configObjects: {}

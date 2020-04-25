@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class PatternGammur : MonoBehaviour
 {
-
+    public Material MaterialStandard;
+    public Material MaterialChange;
+    public Renderer GraphicsBase;
 
     public GameObject ScreamPart;
     public GameObject Gammur;
@@ -17,11 +19,17 @@ public class PatternGammur : MonoBehaviour
     //public Transform GammurTransformParent;
     bool isActive = true;
 
+    public GameObject PortaBoss;
+    public GameObject DoorCollider;
+    public GameObject PrecedentCollider;
 
     private void OnTriggerEnter(Collider other)
     {
         if(isActive == true && other.gameObject.tag == "Player")
         {
+            PortaBoss.SetActive(true);
+            PrecedentCollider.SetActive(false);
+            DoorCollider.SetActive(true);
             StartCoroutine(GammurAttack());
             isActive = false;
         }
@@ -37,11 +45,15 @@ public class PatternGammur : MonoBehaviour
     {
         while (true)
         {
+            StartCoroutine(flash());
             yield return new WaitForSeconds((float)3f);
+            StartCoroutine(flash());
             StartCoroutine(Scream());
             yield return new WaitForSeconds((float)10f);
+            StartCoroutine(flash());
             SpawnMinion();
             yield return new WaitForSeconds((float)10f);
+            StartCoroutine(flash());
             EggBomb();
             yield return new WaitForSeconds((float)3f);
         }
@@ -116,6 +128,13 @@ public class PatternGammur : MonoBehaviour
             go.transform.SetParent(GammurTransformParent);
             go.AddComponent<MinionLookAt>();
         }
+    }
+
+    public IEnumerator flash()
+    {
+        GraphicsBase.material = MaterialChange;
+        yield return new WaitForSeconds(0.5f);
+        GraphicsBase.material = MaterialStandard;
     }
 
 }

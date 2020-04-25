@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RuneAttackValvran : MonoBehaviour
 {
     public GameObject PeckReference;
     public GameObject[] player;
+    bool SpellReady = true;
+    
 
     private void Start()
     {
@@ -13,10 +16,35 @@ public class RuneAttackValvran : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(GameManagerScript.GM.runeTwo))
+        if(InventorySystem.tempIValvran == 0)
         {
-            StartCoroutine(Attack());
-            Ammo.AmmoV--;
+            if ((Input.GetKeyDown(GameManagerScript.GM.runeOne) || Input.GetKeyDown(KeyCode.JoystickButton2)) && SpellReady == true)
+            {
+                StartCoroutine(Attack());
+                Ammo.AmmoV--;
+                Ammo.NumAmmoV0.text = Ammo.AmmoV.ToString();
+                SpellReady = false;
+                Ammo.RuneRawImageValvran0.enabled = false;
+                Ammo.RuneRawImageCooldownValvran0.enabled = true;
+                StartCoroutine(cooldown());
+                Ammo.RuneRawImageCooldownValvran0.enabled = false;
+                Ammo.RuneRawImageValvran0.enabled = true;
+            }
+        }
+        if (InventorySystem.tempIValvran == 1)
+        {
+            if ((Input.GetKeyDown(GameManagerScript.GM.runeTwo) || Input.GetKeyDown(KeyCode.JoystickButton1)) && SpellReady == true)
+            {
+                StartCoroutine(Attack());
+                Ammo.AmmoV--;
+                Ammo.NumAmmoV1.text = Ammo.AmmoV.ToString();
+                SpellReady = false;
+                Ammo.RuneRawImageValvran1.enabled = false;
+                Ammo.RuneRawImageCooldownValvran1.enabled = true;
+                StartCoroutine(cooldown());
+                Ammo.RuneRawImageCooldownValvran1.enabled = false;
+                Ammo.RuneRawImageValvran1.enabled = true;
+            }
         }
     }
     //void Attack3Peck()
@@ -49,5 +77,10 @@ public class RuneAttackValvran : MonoBehaviour
         Destroy(newShot1, 0.2f);
         Destroy(newShot2, 0.4f);
         Destroy(newShot3, 0.6f);
+    }
+    public IEnumerator cooldown()
+    {
+        yield return new WaitForSeconds(0.70f);
+        SpellReady = true;
     }
 }

@@ -23,6 +23,13 @@ TagManager:
   - NotWeapon
   - RuneWow
   - RuneValvran
+  - Spike
+  - RuneGammur
+  - Eggcracker
+  - EggcrackerPlayer
+  - EggPlayer
+  - BossDoor
+  - RuneProva
   layers:
   - Default
   - TransparentFX

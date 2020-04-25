@@ -13,7 +13,7 @@ public class DestroyShot : MonoBehaviour
     //}
     //private void OnTriggerEnter(Collider other)
     //{
-    //    if (other.gameObject.tag == "Shot")
+    //    if (other.gameObject.tag == "Shot" || other.gameObject.tag == "ShotPlayer")
     //    {
     //        Destroy(other.gameObject);
     //    }

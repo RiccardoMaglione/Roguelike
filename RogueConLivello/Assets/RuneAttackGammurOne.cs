@@ -1,21 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RuneAttackGammurOne : MonoBehaviour
 {
     public GameObject ScreamPart;
     public GameObject[] Player;
+    bool SpellReady = true;
+    RawImage GammurCooldownOne;
 
     private void Start()
     {
         Player = GameObject.FindGameObjectsWithTag("Player");
+        GammurCooldownOne = GameObject.Find("RuneGammur1RawImageCooldown").GetComponent<RawImage>();
+        GammurCooldownOne.enabled = false;
     }
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.UpArrow))
+        if((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Joystick1Button3)) && SpellReady == true)
         {
             StartCoroutine(Scream());
+            SpellReady = false;
+            StartCoroutine(cooldown());
         }
     }
     public IEnumerator Scream()
@@ -52,5 +59,12 @@ public class RuneAttackGammurOne : MonoBehaviour
             newShot12.tag = "ShotPlayer";
             yield return new WaitForSeconds((float)0.2f);
         }
+    }
+    public IEnumerator cooldown()
+    {
+        GammurCooldownOne.enabled = true;
+        yield return new WaitForSeconds(15);
+        SpellReady = true;
+        GammurCooldownOne.enabled = false;
     }
 }
