@@ -1,0 +1,210 @@
+fileFormatVersion: 2
+guid: 17e2ec4bd64a1d043bbfe724b2d0cb64
+ModelImporter:
+  serializedVersion: 26
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Torch_flame
+    second: {fileID: 2100000, guid: c136a15fd99c1af4f90bd3e26a335eba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tutorial_board
+    second: {fileID: 2100000, guid: c89a91c56330c264c94d2f2b27764c73, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cracks_03
+    second: {fileID: 2100000, guid: a2c945a2d80825d478d8c8b020a065ad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: darts_trap
+    second: {fileID: 2100000, guid: aab5bc677fb7e964694881b82cbc82e5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: env
+    second: {fileID: 2100000, guid: d6808da878662674fbba8c8e2373f8eb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: env1props
+    second: {fileID: 2100000, guid: c3c0d56d93dfc564592da1345a847367, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: env1props1
+    second: {fileID: 2100000, guid: 05cabf057bf2cb34584f2b13c9cc7a07, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: env1props2
+    second: {fileID: 2100000, guid: 7fc2b3839895f3a47ac7e1d586fd87f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: env1props3
+    second: {fileID: 2100000, guid: 0cbb14c9dc63b4043ab35774ef1b3a9d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: env1props4
+    second: {fileID: 2100000, guid: d95b0cbbf77d3904fb35c68c65a4d942, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: env1props5
+    second: {fileID: 2100000, guid: 94b9570af3e1986449e8d6d5be2c396d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hole
+    second: {fileID: 2100000, guid: 47fbf30a7ee151d4289ffdd4ea5e1c44, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: vase_hgih
+    second: {fileID: 2100000, guid: 8e45ac89361ff674a9da4c6a10e7ef4a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall_decoration_01
+    second: {fileID: 2100000, guid: 2f8b4d1da2fb1c2498b0031df1f06e09, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Colomns_cracks_01_AlbedoTransparency
+    second: {fileID: 2800000, guid: 8d0825fd7752aa1468d5d5e7df9ce4b4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Env
+    second: {fileID: 2800000, guid: ccefefb0612c3d04c985bd7255423aed, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Floor1_hole_hole_AlbedoTransparency
+    second: {fileID: 2800000, guid: b029d4f289463cc4cb9394e62136b615, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Torch_flame_01fbx_lambert1_AlbedoTransparency
+    second: {fileID: 2800000, guid: b396d9afa76db934fa4d8eb28e0ce6f6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Tutorial_board_Rocks_AlbedoTransparency
+    second: {fileID: 2800000, guid: d7d372380ce2480468599803cc2ead10, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: darts_trap_darts_trap_AlbedoTransparency
+    second: {fileID: 2800000, guid: 705c03e8212f7ae4fbbf97d6801ecc2a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: env1props
+    second: {fileID: 2800000, guid: 8a216bb671d7e854d93bbce4ac7f8216, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: vase_high_vase_high_AlbedoTransparency
+    second: {fileID: 2800000, guid: c582fb024c5e3764a9837ce53c050d78, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wall_decorations_wall_decoration_01_BaseColor
+    second: {fileID: 2800000, guid: 7bc776b940fc0f94a9ac2fdebafde974, type: 3}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
