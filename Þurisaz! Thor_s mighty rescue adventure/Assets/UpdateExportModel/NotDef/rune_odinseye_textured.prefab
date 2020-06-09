@@ -258,4 +258,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   a: {fileID: 8809882221543391232}
   laser: {fileID: 7026262959804871937}
-  laserTime: 1
+  laserTime: 0.5
