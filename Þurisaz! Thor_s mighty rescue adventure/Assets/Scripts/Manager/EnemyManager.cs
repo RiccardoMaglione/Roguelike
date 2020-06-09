@@ -34,6 +34,7 @@ public class EnemyManager : MonoBehaviour
 
     [Header("General Reference")]
     public int health;
+    public GameObject shadow;
 
     //public int healthFireball = 1;
     //public int healthTornado = 1;
@@ -254,6 +255,8 @@ public class EnemyManager : MonoBehaviour
                 GameObject rune = Instantiate(RuneReference, transform.position, rot);
                 FindObjectOfType<AudioManager>().Play("BaseRuneDrop", sfx);
                 rune.GetComponent<RuneWow>().enabled = false;
+                GameObject shadow1 = Instantiate(shadow, new Vector3(transform.position.x, 0.1f, transform.position.z), Quaternion.identity);
+                shadow1.transform.parent = rune.transform;
             }
             #endregion
             #region Valvran
@@ -271,6 +274,8 @@ public class EnemyManager : MonoBehaviour
                 GameObject rune = Instantiate(RuneReference, transform.position, rot);
                 FindObjectOfType<AudioManager>().Play("BaseRuneDrop", sfx);
                 rune.GetComponent<RuneValravn>().enabled = false;
+                GameObject shadow1 = Instantiate(shadow, new Vector3(transform.position.x, 0.1f, transform.position.z), Quaternion.identity);
+                shadow1.transform.parent = rune.transform;
             }
             #endregion
             #region Odin's Eye
@@ -279,6 +284,8 @@ public class EnemyManager : MonoBehaviour
                 Quaternion rot = new Quaternion(0, 90, 0, 0);
                 GameObject rune = Instantiate(RuneReference, transform.position, rot);
                 rune.GetComponent<RuneEye>().enabled = false;
+                GameObject shadow1 = Instantiate(shadow, new Vector3(transform.position.x, 0.1f, transform.position.z), Quaternion.identity);
+                shadow1.transform.parent = rune.transform;
             }
             #endregion
             #region Yggdrasil Deer
@@ -287,24 +294,32 @@ public class EnemyManager : MonoBehaviour
                 Quaternion rot = new Quaternion(0, 90, 0, 0);
                 GameObject rune = Instantiate(RuneReference, transform.position, rot);
                 rune.GetComponent<RuneBlue>().enabled = false;
+                GameObject shadow1 = Instantiate(shadow, new Vector3(transform.position.x, 0.1f, transform.position.z), Quaternion.identity);
+                shadow1.transform.parent = rune.transform;
             }
             if (this.gameObject.name == "DeerGreen1")
             {
                 Quaternion rot = new Quaternion(0, 90, 0, 0);
                 GameObject rune = Instantiate(RuneReference, transform.position, rot);
                 rune.GetComponent<RuneGreen>().enabled = false;
+                GameObject shadow1 = Instantiate(shadow, new Vector3(transform.position.x, 0.1f, transform.position.z), Quaternion.identity);
+                shadow1.transform.parent = rune.transform;
             }
             if (this.gameObject.name == "DeerYellow1")
             {
                 Quaternion rot = new Quaternion(0, 90, 0, 0);
                 GameObject rune = Instantiate(RuneReference, transform.position, rot);
                 rune.GetComponent<RuneYellow>().enabled = false;
+                GameObject shadow1 = Instantiate(shadow, new Vector3(transform.position.x, 0.1f, transform.position.z), Quaternion.identity);
+                shadow1.transform.parent = rune.transform;
             }
             if (this.gameObject.name == "DeerRed1")
             {
                 Quaternion rot = new Quaternion(0, 90, 0, 0);
                 GameObject rune = Instantiate(RuneReference, transform.position, rot);
                 rune.GetComponent<RuneOrange>().enabled = false;
+                GameObject shadow1 = Instantiate(shadow, new Vector3(transform.position.x, 0.1f, transform.position.z), Quaternion.identity);
+                shadow1.transform.parent = rune.transform;
             }
             #endregion
             #region Gullinbursti
@@ -313,6 +328,8 @@ public class EnemyManager : MonoBehaviour
             //    Quaternion rot = new Quaternion(0, 90, 0, 0);
             //    GameObject rune = Instantiate(RuneReference, transform.position, rot);
             //    rune.GetComponent<RuneGullinbursti>().enabled = false;
+            //GameObject shadow1 = Instantiate(shadow, new Vector3(transform.position.x, 0.1f, transform.position.z), Quaternion.identity);
+            //shadow1.transform.parent = rune.transform;
             //}
             #endregion
             #region Darkelf
@@ -321,6 +338,8 @@ public class EnemyManager : MonoBehaviour
             //    Quaternion rot = new Quaternion(0, 90, 0, 0);
             //    GameObject rune = Instantiate(RuneReference, transform.position, rot);
             //    rune.GetComponent<RuneDarkElf>().enabled = false;
+            //GameObject shadow1 = Instantiate(shadow, new Vector3(transform.position.x, 0.1f, transform.position.z), Quaternion.identity);
+            //shadow1.transform.parent = rune.transform;
             //}
             #endregion
             #region Draugr
@@ -329,6 +348,8 @@ public class EnemyManager : MonoBehaviour
             //    Quaternion rot = new Quaternion(0, 90, 0, 0);
             //    GameObject rune = Instantiate(RuneReference, transform.position, rot);
             //    rune.GetComponent<RuneDraugr>().enabled = false;
+            //    GameObject shadow1 = Instantiate(shadow, new Vector3(transform.position.x, 0.1f, transform.position.z), Quaternion.identity);
+            //    shadow1.transform.parent = rune.transform;
             //}
             #endregion
 

@@ -13003,6 +13003,7 @@ MonoBehaviour:
   DestraGammurCollider: {fileID: 0}
   SinistraGammurCollider: {fileID: 0}
   health: 2
+  shadow: {fileID: 0}
   isBoss: 0
   currentHealth: 0
   healthBar: {fileID: 0}
@@ -23727,6 +23728,7 @@ MonoBehaviour:
   DestraGammurCollider: {fileID: 0}
   SinistraGammurCollider: {fileID: 0}
   health: 3
+  shadow: {fileID: 0}
   isBoss: 0
   currentHealth: 0
   healthBar: {fileID: 0}
@@ -23832,6 +23834,7 @@ MonoBehaviour:
   DestraGammurCollider: {fileID: 0}
   SinistraGammurCollider: {fileID: 0}
   health: 2
+  shadow: {fileID: 0}
   isBoss: 0
   currentHealth: 0
   healthBar: {fileID: 0}
@@ -25862,6 +25865,7 @@ MonoBehaviour:
   DestraGammurCollider: {fileID: 0}
   SinistraGammurCollider: {fileID: 0}
   health: 3
+  shadow: {fileID: 0}
   isBoss: 0
   currentHealth: 0
   healthBar: {fileID: 0}
@@ -36320,6 +36324,7 @@ MonoBehaviour:
   DestraGammurCollider: {fileID: 0}
   SinistraGammurCollider: {fileID: 0}
   health: 2
+  shadow: {fileID: 9020515508136278214, guid: ccf500aef5b4af14c9533a4c6b357cb9, type: 3}
   isBoss: 0
   currentHealth: 0
   healthBar: {fileID: 0}
@@ -45496,6 +45501,21 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5653747700367265993, guid: d9f492873a47b53489e7162330e94cc7,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5653747700367265993, guid: d9f492873a47b53489e7162330e94cc7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 08aaf8a4419bad845ad06d7e77137bd6, type: 2}
+    - target: {fileID: 5653747700367265993, guid: d9f492873a47b53489e7162330e94cc7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1f32bd57b31125b41a34551ad6683ba4, type: 2}
     - target: {fileID: -4216859302048453862, guid: d9f492873a47b53489e7162330e94cc7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -45566,21 +45586,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 5653747700367265993, guid: d9f492873a47b53489e7162330e94cc7,
-        type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5653747700367265993, guid: d9f492873a47b53489e7162330e94cc7,
-        type: 3}
-      propertyPath: m_Materials.Array.data[1]
-      value: 
-      objectReference: {fileID: 2100000, guid: 08aaf8a4419bad845ad06d7e77137bd6, type: 2}
-    - target: {fileID: 5653747700367265993, guid: d9f492873a47b53489e7162330e94cc7,
-        type: 3}
-      propertyPath: m_Materials.Array.data[2]
-      value: 
-      objectReference: {fileID: 2100000, guid: 1f32bd57b31125b41a34551ad6683ba4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9f492873a47b53489e7162330e94cc7, type: 3}
 --- !u!23 &1632064722 stripped
@@ -51844,6 +51849,7 @@ MonoBehaviour:
   DestraGammurCollider: {fileID: 2014713856}
   SinistraGammurCollider: {fileID: 386786611}
   health: 20
+  shadow: {fileID: 0}
   isBoss: 0
   currentHealth: 0
   healthBar: {fileID: 849010910}
@@ -53410,6 +53416,7 @@ MonoBehaviour:
   DestraGammurCollider: {fileID: 0}
   SinistraGammurCollider: {fileID: 0}
   health: 3
+  shadow: {fileID: 0}
   isBoss: 0
   currentHealth: 0
   healthBar: {fileID: 0}
