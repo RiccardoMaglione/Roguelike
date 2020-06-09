@@ -57,31 +57,59 @@ public class InventorySystem : MonoBehaviour
 
 
     #region Nuove variabili per rune nuove inventario
+
+    public static GameObject RuneBlue;
+    public static GameObject RuneGreen;
+    public static GameObject RuneRed;
+    public static GameObject RuneYellow;
+    public static GameObject RuneEye;
+    public static GameObject RuneDarkElf;
+    public static GameObject RuneDraugr;
+
     public bool isPresentEye = false;
     public bool isPresentBlue = false;
     public bool isPresentGreen = false;
     public bool isPresentYellow = false;
     public bool isPresentOrange = false;
+
+    public bool isPresentDarkElf = false;
+    public bool isPresentDraugr = false;
+
     static public bool tempIsPresentEye = false;
     static public bool tempIsPresentBlue = false;
     static public bool tempIsPresentGreen = false;
     static public bool tempIsPresentYellow = false;
     static public bool tempIsPresentOrange = false;
+
+    static public bool tempIsPresentDarkElf = false;
+    static public bool tempIsPresentDraugr = false;
+
     public static int tempIEye;
     public static int tempIBlue;
     public static int tempIGreen;
     public static int tempIYellow;
     public static int tempIOrange;
+
+    public static int tempIDarkElf;
+    public static int tempIDraugr;
+
     public static int tempIImageEye;
     public static int tempIImageBlue;
     public static int tempIImageGreen;
     public static int tempIImageYellow;
     public static int tempIImageOrange;
+
+    public static int tempIImageDarkElf;
+    public static int tempIImageDraugr;
+
     static public bool isFirsPresentRuneEye = false;
     static public bool isFirsPresentRuneBlue = false;
     static public bool isFirsPresentRuneGreen = false;
     static public bool isFirsPresentRuneYellow = false;
     static public bool isFirsPresentRuneOrange = false;
+
+    static public bool isFirsPresentRuneDarkElf = false;
+    static public bool isFirsPresentRuneDraugr = false;
     #endregion
 
     public int ciao;
@@ -101,6 +129,9 @@ public class InventorySystem : MonoBehaviour
             isPresentGreen = false;
             isPresentYellow = false;
             isPresentOrange = false;
+
+            isPresentDarkElf = false;
+            isPresentDraugr = false;
 
             isPresentProve = false;
             
@@ -185,7 +216,7 @@ public class InventorySystem : MonoBehaviour
     {
 
         
-        if(i < 2 && (other.gameObject.tag == "RuneWow" || other.gameObject.tag == "RuneValvran" || other.gameObject.tag == "RuneProva" || other.gameObject.tag == "RuneEye" || other.gameObject.tag == "RuneBlue" || other.gameObject.tag == "RuneGreen" || other.gameObject.tag == "RuneYellow" || other.gameObject.tag == "RuneOrange"))        //Se i<2 e l'altro oggetto ha un particolare tag
+        if(i < 2 && (other.gameObject.tag == "RuneWow" || other.gameObject.tag == "RuneValvran" || other.gameObject.tag == "RuneProva" || other.gameObject.tag == "RuneEye" || other.gameObject.tag == "RuneBlue" || other.gameObject.tag == "RuneGreen" || other.gameObject.tag == "RuneYellow" || other.gameObject.tag == "RuneOrange" || other.gameObject.tag == "RuneDarkElf" || other.gameObject.tag == "RuneDraugr"))        //Se i<2 e l'altro oggetto ha un particolare tag
         {
             if (other.gameObject.tag == "RuneWow" && isPresentWow == false)             //Se l'altro oggetto è la runa del will o wisp ed è la runa non è già presente nell'inventario
             {
@@ -271,8 +302,24 @@ public class InventorySystem : MonoBehaviour
                 isPresentOrange = true;                                                    //Setta a vero la presenza della runa del will o wisp
                 tempIsPresentOrange = true;                                                //Setta a vero la presenza della runa del will o wisp nella variabile temporanea
             }
-
-
+            if (other.gameObject.tag == "RuneDarkElf" && isPresentDarkElf == false)             //Se l'altro oggetto è la runa del will o wisp ed è la runa non è già presente nell'inventario
+            {
+                tempIDarkElf = i;                                                           //Setta la variabile temporanea tempI del will o wisp uguale a i
+                tempIImageDarkElf = i;                                                      //Setta la variabile temporanea tempI relativa alla ui del will o wisp uguale a i
+                InventorySlotsEnemy[i] = other.gameObject;                              //Assegna alla posizione i l'oggetto appena raccolto
+                i++;                                                                    //Aumenta i di 1
+                isPresentDarkElf = true;                                                    //Setta a vero la presenza della runa del will o wisp
+                tempIsPresentDarkElf = true;                                                //Setta a vero la presenza della runa del will o wisp nella variabile temporanea
+            }
+            if (other.gameObject.tag == "RuneDraugr" && isPresentDraugr == false)             //Se l'altro oggetto è la runa del will o wisp ed è la runa non è già presente nell'inventario
+            {
+                tempIDraugr = i;                                                           //Setta la variabile temporanea tempI del will o wisp uguale a i
+                tempIImageDraugr = i;                                                      //Setta la variabile temporanea tempI relativa alla ui del will o wisp uguale a i
+                InventorySlotsEnemy[i] = other.gameObject;                              //Assegna alla posizione i l'oggetto appena raccolto
+                i++;                                                                    //Aumenta i di 1
+                isPresentDraugr = true;                                                    //Setta a vero la presenza della runa del will o wisp
+                tempIsPresentDraugr = true;                                                //Setta a vero la presenza della runa del will o wisp nella variabile temporanea
+            }
 
             #endregion
 
@@ -302,7 +349,7 @@ public class InventorySystem : MonoBehaviour
         #region Change rune
         if (Input.GetKey(KeyCode.B))                                                                                                                //Se schiaccio B (da cambiare poi in F + LeftArrow)
         {
-            if (other.gameObject.tag == "RuneWow" || other.gameObject.tag == "RuneValvran" || other.gameObject.tag == "RuneProva" || other.gameObject.tag == "RuneEye" || other.gameObject.tag == "RuneBlue" || other.gameObject.tag == "RuneGreen" || other.gameObject.tag == "RuneYellow" || other.gameObject.tag == "RuneOrange")                  //Se l'altro oggetto è uno di quelli proposti
+            if (other.gameObject.tag == "RuneWow" || other.gameObject.tag == "RuneValvran" || other.gameObject.tag == "RuneProva" || other.gameObject.tag == "RuneEye" || other.gameObject.tag == "RuneBlue" || other.gameObject.tag == "RuneGreen" || other.gameObject.tag == "RuneYellow" || other.gameObject.tag == "RuneOrange" || other.gameObject.tag == "RuneDarkElf" || other.gameObject.tag == "RuneDraugr")                  //Se l'altro oggetto è uno di quelli proposti
             {
                 Destroy(InventorySlotsEnemy[0]);                                                                                                    //Distruggi l'oggetto nell'invetario Enemy alla posizione 0
                 InventorySlotsEnemy[0] = other.gameObject;                                                                                          //Setta l'altro oggetto nell'inventario Enemy alla posizione 0
@@ -335,11 +382,21 @@ public class InventorySystem : MonoBehaviour
                     isPresentOrange = true;
                     InventorySlotsEnemy[0].GetComponent<RuneOrange>().enabled = true;
                 }
+                if (other.gameObject.tag == "RuneDarkElf")
+                {
+                    isPresentDarkElf = true;
+                    InventorySlotsEnemy[0].GetComponent<RuneDarkElf>().enabled = true;
+                }
+                if (other.gameObject.tag == "RuneDraugr")
+                {
+                    isPresentDraugr = true;
+                    InventorySlotsEnemy[0].GetComponent<RuneDraugr>().enabled = true;
+                }
             }
         }
         if (Input.GetKey(KeyCode.N))                                                                                                                //Se schiaccio N (da cambiare poi in F + RightArrow)
         {
-            if (other.gameObject.tag == "RuneWow" || other.gameObject.tag == "RuneValvran" || other.gameObject.tag == "RuneProva" || other.gameObject.tag == "RuneEye" || other.gameObject.tag == "RuneBlue" || other.gameObject.tag == "RuneGreen" || other.gameObject.tag == "RuneYellow" || other.gameObject.tag == "RuneOrange")                  //Se l'altro oggetto è uno di quelli proposti
+            if (other.gameObject.tag == "RuneWow" || other.gameObject.tag == "RuneValvran" || other.gameObject.tag == "RuneProva" || other.gameObject.tag == "RuneEye" || other.gameObject.tag == "RuneBlue" || other.gameObject.tag == "RuneGreen" || other.gameObject.tag == "RuneYellow" || other.gameObject.tag == "RuneOrange" || other.gameObject.tag == "RuneDarkElf" || other.gameObject.tag == "RuneDraugr")                  //Se l'altro oggetto è uno di quelli proposti
             {
                 Destroy(InventorySlotsEnemy[1]);                                                                                                    //Distruggi l'oggetto nell'invetario Enemy alla posizione 1
                 InventorySlotsEnemy[1] = other.gameObject;                                                                                          //Setta l'altro oggetto nell'inventario Enemy alla posizione 1
@@ -370,6 +427,16 @@ public class InventorySystem : MonoBehaviour
                 {
                     isPresentOrange = true;
                     InventorySlotsEnemy[1].GetComponent<RuneOrange>().enabled = true;
+                }
+                if (other.gameObject.tag == "RuneDarkElf")
+                {
+                    isPresentDarkElf = true;
+                    InventorySlotsEnemy[1].GetComponent<RuneDarkElf>().enabled = true;
+                }
+                if (other.gameObject.tag == "RuneDraugr")
+                {
+                    isPresentDraugr = true;
+                    InventorySlotsEnemy[1].GetComponent<RuneDraugr>().enabled = true;
                 }
             }
         }

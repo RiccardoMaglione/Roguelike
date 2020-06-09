@@ -68,21 +68,25 @@ public class RuneWow : MonoBehaviour
     {
         if (InventorySystem.tempIWow == 0)
         {
-            Ammo.RuneRawImageWilloWisp0.enabled = false;
-            Ammo.RuneRawImageCooldownWilloWisp0.enabled = true;
+            //Ammo.RuneRawImageWilloWisp0.enabled = false;
+            //Ammo.RuneRawImageCooldownWilloWisp0.enabled = true;
+            player[0].GetComponent<Ammo>().SlotRuneOne.texture = player[0].GetComponent<Ammo>().RuneWowTexture[1];
             yield return new WaitForSeconds(CooldownRune);
             SpellReady = true;
-            Ammo.RuneRawImageCooldownWilloWisp0.enabled = false;
-            Ammo.RuneRawImageWilloWisp0.enabled = true;
+            player[0].GetComponent<Ammo>().SlotRuneOne.texture = player[0].GetComponent<Ammo>().RuneWowTexture[0];
+            //Ammo.RuneRawImageCooldownWilloWisp0.enabled = false;
+            //Ammo.RuneRawImageWilloWisp0.enabled = true;
         }
         if (InventorySystem.tempIWow == 1)
         {
-            Ammo.RuneRawImageWilloWisp1.enabled = false;
-            Ammo.RuneRawImageCooldownWilloWisp1.enabled = true;
+            //Ammo.RuneRawImageWilloWisp1.enabled = false;
+            //Ammo.RuneRawImageCooldownWilloWisp1.enabled = true;
+            player[0].GetComponent<Ammo>().SlotRuneTwo.texture = player[0].GetComponent<Ammo>().RuneWowTexture[1];
             yield return new WaitForSeconds(CooldownRune);
             SpellReady = true;
-            Ammo.RuneRawImageCooldownWilloWisp1.enabled = false;
-            Ammo.RuneRawImageWilloWisp1.enabled = true;
+            player[0].GetComponent<Ammo>().SlotRuneTwo.texture = player[0].GetComponent<Ammo>().RuneWowTexture[0];
+            //Ammo.RuneRawImageCooldownWilloWisp1.enabled = false;
+            //Ammo.RuneRawImageWilloWisp1.enabled = true;
         }
     }
 }

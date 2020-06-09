@@ -17968,6 +17968,7 @@ RectTransform:
   m_Children:
   - {fileID: 1962521405}
   - {fileID: 543813809}
+  - {fileID: 1687127442}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -60002,6 +60003,75 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1425083959}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1429348127
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1429348129}
+  - component: {fileID: 1429348128}
+  m_Layer: 0
+  m_Name: Intro
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1429348128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429348127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35108346ead390443b8e7e1bd87f0f11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PanelLoki: {fileID: 1687127440}
+  Intro:
+  - {fileID: 2800000, guid: e3cfb6e00df100e4894064602a9a4d5a, type: 3}
+  - {fileID: 2800000, guid: 84508deb1ed9b94488a4c727b8e3fda9, type: 3}
+  - {fileID: 2800000, guid: 1bb4764047e1ac644b50221b5cfeb0a6, type: 3}
+  - {fileID: 2800000, guid: 0f256140fc42572489b3df7c5513e112, type: 3}
+  - {fileID: 2800000, guid: b87167bdda51f0641a139f039f4f97db, type: 3}
+  - {fileID: 2800000, guid: 1e6ecda978c3c514db21ee3a0bef47a9, type: 3}
+  - {fileID: 2800000, guid: 2cfaedb943a9219459e98016ef590d01, type: 3}
+  - {fileID: 2800000, guid: 27135a6e350266946a4702e694a7c222, type: 3}
+  - {fileID: 2800000, guid: ea4318771109d734586059b4408f82c1, type: 3}
+  - {fileID: 2800000, guid: cef7a4fbf2586224ea79c3f828f2c6d8, type: 3}
+  - {fileID: 2800000, guid: 0eb851de192426c43ab93d42909c40b3, type: 3}
+  - {fileID: 2800000, guid: ffe0fcb442e3ac041967eec1f7a6aa9b, type: 3}
+  - {fileID: 2800000, guid: 1c9e7b13537203d4386e81344710375b, type: 3}
+  - {fileID: 2800000, guid: b963d49a55ed3454daee0bdac2af9f35, type: 3}
+  - {fileID: 2800000, guid: 9ed5e793476b22e48be5e8e985b2ca40, type: 3}
+  - {fileID: 2800000, guid: 5773a6df1e83a224ba70295f9c7ca1f0, type: 3}
+  - {fileID: 2800000, guid: 52845bb1039a4cd42a77d124246a4bca, type: 3}
+  - {fileID: 2800000, guid: 80a66ba1ec14f2a49a7bd57521b871ad, type: 3}
+  - {fileID: 2800000, guid: 6e029022fb8a3c84e9a57b85bed025cc, type: 3}
+  - {fileID: 2800000, guid: a52f0d77a216496498cade4077f3d427, type: 3}
+  - {fileID: 2800000, guid: 9222ae3f12cd2d6439da2c489a2312d7, type: 3}
+  - {fileID: 2800000, guid: d7a59737976ce0243946a04954142a4c, type: 3}
+  - {fileID: 2800000, guid: aea976b882d785c41b862a8d5e8e446c, type: 3}
+  Cooldown: 0.1
+--- !u!4 &1429348129
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429348127}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 461.1845, y: 307.57663, z: -379.41275}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 66
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1430664347
 GameObject:
   m_ObjectHideFlags: 0
@@ -66810,6 +66880,8 @@ MonoBehaviour:
   isPresentGreen: 0
   isPresentYellow: 0
   isPresentOrange: 0
+  isPresentDarkElf: 0
+  isPresentDraugr: 0
   ciao: 0
   ciao2: 0
 --- !u!114 &1587132230
@@ -66824,6 +66896,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f38b659c3fffaaf4790cb11a999daa40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFirstRuneWow: 0
+  isFirstRuneValvran: 0
+  isActivateWow: 0
+  isActivateValvran: 0
+  SlotRuneOne: {fileID: 0}
+  SlotRuneTwo: {fileID: 0}
+  RuneWowTexture:
+  - {fileID: 0}
+  - {fileID: 0}
+  RuneValravnTexture:
+  - {fileID: 0}
+  - {fileID: 0}
+  RuneBlueTexture:
+  - {fileID: 0}
+  - {fileID: 0}
+  RuneYellowTexture:
+  - {fileID: 0}
+  - {fileID: 0}
+  RuneGreenTexture:
+  - {fileID: 0}
+  - {fileID: 0}
+  RuneRedTexture:
+  - {fileID: 0}
+  - {fileID: 0}
+  RuneEyeTexture:
+  - {fileID: 0}
+  - {fileID: 0}
+  RuneDarkElfTexture:
+  - {fileID: 0}
+  - {fileID: 0}
+  RuneDraugrTexture:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!136 &1587132231
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -70303,6 +70408,78 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1685337860}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1687127439
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1687127442}
+  - component: {fileID: 1687127441}
+  - component: {fileID: 1687127440}
+  m_Layer: 5
+  m_Name: PanelLoki
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1687127440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687127439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Texture: {fileID: 0}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!222 &1687127441
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687127439}
+  m_CullTransparentMesh: 0
+--- !u!224 &1687127442
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687127439}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 435065071}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1688021748
 PrefabInstance:
   m_ObjectHideFlags: 0

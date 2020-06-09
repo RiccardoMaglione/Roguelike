@@ -34,8 +34,8 @@ public class Ammo : MonoBehaviour
     #endregion
 
     #region Booleano riferimento alla prima runa per capire il posizionamento nell'inventario
-    bool isFirstRuneWow = false;
-    bool isFirstRuneValvran = false;
+    public bool isFirstRuneWow = false;
+    public bool isFirstRuneValvran = false;
 
     bool isFirstRuneBlue = false;
     bool isFirstRuneGreen = false;
@@ -76,8 +76,8 @@ public class Ammo : MonoBehaviour
     #endregion
     
     #region Booleano riferimento per capire se è attivo o no
-    bool isActivateWow = false;
-    bool isActivateValvran = false;
+    public bool isActivateWow = false;
+    public bool isActivateValvran = false;
 
     bool isActivateBlue = false;
     bool isActivateGreen = false;
@@ -122,6 +122,8 @@ public class Ammo : MonoBehaviour
     public Texture[] RuneGreenTexture = new Texture[2];
     public Texture[] RuneRedTexture = new Texture[2];
     public Texture[] RuneEyeTexture = new Texture[2];
+    public Texture[] RuneDarkElfTexture = new Texture[2];
+    public Texture[] RuneDraugrTexture = new Texture[2];
 
     #endregion
 
@@ -143,42 +145,40 @@ public class Ammo : MonoBehaviour
             NumAmmoV0.gameObject.SetActive(false);
             NumAmmoV1.gameObject.SetActive(false);
 
+            //SlotRuneOne = null;
+            //SlotRuneTwo = null;
             //RuneRawImageWilloWisp0 = GameObject.Find("RuneWillOWispRawImage0").GetComponent<RawImage>();
             //RuneRawImageWilloWisp1 = GameObject.Find("RuneWillOWispRawImage1").GetComponent<RawImage>();
             //RuneRawImageValvran0 = GameObject.Find("RuneValvranRawImage0").GetComponent<RawImage>();
             //RuneRawImageValvran1 = GameObject.Find("RuneValvranRawImage1").GetComponent<RawImage>();
 
-            RuneRawImageWilloWisp0.enabled = false;
-            RuneRawImageWilloWisp1.enabled = false;
-            RuneRawImageValvran0.enabled = false;
-            RuneRawImageValvran1.enabled = false;
+            //RuneRawImageWilloWisp0.enabled = false;
+            //RuneRawImageWilloWisp1.enabled = false;
+            //RuneRawImageValvran0.enabled = false;
+            //RuneRawImageValvran1.enabled = false;
+
 
             //RuneRawImageCooldownWilloWisp0 = GameObject.Find("RuneWillOWispCooldownRawImage0").GetComponent<RawImage>();
             //RuneRawImageCooldownWilloWisp1 = GameObject.Find("RuneWillOWispCooldownRawImage1").GetComponent<RawImage>();
             //RuneRawImageCooldownValvran0 = GameObject.Find("RuneValvranCooldownRawImage0").GetComponent<RawImage>();
             //RuneRawImageCooldownValvran1 = GameObject.Find("RuneValvranCooldownRawImage1").GetComponent<RawImage>();
 
-            RuneRawImageCooldownWilloWisp0.enabled = false;
-            RuneRawImageCooldownWilloWisp1.enabled = false;
-            RuneRawImageCooldownValvran0.enabled = false;
-            RuneRawImageCooldownValvran1.enabled = false;
-
-
-        #region 
-
-        #endregion
-
-
+            //RuneRawImageCooldownWilloWisp0.enabled = false;
+            //RuneRawImageCooldownWilloWisp1.enabled = false;
+            //RuneRawImageCooldownValvran0.enabled = false;
+            //RuneRawImageCooldownValvran1.enabled = false;
 
         //}
-        if (CurrentScene.name == "ThirdLevel")
+        if (CurrentScene.name == "ThirdLevel")          //Nel primo piano ci sono solo due mostri quindi non mi servono le altre referenze
         {
             if(tempIsActiveWow == true)
             {
-                RuneRawImageWilloWisp0.enabled = true;
+                //RuneRawImageWilloWisp0.enabled = true;
+                SlotRuneOne.texture = RuneWowTexture[0];
                 NumAmmoW0.gameObject.SetActive(true);
                 //if l'altro oggetto è il seguente
-                RuneRawImageValvran1.enabled = true;
+                SlotRuneTwo.texture = RuneValravnTexture[0];
+                //RuneRawImageValvran1.enabled = true;
                 NumAmmoV1.gameObject.SetActive(true);
                 isFirstRuneWow = true;
                 isFirstRuneValvran = true;
@@ -188,10 +188,12 @@ public class Ammo : MonoBehaviour
             }
             if (tempIsActiveValravn == true)
             {
-                RuneRawImageValvran0.enabled = true;
+                //RuneRawImageValvran0.enabled = true;
+                SlotRuneOne.texture = RuneValravnTexture[0];
                 NumAmmoV0.gameObject.SetActive(true);
                 //if l'altro oggetto è il seguente
-                RuneRawImageWilloWisp1.enabled = true;
+                SlotRuneTwo.texture = RuneWowTexture[0];
+                //RuneRawImageWilloWisp1.enabled = true;
                 NumAmmoW1.gameObject.SetActive(true);
                 isFirstRuneWow = true;
                 isFirstRuneValvran = true;
@@ -203,238 +205,69 @@ public class Ammo : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        #region Set Ammo
+
         #region Rune Will o Wisp
         if (other.gameObject.tag == "RuneWow" && isFirstRuneWow == false)   //Se non ho già raccolto la runa
         {
-            if(InventorySystem.tempIImageWow == 0 && isActivateValvran == false)            //Slot runa uno
+            if(InventorySystem.tempIImageWow == 0 && (isActivateValvran == false && isActivateBlue == false && isActivateGreen == false && isActivateRed == false && isActivateYellow == false && isActivateEye == false && isActivateDarkElf == false && isActivateDraugr == false))            //Slot runa uno
             { 
                 //RuneRawImageWilloWisp0.enabled = true;
-                SlotRuneOne.texture = RuneWowTexture[0];
-                
-                
-                
-                
-                
-                
-                
-                NumAmmoW0.gameObject.SetActive(true);
-                AmmoW = 10;
-                RuneWoW = other.gameObject;
-                isFirstRuneWow = true;
-                Debug.Log(AmmoW);
-                NumAmmoW0.text = AmmoW.ToString();
-                isActivateWow = true;
-                tempIsActiveWow = true;
-            } //Se l'immagine 
-            if (isActivateValvran == true)                                                  //Slot runa due
-            {
-                //RuneRawImageWilloWisp1.enabled = true;
-                SlotRuneTwo.texture = RuneWowTexture[0];
-                NumAmmoW1.gameObject.SetActive(true);
-                AmmoW = 10;
-                RuneWoW = other.gameObject;
-                isFirstRuneWow = true;
-                Debug.Log(AmmoW);
-                NumAmmoW1.text = AmmoW.ToString();
+                SlotRuneOne.texture = RuneWowTexture[0];    //Sostituisce la texture della runa uno con la texture del wow
+                NumAmmoW0.gameObject.SetActive(true);       //Attiva le ammo del wisp nello slots uno
+                AmmoW = 10;                                 //Setta le ammo del wow a 10
+                RuneWoW = other.gameObject;                 //Mette in runa wow in una variabile
+                isFirstRuneWow = true;                      //Segna che la prima runa del wow è stata presa
+                Debug.Log(AmmoW);                           //Scrivo a console quante ammo ha il willowisp
+                NumAmmoW0.text = AmmoW.ToString();          //Aggiorno il testo
+                isActivateWow = true;                       //Setto a vero l'attivazione del wow
+                tempIsActiveWow = true;                     //Setto a vero la temp dell'attivazione 
             }
-            if (isActivateBlue == true)                                                  //Slot runa due
+            if (isActivateValvran == true || isActivateBlue == true || isActivateGreen == true || isActivateRed == true || isActivateYellow == true || isActivateEye == true || isActivateDarkElf == true || isActivateDraugr == true)                  //Vede che la runa uno è occupata dal valravn o dalle altre in questione quindi mette la runa due
             {
                 //RuneRawImageWilloWisp1.enabled = true;
-                SlotRuneTwo.texture = RuneWowTexture[0];
-                NumAmmoW1.gameObject.SetActive(true);
-                AmmoW = 10;
-                RuneWoW = other.gameObject;
-                isFirstRuneWow = true;
-                Debug.Log(AmmoW);
-                NumAmmoW1.text = AmmoW.ToString();
-            }
-            if (isActivateGreen == true)                                                  //Slot runa due
-            {
-                //RuneRawImageWilloWisp1.enabled = true;
-                SlotRuneTwo.texture = RuneWowTexture[0];
-                NumAmmoW1.gameObject.SetActive(true);
-                AmmoW = 10;
-                RuneWoW = other.gameObject;
-                isFirstRuneWow = true;
-                Debug.Log(AmmoW);
-                NumAmmoW1.text = AmmoW.ToString();
-            }
-            if (isActivateRed == true)                                                  //Slot runa due
-            {
-                //RuneRawImageWilloWisp1.enabled = true;
-                SlotRuneTwo.texture = RuneWowTexture[0];
-                NumAmmoW1.gameObject.SetActive(true);
-                AmmoW = 10;
-                RuneWoW = other.gameObject;
-                isFirstRuneWow = true;
-                Debug.Log(AmmoW);
-                NumAmmoW1.text = AmmoW.ToString();
-            }
-            if (isActivateYellow == true)                                                  //Slot runa due
-            {
-                //RuneRawImageWilloWisp1.enabled = true;
-                SlotRuneTwo.texture = RuneWowTexture[0];
-                NumAmmoW1.gameObject.SetActive(true);
-                AmmoW = 10;
-                RuneWoW = other.gameObject;
-                isFirstRuneWow = true;
-                Debug.Log(AmmoW);
-                NumAmmoW1.text = AmmoW.ToString();
-            }
-            if (isActivateEye == true)                                                  //Slot runa due
-            {
-                //RuneRawImageWilloWisp1.enabled = true;
-                SlotRuneTwo.texture = RuneWowTexture[0];
-                NumAmmoW1.gameObject.SetActive(true);
-                AmmoW = 10;
-                RuneWoW = other.gameObject;
-                isFirstRuneWow = true;
-                Debug.Log(AmmoW);
-                NumAmmoW1.text = AmmoW.ToString();
-            }
-            if (isActivateDarkElf == true)                                                  //Slot runa due
-            {
-                //RuneRawImageWilloWisp1.enabled = true;
-                SlotRuneTwo.texture = RuneWowTexture[0];
-                NumAmmoW1.gameObject.SetActive(true);
-                AmmoW = 10;
-                RuneWoW = other.gameObject;
-                isFirstRuneWow = true;
-                Debug.Log(AmmoW);
-                NumAmmoW1.text = AmmoW.ToString();
-            }
-            if (isActivateDraugr== true)                                                  //Slot runa due
-            {
-                //RuneRawImageWilloWisp1.enabled = true;
-                SlotRuneTwo.texture = RuneWowTexture[0];
-                NumAmmoW1.gameObject.SetActive(true);
-                AmmoW = 10;
-                RuneWoW = other.gameObject;
-                isFirstRuneWow = true;
-                Debug.Log(AmmoW);
-                NumAmmoW1.text = AmmoW.ToString();
+                SlotRuneTwo.texture = RuneWowTexture[0];    //Sostituisce la texture della runa due
+                NumAmmoW1.gameObject.SetActive(true);       //Attiva le ammo del wisp nello slots due
+                AmmoW = 10;                                 //Setta le ammo del wow a 10
+                RuneWoW = other.gameObject;                 //Mette in runa wow in una variabile
+                isFirstRuneWow = true;                      //Segna che la prima runa del wow è stata presa
+                Debug.Log(AmmoW);                           //Scrivo a console quante rune ha il willowisp
+                NumAmmoW1.text = AmmoW.ToString();          //Aggiorno il testo
             }
         }
         else if(other.gameObject.tag == "RuneWow" && isFirstRuneWow == true)    //Se ho già raccolto la runa
         {
             AmmoW += 10;
-            if (InventorySystem.tempIImageWow == 0)
+            if (InventorySystem.tempIImageWow == 0) //Se la runa sta nello slot 0
             {
-                NumAmmoW0.text = AmmoW.ToString();
+                NumAmmoW0.text = AmmoW.ToString();  //Aumenta le ammo dello slot 0
             }
-            if (InventorySystem.tempIImageWow == 1)
+            if (InventorySystem.tempIImageWow == 1) //Se la runa sta nello slot 1
             {
-                NumAmmoW1.text = AmmoW.ToString();
+                NumAmmoW1.text = AmmoW.ToString();  //Aumenta le ammo dello slot 1
             }
             Destroy(other.gameObject);
         }
         #endregion
 
-
-
-
-
-
-
-
-
-        #region Cose non ottimizzate
-
-
         #region Rune Valvran
         if (other.gameObject.tag == "RuneValvran" && isFirstRuneValvran == false)
         {
-            if (InventorySystem.tempIImageValvran == 0 && isActivateWow == false)
+            if (InventorySystem.tempIImageValvran == 0 && (isActivateWow == false && isActivateBlue == false && isActivateGreen == false && isActivateRed == false && isActivateYellow == false && isActivateEye == false && isActivateDarkElf == false && isActivateDraugr == false))              //Slot runa uno
             {
                 //RuneRawImageValvran0.enabled = true;
-                SlotRuneOne.texture = RuneValravnTexture[0];
-                NumAmmoV0.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV0.text = AmmoV.ToString();
-                isActivateValvran = true;
-                tempIsActiveValravn = true;
+                Debug.Log("Lo stai mettendo qua?");
+                SlotRuneOne.texture = RuneValravnTexture[0];    //Sostituisce la texture della runa uno con la texture del valravn
+                NumAmmoV0.gameObject.SetActive(true);           //Attiva le ammo del valravn nello slots uno
+                AmmoV = 10;                                     //Setta le ammo del valravn a 10
+                RuneValvran = other.gameObject;                 //Mette in runa valravn in una variabile
+                isFirstRuneValvran = true;                      //Segna che la prima runa del valravn è stata presa
+                Debug.Log(AmmoV);                               //Scrivo a console quante ammo ha il valravn
+                NumAmmoV0.text = AmmoV.ToString();              //Aggiorno il testo
+                isActivateValvran = true;                       //Setto a vero l'attivazione del wow
+                tempIsActiveValravn = true;                     //Setto a vero la temp dell'attivazione 
             }
-            if (isActivateWow == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateBlue == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateGreen == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateRed == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateYellow == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateEye == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateDarkElf == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateDraugr == true)
+            if (isActivateWow == true || isActivateBlue == true || isActivateGreen == true || isActivateRed == true || isActivateYellow == true || isActivateEye == true || isActivateDarkElf == true || isActivateDraugr == true)              //Vede che la runa uno è occupata dal wow o dalle altre in questione quindi mette la runa due
             {
                 //RuneRawImageValvran1.enabled = true;
                 SlotRuneTwo.texture = RuneValravnTexture[0];
@@ -460,1012 +293,348 @@ public class Ammo : MonoBehaviour
             Destroy(other.gameObject);
         }
         #endregion
-
-
-
 
         #region Rune Blue
-        if (other.gameObject.tag == "RuneBlue" && isFirstRuneBlue == false)
+        if (other.gameObject.tag == "RuneBlue" && isFirstRuneBlue == false)   //Se non ho già raccolto la runa
         {
-            if (InventorySystem.tempIImageBlue == 0 && isActivateWow == false)
+            if (InventorySystem.tempIImageBlue == 0 && (isActivateWow == false && isActivateValvran == false && isActivateGreen == false && isActivateRed == false && isActivateYellow == false && isActivateEye == false && isActivateDarkElf == false && isActivateDraugr == false))            //Slot runa uno
             {
-                //RuneRawImageValvran0.enabled = true;
-                SlotRuneOne.texture = RuneValravnTexture[0];
-                NumAmmoV0.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV0.text = AmmoV.ToString();
-                isActivateValvran = true;
-                tempIsActiveValravn = true;
+                //RuneRawImageWilloWisp0.enabled = true;
+                SlotRuneOne.texture = RuneBlueTexture[0];    //Sostituisce la texture della runa uno con la texture del blue
+                NumAmmoBlue0.gameObject.SetActive(true);     //Attiva le ammo del blue nello slots uno
+                AmmoBlue = 10;                               //Setta le ammo del blue a 10
+                RuneBlue = other.gameObject;                 //Mette in runa blue in una variabile
+                isFirstRuneBlue = true;                      //Segna che la prima runa del blue è stata presa
+                Debug.Log(AmmoBlue);                         //Scrivo a console quante ammo ha il blue
+                NumAmmoBlue0.text = AmmoBlue.ToString();     //Aggiorno il testo
+                isActivateBlue = true;                       //Setto a vero l'attivazione del blue
+                tempIsActiveBlue = true;                     //Setto a vero la temp dell'attivazione 
             }
-            if (isActivateWow == true)
+            if (isActivateWow == true || isActivateValvran == true || isActivateGreen == true || isActivateRed == true || isActivateYellow == true || isActivateEye == true || isActivateDarkElf == true || isActivateDraugr == true)                  //Vede che la runa uno è occupata dal valravn o dalle altre in questione quindi mette la runa due
             {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateBlue == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateGreen == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateRed == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateYellow == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateEye == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateDarkElf == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateDraugr == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
+                //RuneRawImageWilloWisp1.enabled = true;
+                SlotRuneTwo.texture = RuneBlueTexture[0];    //Sostituisce la texture della runa due
+                NumAmmoBlue1.gameObject.SetActive(true);     //Attiva le ammo del blue nello slots due
+                AmmoBlue = 10;                               //Setta le ammo del blue a 10
+                RuneBlue = other.gameObject;                 //Mette in runa blue in una variabile
+                isFirstRuneBlue = true;                      //Segna che la prima runa del blue è stata presa
+                Debug.Log(AmmoBlue);                         //Scrivo a console quante rune ha il blue
+                NumAmmoBlue1.text = AmmoBlue.ToString();     //Aggiorno il testo
             }
         }
-        else if (other.gameObject.tag == "RuneBlue" && isFirstRuneValvran == true)
+        else if (other.gameObject.tag == "RuneBlue" && isFirstRuneBlue == true)    //Se ho già raccolto la runa
         {
-            AmmoV += 10;
-            if (InventorySystem.tempIImageValvran == 0)
+            AmmoBlue += 10;
+            if (InventorySystem.tempIImageBlue == 0)        //Se la runa sta nello slot 0
             {
-                NumAmmoV0.text = AmmoV.ToString();
+                NumAmmoBlue0.text = AmmoBlue.ToString();    //Aumenta le ammo dello slot 0
             }
-            if (InventorySystem.tempIImageValvran == 1)
+            if (InventorySystem.tempIImageBlue == 1)        //Se la runa sta nello slot 1
             {
-                NumAmmoV1.text = AmmoV.ToString();
+                NumAmmoBlue1.text = AmmoBlue.ToString();    //Aumenta le ammo dello slot 1
             }
             Destroy(other.gameObject);
         }
         #endregion
-        #region Rune Valvran
-        if (other.gameObject.tag == "RuneValvran" && isFirstRuneValvran == false)
+
+        #region Rune Green
+        if (other.gameObject.tag == "RuneGreen" && isFirstRuneGreen == false)   //Se non ho già raccolto la runa
         {
-            if (InventorySystem.tempIImageValvran == 0 && isActivateWow == false)
+            if (InventorySystem.tempIImageGreen == 0 && (isActivateWow == false && isActivateValvran == false && isActivateBlue == false && isActivateRed == false && isActivateYellow == false && isActivateEye == false && isActivateDarkElf == false && isActivateDraugr == false))            //Slot runa uno
             {
-                //RuneRawImageValvran0.enabled = true;
-                SlotRuneOne.texture = RuneValravnTexture[0];
-                NumAmmoV0.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV0.text = AmmoV.ToString();
-                isActivateValvran = true;
-                tempIsActiveValravn = true;
+                //RuneRawImageWilloWisp0.enabled = true;
+                SlotRuneOne.texture = RuneGreenTexture[0];    //Sostituisce la texture della runa uno con la texture del green
+                NumAmmoGreen0.gameObject.SetActive(true);     //Attiva le ammo del green nello slots uno
+                AmmoGreen = 10;                               //Setta le ammo del green a 10
+                RuneGreen = other.gameObject;                 //Mette in runa green in una variabile
+                isFirstRuneGreen = true;                      //Segna che la prima runa del green è stata presa
+                Debug.Log(AmmoGreen);                         //Scrivo a console quante ammo ha il green
+                NumAmmoGreen0.text = AmmoGreen.ToString();    //Aggiorno il testo
+                isActivateGreen = true;                       //Setto a vero l'attivazione del green
+                tempIsActiveGreen = true;                     //Setto a vero la temp dell'attivazione 
             }
-            if (isActivateWow == true)
+            if (isActivateWow == true || isActivateValvran == true || isActivateBlue == true || isActivateRed == true || isActivateYellow == true || isActivateEye == true || isActivateDarkElf == true || isActivateDraugr == true)                  //Vede che la runa uno è occupata dal valravn o dalle altre in questione quindi mette la runa due
             {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateBlue == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateGreen == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateRed == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateYellow == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateEye == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateDarkElf == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateDraugr == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
+                //RuneRawImageWilloWisp1.enabled = true;
+                SlotRuneTwo.texture = RuneGreenTexture[0];    //Sostituisce la texture della runa due
+                NumAmmoGreen1.gameObject.SetActive(true);     //Attiva le ammo del green nello slots due
+                AmmoGreen = 10;                               //Setta le ammo del green a 10
+                RuneGreen = other.gameObject;                 //Mette in runa green in una variabile
+                isFirstRuneGreen = true;                      //Segna che la prima runa del green è stata presa
+                Debug.Log(AmmoGreen);                         //Scrivo a console quante rune ha il green
+                NumAmmoGreen1.text = AmmoGreen.ToString();    //Aggiorno il testo
             }
         }
-        else if (other.gameObject.tag == "RuneValvran" && isFirstRuneValvran == true)
+        else if (other.gameObject.tag == "RuneGreen" && isFirstRuneGreen == true)    //Se ho già raccolto la runa
         {
-            AmmoV += 10;
-            if (InventorySystem.tempIImageValvran == 0)
+            AmmoGreen += 10;
+            if (InventorySystem.tempIImageGreen == 0)            //Se la runa sta nello slot 0
             {
-                NumAmmoV0.text = AmmoV.ToString();
+                NumAmmoGreen0.text = AmmoGreen.ToString();      //Aumenta le ammo dello slot 0
             }
-            if (InventorySystem.tempIImageValvran == 1)
+            if (InventorySystem.tempIImageGreen == 1)            //Se la runa sta nello slot 1
             {
-                NumAmmoV1.text = AmmoV.ToString();
+                NumAmmoGreen1.text = AmmoGreen.ToString();      //Aumenta le ammo dello slot 1
             }
             Destroy(other.gameObject);
         }
         #endregion
-        #region Rune Valvran
-        if (other.gameObject.tag == "RuneValvran" && isFirstRuneValvran == false)
+
+        #region Rune Red
+        if (other.gameObject.tag == "RuneRed" && isFirstRuneRed == false)   //Se non ho già raccolto la runa
         {
-            if (InventorySystem.tempIImageValvran == 0 && isActivateWow == false)
+            if (InventorySystem.tempIImageOrange == 0 && (isActivateWow == false && isActivateValvran == false && isActivateBlue == false && isActivateGreen == false && isActivateYellow == false && isActivateEye == false && isActivateDarkElf == false && isActivateDraugr == false))            //Slot runa uno
             {
-                //RuneRawImageValvran0.enabled = true;
-                SlotRuneOne.texture = RuneValravnTexture[0];
-                NumAmmoV0.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV0.text = AmmoV.ToString();
-                isActivateValvran = true;
-                tempIsActiveValravn = true;
+                //RuneRawImageWilloWisp0.enabled = true;
+                SlotRuneOne.texture = RuneRedTexture[0];    //Sostituisce la texture della runa uno con la texture del red
+                NumAmmoRed0.gameObject.SetActive(true);     //Attiva le ammo del red nello slots uno
+                AmmoRed = 10;                               //Setta le ammo del red a 10
+                RuneRed = other.gameObject;                 //Mette in runa red in una variabile
+                isFirstRuneRed = true;                      //Segna che la prima runa del red è stata presa
+                Debug.Log(AmmoRed);                         //Scrivo a console quante ammo ha il red
+                NumAmmoRed0.text = AmmoRed.ToString();      //Aggiorno il testo
+                isActivateRed = true;                       //Setto a vero l'attivazione del red
+                tempIsActiveRed = true;                     //Setto a vero la temp dell'attivazione 
             }
-            if (isActivateWow == true)
+            if (isActivateWow == true || isActivateValvran == true || isActivateBlue == true || isActivateGreen == true || isActivateYellow == true || isActivateEye == true || isActivateDarkElf == true || isActivateDraugr == true)                  //Vede che la runa uno è occupata dal valravn o dalle altre in questione quindi mette la runa due
             {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateBlue == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateGreen == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateRed == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateYellow == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateEye == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateDarkElf == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateDraugr == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
+                //RuneRawImageWilloWisp1.enabled = true;
+                SlotRuneTwo.texture = RuneRedTexture[0];    //Sostituisce la texture della runa due
+                NumAmmoRed1.gameObject.SetActive(true);     //Attiva le ammo del red nello slots due
+                AmmoRed = 10;                               //Setta le ammo del red a 10
+                RuneRed = other.gameObject;                 //Mette in runa red in una variabile
+                isFirstRuneRed = true;                      //Segna che la prima runa del red è stata presa
+                Debug.Log(AmmoRed);                         //Scrivo a console quante rune ha il red
+                NumAmmoRed1.text = AmmoRed.ToString();      //Aggiorno il testo
             }
         }
-        else if (other.gameObject.tag == "RuneValvran" && isFirstRuneValvran == true)
+        else if (other.gameObject.tag == "RuneRed" && isFirstRuneRed == true)    //Se ho già raccolto la runa
         {
-            AmmoV += 10;
-            if (InventorySystem.tempIImageValvran == 0)
+            AmmoRed += 10;
+            if (InventorySystem.tempIImageOrange == 0)              //Se la runa sta nello slot 0
             {
-                NumAmmoV0.text = AmmoV.ToString();
+                NumAmmoRed0.text = AmmoRed.ToString();              //Aumenta le ammo dello slot 0
             }
-            if (InventorySystem.tempIImageValvran == 1)
+            if (InventorySystem.tempIImageOrange == 1)              //Se la runa sta nello slot 1
             {
-                NumAmmoV1.text = AmmoV.ToString();
+                NumAmmoRed1.text = AmmoRed.ToString();              //Aumenta le ammo dello slot 1
             }
             Destroy(other.gameObject);
         }
         #endregion
-        #region Rune Valvran
-        if (other.gameObject.tag == "RuneValvran" && isFirstRuneValvran == false)
+
+        #region Rune Yellow
+        if (other.gameObject.tag == "RuneYellow" && isFirstRuneYellow == false)   //Se non ho già raccolto la runa
         {
-            if (InventorySystem.tempIImageValvran == 0 && isActivateWow == false)
+            if (InventorySystem.tempIImageYellow == 0 && (isActivateWow == false && isActivateValvran == false && isActivateBlue == false && isActivateGreen == false && isActivateRed == false && isActivateEye == false && isActivateDarkElf == false && isActivateDraugr == false))            //Slot runa uno
             {
-                //RuneRawImageValvran0.enabled = true;
-                SlotRuneOne.texture = RuneValravnTexture[0];
-                NumAmmoV0.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV0.text = AmmoV.ToString();
-                isActivateValvran = true;
-                tempIsActiveValravn = true;
+                //RuneRawImageWilloWisp0.enabled = true;
+                SlotRuneOne.texture = RuneYellowTexture[0];    //Sostituisce la texture della runa uno con la texture del yellow
+                NumAmmoYellow0.gameObject.SetActive(true);     //Attiva le ammo del red nello slots uno
+                AmmoYellow = 10;                               //Setta le ammo del yellow a 10
+                RuneYellow = other.gameObject;                 //Mette in runa yellow in una variabile
+                isFirstRuneYellow = true;                      //Segna che la prima runa del yellow è stata presa
+                Debug.Log(AmmoYellow);                         //Scrivo a console quante ammo ha il yellow
+                NumAmmoYellow0.text = AmmoYellow.ToString();   //Aggiorno il testo
+                isActivateYellow = true;                       //Setto a vero l'attivazione del yellow
+                tempIsActiveYellow = true;                     //Setto a vero la temp dell'attivazione 
             }
-            if (isActivateWow == true)
+            if (isActivateWow == true || isActivateValvran == true || isActivateBlue == true || isActivateGreen == true || isActivateRed == true || isActivateEye == true || isActivateDarkElf == true || isActivateDraugr == true)                  //Vede che la runa uno è occupata dal valravn o dalle altre in questione quindi mette la runa due
             {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateBlue == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateGreen == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateRed == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateYellow == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateEye == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateDarkElf == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateDraugr == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
+                //RuneRawImageWilloWisp1.enabled = true;
+                SlotRuneTwo.texture = RuneYellowTexture[0];    //Sostituisce la texture della runa due
+                NumAmmoYellow1.gameObject.SetActive(true);     //Attiva le ammo del yellow nello slots due
+                AmmoYellow = 10;                               //Setta le ammo del yellow a 10
+                RuneYellow = other.gameObject;                 //Mette in runa yellow in una variabile
+                isFirstRuneYellow = true;                      //Segna che la prima runa del yellow è stata presa
+                Debug.Log(AmmoYellow);                         //Scrivo a console quante rune ha il yellow
+                NumAmmoYellow1.text = AmmoYellow.ToString();   //Aggiorno il testo
             }
         }
-        else if (other.gameObject.tag == "RuneValvran" && isFirstRuneValvran == true)
+        else if (other.gameObject.tag == "RuneYellow" && isFirstRuneYellow == true)    //Se ho già raccolto la runa
         {
-            AmmoV += 10;
-            if (InventorySystem.tempIImageValvran == 0)
+            AmmoYellow += 10;
+            if (InventorySystem.tempIImageYellow == 0)                      //Se la runa sta nello slot 0
             {
-                NumAmmoV0.text = AmmoV.ToString();
+                NumAmmoYellow0.text = AmmoYellow.ToString();                //Aumenta le ammo dello slot 0
             }
-            if (InventorySystem.tempIImageValvran == 1)
+            if (InventorySystem.tempIImageYellow == 1)                      //Se la runa sta nello slot 1
             {
-                NumAmmoV1.text = AmmoV.ToString();
+                NumAmmoYellow1.text = AmmoYellow.ToString();                //Aumenta le ammo dello slot 1
             }
             Destroy(other.gameObject);
         }
         #endregion
-        #region Rune Valvran
-        if (other.gameObject.tag == "RuneValvran" && isFirstRuneValvran == false)
+
+        #region Rune Eye
+        if (other.gameObject.tag == "RuneEye" && isFirstRuneEye == false)   //Se non ho già raccolto la runa
         {
-            if (InventorySystem.tempIImageValvran == 0 && isActivateWow == false)
+            if (InventorySystem.tempIImageEye == 0 && (isActivateWow == false && isActivateValvran == false && isActivateBlue == false && isActivateGreen == false && isActivateRed == false && isActivateYellow == false && isActivateDarkElf == false && isActivateDraugr == false))            //Slot runa uno
             {
-                //RuneRawImageValvran0.enabled = true;
-                SlotRuneOne.texture = RuneValravnTexture[0];
-                NumAmmoV0.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV0.text = AmmoV.ToString();
-                isActivateValvran = true;
-                tempIsActiveValravn = true;
+                //RuneRawImageWilloWisp0.enabled = true;
+                SlotRuneOne.texture = RuneEyeTexture[0];    //Sostituisce la texture della runa uno con la texture del eye
+                NumAmmoEye0.gameObject.SetActive(true);     //Attiva le ammo del eye nello slots uno
+                AmmoEye = 10;                               //Setta le ammo del eye a 10
+                RuneEye = other.gameObject;                 //Mette in runa eye in una variabile
+                isFirstRuneEye = true;                      //Segna che la prima runa del eye è stata presa
+                Debug.Log(AmmoEye);                         //Scrivo a console quante ammo ha il eye
+                NumAmmoEye0.text = AmmoEye.ToString();      //Aggiorno il testo
+                isActivateEye = true;                       //Setto a vero l'attivazione del eye
+                tempIsActiveEye = true;                     //Setto a vero la temp dell'attivazione 
             }
-            if (isActivateWow == true)
+            if (isActivateWow == true || isActivateValvran == true || isActivateBlue == true || isActivateGreen == true || isActivateRed == true || isActivateYellow == true || isActivateDarkElf == true || isActivateDraugr == true)                  //Vede che la runa uno è occupata dal valravn o dalle altre in questione quindi mette la runa due
             {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateBlue == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateGreen == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateRed == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateYellow == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateEye == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateDarkElf == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateDraugr == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
+                //RuneRawImageWilloWisp1.enabled = true;
+                SlotRuneTwo.texture = RuneEyeTexture[0];    //Sostituisce la texture della runa due
+                NumAmmoEye1.gameObject.SetActive(true);     //Attiva le ammo del eye nello slots due
+                AmmoEye = 10;                               //Setta le ammo del eye a 10
+                RuneEye = other.gameObject;                 //Mette in runa eye in una variabile
+                isFirstRuneEye = true;                      //Segna che la prima runa del eye è stata presa
+                Debug.Log(AmmoEye);                         //Scrivo a console quante rune ha il eye
+                NumAmmoEye1.text = AmmoEye.ToString();      //Aggiorno il testo
             }
         }
-        else if (other.gameObject.tag == "RuneValvran" && isFirstRuneValvran == true)
+        else if (other.gameObject.tag == "RuneEye" && isFirstRuneEye == true)    //Se ho già raccolto la runa
         {
-            AmmoV += 10;
-            if (InventorySystem.tempIImageValvran == 0)
+            AmmoEye += 10;
+            if (InventorySystem.tempIImageEye == 0)                 //Se la runa sta nello slot 0
             {
-                NumAmmoV0.text = AmmoV.ToString();
+                NumAmmoEye0.text = AmmoEye.ToString();              //Aumenta le ammo dello slot 0
             }
-            if (InventorySystem.tempIImageValvran == 1)
+            if (InventorySystem.tempIImageEye == 1)                 //Se la runa sta nello slot 1
             {
-                NumAmmoV1.text = AmmoV.ToString();
+                NumAmmoEye1.text = AmmoEye.ToString();              //Aumenta le ammo dello slot 1
             }
             Destroy(other.gameObject);
         }
         #endregion
-        #region Rune Valvran
-        if (other.gameObject.tag == "RuneValvran" && isFirstRuneValvran == false)
+
+        #region Rune Dark Elf
+        if (other.gameObject.tag == "RuneDarkElf" && isFirstRuneDarkElf == false)   //Se non ho già raccolto la runa
         {
-            if (InventorySystem.tempIImageValvran == 0 && isActivateWow == false)
+            if (InventorySystem.tempIImageDarkElf == 0 && (isActivateWow == false && isActivateValvran == false && isActivateBlue == false && isActivateGreen == false && isActivateRed == false && isActivateYellow == false && isActivateEye == false && isActivateDraugr == false))            //Slot runa uno
             {
-                //RuneRawImageValvran0.enabled = true;
-                SlotRuneOne.texture = RuneValravnTexture[0];
-                NumAmmoV0.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV0.text = AmmoV.ToString();
-                isActivateValvran = true;
-                tempIsActiveValravn = true;
+                //RuneRawImageWilloWisp0.enabled = true;
+                SlotRuneOne.texture = RuneDarkElfTexture[0];    //Sostituisce la texture della runa uno con la texture del dark elf
+                NumAmmoDarkElf0.gameObject.SetActive(true);     //Attiva le ammo del dark elf nello slots uno
+                AmmoDarkElf = 10;                               //Setta le ammo del dark elf a 10
+                RuneDarkElf = other.gameObject;                 //Mette in runa dark elf in una variabile
+                isFirstRuneDarkElf = true;                      //Segna che la prima runa del dark elf è stata presa
+                Debug.Log(AmmoDarkElf);                         //Scrivo a console quante ammo ha il dark elf
+                NumAmmoDarkElf0.text = AmmoDarkElf.ToString();  //Aggiorno il testo
+                isActivateDarkElf = true;                       //Setto a vero l'attivazione del dark elf
+                tempIsActiveDarkElf = true;                     //Setto a vero la temp dell'attivazione 
             }
-            if (isActivateWow == true)
+            if (isActivateWow == true || isActivateValvran == true || isActivateBlue == true || isActivateGreen == true || isActivateRed == true || isActivateYellow == true || isActivateEye == true || isActivateDraugr == true)                  //Vede che la runa uno è occupata dal valravn o dalle altre in questione quindi mette la runa due
             {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateBlue == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateGreen == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateRed == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateYellow == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateEye == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateDarkElf == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateDraugr == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
+                //RuneRawImageWilloWisp1.enabled = true;
+                SlotRuneTwo.texture = RuneDarkElfTexture[0];    //Sostituisce la texture della runa due
+                NumAmmoDarkElf1.gameObject.SetActive(true);     //Attiva le ammo del dark elf nello slots due
+                AmmoDarkElf = 10;                               //Setta le ammo del dark elf a 10
+                RuneDarkElf = other.gameObject;                 //Mette in runa dark elf in una variabile
+                isFirstRuneDarkElf = true;                      //Segna che la prima runa del dark elf è stata presa
+                Debug.Log(AmmoDarkElf);                         //Scrivo a console quante rune ha il dark elf
+                NumAmmoDarkElf1.text = AmmoDarkElf.ToString();  //Aggiorno il testo
             }
         }
-        else if (other.gameObject.tag == "RuneValvran" && isFirstRuneValvran == true)
+        else if (other.gameObject.tag == "RuneDarkElf" && isFirstRuneDarkElf == true)    //Se ho già raccolto la runa
         {
-            AmmoV += 10;
-            if (InventorySystem.tempIImageValvran == 0)
+            AmmoDarkElf += 10;
+            if (InventorySystem.tempIImageDarkElf == 0)                     //Se la runa sta nello slot 0
             {
-                NumAmmoV0.text = AmmoV.ToString();
+                NumAmmoDarkElf0.text = AmmoDarkElf.ToString();              //Aumenta le ammo dello slot 0
             }
-            if (InventorySystem.tempIImageValvran == 1)
+            if (InventorySystem.tempIImageDarkElf == 1)                     //Se la runa sta nello slot 1
             {
-                NumAmmoV1.text = AmmoV.ToString();
+                NumAmmoDarkElf1.text = AmmoDarkElf.ToString();              //Aumenta le ammo dello slot 1
             }
             Destroy(other.gameObject);
         }
         #endregion
-        #region Rune Valvran
-        if (other.gameObject.tag == "RuneValvran" && isFirstRuneValvran == false)
+
+        #region Rune Draugr
+        if (other.gameObject.tag == "RuneDraugr" && isFirstRuneDraugr == false)   //Se non ho già raccolto la runa
         {
-            if (InventorySystem.tempIImageValvran == 0 && isActivateWow == false)
+            if (InventorySystem.tempIImageDraugr == 0 && (isActivateWow == false && isActivateValvran == false && isActivateBlue == false && isActivateGreen == false && isActivateRed == false && isActivateYellow == false && isActivateEye == false && isActivateDarkElf == false))            //Slot runa uno
             {
-                //RuneRawImageValvran0.enabled = true;
-                SlotRuneOne.texture = RuneValravnTexture[0];
-                NumAmmoV0.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV0.text = AmmoV.ToString();
-                isActivateValvran = true;
-                tempIsActiveValravn = true;
+                //RuneRawImageWilloWisp0.enabled = true;
+                SlotRuneOne.texture = RuneDraugrTexture[0];    //Sostituisce la texture della runa uno con la texture del draugr
+                NumAmmoDraugr0.gameObject.SetActive(true);     //Attiva le ammo del draugr nello slots uno
+                AmmoDraugr = 10;                               //Setta le ammo del draugr a 10
+                RuneDraugr = other.gameObject;                 //Mette in runa draugr in una variabile
+                isFirstRuneDraugr = true;                      //Segna che la prima runa del draugr è stata presa
+                Debug.Log(AmmoDraugr);                         //Scrivo a console quante ammo ha il draugr
+                NumAmmoDraugr0.text = AmmoDraugr.ToString();   //Aggiorno il testo
+                isActivateDraugr = true;                       //Setto a vero l'attivazione del draugr
+                tempIsActiveDraugr = true;                     //Setto a vero la temp dell'attivazione 
             }
-            if (isActivateWow == true)
+            if (isActivateWow == true || isActivateValvran == true || isActivateBlue == true || isActivateGreen == true || isActivateRed == true || isActivateYellow == true || isActivateEye == true || isActivateDarkElf == true)                  //Vede che la runa uno è occupata dal valravn o dalle altre in questione quindi mette la runa due
             {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateBlue == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateGreen == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateRed == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateYellow == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateEye == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateDarkElf == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateDraugr == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
+                //RuneRawImageWilloWisp1.enabled = true;
+                SlotRuneTwo.texture = RuneDraugrTexture[0];    //Sostituisce la texture della runa due
+                NumAmmoDraugr1.gameObject.SetActive(true);     //Attiva le ammo del draugr nello slots due
+                AmmoDraugr = 10;                               //Setta le ammo del draugr a 10
+                RuneDraugr = other.gameObject;                 //Mette in runa draugr in una variabile
+                isFirstRuneDraugr = true;                      //Segna che la prima runa del draugr è stata presa
+                Debug.Log(AmmoDraugr);                         //Scrivo a console quante rune ha il draugr
+                NumAmmoDraugr1.text = AmmoDraugr.ToString();   //Aggiorno il testo
             }
         }
-        else if (other.gameObject.tag == "RuneValvran" && isFirstRuneValvran == true)
+        else if (other.gameObject.tag == "RuneDraugr" && isFirstRuneDraugr == true)    //Se ho già raccolto la runa
         {
-            AmmoV += 10;
-            if (InventorySystem.tempIImageValvran == 0)
+            AmmoDraugr += 10;
+            if (InventorySystem.tempIImageDraugr == 0)                      //Se la runa sta nello slot 0
             {
-                NumAmmoV0.text = AmmoV.ToString();
+                NumAmmoDraugr0.text = AmmoDraugr.ToString();                //Aumenta le ammo dello slot 0
             }
-            if (InventorySystem.tempIImageValvran == 1)
+            if (InventorySystem.tempIImageDraugr == 1)                      //Se la runa sta nello slot 1
             {
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            Destroy(other.gameObject);
-        }
-        #endregion
-        #region Rune Valvran
-        if (other.gameObject.tag == "RuneValvran" && isFirstRuneValvran == false)
-        {
-            if (InventorySystem.tempIImageValvran == 0 && isActivateWow == false)
-            {
-                //RuneRawImageValvran0.enabled = true;
-                SlotRuneOne.texture = RuneValravnTexture[0];
-                NumAmmoV0.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV0.text = AmmoV.ToString();
-                isActivateValvran = true;
-                tempIsActiveValravn = true;
-            }
-            if (isActivateWow == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateBlue == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateGreen == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateRed == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateYellow == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateEye == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateDarkElf == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-            if (isActivateDraugr == true)
-            {
-                //RuneRawImageValvran1.enabled = true;
-                SlotRuneTwo.texture = RuneValravnTexture[0];
-                NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
-                RuneValvran = other.gameObject;
-                isFirstRuneValvran = true;
-                Debug.Log(AmmoV);
-                NumAmmoV1.text = AmmoV.ToString();
-            }
-        }
-        else if (other.gameObject.tag == "RuneValvran" && isFirstRuneValvran == true)
-        {
-            AmmoV += 10;
-            if (InventorySystem.tempIImageValvran == 0)
-            {
-                NumAmmoV0.text = AmmoV.ToString();
-            }
-            if (InventorySystem.tempIImageValvran == 1)
-            {
-                NumAmmoV1.text = AmmoV.ToString();
+                NumAmmoDraugr1.text = AmmoDraugr.ToString();                //Aumenta le ammo dello slot 1
             }
             Destroy(other.gameObject);
         }
         #endregion
 
         #endregion
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 
     void Update()
     {
-        Debug.Log(AmmoW);
-        Debug.Log(AmmoV);
+        #region Debug Ammo
+        Debug.Log("Le ammo del will o wisp " +AmmoW);
+        Debug.Log("Le ammo del valravn " +AmmoV);
+        Debug.Log("Le ammo del cervo blu " +AmmoBlue);
+        Debug.Log("Le ammo del cervo verde " +AmmoGreen);
+        Debug.Log("Le ammo del cervo rosso " +AmmoRed);
+        Debug.Log("Le ammo del cervo giallo " +AmmoYellow);
+        Debug.Log("Le ammo dell'occhio " +AmmoEye);
+        Debug.Log("Le ammo del dark elf " +AmmoDarkElf);
+        Debug.Log("Le ammo del draugr " + AmmoDraugr);
+        #endregion
+
+        #region Delete Ammo
+
         #region Ammo Will o Wisp
-            if (AmmoW <= 0)
+        if (AmmoW <= 0)
             {
-                if (CurrentScene.name == "FirsLevel")
+                if (CurrentScene.name == "FirstLevel")
                 {
+                    Debug.Log("Dovresti togliere la texture dalla runa 1, vediamo");
                     Destroy(RuneWoW.gameObject);
                     isFirstRuneWow = false;
-                    RuneRawImageWilloWisp0.enabled = false;
-                    RuneRawImageCooldownWilloWisp0.enabled = false;
+                    //RuneRawImageWilloWisp0.enabled = false;
+                    //RuneRawImageCooldownWilloWisp0.enabled = false;
+                    if(InventorySystem.tempIImageWow == 0)
+                    {
+                        SlotRuneOne.texture = null;
+                    }
+                    if (InventorySystem.tempIImageWow == 1)
+                    {
+                        SlotRuneTwo.texture = null;
+                    }
                     NumAmmoW0.gameObject.SetActive(false);
-                    RuneRawImageWilloWisp1.enabled = false;
-                    RuneRawImageCooldownWilloWisp1.enabled = false;
+                    //RuneRawImageWilloWisp1.enabled = false;
+                    //RuneRawImageCooldownWilloWisp1.enabled = false;
                     NumAmmoW1.gameObject.SetActive(false);
                     
                 }
@@ -1473,11 +642,19 @@ public class Ammo : MonoBehaviour
                 {
                     Destroy(InventorySystem.RuneWow.gameObject);
                     isFirstRuneWow = false;
-                    RuneRawImageWilloWisp0.enabled = false;
-                    RuneRawImageCooldownWilloWisp0.enabled = false;
+                    //RuneRawImageWilloWisp0.enabled = false;
+                    //RuneRawImageCooldownWilloWisp0.enabled = false;
+                    if (InventorySystem.tempIImageWow == 0)
+                    {
+                        SlotRuneOne.texture = null;
+                    }
+                    if (InventorySystem.tempIImageWow == 1)
+                    {
+                        SlotRuneTwo.texture = null;
+                    }
                     NumAmmoW0.gameObject.SetActive(false);
-                    RuneRawImageWilloWisp1.enabled = false;
-                    RuneRawImageCooldownWilloWisp1.enabled = false;
+                    //RuneRawImageWilloWisp1.enabled = false;
+                    //RuneRawImageCooldownWilloWisp1.enabled = false;
                     NumAmmoW1.gameObject.SetActive(false);
                 }
             }
@@ -1486,29 +663,195 @@ public class Ammo : MonoBehaviour
         #region Ammo Valvran
             if (AmmoV <= 0)
             {
-                if (CurrentScene.name == "FirsLevel")
+                if (CurrentScene.name == "FirstLevel")
                 {
                     Destroy(RuneValvran.gameObject);
                     isFirstRuneValvran = false;
-                    RuneRawImageValvran0.enabled = false;
-                    RuneRawImageCooldownValvran0.enabled = false;
+                    //RuneRawImageValvran0.enabled = false;
+                    //RuneRawImageCooldownValvran0.enabled = false;
+                    if (InventorySystem.tempIImageValvran == 0)
+                    {
+                        SlotRuneOne.texture = null;
+                    }
+                    if (InventorySystem.tempIImageValvran == 1)
+                    {
+                        SlotRuneTwo.texture = null;
+                    }
+
                     NumAmmoV0.gameObject.SetActive(false);
-                    RuneRawImageValvran1.enabled = false;
-                    RuneRawImageCooldownValvran1.enabled = false;
+                    //RuneRawImageValvran1.enabled = false;
+                    //RuneRawImageCooldownValvran1.enabled = false;
                     NumAmmoV1.gameObject.SetActive(false);
                 }
                 if (CurrentScene.name == "ThirdLevel")
                 {
                     Destroy(InventorySystem.RuneValravn.gameObject);
                     isFirstRuneValvran = false;
-                    RuneRawImageValvran0.enabled = false;
-                    RuneRawImageCooldownValvran0.enabled = false;
+                    //RuneRawImageValvran0.enabled = false;
+                    //RuneRawImageCooldownValvran0.enabled = false;
+                    if (InventorySystem.tempIImageValvran == 0)
+                    {
+                        SlotRuneOne.texture = null;
+                    }
+                    if (InventorySystem.tempIImageValvran == 1)
+                    {
+                        SlotRuneTwo.texture = null;
+                    }
                     NumAmmoV0.gameObject.SetActive(false);
-                    RuneRawImageValvran1.enabled = false;
-                    RuneRawImageCooldownValvran1.enabled = false;
+                    //RuneRawImageValvran1.enabled = false;
+                    //RuneRawImageCooldownValvran1.enabled = false;
                     NumAmmoV1.gameObject.SetActive(false);
                 }
             }
+        #endregion
+
+        #region Ammo Blue
+        if (AmmoBlue <= 0)
+        {
+            if (CurrentScene.name == "ThirdLevel")
+            {
+                Destroy(InventorySystem.RuneBlue.gameObject);
+                isFirstRuneBlue = false;
+                if (InventorySystem.tempIImageBlue == 0)
+                {
+                    SlotRuneOne.texture = null;
+                }
+                if (InventorySystem.tempIImageBlue == 1)
+                {
+                    SlotRuneTwo.texture = null;
+                }
+                NumAmmoBlue0.gameObject.SetActive(false);
+                NumAmmoBlue1.gameObject.SetActive(false);
+            }
+        }
+        #endregion
+
+        #region Ammo Green
+        if (AmmoGreen <= 0)
+        {
+            if (CurrentScene.name == "ThirdLevel")
+            {
+                Destroy(InventorySystem.RuneGreen.gameObject);
+                isFirstRuneGreen = false;
+                if (InventorySystem.tempIImageGreen == 0)
+                {
+                    SlotRuneOne.texture = null;
+                }
+                if (InventorySystem.tempIImageGreen == 1)
+                {
+                    SlotRuneTwo.texture = null;
+                }
+                NumAmmoGreen0.gameObject.SetActive(false);
+                NumAmmoGreen1.gameObject.SetActive(false);
+            }
+        }
+        #endregion
+
+        #region Ammo Red
+        if (AmmoRed <= 0)
+        {
+            if (CurrentScene.name == "ThirdLevel")
+            {
+                Destroy(InventorySystem.RuneRed.gameObject);
+                isFirstRuneRed = false;
+                if (InventorySystem.tempIImageOrange == 0)
+                {
+                    SlotRuneOne.texture = null;
+                }
+                if (InventorySystem.tempIImageOrange == 1)
+                {
+                    SlotRuneTwo.texture = null;
+                }
+                NumAmmoRed0.gameObject.SetActive(false);
+                NumAmmoRed1.gameObject.SetActive(false);
+            }
+        }
+        #endregion
+
+        #region Ammo Yellow
+        if (AmmoYellow <= 0)
+        {
+            if (CurrentScene.name == "ThirdLevel")
+            {
+                Destroy(InventorySystem.RuneYellow.gameObject);
+                isFirstRuneYellow = false;
+                if (InventorySystem.tempIImageYellow == 0)
+                {
+                    SlotRuneOne.texture = null;
+                }
+                if (InventorySystem.tempIImageYellow == 1)
+                {
+                    SlotRuneTwo.texture = null;
+                }
+                NumAmmoYellow0.gameObject.SetActive(false);
+                NumAmmoYellow1.gameObject.SetActive(false);
+            }
+        }
+        #endregion
+
+        #region Ammo Eye
+        if (AmmoEye <= 0)
+        {
+            if (CurrentScene.name == "ThirdLevel")
+            {
+                Destroy(InventorySystem.RuneEye.gameObject);
+                isFirstRuneEye = false;
+                if (InventorySystem.tempIImageEye == 0)
+                {
+                    SlotRuneOne.texture = null;
+                }
+                if (InventorySystem.tempIImageEye == 1)
+                {
+                    SlotRuneTwo.texture = null;
+                }
+                NumAmmoEye0.gameObject.SetActive(false);
+                NumAmmoEye1.gameObject.SetActive(false);
+            }
+        }
+        #endregion
+
+        #region Ammo Dark Elf
+        if (AmmoDarkElf <= 0)
+        {
+            if (CurrentScene.name == "ThirdLevel")
+            {
+                Destroy(InventorySystem.RuneDarkElf.gameObject);
+                isFirstRuneDarkElf = false;
+                if (InventorySystem.tempIImageDarkElf == 0)
+                {
+                    SlotRuneOne.texture = null;
+                }
+                if (InventorySystem.tempIImageDarkElf == 1)
+                {
+                    SlotRuneTwo.texture = null;
+                }
+                NumAmmoDarkElf0.gameObject.SetActive(false);
+                NumAmmoDarkElf1.gameObject.SetActive(false);
+            }
+        }
+        #endregion
+
+        #region Ammo Draugr
+        if (AmmoDraugr <= 0)
+        {
+            if (CurrentScene.name == "ThirdLevel")
+            {
+                Destroy(InventorySystem.RuneDraugr.gameObject);
+                isFirstRuneDraugr = false;
+                if (InventorySystem.tempIImageDraugr == 0)
+                {
+                    SlotRuneOne.texture = null;
+                }
+                if (InventorySystem.tempIImageDraugr == 1)
+                {
+                    SlotRuneTwo.texture = null;
+                }
+                NumAmmoDraugr0.gameObject.SetActive(false);
+                NumAmmoDraugr1.gameObject.SetActive(false);
+            }
+        }
+        #endregion
+
         #endregion
     }
 }

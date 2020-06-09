@@ -43,11 +43,13 @@ public class RuneValravn : MonoBehaviour
                 Ammo.AmmoV--;                                           //Diminuisco di 1 le ammo del valravn
                 Ammo.NumAmmoV0.text = Ammo.AmmoV.ToString();            //Aggiorno il testo nella ui
                 SpellReady = false;                                     //Setto speel ready a falso
-                Ammo.RuneRawImageValvran0.enabled = false;              //Setto a falso la componente raw image della runa nell'ui
-                Ammo.RuneRawImageCooldownValvran0.enabled = true;       //Setto a vero la componente raw image della runa cooldown nell'ui
+                //Ammo.RuneRawImageValvran0.enabled = false;              //Setto a falso la componente raw image della runa nell'ui
+                //Ammo.RuneRawImageCooldownValvran0.enabled = true;       //Setto a vero la componente raw image della runa cooldown nell'ui
+                player[0].GetComponent<Ammo>().SlotRuneOne.texture = player[0].GetComponent<Ammo>().RuneValravnTexture[1];
                 StartCoroutine(cooldown());                             //Faccio partire la coroutine
-                Ammo.RuneRawImageCooldownValvran0.enabled = false;      //Setto a falso la componente raw image della runa cooldown nell'ui
-                Ammo.RuneRawImageValvran0.enabled = true;               //Setto a vero la componente raw image della runa nell'ui
+                //Ammo.RuneRawImageCooldownValvran0.enabled = false;      //Setto a falso la componente raw image della runa cooldown nell'ui
+                //Ammo.RuneRawImageValvran0.enabled = true;               //Setto a vero la componente raw image della runa nell'ui
+                player[0].GetComponent<Ammo>().SlotRuneOne.texture = player[0].GetComponent<Ammo>().RuneValravnTexture[0];
             }
         }
         if (InventorySystem.tempIValvran == 1)  //Se la variabile temporanea i è uguale a 1
@@ -58,11 +60,13 @@ public class RuneValravn : MonoBehaviour
                 Ammo.AmmoV--;                                           //Diminuisco di 1 le ammo del valravn
                 Ammo.NumAmmoV1.text = Ammo.AmmoV.ToString();            //Aggiorno il testo nella ui
                 SpellReady = false;                                     //Setto speel ready a falso
-                Ammo.RuneRawImageValvran1.enabled = false;              //Setto a falso la componente raw image della runa nell'ui
-                Ammo.RuneRawImageCooldownValvran1.enabled = true;       //Setto a vero la componente raw image della runa cooldown nell'ui
+                //Ammo.RuneRawImageValvran1.enabled = false;              //Setto a falso la componente raw image della runa nell'ui
+                //Ammo.RuneRawImageCooldownValvran1.enabled = true;       //Setto a vero la componente raw image della runa cooldown nell'ui
+                player[0].GetComponent<Ammo>().SlotRuneTwo.texture = player[0].GetComponent<Ammo>().RuneValravnTexture[1];
                 StartCoroutine(cooldown());                             //Faccio partire la coroutine
-                Ammo.RuneRawImageCooldownValvran1.enabled = false;      //Setto a falso la componente raw image della runa cooldown nell'ui
-                Ammo.RuneRawImageValvran1.enabled = true;               //Setto a vero la componente raw image della runa nell'ui
+                //Ammo.RuneRawImageCooldownValvran1.enabled = false;      //Setto a falso la componente raw image della runa cooldown nell'ui
+                //Ammo.RuneRawImageValvran1.enabled = true;               //Setto a vero la componente raw image della runa nell'ui
+                player[0].GetComponent<Ammo>().SlotRuneTwo.texture = player[0].GetComponent<Ammo>().RuneValravnTexture[0];
             }
         }
     }

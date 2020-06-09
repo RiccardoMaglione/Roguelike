@@ -28,6 +28,8 @@ public class RuneToPlayer : MonoBehaviour
     static public bool isTimeToGreen = false;
     static public bool isTimeToYellow = false;
     static public bool isTimeToOrange = false;
+    static public bool isTimeToDarkElf = false;
+    static public bool isTimeToDraugr = false;
 
 
     public MeshRenderer GraphicsRuneEye;
@@ -35,6 +37,8 @@ public class RuneToPlayer : MonoBehaviour
     public MeshRenderer GraphicsRuneDeerGreen;
     public MeshRenderer GraphicsRuneDeerYellow;
     public MeshRenderer GraphicsRuneDeerOrange;
+    public MeshRenderer GraphicsRuneDarkElf;
+    public MeshRenderer GraphicsRuneDraugr;
     #endregion
 
     private void Start()
@@ -133,8 +137,27 @@ public class RuneToPlayer : MonoBehaviour
                         InventorySystem.isFirsPresentRuneOrange = true;
                     }
                 }
+                if (InventorySystem.isFirsPresentRuneDarkElf == false)
+                {
+                    if (gameObject.tag == "RuneDarkElf")
+                    {
+                        print("Questa è il numero delle rune prese " + NumberRuneEnemyCatch);
+                        transform.parent = Player.transform;
+                        NumberRuneEnemyCatch++;
+                        InventorySystem.isFirsPresentRuneDarkElf = true;
+                    }
+                }
+                if (InventorySystem.isFirsPresentRuneDraugr == false)
+                {
+                    if (gameObject.tag == "RuneDraugr")
+                    {
+                        print("Questa è il numero delle rune prese " + NumberRuneEnemyCatch);
+                        transform.parent = Player.transform;
+                        NumberRuneEnemyCatch++;
+                        InventorySystem.isFirsPresentRuneDraugr = true;
+                    }
+                }
                 #endregion
-
             }
             if (NumberRuneBossCatch < 1)
             {
@@ -274,6 +297,32 @@ public class RuneToPlayer : MonoBehaviour
                     GetComponent<RuneOrange>().enabled = true;
                     isTimeToOrange = true;
                     GraphicsRuneDeerOrange.enabled = false;
+                }
+            }
+            #endregion
+            #region Dark Elf
+            if (gameObject.tag == "RuneDarkElf" && InventorySystem.isFirsPresentRuneDarkElf == true)
+            {
+                if (isTimeToDarkElf == false)
+                {
+                    transform.parent = Player.transform;
+                    transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+                    GetComponent<RuneDarkElf>().enabled = true;
+                    isTimeToDarkElf = true;
+                    GraphicsRuneDarkElf.enabled = false;
+                }
+            }
+            #endregion
+            #region Draugr
+            if (gameObject.tag == "RuneDraugr" && InventorySystem.isFirsPresentRuneDraugr == true)
+            {
+                if (isTimeToDraugr == false)
+                {
+                    transform.parent = Player.transform;
+                    transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+                    GetComponent<RuneDraugr>().enabled = true;
+                    isTimeToDraugr = true;
+                    GraphicsRuneDraugr.enabled = false;
                 }
             }
             #endregion

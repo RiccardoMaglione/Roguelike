@@ -99,14 +99,54 @@ public class GameManager : MonoBehaviour
         InventorySystem.isFirsPresentRuneProva = false;
         InventorySystem.isFirsPresentRuneValvran = false;
         InventorySystem.isFirsPresentRuneWow = false;
+
+        InventorySystem.isFirsPresentRuneBlue = false;
+        InventorySystem.isFirsPresentRuneGreen = false;
+        InventorySystem.isFirsPresentRuneOrange = false;
+        InventorySystem.isFirsPresentRuneYellow = false;
+        InventorySystem.isFirsPresentRuneEye = false;
+        InventorySystem.isFirsPresentRuneDarkElf = false;
+        InventorySystem.isFirsPresentRuneDraugr = false;
+
         InventorySystem.tempIImageValvran = 0;
         InventorySystem.tempIImageWow = 0;
+        InventorySystem.tempIImageBlue = 0;
+        InventorySystem.tempIImageGreen = 0;
+        InventorySystem.tempIImageOrange = 0;
+        InventorySystem.tempIImageYellow = 0;
+        InventorySystem.tempIImageEye = 0;
+        InventorySystem.tempIImageDarkElf = 0;
+        InventorySystem.tempIImageDraugr = 0;
+
         InventorySystem.tempIValvran = 0;
         InventorySystem.tempIWow = 0;
+        InventorySystem.tempIBlue = 0;
+        InventorySystem.tempIGreen = 0;
+        InventorySystem.tempIOrange = 0;
+        InventorySystem.tempIYellow = 0;
+        InventorySystem.tempIEye = 0;
+        InventorySystem.tempIDarkElf = 0;
+        InventorySystem.tempIDraugr = 0;
+
         RuneToPlayer.isTimeToWow = false;
         RuneToPlayer.isTimeToValvran = false;
+        RuneToPlayer.isTimeToBlue = false;
+        RuneToPlayer.isTimeToGreen = false;
+        RuneToPlayer.isTimeToOrange = false;
+        RuneToPlayer.isTimeToYellow = false;
+        RuneToPlayer.isTimeToEye = false;
+        RuneToPlayer.isTimeToDarkElf = false;
+        RuneToPlayer.isTimeToDraugr = false;
+
         Ammo.AmmoW = 0;
         Ammo.AmmoV = 0;
+        Ammo.AmmoBlue = 0;
+        Ammo.AmmoGreen = 0;
+        Ammo.AmmoRed = 0;
+        Ammo.AmmoYellow = 0;
+        Ammo.AmmoEye = 0;
+        Ammo.AmmoDarkElf = 0;
+        Ammo.AmmoDraugr = 0;
         #endregion
     }
     public void GoToLoading()
