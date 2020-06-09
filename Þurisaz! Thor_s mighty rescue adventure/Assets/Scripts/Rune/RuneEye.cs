@@ -135,6 +135,8 @@ public class RuneEye : MonoBehaviour
     [Header("DESIGN")]
     [Tooltip("Durata del laser")]
     public float laserTime = 0;
+    bool SpellReady = true;
+    public float CooldownAttack = 6f;
     void attack()
     {
         laser.SetActive(true);
@@ -163,18 +165,83 @@ public class RuneEye : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1) || isActive)
+        if (InventorySystem.tempIWow == 0)
         {
-            isActive = true;
-            attack();
-            timer += Time.deltaTime;
-
-            if (timer > laserTime)
+            if ((Input.GetKeyDown(ControlsManager.CM.runeOne) || Input.GetKeyDown(KeyCode.JoystickButton2)) && SpellReady == true)
             {
-                isActive = false;
-                timer = 0;
-                laser.SetActive(false);
+                isActive = true;
+                attack();
+                timer += Time.deltaTime;
+
+                if (timer > laserTime)
+                {
+                    isActive = false;
+                    timer = 0;
+                    laser.SetActive(false);
+                }
+                Ammo.AmmoW--;
+                Ammo.NumAmmoW0.text = Ammo.AmmoW.ToString();
+                SpellReady = false;
+                StartCoroutine(cooldown());
             }
         }
+        if (InventorySystem.tempIWow == 1)
+        {
+            if ((Input.GetKeyDown(ControlsManager.CM.runeTwo) || Input.GetKeyDown(KeyCode.JoystickButton1)) && SpellReady == true)
+            {
+                isActive = true;
+                attack();
+                timer += Time.deltaTime;
+
+                if (timer > laserTime)
+                {
+                    isActive = false;
+                    timer = 0;
+                    laser.SetActive(false);
+                }
+                Ammo.AmmoW--;
+                Ammo.NumAmmoW1.text = Ammo.AmmoW.ToString();
+                SpellReady = false;
+                StartCoroutine(cooldown());
+            }
+        }
+
+        //if (Input.GetKeyDown(KeyCode.Alpha1) || isActive)
+        //{
+        //    isActive = true;
+        //    attack();
+        //    timer += Time.deltaTime;
+        //
+        //    if (timer > laserTime)
+        //    {
+        //        isActive = false;
+        //        timer = 0;
+        //        laser.SetActive(false);
+        //    }
+        //}
     }
+
+
+    public IEnumerator cooldown()
+    {
+        if (InventorySystem.tempIWow == 0)
+        {
+            //Ammo.RuneRawImageWilloWisp0.enabled = false;
+            //Ammo.RuneRawImageCooldownWilloWisp0.enabled = true;
+            yield return new WaitForSeconds(CooldownAttack);
+            SpellReady = true;
+            //Ammo.RuneRawImageCooldownWilloWisp0.enabled = false;
+            //Ammo.RuneRawImageWilloWisp0.enabled = true;
+        }
+        if (InventorySystem.tempIWow == 1)
+        {
+            //Ammo.RuneRawImageWilloWisp1.enabled = false;
+            //Ammo.RuneRawImageCooldownWilloWisp1.enabled = true;
+            yield return new WaitForSeconds(CooldownAttack);
+            SpellReady = true;
+            //Ammo.RuneRawImageCooldownWilloWisp1.enabled = false;
+            //Ammo.RuneRawImageWilloWisp1.enabled = true;
+        }
+    }
+
 }

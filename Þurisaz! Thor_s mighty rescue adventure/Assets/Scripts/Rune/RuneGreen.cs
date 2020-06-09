@@ -18,6 +18,7 @@ public class RuneGreen : MonoBehaviour
     bool isFinishAttack = true;
 
     float sfx;
+    bool SpellReady = true;
     #endregion
 
     // Start is called before the first frame update
@@ -29,10 +30,28 @@ public class RuneGreen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.O) && isFinishAttack == true)
+
+        if (InventorySystem.tempIWow == 0)
         {
-            isFinishAttack = false;
-            StartCoroutine(SpineAttack());
+            if ((Input.GetKeyDown(ControlsManager.CM.runeOne) || Input.GetKeyDown(KeyCode.JoystickButton2)) && SpellReady == true)
+            {
+                SpawnSpike();
+                Ammo.AmmoW--;
+                Ammo.NumAmmoW0.text = Ammo.AmmoW.ToString();
+                SpellReady = false;
+                StartCoroutine(cooldown());
+            }
+        }
+        if (InventorySystem.tempIWow == 1)
+        {
+            if ((Input.GetKeyDown(ControlsManager.CM.runeTwo) || Input.GetKeyDown(KeyCode.JoystickButton1)) && SpellReady == true)
+            {
+                SpawnSpike();
+                Ammo.AmmoW--;
+                Ammo.NumAmmoW1.text = Ammo.AmmoW.ToString();
+                SpellReady = false;
+                StartCoroutine(cooldown());
+            }
         }
     }
 
@@ -57,12 +76,27 @@ public class RuneGreen : MonoBehaviour
     #endregion
 
     #region IEnumerator Attack
-    public IEnumerator SpineAttack()
-    {
-        SpawnSpike();
-        yield return new WaitForSeconds(CooldownAttack);
-        isFinishAttack = true;
-    }
-    #endregion
 
+    #endregion
+    public IEnumerator cooldown()
+    {
+        if (InventorySystem.tempIWow == 0)
+        {
+            //Ammo.RuneRawImageWilloWisp0.enabled = false;
+            //Ammo.RuneRawImageCooldownWilloWisp0.enabled = true;
+            yield return new WaitForSeconds(CooldownAttack);
+            SpellReady = true;
+            //Ammo.RuneRawImageCooldownWilloWisp0.enabled = false;
+            //Ammo.RuneRawImageWilloWisp0.enabled = true;
+        }
+        if (InventorySystem.tempIWow == 1)
+        {
+            //Ammo.RuneRawImageWilloWisp1.enabled = false;
+            //Ammo.RuneRawImageCooldownWilloWisp1.enabled = true;
+            yield return new WaitForSeconds(CooldownAttack);
+            SpellReady = true;
+            //Ammo.RuneRawImageCooldownWilloWisp1.enabled = false;
+            //Ammo.RuneRawImageWilloWisp1.enabled = true;
+        }
+    }
 }
