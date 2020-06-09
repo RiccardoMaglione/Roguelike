@@ -58,6 +58,8 @@ public class PatternBlueDeer : MonoBehaviour
         StartCoroutine(flash());
         //FindObjectOfType<AudioManager>().Play("InsertNameSound", sfx);
         GameObject go = Instantiate(Snowball, new Vector3(DeerContainer.transform.position.x, DeerContainer.transform.position.y, DeerContainer.transform.position.z), transform.rotation);
+        GameObject shadow1 = Instantiate(shadow, new Vector3(transform.position.x, 0.1f, transform.position.z), Quaternion.identity);
+        shadow1.transform.parent = go.transform;
     }
     #endregion
 

@@ -61,6 +61,8 @@ public class PatternYellowDeer : MonoBehaviour
         for (int i = 2; i < 6; i++)
         {
             GameObject go = Instantiate(Fireball, new Vector3(DeerYellowContainer.transform.localPosition.x, DeerYellowContainer.transform.localPosition.y + HeightAttack, DeerYellowContainer.transform.localPosition.z) + DeerYellowContainer.transform.forward * i, transform.rotation);
+            GameObject shadow1 = Instantiate(shadow, new Vector3(DeerYellowContainer.transform.localPosition.x, 0.1f, DeerYellowContainer.transform.localPosition.z) + DeerYellowContainer.transform.forward * i, Quaternion.identity);
+            shadow1.transform.parent = go.transform;
         }
     }
     #endregion

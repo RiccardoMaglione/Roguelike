@@ -1083,6 +1083,7 @@ MonoBehaviour:
   DestraGammurCollider: {fileID: 0}
   SinistraGammurCollider: {fileID: 0}
   health: 2
+  shadow: {fileID: 9020515508136278214, guid: ccf500aef5b4af14c9533a4c6b357cb9, type: 3}
   isBoss: 0
   currentHealth: 0
   healthBar: {fileID: 0}
@@ -2819,6 +2820,7 @@ MonoBehaviour:
   DestraGammurCollider: {fileID: 0}
   SinistraGammurCollider: {fileID: 0}
   health: 3
+  shadow: {fileID: 9020515508136278214, guid: ccf500aef5b4af14c9533a4c6b357cb9, type: 3}
   isBoss: 0
   currentHealth: 0
   healthBar: {fileID: 0}
@@ -6533,6 +6535,7 @@ MonoBehaviour:
   DestraGammurCollider: {fileID: 0}
   SinistraGammurCollider: {fileID: 0}
   health: 2
+  shadow: {fileID: 9020515508136278214, guid: ccf500aef5b4af14c9533a4c6b357cb9, type: 3}
   isBoss: 0
   currentHealth: 0
   healthBar: {fileID: 0}
@@ -8548,6 +8551,7 @@ MonoBehaviour:
   DestraGammurCollider: {fileID: 0}
   SinistraGammurCollider: {fileID: 0}
   health: 2
+  shadow: {fileID: 0}
   isBoss: 0
   currentHealth: 0
   healthBar: {fileID: 0}
@@ -9627,6 +9631,7 @@ MonoBehaviour:
   DestraGammurCollider: {fileID: 0}
   SinistraGammurCollider: {fileID: 0}
   health: 2
+  shadow: {fileID: 9020515508136278214, guid: ccf500aef5b4af14c9533a4c6b357cb9, type: 3}
   isBoss: 0
   currentHealth: 0
   healthBar: {fileID: 0}
@@ -11465,6 +11470,7 @@ MonoBehaviour:
   DestraGammurCollider: {fileID: 0}
   SinistraGammurCollider: {fileID: 0}
   health: 3
+  shadow: {fileID: 9020515508136278214, guid: ccf500aef5b4af14c9533a4c6b357cb9, type: 3}
   isBoss: 0
   currentHealth: 0
   healthBar: {fileID: 0}
@@ -15907,6 +15913,7 @@ MonoBehaviour:
   DestraGammurCollider: {fileID: 0}
   SinistraGammurCollider: {fileID: 0}
   health: 2
+  shadow: {fileID: 9020515508136278214, guid: ccf500aef5b4af14c9533a4c6b357cb9, type: 3}
   isBoss: 0
   currentHealth: 0
   healthBar: {fileID: 0}
@@ -18791,6 +18798,7 @@ MonoBehaviour:
   DestraGammurCollider: {fileID: 0}
   SinistraGammurCollider: {fileID: 0}
   health: 3
+  shadow: {fileID: 9020515508136278214, guid: ccf500aef5b4af14c9533a4c6b357cb9, type: 3}
   isBoss: 0
   currentHealth: 0
   healthBar: {fileID: 0}
@@ -19581,6 +19589,7 @@ MonoBehaviour:
   DestraGammurCollider: {fileID: 0}
   SinistraGammurCollider: {fileID: 0}
   health: 2
+  shadow: {fileID: 9020515508136278214, guid: ccf500aef5b4af14c9533a4c6b357cb9, type: 3}
   isBoss: 0
   currentHealth: 0
   healthBar: {fileID: 0}
@@ -21393,6 +21402,7 @@ MonoBehaviour:
   DestraGammurCollider: {fileID: 0}
   SinistraGammurCollider: {fileID: 0}
   health: 3
+  shadow: {fileID: 9020515508136278214, guid: ccf500aef5b4af14c9533a4c6b357cb9, type: 3}
   isBoss: 0
   currentHealth: 0
   healthBar: {fileID: 0}
@@ -24152,6 +24162,7 @@ MonoBehaviour:
   DestraGammurCollider: {fileID: 0}
   SinistraGammurCollider: {fileID: 0}
   health: 3
+  shadow: {fileID: 9020515508136278214, guid: ccf500aef5b4af14c9533a4c6b357cb9, type: 3}
   isBoss: 0
   currentHealth: 0
   healthBar: {fileID: 0}
@@ -24860,6 +24871,7 @@ MonoBehaviour:
   DestraGammurCollider: {fileID: 0}
   SinistraGammurCollider: {fileID: 0}
   health: 2
+  shadow: {fileID: 9020515508136278214, guid: ccf500aef5b4af14c9533a4c6b357cb9, type: 3}
   isBoss: 0
   currentHealth: 0
   healthBar: {fileID: 0}
@@ -32284,6 +32296,7 @@ MonoBehaviour:
   DestraGammurCollider: {fileID: 0}
   SinistraGammurCollider: {fileID: 0}
   health: 2
+  shadow: {fileID: 9020515508136278214, guid: ccf500aef5b4af14c9533a4c6b357cb9, type: 3}
   isBoss: 0
   currentHealth: 0
   healthBar: {fileID: 0}
@@ -37296,6 +37309,7 @@ MonoBehaviour:
   DestraGammurCollider: {fileID: 0}
   SinistraGammurCollider: {fileID: 0}
   health: 3
+  shadow: {fileID: 9020515508136278214, guid: ccf500aef5b4af14c9533a4c6b357cb9, type: 3}
   isBoss: 0
   currentHealth: 0
   healthBar: {fileID: 0}
@@ -37902,6 +37916,7 @@ MonoBehaviour:
   DestraGammurCollider: {fileID: 0}
   SinistraGammurCollider: {fileID: 0}
   health: 2
+  shadow: {fileID: 0}
   isBoss: 0
   currentHealth: 0
   healthBar: {fileID: 0}
@@ -38534,6 +38549,7 @@ MonoBehaviour:
   DestraGammurCollider: {fileID: 0}
   SinistraGammurCollider: {fileID: 0}
   health: 2
+  shadow: {fileID: 0}
   isBoss: 0
   currentHealth: 0
   healthBar: {fileID: 0}
@@ -45573,6 +45589,7 @@ MonoBehaviour:
   DestraGammurCollider: {fileID: 0}
   SinistraGammurCollider: {fileID: 0}
   health: 2
+  shadow: {fileID: 9020515508136278214, guid: ccf500aef5b4af14c9533a4c6b357cb9, type: 3}
   isBoss: 0
   currentHealth: 0
   healthBar: {fileID: 0}
@@ -47782,6 +47799,7 @@ MonoBehaviour:
   DestraGammurCollider: {fileID: 0}
   SinistraGammurCollider: {fileID: 0}
   health: 2
+  shadow: {fileID: 9020515508136278214, guid: ccf500aef5b4af14c9533a4c6b357cb9, type: 3}
   isBoss: 0
   currentHealth: 0
   healthBar: {fileID: 0}
@@ -54727,6 +54745,7 @@ MonoBehaviour:
   DestraGammurCollider: {fileID: 0}
   SinistraGammurCollider: {fileID: 0}
   health: 2
+  shadow: {fileID: 9020515508136278214, guid: ccf500aef5b4af14c9533a4c6b357cb9, type: 3}
   isBoss: 0
   currentHealth: 0
   healthBar: {fileID: 0}
@@ -56933,6 +56952,7 @@ MonoBehaviour:
   DestraGammurCollider: {fileID: 0}
   SinistraGammurCollider: {fileID: 0}
   health: 3
+  shadow: {fileID: 9020515508136278214, guid: ccf500aef5b4af14c9533a4c6b357cb9, type: 3}
   isBoss: 0
   currentHealth: 0
   healthBar: {fileID: 0}
@@ -57333,6 +57353,7 @@ MonoBehaviour:
   DestraGammurCollider: {fileID: 0}
   SinistraGammurCollider: {fileID: 0}
   health: 2
+  shadow: {fileID: 9020515508136278214, guid: ccf500aef5b4af14c9533a4c6b357cb9, type: 3}
   isBoss: 0
   currentHealth: 0
   healthBar: {fileID: 0}
@@ -59848,6 +59869,7 @@ MonoBehaviour:
   DestraGammurCollider: {fileID: 0}
   SinistraGammurCollider: {fileID: 0}
   health: 3
+  shadow: {fileID: 9020515508136278214, guid: ccf500aef5b4af14c9533a4c6b357cb9, type: 3}
   isBoss: 0
   currentHealth: 0
   healthBar: {fileID: 0}
@@ -60425,6 +60447,7 @@ MonoBehaviour:
   DestraGammurCollider: {fileID: 0}
   SinistraGammurCollider: {fileID: 0}
   health: 2
+  shadow: {fileID: 9020515508136278214, guid: ccf500aef5b4af14c9533a4c6b357cb9, type: 3}
   isBoss: 0
   currentHealth: 0
   healthBar: {fileID: 0}
@@ -65251,6 +65274,7 @@ MonoBehaviour:
   DestraGammurCollider: {fileID: 0}
   SinistraGammurCollider: {fileID: 0}
   health: 2
+  shadow: {fileID: 9020515508136278214, guid: ccf500aef5b4af14c9533a4c6b357cb9, type: 3}
   isBoss: 0
   currentHealth: 0
   healthBar: {fileID: 0}
@@ -66934,6 +66958,7 @@ MonoBehaviour:
   DestraGammurCollider: {fileID: 0}
   SinistraGammurCollider: {fileID: 0}
   health: 2
+  shadow: {fileID: 9020515508136278214, guid: ccf500aef5b4af14c9533a4c6b357cb9, type: 3}
   isBoss: 0
   currentHealth: 0
   healthBar: {fileID: 0}
@@ -68283,6 +68308,7 @@ MonoBehaviour:
   DestraGammurCollider: {fileID: 0}
   SinistraGammurCollider: {fileID: 0}
   health: 2
+  shadow: {fileID: 9020515508136278214, guid: ccf500aef5b4af14c9533a4c6b357cb9, type: 3}
   isBoss: 0
   currentHealth: 0
   healthBar: {fileID: 0}
@@ -71656,6 +71682,7 @@ MonoBehaviour:
   DestraGammurCollider: {fileID: 0}
   SinistraGammurCollider: {fileID: 0}
   health: 2
+  shadow: {fileID: 9020515508136278214, guid: ccf500aef5b4af14c9533a4c6b357cb9, type: 3}
   isBoss: 0
   currentHealth: 0
   healthBar: {fileID: 0}
@@ -73109,6 +73136,7 @@ MonoBehaviour:
   DestraGammurCollider: {fileID: 0}
   SinistraGammurCollider: {fileID: 0}
   health: 2
+  shadow: {fileID: 9020515508136278214, guid: ccf500aef5b4af14c9533a4c6b357cb9, type: 3}
   isBoss: 0
   currentHealth: 0
   healthBar: {fileID: 0}
@@ -75612,7 +75640,7 @@ MonoBehaviour:
   MaterialStandard: {fileID: 2100000, guid: f4deb4ecdf8f69e45b1ec6c4b40d53e1, type: 2}
   MaterialChange: {fileID: 2100000, guid: 8eb4176178d025f45a1dc665f93535fd, type: 2}
   GraphicsBase: {fileID: 1437911046}
-  shadow: {fileID: 0}
+  shadow: {fileID: 9020515508136278214, guid: ccf500aef5b4af14c9533a4c6b357cb9, type: 3}
   HeightAttack: 5
   CooldownAttack: 3
   CooldownFlash: 0.5
@@ -84703,7 +84731,7 @@ MonoBehaviour:
   MaterialStandard: {fileID: 2100000, guid: f4deb4ecdf8f69e45b1ec6c4b40d53e1, type: 2}
   MaterialChange: {fileID: 2100000, guid: 92b1768e8d203514d9d03f3ccdaa96f2, type: 2}
   GraphicsBase: {fileID: 414772048}
-  shadow: {fileID: 0}
+  shadow: {fileID: 9020515508136278214, guid: ccf500aef5b4af14c9533a4c6b357cb9, type: 3}
   CooldownAttack: 6
   CooldownFlash: 0.5
 --- !u!1 &1990143689
@@ -88253,6 +88281,7 @@ MonoBehaviour:
   DestraGammurCollider: {fileID: 0}
   SinistraGammurCollider: {fileID: 0}
   health: 2
+  shadow: {fileID: 0}
   isBoss: 0
   currentHealth: 0
   healthBar: {fileID: 0}
@@ -89433,6 +89462,7 @@ MonoBehaviour:
   DestraGammurCollider: {fileID: 0}
   SinistraGammurCollider: {fileID: 0}
   health: 3
+  shadow: {fileID: 9020515508136278214, guid: ccf500aef5b4af14c9533a4c6b357cb9, type: 3}
   isBoss: 0
   currentHealth: 0
   healthBar: {fileID: 0}
@@ -90936,6 +90966,7 @@ MonoBehaviour:
   DestraGammurCollider: {fileID: 0}
   SinistraGammurCollider: {fileID: 0}
   health: 2
+  shadow: {fileID: 9020515508136278214, guid: ccf500aef5b4af14c9533a4c6b357cb9, type: 3}
   isBoss: 0
   currentHealth: 0
   healthBar: {fileID: 0}
