@@ -7,6 +7,9 @@ public class CameraTrigger : MonoBehaviour
     public GameObject nextCamera;           //Inizializzo l'oggetto next camera
     public GameObject fog;                  //Inizializzo l'oggetto fog
 
+    public GameObject HeadThorPrevious;
+    public GameObject HeadThorNext;
+
     private void Start()
     {
         fog.SetActive(true);                //Attivo la fog
@@ -18,6 +21,8 @@ public class CameraTrigger : MonoBehaviour
         {
             previousCamera.SetActive(false);    //Setto l'oggetto falso
             nextCamera.SetActive(true);         //Setto l'oggetto vero
+            HeadThorPrevious.SetActive(false);
+            HeadThorNext.SetActive(true);
             fog.SetActive(false);               //Setto l'oggetto falso
             if(this.name == "22Trigger")
             {

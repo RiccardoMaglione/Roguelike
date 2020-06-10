@@ -4594,7 +4594,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &205571761
 Transform:
   m_ObjectHideFlags: 0
@@ -11527,6 +11527,8 @@ MonoBehaviour:
   previousCamera: {fileID: 1626986555}
   nextCamera: {fileID: 993362319}
   fog: {fileID: 0}
+  HeadThorPrevious: {fileID: 2086211338}
+  HeadThorNext: {fileID: 1377952038}
 --- !u!65 &287967067
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15198,7 +15200,7 @@ GameObject:
   - component: {fileID: 464300871}
   - component: {fileID: 464300870}
   m_Layer: 8
-  m_Name: ThorMinimap (4)
+  m_Name: ThorMinimap2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15212,7 +15214,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 464300868}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 20, z: -1}
+  m_LocalPosition: {x: 0, y: 20, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1733022748}
@@ -15225,7 +15227,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 464300868}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da7e79214560b644b9abb56038606ae4, type: 3}
   m_Name: 
@@ -15754,6 +15756,8 @@ MonoBehaviour:
   previousCamera: {fileID: 993362319}
   nextCamera: {fileID: 138700610}
   fog: {fileID: 0}
+  HeadThorPrevious: {fileID: 1377952038}
+  HeadThorNext: {fileID: 464300868}
 --- !u!65 &509403950
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16844,7 +16848,7 @@ GameObject:
   - component: {fileID: 620990111}
   - component: {fileID: 620990110}
   m_Layer: 8
-  m_Name: ThorMinimap (5)
+  m_Name: ThorMinimap6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16858,7 +16862,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 620990108}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 20, z: -1}
+  m_LocalPosition: {x: 0, y: 20, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 2047991148}
@@ -16871,7 +16875,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 620990108}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da7e79214560b644b9abb56038606ae4, type: 3}
   m_Name: 
@@ -17735,6 +17739,8 @@ MonoBehaviour:
   previousCamera: {fileID: 771709596}
   nextCamera: {fileID: 1442981218}
   fog: {fileID: 0}
+  HeadThorPrevious: {fileID: 620990108}
+  HeadThorNext: {fileID: 1912882893}
 --- !u!65 &665272563
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27899,7 +27905,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1144837360
 Transform:
   m_ObjectHideFlags: 0
@@ -39074,7 +39080,7 @@ GameObject:
   - component: {fileID: 1377952041}
   - component: {fileID: 1377952040}
   m_Layer: 8
-  m_Name: ThorMinimap (3)
+  m_Name: ThorMinimap3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39088,7 +39094,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1377952038}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 20, z: -1}
+  m_LocalPosition: {x: 0, y: 20, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1122033220}
@@ -39101,7 +39107,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1377952038}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da7e79214560b644b9abb56038606ae4, type: 3}
   m_Name: 
@@ -39307,6 +39313,8 @@ MonoBehaviour:
   previousCamera: {fileID: 1442981218}
   nextCamera: {fileID: 771709596}
   fog: {fileID: 1115372925}
+  HeadThorPrevious: {fileID: 1912882893}
+  HeadThorNext: {fileID: 620990108}
 --- !u!65 &1386761552
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39507,6 +39515,8 @@ MonoBehaviour:
   previousCamera: {fileID: 138700610}
   nextCamera: {fileID: 1014990838}
   fog: {fileID: 0}
+  HeadThorPrevious: {fileID: 464300868}
+  HeadThorNext: {fileID: 1533766557}
 --- !u!65 &1394776781
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39811,6 +39821,8 @@ MonoBehaviour:
   previousCamera: {fileID: 1014990838}
   nextCamera: {fileID: 138700610}
   fog: {fileID: 2126791164}
+  HeadThorPrevious: {fileID: 1533766557}
+  HeadThorNext: {fileID: 464300868}
 --- !u!65 &1412616864
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43248,12 +43260,12 @@ GameObject:
   - component: {fileID: 1533766560}
   - component: {fileID: 1533766559}
   m_Layer: 8
-  m_Name: ThorMinimap (5)
+  m_Name: ThorMinimap1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1533766558
 Transform:
   m_ObjectHideFlags: 0
@@ -43262,7 +43274,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1533766557}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 20, z: -1}
+  m_LocalPosition: {x: 0, y: 20, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1317505810}
@@ -43275,7 +43287,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1533766557}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da7e79214560b644b9abb56038606ae4, type: 3}
   m_Name: 
@@ -45234,6 +45246,8 @@ MonoBehaviour:
   previousCamera: {fileID: 1442981218}
   nextCamera: {fileID: 1626986555}
   fog: {fileID: 0}
+  HeadThorPrevious: {fileID: 1912882893}
+  HeadThorNext: {fileID: 2086211338}
 --- !u!65 &1620560843
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -45708,6 +45722,21 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5653747700367265993, guid: d9f492873a47b53489e7162330e94cc7,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5653747700367265993, guid: d9f492873a47b53489e7162330e94cc7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 08aaf8a4419bad845ad06d7e77137bd6, type: 2}
+    - target: {fileID: 5653747700367265993, guid: d9f492873a47b53489e7162330e94cc7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1f32bd57b31125b41a34551ad6683ba4, type: 2}
     - target: {fileID: -4216859302048453862, guid: d9f492873a47b53489e7162330e94cc7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -45778,21 +45807,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 5653747700367265993, guid: d9f492873a47b53489e7162330e94cc7,
-        type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5653747700367265993, guid: d9f492873a47b53489e7162330e94cc7,
-        type: 3}
-      propertyPath: m_Materials.Array.data[1]
-      value: 
-      objectReference: {fileID: 2100000, guid: 08aaf8a4419bad845ad06d7e77137bd6, type: 2}
-    - target: {fileID: 5653747700367265993, guid: d9f492873a47b53489e7162330e94cc7,
-        type: 3}
-      propertyPath: m_Materials.Array.data[2]
-      value: 
-      objectReference: {fileID: 2100000, guid: 1f32bd57b31125b41a34551ad6683ba4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9f492873a47b53489e7162330e94cc7, type: 3}
 --- !u!23 &1632064722 stripped
@@ -48092,6 +48106,8 @@ MonoBehaviour:
   previousCamera: {fileID: 993362319}
   nextCamera: {fileID: 1626986555}
   fog: {fileID: 1971297765}
+  HeadThorPrevious: {fileID: 1377952038}
+  HeadThorNext: {fileID: 2086211338}
 --- !u!65 &1738376353
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -50950,6 +50966,8 @@ MonoBehaviour:
   previousCamera: {fileID: 1014990838}
   nextCamera: {fileID: 1014990838}
   fog: {fileID: 0}
+  HeadThorPrevious: {fileID: 1533766557}
+  HeadThorNext: {fileID: 1533766557}
 --- !u!65 &1898257150
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -51207,7 +51225,7 @@ GameObject:
   - component: {fileID: 1912882896}
   - component: {fileID: 1912882895}
   m_Layer: 8
-  m_Name: ThorMinimap (4)
+  m_Name: ThorMinimap5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51221,7 +51239,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1912882893}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 20, z: -1}
+  m_LocalPosition: {x: 0, y: 20, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1063044789}
@@ -51234,7 +51252,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1912882893}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da7e79214560b644b9abb56038606ae4, type: 3}
   m_Name: 
@@ -52302,6 +52320,8 @@ MonoBehaviour:
   previousCamera: {fileID: 1626986555}
   nextCamera: {fileID: 1442981218}
   fog: {fileID: 1388147040}
+  HeadThorPrevious: {fileID: 2086211338}
+  HeadThorNext: {fileID: 1912882893}
 --- !u!65 &1958188927
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -54413,6 +54433,8 @@ MonoBehaviour:
   previousCamera: {fileID: 138700610}
   nextCamera: {fileID: 993362319}
   fog: {fileID: 1062037600}
+  HeadThorPrevious: {fileID: 464300868}
+  HeadThorNext: {fileID: 1377952038}
 --- !u!65 &2062702158
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -54718,7 +54740,7 @@ GameObject:
   - component: {fileID: 2086211341}
   - component: {fileID: 2086211340}
   m_Layer: 8
-  m_Name: ThorMinimap (2)
+  m_Name: ThorMinimap4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54732,7 +54754,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2086211338}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0, y: 20, z: -1}
+  m_LocalPosition: {x: 0, y: 20, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 1646647774}
@@ -54745,7 +54767,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2086211338}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da7e79214560b644b9abb56038606ae4, type: 3}
   m_Name: 
