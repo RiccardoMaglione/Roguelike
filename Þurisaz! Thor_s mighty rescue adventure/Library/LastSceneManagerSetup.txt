@@ -3,11 +3,11 @@ sceneSetups:
   isLoaded: 1
   isActive: 1
   isSubScene: 0
-- path: Assets/Scenes/ThirdLevel.unity
+- path: Assets/Scenes/GraphicsMenu.unity
   isLoaded: 0
   isActive: 0
   isSubScene: 0
-- path: Assets/Scenes/FirstLevel.unity
+- path: Assets/Scenes/MainMenu.unity
   isLoaded: 0
   isActive: 0
   isSubScene: 0
