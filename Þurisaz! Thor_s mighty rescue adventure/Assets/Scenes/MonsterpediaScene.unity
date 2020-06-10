@@ -882,7 +882,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 98485879}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2022214925}
+        m_MethodName: LokiPedia
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &98485879
@@ -3126,7 +3137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &618443724
 Transform:
   m_ObjectHideFlags: 0
@@ -4048,7 +4059,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &768774893
 Transform:
   m_ObjectHideFlags: 0
@@ -4219,7 +4230,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.75
-  m_Text: "\"A small \u201Cfairy fire\u201D that helps travelers to find their path.\""
+  m_Text: '"God of mischief. A trickster god who likes to pull tricks to other creatures
+    and ,mostly, his brother."'
 --- !u!222 &807741314
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7950,6 +7962,7 @@ MonoBehaviour:
   "ButtonDura\xFEr\xF3rPedia": {fileID: 1797519743}
   ButtonGullinburstiPedia: {fileID: 1988495770}
   ButtonDraugrPedia: {fileID: 447292537}
+  ButtonLokiPedia: {fileID: 0}
 --- !u!4 &2022214926
 Transform:
   m_ObjectHideFlags: 0
@@ -8055,8 +8068,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.75
-  m_Text: "The enemy shoots three projectiles in front of him: one in front of him,
-    one diagonally\r to the left and the other diagonally to the right.\r\n\n"
+  m_Text: "<b>Attacks before Loki appears:\r</b>\n1. Ice walls smash in a random order.\r\n2.
+    Fire balls fall from the sky.\r\n3. Ice and fire columns spawn from the ground
+    shooting bullets in 4 directions.\r\n<b>Loki attacks:\r</b>\n1. Loki basic attack:
+    shoots a bullet.\r\n2. Loki creates copies of himself which apply basic attacks.\r\n3.Loki
+    shoots projectiles in 8 different directions.\r\n4. Loki deactivates Thor\u2019s
+    runes for few seconds.\r\n\n"
 --- !u!222 &2035113944
 CanvasRenderer:
   m_ObjectHideFlags: 0

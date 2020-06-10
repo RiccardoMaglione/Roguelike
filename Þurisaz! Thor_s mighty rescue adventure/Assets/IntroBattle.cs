@@ -18,9 +18,21 @@ public class IntroBattle : MonoBehaviour
     {
         for (int i = 0; i < 29; i++)
         {
-            Panel.texture = Intro[i];
-            yield return new WaitForSeconds(Cooldown);
+            if (i == 22)                                //Frame numero 23
+            {
+                Panel.texture = Intro[i];
+                yield return new WaitForSeconds(1);
+            }
+            else if(i == 28)                            //Frame numero 29
+            {
+                Panel.texture = Intro[i];
+                yield return new WaitForSeconds(1.30f);
+            }
+            else
+            {
+                Panel.texture = Intro[i];
+                yield return new WaitForSeconds(Cooldown);
+            }
         }
-
     }
 }

@@ -17,6 +17,8 @@ public class MonsterpediaManager : MonoBehaviour
     public GameObject ButtonGullinburstiPedia;
     public GameObject ButtonDraugrPedia;
 
+    public GameObject ButtonLokiPedia;
+
     private void Start()
     {
         ButtonWowPedia.SetActive(false);
@@ -162,5 +164,20 @@ public class MonsterpediaManager : MonoBehaviour
         ButtonDuraþrórPedia.SetActive(false);
         ButtonGullinburstiPedia.SetActive(false);
         ButtonDraugrPedia.SetActive(true);
+    }
+
+    public void LokiPedia()
+    {
+        ButtonWowPedia.SetActive(false);
+        ButtonValravnPedia.SetActive(false);
+        ButtonGammurPedia.SetActive(false);
+        ButtonEyePedia.SetActive(false);
+        ButtonDáinnPedia.SetActive(false);
+        ButtonDvalinnPedia.SetActive(false);
+        ButtonDuneyrrPedia.SetActive(false);
+        ButtonDuraþrórPedia.SetActive(false);
+        ButtonGullinburstiPedia.SetActive(false);
+        ButtonDraugrPedia.SetActive(false);
+        ButtonLokiPedia.SetActive(true);
     }
 }
