@@ -35,6 +35,7 @@ public class ChasmTrap : MonoBehaviour
                 }
                 else
                 {
+                    CameraTrigger.TempHead.SetActive(false);
                     Destroy(TrapBreak);
                     FindObjectOfType<AudioManager>().Play("HoleTrap", sfx);
                     Player.transform.position = new Vector3(-55, 0.5f, 1);
@@ -43,6 +44,7 @@ public class ChasmTrap : MonoBehaviour
 
                     if (TwoCameraReferences.activeSelf)                         //Se la camera 2 è attiva
                     {
+                        CameraTrigger.TempHead.SetActive(false);
                         TwoCameraReferences.SetActive(false);                   //Disattiva l'oggetto
                         OneCameraReferences.SetActive(true);                    //Attiva l'oggetto
                         //PlayerManager.startPosition = new Vector3(-55, 0.5f, 1);
@@ -50,6 +52,7 @@ public class ChasmTrap : MonoBehaviour
                     }
                     else if (ThreeCameraReferences.activeSelf)                  //Se la camera 3 è attiva
                     {
+                        CameraTrigger.TempHead.SetActive(false);
                         ThreeCameraReferences.SetActive(false);                 //Disattiva l'oggetto
                         OneCameraReferences.SetActive(true);                    //Attiva l'oggetto
                         //PlayerManager.startPosition = new Vector3(-55, 0.5f, 1);
@@ -70,6 +73,7 @@ public class ChasmTrap : MonoBehaviour
                 }
                 else
                 {
+                    CameraTrigger.TempHead.SetActive(false);
                     Destroy(TrapBreak);
                     FindObjectOfType<AudioManager>().Play("HoleTrap", sfx);
                     Player.transform.position = new Vector3(16, 0.5f, -2);
@@ -78,6 +82,7 @@ public class ChasmTrap : MonoBehaviour
 
                     if (SixCameraReferences.activeSelf)                         //Se la camera 2 è attiva
                     {
+                        CameraTrigger.TempHead.SetActive(false);
                         SixCameraReferences.SetActive(false);                   //Disattiva l'oggetto
                         OneCameraReferences.SetActive(true);                    //Attiva l'oggetto
                         //PlayerManager.startPosition = new Vector3(16, 0.5f, -2);
@@ -85,6 +90,7 @@ public class ChasmTrap : MonoBehaviour
                     }
                     if (SevenCameraReferences.activeSelf)                         //Se la camera 2 è attiva
                     {
+                        CameraTrigger.TempHead.SetActive(false);
                         SevenCameraReferences.SetActive(false);                   //Disattiva l'oggetto
                         OneCameraReferences.SetActive(true);                    //Attiva l'oggetto
                         //PlayerManager.startPosition = new Vector3(16, 0.5f, -2);
@@ -92,6 +98,7 @@ public class ChasmTrap : MonoBehaviour
                     }
                     else if (EightCameraReferences.activeSelf)                  //Se la camera 3 è attiva
                     {
+                        CameraTrigger.TempHead.SetActive(false);
                         EightCameraReferences.SetActive(false);                 //Disattiva l'oggetto
                         OneCameraReferences.SetActive(true);                    //Attiva l'oggetto
                         //PlayerManager.startPosition = new Vector3(16, 0.5f, -2);
