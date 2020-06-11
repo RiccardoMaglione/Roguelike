@@ -114,7 +114,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 494}
   m_MaxSize: {x: 14004, y: 14044}
   vertical: 0
-  controlID: 126
+  controlID: 108
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 494}
   m_MaxSize: {x: 10002, y: 14044}
   vertical: 1
-  controlID: 79
+  controlID: 109
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 222}
   m_MaxSize: {x: 8006, y: 4022}
   vertical: 0
-  controlID: 80
+  controlID: 110
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -382,9 +382,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 6ed6ffff70d6ffff
+      m_SelectedIDs: 323effff
+      m_LastClickedID: -49614
+      m_ExpandedIDs: 76fbffffb6660000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -444,9 +444,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -66.762375, y: -1327.5817, z: 1151.23}
+    m_Target: {x: 11.906851, y: 33.35266, z: -44.745056}
     speed: 2
-    m_Value: {x: -66.762375, y: -1327.5817, z: 1151.23}
+    m_Value: {x: 11.906851, y: 33.35266, z: -44.745056}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -475,13 +475,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.41619188, y: -0.014990898, z: 0.0069078254, w: 0.9091423}
+    m_Target: {x: 0.35812896, y: 0.01822208, z: -0.0069287186, w: 0.933539}
     speed: 2
-    m_Value: {x: 0.41481113, y: -0.016365645, z: 0.007507459, w: 0.90972936}
+    m_Value: {x: 0.35670483, y: 0.018231258, z: -0.0069009177, w: 0.9340138}
   m_Size:
-    m_Target: 1815.45
+    m_Target: 4.7400265
     speed: 2
-    m_Value: 1815.45
+    m_Value: 4.7400312
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -571,21 +571,22 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SkipHidden: 0
     m_SearchArea: 1
-    m_Folders: []
+    m_Folders:
+    - Assets/UpdateExportModel/Emission
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/UpdateExportModel
+  - Assets/UpdateExportModel/Emission
   m_LastFoldersGridSize: -1
   m_LastProjectPath: "C:\\Users\\Ricca\\Desktop\\RepositoryPurisaz\\Roguelike\\\xDEurisaz!
     Thor_s mighty rescue adventure"
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 401}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
-    m_ExpandedIDs: 000000002a3200002e35000030350000c0360000203b0000323c00008e410000fa4100001442000000ca9a3b
+    scrollPos: {x: 0, y: 449}
+    m_SelectedIDs: 8c310000
+    m_LastClickedID: 12684
+    m_ExpandedIDs: 000000009c2d0000ae300000b0300000ec30000042320000c6360000da370000503d0000263f0000403f000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -613,7 +614,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000002a3200002e35000030350000c0360000203b0000323c00008e410000fa41000014420000
+    m_ExpandedIDs: 000000009c2d0000ae300000b030000042320000c6360000da370000503d0000263f0000403f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
