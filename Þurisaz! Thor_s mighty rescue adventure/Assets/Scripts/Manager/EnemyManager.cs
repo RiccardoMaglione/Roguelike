@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
+
     #region Variables
     public GameObject Hole;
 
@@ -76,6 +77,20 @@ public class EnemyManager : MonoBehaviour
 
     #endregion
     #endregion
+
+
+    public static int WowFound = 0;
+    public static int ValravnFound = 0;
+    public static int OdinEyeFound = 0;
+    public static int GreenFound = 0;
+    public static int YellowFound = 0;
+    public static int RedFound = 0;
+    public static int BlueFound = 0;
+    public static int GullinburstiFound = 0;
+    public static int DraugrFound = 0;
+    public static int GammurFound = 0;
+    public static int LokiFound = 0;
+
     private void OnTriggerEnter(Collider other)
     {
 
