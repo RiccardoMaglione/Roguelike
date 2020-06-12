@@ -272,6 +272,7 @@ public class EnemyManager : MonoBehaviour
                 rune.GetComponent<RuneWow>().enabled = false;
                 GameObject shadow1 = Instantiate(shadow, new Vector3(transform.position.x, 0.1f, transform.position.z), Quaternion.identity);
                 shadow1.transform.parent = rune.transform;
+                WowFound = 1;
             }
             #endregion
             #region Valvran
@@ -291,6 +292,7 @@ public class EnemyManager : MonoBehaviour
                 rune.GetComponent<RuneValravn>().enabled = false;
                 GameObject shadow1 = Instantiate(shadow, new Vector3(transform.position.x, 0.1f, transform.position.z), Quaternion.identity);
                 shadow1.transform.parent = rune.transform;
+                ValravnFound = 1;
             }
             #endregion
             #region Odin's Eye
@@ -301,6 +303,7 @@ public class EnemyManager : MonoBehaviour
                 rune.GetComponent<RuneEye>().enabled = false;
                 GameObject shadow1 = Instantiate(shadow, new Vector3(transform.position.x, 0.1f, transform.position.z), Quaternion.identity);
                 shadow1.transform.parent = rune.transform;
+                OdinEyeFound = 1;
             }
             #endregion
             #region Yggdrasil Deer
@@ -311,6 +314,7 @@ public class EnemyManager : MonoBehaviour
                 rune.GetComponent<RuneBlue>().enabled = false;
                 GameObject shadow1 = Instantiate(shadow, new Vector3(transform.position.x, 0.1f, transform.position.z), Quaternion.identity);
                 shadow1.transform.parent = rune.transform;
+                BlueFound = 1;
             }
             if (this.gameObject.name == "DeerGreen1")
             {
@@ -319,6 +323,7 @@ public class EnemyManager : MonoBehaviour
                 rune.GetComponent<RuneGreen>().enabled = false;
                 GameObject shadow1 = Instantiate(shadow, new Vector3(transform.position.x, 0.1f, transform.position.z), Quaternion.identity);
                 shadow1.transform.parent = rune.transform;
+                GreenFound = 1;
             }
             if (this.gameObject.name == "DeerYellow1")
             {
@@ -327,6 +332,7 @@ public class EnemyManager : MonoBehaviour
                 rune.GetComponent<RuneYellow>().enabled = false;
                 GameObject shadow1 = Instantiate(shadow, new Vector3(transform.position.x, 0.1f, transform.position.z), Quaternion.identity);
                 shadow1.transform.parent = rune.transform;
+                YellowFound = 1;
             }
             if (this.gameObject.name == "DeerRed1")
             {
@@ -335,6 +341,7 @@ public class EnemyManager : MonoBehaviour
                 rune.GetComponent<RuneOrange>().enabled = false;
                 GameObject shadow1 = Instantiate(shadow, new Vector3(transform.position.x, 0.1f, transform.position.z), Quaternion.identity);
                 shadow1.transform.parent = rune.transform;
+                RedFound = 1;
             }
             #endregion
             #region Gullinbursti
@@ -389,6 +396,7 @@ public class EnemyManager : MonoBehaviour
             #region Gammur
             if (this.gameObject.name == "GammurBoss")
             {
+                GammurFound = 1;
                 Destroy(BossContainer);
                 Hole.SetActive(true);
 
