@@ -89,6 +89,12 @@ public class PlayerManager : MonoBehaviour
     static public int EnemyTriggerA = 1;
 
 
+    static public int ObstacleW = 1;
+    static public int ObstacleS = 1;
+    static public int ObstacleD = 1;
+    static public int ObstacleA = 1;
+
+
     public static int Look = 1;
 
 
@@ -172,7 +178,7 @@ public class PlayerManager : MonoBehaviour
             }
         }
         #endregion
-    #region Trigger for Attack Valravn
+        #region Trigger for Attack Valravn
     if (other.gameObject.name == "WallWFinale")
     {
         endpos = new Vector3((int)transform.position.x, transform.position.y, (int)other.transform.position.z - 1);
@@ -314,6 +320,53 @@ public class PlayerManager : MonoBehaviour
         }
         #endregion
 
+        #region Detect Obstacle
+        RaycastHit hitOb;
+        if (Physics.Raycast(transform.position, transform.right * 1.5f, out hitOb, 1))
+        {
+            Debug.DrawRay(transform.position, transform.right * 1, Color.green);
+            if (hitOb.collider)
+            {
+                if (hitOb.collider.gameObject.tag == "Obstacle")
+                {
+                    if (transform.right == Vector3.forward)
+                    {
+                        Debug.Log("Valore Enemy trigger davanti" + ObstacleW + ObstacleD + ObstacleS + ObstacleA);
+                        ObstacleW = 0;
+                    }
+                    if (transform.right == Vector3.back)
+                    {
+                        Debug.Log("Valore Enemy trigger dietro" + ObstacleW + ObstacleD + ObstacleS + ObstacleA);
+                        ObstacleS = 0;
+                    }
+                    if (transform.right == Vector3.right)
+                    {
+                        Debug.Log("Valore Enemy trigger destra" + ObstacleW + ObstacleD + ObstacleS + ObstacleA);
+                        ObstacleD = 0;
+                    }
+                    if (transform.right == Vector3.left)
+                    {
+                        Debug.Log("Valore Enemy trigger sinistra" + ObstacleW + ObstacleD + ObstacleS + ObstacleA);
+                        ObstacleA = 0;
+                    }
+
+                    Debug.Log("Valore Enemy trigger " + ObstacleW + ObstacleD + ObstacleS + ObstacleA);
+                    Debug.Log("Non mi fa passare");
+                }
+            }
+        }
+        else
+        {
+            ObstacleW = 1;
+            ObstacleS = 1;
+            ObstacleD = 1;
+            ObstacleA = 1;
+            Debug.Log("Valore Enemy trigger " + ObstacleW + ObstacleD + ObstacleS + ObstacleA);
+            Debug.Log("Fammi Passare");
+        }
+        #endregion
+
+
         #region Update Health
         if (Input.GetKeyDown(KeyCode.G) && isDebugMode == false)
         {
@@ -386,7 +439,7 @@ public class PlayerManager : MonoBehaviour
             {
                   moving = true;
                   speed += (acceleration - speed * friction) * Time.deltaTime * -Mathf.Abs(v);
-                  endpos = new Vector3((int)transform.position.x, transform.position.y, (int)transform.position.z) + Vector3.forward * WallTrigger.WallW * EnemyTriggerW;
+                  endpos = new Vector3((int)transform.position.x, transform.position.y, (int)transform.position.z) + Vector3.forward * WallTrigger.WallW * EnemyTriggerW * ObstacleW;
             }
         }
         #endregion
@@ -401,7 +454,7 @@ public class PlayerManager : MonoBehaviour
              {
                  moving = true;
                  speed += (acceleration - speed * friction) * Time.deltaTime * -Mathf.Abs(v);
-                 endpos = new Vector3((int)transform.position.x, transform.position.y, (int)transform.position.z) + Vector3.back * WallTrigger.WallS * EnemyTriggerS;;
+                 endpos = new Vector3((int)transform.position.x, transform.position.y, (int)transform.position.z) + Vector3.back * WallTrigger.WallS * EnemyTriggerS * ObstacleS;;
              }
         }
         #endregion
@@ -416,7 +469,7 @@ public class PlayerManager : MonoBehaviour
              {
                  moving = true;
                  speed += (acceleration - speed * friction) * Time.deltaTime * -Mathf.Abs(h);
-                 endpos = new Vector3((int)transform.position.x, transform.position.y, (int)transform.position.z) + Vector3.left * WallTrigger.WallA * EnemyTriggerA;
+                 endpos = new Vector3((int)transform.position.x, transform.position.y, (int)transform.position.z) + Vector3.left * WallTrigger.WallA * EnemyTriggerA * ObstacleA;
              }
         }
         #endregion
@@ -431,7 +484,7 @@ public class PlayerManager : MonoBehaviour
             {
                 moving = true;
                 speed += (acceleration - speed * friction) * Time.deltaTime * -Mathf.Abs(h);
-                endpos = new Vector3((int)transform.position.x, transform.position.y, (int)transform.position.z) + Vector3.right * WallTrigger.WallD * EnemyTriggerD;
+                endpos = new Vector3((int)transform.position.x, transform.position.y, (int)transform.position.z) + Vector3.right * WallTrigger.WallD * EnemyTriggerD * ObstacleD;
             }
         }
         #endregion
