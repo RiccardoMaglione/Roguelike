@@ -22488,6 +22488,7 @@ MonoBehaviour:
   RuneDraugrTexture:
   - {fileID: 2800000, guid: be10a27382bc6554288f1bf466d98a11, type: 3}
   - {fileID: 2800000, guid: 2914b63110185dd44bc71011c4da7c8a, type: 3}
+  AlphaTexture: {fileID: 2800000, guid: b144391da3ea85f42aa3ec6bb4e4709c, type: 3}
 --- !u!114 &837119558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45493,21 +45494,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 5653747700367265993, guid: d9f492873a47b53489e7162330e94cc7,
-        type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5653747700367265993, guid: d9f492873a47b53489e7162330e94cc7,
-        type: 3}
-      propertyPath: m_Materials.Array.data[1]
-      value: 
-      objectReference: {fileID: 2100000, guid: 08aaf8a4419bad845ad06d7e77137bd6, type: 2}
-    - target: {fileID: 5653747700367265993, guid: d9f492873a47b53489e7162330e94cc7,
-        type: 3}
-      propertyPath: m_Materials.Array.data[2]
-      value: 
-      objectReference: {fileID: 2100000, guid: 1f32bd57b31125b41a34551ad6683ba4, type: 2}
     - target: {fileID: -4216859302048453862, guid: d9f492873a47b53489e7162330e94cc7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -45578,6 +45564,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5653747700367265993, guid: d9f492873a47b53489e7162330e94cc7,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5653747700367265993, guid: d9f492873a47b53489e7162330e94cc7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 08aaf8a4419bad845ad06d7e77137bd6, type: 2}
+    - target: {fileID: 5653747700367265993, guid: d9f492873a47b53489e7162330e94cc7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1f32bd57b31125b41a34551ad6683ba4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9f492873a47b53489e7162330e94cc7, type: 3}
 --- !u!23 &1632064722 stripped

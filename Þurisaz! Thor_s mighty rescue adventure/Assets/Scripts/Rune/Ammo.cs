@@ -127,7 +127,7 @@ public class Ammo : MonoBehaviour
 
     #endregion
 
-
+    public Texture AlphaTexture;
 
     Scene CurrentScene;
     private void Start()
@@ -145,8 +145,8 @@ public class Ammo : MonoBehaviour
             NumAmmoV0.gameObject.SetActive(false);
             NumAmmoV1.gameObject.SetActive(false);
 
-            //SlotRuneOne = null;
-            //SlotRuneTwo = null;
+            SlotRuneOne.texture = AlphaTexture;
+            SlotRuneTwo.texture = AlphaTexture;
             //RuneRawImageWilloWisp0 = GameObject.Find("RuneWillOWispRawImage0").GetComponent<RawImage>();
             //RuneRawImageWilloWisp1 = GameObject.Find("RuneWillOWispRawImage1").GetComponent<RawImage>();
             //RuneRawImageValvran0 = GameObject.Find("RuneValvranRawImage0").GetComponent<RawImage>();
@@ -626,11 +626,11 @@ public class Ammo : MonoBehaviour
                     //RuneRawImageCooldownWilloWisp0.enabled = false;
                     if(InventorySystem.tempIImageWow == 0)
                     {
-                        SlotRuneOne.texture = null;
+                        SlotRuneOne.texture = AlphaTexture;
                     }
                     if (InventorySystem.tempIImageWow == 1)
                     {
-                        SlotRuneTwo.texture = null;
+                        SlotRuneTwo.texture = AlphaTexture;
                     }
                     NumAmmoW0.gameObject.SetActive(false);
                     //RuneRawImageWilloWisp1.enabled = false;
@@ -646,11 +646,11 @@ public class Ammo : MonoBehaviour
                     //RuneRawImageCooldownWilloWisp0.enabled = false;
                     if (InventorySystem.tempIImageWow == 0)
                     {
-                        SlotRuneOne.texture = null;
+                        SlotRuneOne.texture = AlphaTexture;
                     }
                     if (InventorySystem.tempIImageWow == 1)
                     {
-                        SlotRuneTwo.texture = null;
+                        SlotRuneTwo.texture = AlphaTexture;
                     }
                     NumAmmoW0.gameObject.SetActive(false);
                     //RuneRawImageWilloWisp1.enabled = false;
@@ -671,11 +671,11 @@ public class Ammo : MonoBehaviour
                     //RuneRawImageCooldownValvran0.enabled = false;
                     if (InventorySystem.tempIImageValvran == 0)
                     {
-                        SlotRuneOne.texture = null;
+                        SlotRuneOne.texture = AlphaTexture;
                     }
                     if (InventorySystem.tempIImageValvran == 1)
                     {
-                        SlotRuneTwo.texture = null;
+                        SlotRuneTwo.texture = AlphaTexture;
                     }
 
                     NumAmmoV0.gameObject.SetActive(false);
@@ -691,11 +691,11 @@ public class Ammo : MonoBehaviour
                     //RuneRawImageCooldownValvran0.enabled = false;
                     if (InventorySystem.tempIImageValvran == 0)
                     {
-                        SlotRuneOne.texture = null;
+                        SlotRuneOne.texture = AlphaTexture;
                     }
                     if (InventorySystem.tempIImageValvran == 1)
                     {
-                        SlotRuneTwo.texture = null;
+                        SlotRuneTwo.texture = AlphaTexture;
                     }
                     NumAmmoV0.gameObject.SetActive(false);
                     //RuneRawImageValvran1.enabled = false;
@@ -714,11 +714,11 @@ public class Ammo : MonoBehaviour
                 isFirstRuneBlue = false;
                 if (InventorySystem.tempIImageBlue == 0)
                 {
-                    SlotRuneOne.texture = null;
+                    SlotRuneOne.texture = AlphaTexture;
                 }
                 if (InventorySystem.tempIImageBlue == 1)
                 {
-                    SlotRuneTwo.texture = null;
+                    SlotRuneTwo.texture = AlphaTexture;
                 }
                 NumAmmoBlue0.gameObject.SetActive(false);
                 NumAmmoBlue1.gameObject.SetActive(false);
@@ -735,11 +735,11 @@ public class Ammo : MonoBehaviour
                 isFirstRuneGreen = false;
                 if (InventorySystem.tempIImageGreen == 0)
                 {
-                    SlotRuneOne.texture = null;
+                    SlotRuneOne.texture = AlphaTexture;
                 }
                 if (InventorySystem.tempIImageGreen == 1)
                 {
-                    SlotRuneTwo.texture = null;
+                    SlotRuneTwo.texture = AlphaTexture;
                 }
                 NumAmmoGreen0.gameObject.SetActive(false);
                 NumAmmoGreen1.gameObject.SetActive(false);
@@ -756,11 +756,11 @@ public class Ammo : MonoBehaviour
                 isFirstRuneRed = false;
                 if (InventorySystem.tempIImageOrange == 0)
                 {
-                    SlotRuneOne.texture = null;
+                    SlotRuneOne.texture = AlphaTexture;
                 }
                 if (InventorySystem.tempIImageOrange == 1)
                 {
-                    SlotRuneTwo.texture = null;
+                    SlotRuneTwo.texture = AlphaTexture;
                 }
                 NumAmmoRed0.gameObject.SetActive(false);
                 NumAmmoRed1.gameObject.SetActive(false);
@@ -777,11 +777,11 @@ public class Ammo : MonoBehaviour
                 isFirstRuneYellow = false;
                 if (InventorySystem.tempIImageYellow == 0)
                 {
-                    SlotRuneOne.texture = null;
+                    SlotRuneOne.texture = AlphaTexture;
                 }
                 if (InventorySystem.tempIImageYellow == 1)
                 {
-                    SlotRuneTwo.texture = null;
+                    SlotRuneTwo.texture = AlphaTexture;
                 }
                 NumAmmoYellow0.gameObject.SetActive(false);
                 NumAmmoYellow1.gameObject.SetActive(false);
@@ -798,11 +798,11 @@ public class Ammo : MonoBehaviour
                 isFirstRuneEye = false;
                 if (InventorySystem.tempIImageEye == 0)
                 {
-                    SlotRuneOne.texture = null;
+                    SlotRuneOne.texture = AlphaTexture;
                 }
                 if (InventorySystem.tempIImageEye == 1)
                 {
-                    SlotRuneTwo.texture = null;
+                    SlotRuneTwo.texture = AlphaTexture;
                 }
                 NumAmmoEye0.gameObject.SetActive(false);
                 NumAmmoEye1.gameObject.SetActive(false);
@@ -819,11 +819,11 @@ public class Ammo : MonoBehaviour
                 isFirstRuneDarkElf = false;
                 if (InventorySystem.tempIImageDarkElf == 0)
                 {
-                    SlotRuneOne.texture = null;
+                    SlotRuneOne.texture = AlphaTexture;
                 }
                 if (InventorySystem.tempIImageDarkElf == 1)
                 {
-                    SlotRuneTwo.texture = null;
+                    SlotRuneTwo.texture = AlphaTexture;
                 }
                 NumAmmoDarkElf0.gameObject.SetActive(false);
                 NumAmmoDarkElf1.gameObject.SetActive(false);
@@ -840,11 +840,11 @@ public class Ammo : MonoBehaviour
                 isFirstRuneDraugr = false;
                 if (InventorySystem.tempIImageDraugr == 0)
                 {
-                    SlotRuneOne.texture = null;
+                    SlotRuneOne.texture = AlphaTexture;
                 }
                 if (InventorySystem.tempIImageDraugr == 1)
                 {
-                    SlotRuneTwo.texture = null;
+                    SlotRuneTwo.texture = AlphaTexture;
                 }
                 NumAmmoDraugr0.gameObject.SetActive(false);
                 NumAmmoDraugr1.gameObject.SetActive(false);
