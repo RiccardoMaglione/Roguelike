@@ -34188,6 +34188,8 @@ MonoBehaviour:
   NumSky: 5
   FireSkyBall: {fileID: 4925770564941002684, guid: b7e66cf33757f304cbe776042ed7bc98,
     type: 3}
+  NumClone: 3
+  Loki: {fileID: -927199367670048503, guid: 1d7093daace4a04429afdc2dd618be7c, type: 3}
 --- !u!1 &722428934
 GameObject:
   m_ObjectHideFlags: 0
@@ -58912,6 +58914,8 @@ MonoBehaviour:
   u: 0
   NumSky: 5
   FireSkyBall: {fileID: 0}
+  NumClone: 3
+  Loki: {fileID: 0}
 --- !u!1001 &1273829999
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -62066,21 +62070,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: 3D_Main_Character_Thor
       objectReference: {fileID: 0}
-    - target: {fileID: 5653747700367265993, guid: d9f492873a47b53489e7162330e94cc7,
-        type: 3}
-      propertyPath: m_Materials.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5653747700367265993, guid: d9f492873a47b53489e7162330e94cc7,
-        type: 3}
-      propertyPath: m_Materials.Array.data[1]
-      value: 
-      objectReference: {fileID: 2100000, guid: 08aaf8a4419bad845ad06d7e77137bd6, type: 2}
-    - target: {fileID: 5653747700367265993, guid: d9f492873a47b53489e7162330e94cc7,
-        type: 3}
-      propertyPath: m_Materials.Array.data[2]
-      value: 
-      objectReference: {fileID: 2100000, guid: 1f32bd57b31125b41a34551ad6683ba4, type: 2}
     - target: {fileID: -4216859302048453862, guid: d9f492873a47b53489e7162330e94cc7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -62151,6 +62140,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5653747700367265993, guid: d9f492873a47b53489e7162330e94cc7,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5653747700367265993, guid: d9f492873a47b53489e7162330e94cc7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 08aaf8a4419bad845ad06d7e77137bd6, type: 2}
+    - target: {fileID: 5653747700367265993, guid: d9f492873a47b53489e7162330e94cc7,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1f32bd57b31125b41a34551ad6683ba4, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9f492873a47b53489e7162330e94cc7, type: 3}
 --- !u!1 &1391620962

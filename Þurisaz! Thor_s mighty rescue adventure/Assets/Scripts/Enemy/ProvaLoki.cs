@@ -48,6 +48,10 @@ public class ProvaLoki : MonoBehaviour
     public int NumSky = 5;
     public GameObject FireSkyBall;
     bool isSky = false;
+
+    public int NumClone = 3;
+    public GameObject Loki;
+    bool isClone = false;
     public IEnumerator WowAttack()
     {
         //while (true)
@@ -86,6 +90,16 @@ public class ProvaLoki : MonoBehaviour
             Instantiate(FireSkyBall, new Vector3(Random.Range(-5, 5), 7, Random.Range(-5, 5)), Quaternion.identity);
         }
         isSky = true;
+    }
+
+    public void Clone()
+    {
+        for (int n = 0; n < NumClone; n++)
+        {
+            GameObject go = Instantiate(Loki, new Vector3(Random.Range(-5, 5), 0, Random.Range(-7, 7)), Quaternion.identity);
+            Destroy(go, 5);
+        }
+        isClone = true;
     }
 
 
@@ -256,8 +270,14 @@ public class ProvaLoki : MonoBehaviour
             }
             if(isSky == true)
             {
-                Is8 = true;
+                isClone = true;
                 isSky = false;
+                Clone();
+            }
+            if (isClone == true)
+            {
+                Is8 = true;
+                isClone = false;
             }
         }
     }
