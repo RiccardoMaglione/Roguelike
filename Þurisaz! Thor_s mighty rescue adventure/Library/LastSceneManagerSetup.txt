@@ -8,7 +8,7 @@ sceneSetups:
   isActive: 1
   isSubScene: 0
 - path: Assets/Scenes/ThirdLevel.unity
-  isLoaded: 0
+  isLoaded: 1
   isActive: 0
   isSubScene: 0
 - path: Assets/Scenes/GraphicsMenu.unity

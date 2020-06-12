@@ -11834,6 +11834,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: 3D_trap_lava_chasm 1 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4367673748123722200, guid: 2c017e72a6386ce478b3f8c1bf1db6b8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9081026840006426321, guid: 2c017e72a6386ce478b3f8c1bf1db6b8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 2c017e72a6386ce478b3f8c1bf1db6b8,
         type: 3}
       propertyPath: m_LocalPosition.x
