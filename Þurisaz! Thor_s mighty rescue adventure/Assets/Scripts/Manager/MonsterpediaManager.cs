@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MonsterpediaManager : MonoBehaviour
 {
+    #region Variables
+    #region ButtonPedia
     public GameObject ButtonWowPedia;
     public GameObject ButtonValravnPedia;
     public GameObject ButtonGammurPedia;
@@ -18,7 +20,41 @@ public class MonsterpediaManager : MonoBehaviour
     public GameObject ButtonDraugrPedia;
 
     public GameObject ButtonLokiPedia;
+    #endregion
+    #region QM
+    public GameObject WowQM;
+    public GameObject ValravnQM;
+    public GameObject GammurQM;
+    
+    public GameObject OdinQM;
+    public GameObject GreenQM;
+    public GameObject YellowQM;
+    public GameObject RedQM;
+    public GameObject BlueQM;
 
+    public GameObject GullinburstiQM;
+    public GameObject DraugrQM;
+
+    public GameObject LokiQM;
+    #endregion
+    #region Act
+    public GameObject WowAct;
+    public GameObject ValravnAct;
+    public GameObject GammurAct;
+
+    public GameObject OdinAct;
+    public GameObject GreenAct;
+    public GameObject YellowAct;
+    public GameObject RedAct;
+    public GameObject BlueAct;
+
+    public GameObject GullinburstiAct;
+    public GameObject DraugrAct;
+
+    public GameObject LokiAct;
+    #endregion
+    public MonsterpediaManager monsterManager;
+    #endregion
     private void Start()
     {
         ButtonWowPedia.SetActive(false);
@@ -97,7 +133,7 @@ public class MonsterpediaManager : MonoBehaviour
         ButtonDuraþrórPedia.SetActive(false);
         ButtonGullinburstiPedia.SetActive(false);
         ButtonDraugrPedia.SetActive(false);
-    }
+    }   //verde
     public void DvalinnPedia()
     {
         ButtonWowPedia.SetActive(false);
@@ -110,7 +146,7 @@ public class MonsterpediaManager : MonoBehaviour
         ButtonDuraþrórPedia.SetActive(false);
         ButtonGullinburstiPedia.SetActive(false);
         ButtonDraugrPedia.SetActive(false);
-    }
+    }   //giallo
     public void DuneyrrPedia()
     {
         ButtonWowPedia.SetActive(false);
@@ -123,7 +159,7 @@ public class MonsterpediaManager : MonoBehaviour
         ButtonDuraþrórPedia.SetActive(false);
         ButtonGullinburstiPedia.SetActive(false);
         ButtonDraugrPedia.SetActive(false);
-    }
+    }   //rosso
     public void DuraþrórPedia()
     {
         ButtonWowPedia.SetActive(false);
@@ -136,7 +172,7 @@ public class MonsterpediaManager : MonoBehaviour
         ButtonDuraþrórPedia.SetActive(true);
         ButtonGullinburstiPedia.SetActive(false);
         ButtonDraugrPedia.SetActive(false);
-    }
+    }   //blu
 
     public void GullinburstiPedia()
     {

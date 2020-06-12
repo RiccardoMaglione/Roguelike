@@ -525,7 +525,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &42167900
 RectTransform:
   m_ObjectHideFlags: 0
@@ -897,7 +897,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &95509762
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1400,7 +1400,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &203877346
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3374,7 +3374,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &618443724
 Transform:
   m_ObjectHideFlags: 0
@@ -3531,7 +3531,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &622488772
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4961,7 +4961,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &977797370
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5348,7 +5348,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1115642464
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5510,7 +5510,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1122412033
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6703,7 +6703,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1540889397
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7272,7 +7272,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1679963844
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7927,7 +7927,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1842795519
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8484,7 +8484,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1964045591
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8843,7 +8843,30 @@ MonoBehaviour:
   "ButtonDura\xFEr\xF3rPedia": {fileID: 1797519743}
   ButtonGullinburstiPedia: {fileID: 1988495770}
   ButtonDraugrPedia: {fileID: 447292537}
-  ButtonLokiPedia: {fileID: 0}
+  ButtonLokiPedia: {fileID: 618443723}
+  WowQM: {fileID: 977797369}
+  ValravnQM: {fileID: 1115642463}
+  GammurQM: {fileID: 95509761}
+  OdinQM: {fileID: 203877345}
+  GreenQM: {fileID: 1122412032}
+  YellowQM: {fileID: 1679963843}
+  RedQM: {fileID: 1842795518}
+  BlueQM: {fileID: 1540889396}
+  GullinburstiQM: {fileID: 2123024857}
+  DraugrQM: {fileID: 622488771}
+  LokiQM: {fileID: 42167899}
+  WowAct: {fileID: 526949845}
+  ValravnAct: {fileID: 59497553}
+  GammurAct: {fileID: 157481990}
+  OdinAct: {fileID: 1547203226}
+  GreenAct: {fileID: 650958643}
+  YellowAct: {fileID: 221742391}
+  RedAct: {fileID: 1106684000}
+  BlueAct: {fileID: 1953577959}
+  GullinburstiAct: {fileID: 1364583106}
+  DraugrAct: {fileID: 456747706}
+  LokiAct: {fileID: 98485876}
+  monsterManager: {fileID: 0}
 --- !u!4 &2022214926
 Transform:
   m_ObjectHideFlags: 0
@@ -9396,7 +9419,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2123024858
 RectTransform:
   m_ObjectHideFlags: 0
