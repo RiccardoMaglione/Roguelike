@@ -116,6 +116,8 @@ MonoBehaviour:
   GraphicsRuneDeerGreen: {fileID: 1727584947889212355}
   GraphicsRuneDeerYellow: {fileID: 0}
   GraphicsRuneDeerOrange: {fileID: 0}
+  GraphicsRuneDarkElf: {fileID: 0}
+  GraphicsRuneDraugr: {fileID: 0}
 --- !u!114 &4446473734042830980
 MonoBehaviour:
   m_ObjectHideFlags: 0

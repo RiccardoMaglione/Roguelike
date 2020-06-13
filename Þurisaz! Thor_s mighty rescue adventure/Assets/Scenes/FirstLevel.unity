@@ -25191,7 +25191,7 @@ MonoBehaviour:
   DestraGammurCollider: {fileID: 0}
   SinistraGammurCollider: {fileID: 0}
   health: 3
-  shadow: {fileID: 0}
+  shadow: {fileID: 9020515508136278214, guid: ccf500aef5b4af14c9533a4c6b357cb9, type: 3}
   isBoss: 0
   currentHealth: 0
   healthBar: {fileID: 0}
@@ -27475,7 +27475,7 @@ MonoBehaviour:
   DestraGammurCollider: {fileID: 0}
   SinistraGammurCollider: {fileID: 0}
   health: 3
-  shadow: {fileID: 0}
+  shadow: {fileID: 9020515508136278214, guid: ccf500aef5b4af14c9533a4c6b357cb9, type: 3}
   isBoss: 0
   currentHealth: 0
   healthBar: {fileID: 0}
@@ -53965,7 +53965,8 @@ MonoBehaviour:
   MaterialChange: {fileID: 2100000, guid: 23dc89bb3aabe25478923959a7c7762a, type: 2}
   GraphicsEnemy: {fileID: 5086997797889947961}
   GraphicsBase: {fileID: 7718390322621512180}
-  BossContainer: {fileID: 0}
+  BossContainer: {fileID: 9020515508136278214, guid: ccf500aef5b4af14c9533a4c6b357cb9,
+    type: 3}
   DoorCollider: {fileID: 1344060790}
   PrecedentCollider: {fileID: 1372375166}
   AltoStatuaCollider: {fileID: 557544702}
@@ -55735,7 +55736,7 @@ MonoBehaviour:
   DestraGammurCollider: {fileID: 0}
   SinistraGammurCollider: {fileID: 0}
   health: 3
-  shadow: {fileID: 0}
+  shadow: {fileID: 9020515508136278214, guid: ccf500aef5b4af14c9533a4c6b357cb9, type: 3}
   isBoss: 0
   currentHealth: 0
   healthBar: {fileID: 0}

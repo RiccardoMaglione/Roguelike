@@ -116,6 +116,8 @@ MonoBehaviour:
   GraphicsRuneDeerGreen: {fileID: 0}
   GraphicsRuneDeerYellow: {fileID: 0}
   GraphicsRuneDeerOrange: {fileID: 1357921105958018715}
+  GraphicsRuneDarkElf: {fileID: 0}
+  GraphicsRuneDraugr: {fileID: 0}
 --- !u!114 &-1510915587235661865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,7 +133,7 @@ MonoBehaviour:
   Fireball: {fileID: 6706214668721462590, guid: 732e281ac9490be4a832d1812e848fc2,
     type: 3}
   PlayerContainer: {fileID: 0}
-  shadow: {fileID: 0}
+  shadow: {fileID: 9020515508136278214, guid: ccf500aef5b4af14c9533a4c6b357cb9, type: 3}
   HeightAttack: 5
   CooldownAttack: 3
   CooldownFlash: 0.5
