@@ -75,16 +75,16 @@ public class RuneToPlayer : MonoBehaviour
                         InventorySystem.isFirsPresentRuneValvran = true;
                     }
                 }
-                if (InventorySystem.isFirsPresentRuneProva == false)
-                {
-                    if (gameObject.tag == "RuneProva")
-                    {
-                        print("Questa è il numero delle rune prese " + NumberRuneEnemyCatch);
-                        transform.parent = Player.transform;
-                        NumberRuneEnemyCatch++;
-                        InventorySystem.isFirsPresentRuneProva = true;
-                    }
-                }
+                //if (InventorySystem.isFirsPresentRuneProva == false)
+                //{
+                //    if (gameObject.tag == "RuneProva")
+                //    {
+                //        print("Questa è il numero delle rune prese " + NumberRuneEnemyCatch);
+                //        transform.parent = Player.transform;
+                //        NumberRuneEnemyCatch++;
+                //        InventorySystem.isFirsPresentRuneProva = true;
+                //    }
+                //}
 
                 #region Inventario rune nuove
                 if (InventorySystem.isFirsPresentRuneEye == false)
@@ -177,8 +177,10 @@ public class RuneToPlayer : MonoBehaviour
             #region Rune Wow
             if (gameObject.tag == "RuneWow" && InventorySystem.isFirsPresentRuneWow == true)
             {
-                if(isTimeToWow == false)
+                Debug.Log("Almeno qua?");
+                if (isTimeToWow == false)
                 {
+                    Debug.Log("Entro qui dentro");
                     transform.parent = Player.transform;
                     transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
                     GetComponent<RuneWow>().enabled = true;
@@ -335,5 +337,10 @@ public class RuneToPlayer : MonoBehaviour
             #endregion
 
         }
+    }
+
+    private void Update()
+    {
+        Debug.Log("saddddddddddddddddddddddddd "+NumberRuneEnemyCatch);
     }
 }

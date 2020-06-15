@@ -96,7 +96,7 @@ public class GameManager : MonoBehaviour
         InventorySystem.i = 0;
         InventorySystem.j = 0;
         InventorySystem.isFirsPresentRuneGammur = false;
-        InventorySystem.isFirsPresentRuneProva = false;
+        //InventorySystem.isFirsPresentRuneProva = false;
         InventorySystem.isFirsPresentRuneValvran = false;
         InventorySystem.isFirsPresentRuneWow = false;
 
@@ -147,6 +147,8 @@ public class GameManager : MonoBehaviour
         Ammo.AmmoEye = 0;
         Ammo.AmmoDarkElf = 0;
         Ammo.AmmoDraugr = 0;
+
+        RuneToPlayer.NumberRuneEnemyCatch = 0;
         #endregion
     }
     public void GoToLoading()

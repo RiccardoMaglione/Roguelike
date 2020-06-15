@@ -21,7 +21,7 @@ public class RuneValravn : MonoBehaviour
     bool move = false;
     float dist;
 
-
+    public float CooldownAttack = 0.70f;
 
 
 
@@ -45,11 +45,11 @@ public class RuneValravn : MonoBehaviour
                 SpellReady = false;                                     //Setto speel ready a falso
                 //Ammo.RuneRawImageValvran0.enabled = false;              //Setto a falso la componente raw image della runa nell'ui
                 //Ammo.RuneRawImageCooldownValvran0.enabled = true;       //Setto a vero la componente raw image della runa cooldown nell'ui
-                player[0].GetComponent<Ammo>().SlotRuneOne.texture = player[0].GetComponent<Ammo>().RuneValravnTexture[1];
+                //player[0].GetComponent<Ammo>().SlotRuneOne.texture = player[0].GetComponent<Ammo>().RuneValravnTexture[1];
                 StartCoroutine(cooldown());                             //Faccio partire la coroutine
                 //Ammo.RuneRawImageCooldownValvran0.enabled = false;      //Setto a falso la componente raw image della runa cooldown nell'ui
                 //Ammo.RuneRawImageValvran0.enabled = true;               //Setto a vero la componente raw image della runa nell'ui
-                player[0].GetComponent<Ammo>().SlotRuneOne.texture = player[0].GetComponent<Ammo>().RuneValravnTexture[0];
+                //player[0].GetComponent<Ammo>().SlotRuneOne.texture = player[0].GetComponent<Ammo>().RuneValravnTexture[0];
             }
         }
         if (InventorySystem.tempIValvran == 1)  //Se la variabile temporanea i è uguale a 1
@@ -62,11 +62,11 @@ public class RuneValravn : MonoBehaviour
                 SpellReady = false;                                     //Setto speel ready a falso
                 //Ammo.RuneRawImageValvran1.enabled = false;              //Setto a falso la componente raw image della runa nell'ui
                 //Ammo.RuneRawImageCooldownValvran1.enabled = true;       //Setto a vero la componente raw image della runa cooldown nell'ui
-                player[0].GetComponent<Ammo>().SlotRuneTwo.texture = player[0].GetComponent<Ammo>().RuneValravnTexture[1];
+                //player[0].GetComponent<Ammo>().SlotRuneTwo.texture = player[0].GetComponent<Ammo>().RuneValravnTexture[1];
                 StartCoroutine(cooldown());                             //Faccio partire la coroutine
                 //Ammo.RuneRawImageCooldownValvran1.enabled = false;      //Setto a falso la componente raw image della runa cooldown nell'ui
                 //Ammo.RuneRawImageValvran1.enabled = true;               //Setto a vero la componente raw image della runa nell'ui
-                player[0].GetComponent<Ammo>().SlotRuneTwo.texture = player[0].GetComponent<Ammo>().RuneValravnTexture[0];
+                //player[0].GetComponent<Ammo>().SlotRuneTwo.texture = player[0].GetComponent<Ammo>().RuneValravnTexture[0];
             }
         }
     }
@@ -125,7 +125,24 @@ public class RuneValravn : MonoBehaviour
 
     public IEnumerator cooldown()
     {
-        yield return new WaitForSeconds(0.70f);     //Aspetto 0.70f secondi
-        SpellReady = true;                          //Setto spell ready uguale a vero
+        if (InventorySystem.tempIValvran == 0)
+        {
+            player[0].GetComponent<Ammo>().SlotRuneOne.texture = player[0].GetComponent<Ammo>().RuneValravnTexture[1];
+            Debug.Log("Entra qui dentro 0");
+            yield return new WaitForSeconds(CooldownAttack);
+            SpellReady = true;
+            player[0].GetComponent<Ammo>().SlotRuneOne.texture = player[0].GetComponent<Ammo>().RuneValravnTexture[0];
+        }
+        if (InventorySystem.tempIValvran == 1)
+        {
+            Debug.Log("Entra qui dentro 1");
+            player[0].GetComponent<Ammo>().SlotRuneTwo.texture = player[0].GetComponent<Ammo>().RuneValravnTexture[1];
+            yield return new WaitForSeconds(CooldownAttack);
+            SpellReady = true;
+            player[0].GetComponent<Ammo>().SlotRuneTwo.texture = player[0].GetComponent<Ammo>().RuneValravnTexture[0];
+        }
+
+        //yield return new WaitForSeconds(0.70f);     //Aspetto 0.70f secondi
+        //SpellReady = true;                          //Setto spell ready uguale a vero
     }
 }

@@ -133,5 +133,5 @@ MonoBehaviour:
   Spine: {fileID: 3626778206258664521, guid: fdf192afd5556d843966b71ba94c677a, type: 3}
   PlayerContainer: {fileID: 0}
   shadow: {fileID: 0}
-  CooldownAttack: 6
+  CooldownAttack: 3
   CooldownFlash: 0.5

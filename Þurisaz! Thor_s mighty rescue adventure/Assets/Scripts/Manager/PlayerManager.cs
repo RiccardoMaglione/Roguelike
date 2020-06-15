@@ -106,7 +106,7 @@ public class PlayerManager : MonoBehaviour
 
     public static bool ColpitoPlayer = false;
 
-
+    static public bool CanMove = true;
     #region Variabili Movemente Definito
 
     [Header("Nuovo Movimento")]
@@ -117,6 +117,11 @@ public class PlayerManager : MonoBehaviour
     //public float TempoPrimaDiAndareD = 0f;
     //public bool ResetT = false;
 
+
+    static public int DirectionW = 0;
+    static public int DirectionA = 0;
+    static public int DirectionS = 0;
+    static public int DirectionD = 0;
 
     #endregion
 
@@ -421,20 +426,26 @@ public class PlayerManager : MonoBehaviour
         #endregion
 
         #region Update Movement
-        float v = Input.GetAxis("Vertical");
-        float h = Input.GetAxis("Horizontal");
-        if (moving && (transform.position == endpos))
+        if(CanMove == true)
         {
-            moving = false;
-            speed = speedInitial;
-        }
-        #region Movement W
+            float v = Input.GetAxis("Vertical");
+            float h = Input.GetAxis("Horizontal");
+            if (moving && (transform.position == endpos))
+            {
+                moving = false;
+                speed = speedInitial;
+            }
+            #region Movement W
         if (!moving && (Input.GetKey(ControlsManager.CM.forward) || Input.GetAxis("Vertical") > 0))      //w
         {
             transform.rotation = Quaternion.LookRotation(Vector3.left, Vector3.up); //guarda w
             timerW += Time.deltaTime;
             timerS = 0; timerA = 0; timerD = 0;
             Look = 1;
+            DirectionA = 0;
+            DirectionS = 0;
+            DirectionD = 0;
+            DirectionW = 1;
             if (timerW > Delay)
             {
                   moving = true;
@@ -443,14 +454,18 @@ public class PlayerManager : MonoBehaviour
             }
         }
         #endregion
-        #region Movement S
+            #region Movement S
         if (!moving && (Input.GetKey(ControlsManager.CM.backward) || Input.GetAxis("Vertical") < 0))     //s
         {
              transform.rotation = Quaternion.LookRotation(Vector3.right, Vector3.up); //guarda s
              timerS += Time.deltaTime;
              timerW = 0; timerA = 0; timerD = 0;
              Look = 2;
-             if (timerS > Delay)
+             DirectionW = 0;
+             DirectionA = 0;
+             DirectionS = 1;
+             DirectionD = 0;
+            if (timerS > Delay)
              {
                  moving = true;
                  speed += (acceleration - speed * friction) * Time.deltaTime * -Mathf.Abs(v);
@@ -458,14 +473,18 @@ public class PlayerManager : MonoBehaviour
              }
         }
         #endregion
-        #region Movement A
+            #region Movement A
         if (!moving && (Input.GetKey(ControlsManager.CM.left) || Input.GetAxis("Horizontal") < 0))     //a
         {
              transform.rotation = Quaternion.LookRotation(Vector3.back, Vector3.up); //guarda a
              timerA += Time.deltaTime;
              timerW = 0; timerS = 0; timerD = 0;
              Look = 3;
-             if (timerA > Delay)
+             DirectionW = 0;
+             DirectionA = 1;
+             DirectionS = 0;
+             DirectionD = 0;
+            if (timerA > Delay)
              {
                  moving = true;
                  speed += (acceleration - speed * friction) * Time.deltaTime * -Mathf.Abs(h);
@@ -473,13 +492,17 @@ public class PlayerManager : MonoBehaviour
              }
         }
         #endregion
-        #region Movement D
+            #region Movement D
         if (!moving && (Input.GetKey(ControlsManager.CM.right) || Input.GetAxis("Horizontal") > 0))  //d
         {
             transform.rotation = Quaternion.LookRotation(Vector3.forward, Vector3.up); //guarda d
             timerD += Time.deltaTime;
             timerW = 0; timerS = 0; timerA = 0;
             Look = 4;
+            DirectionW = 0;
+            DirectionS = 0;
+            DirectionA = 0;
+            DirectionD = 1;
             if (timerD > Delay)
             {
                 moving = true;
@@ -488,8 +511,9 @@ public class PlayerManager : MonoBehaviour
             }
         }
         #endregion
-        transform.position = Vector3.MoveTowards(transform.position, endpos, Time.deltaTime * speed);
-        endpos = new Vector3((int)endpos.x, endpos.y, (int)endpos.z);
+            transform.position = Vector3.MoveTowards(transform.position, endpos, Time.deltaTime * speed);
+            endpos = new Vector3((int)endpos.x, endpos.y, (int)endpos.z);
+        }
         #endregion
     }
 

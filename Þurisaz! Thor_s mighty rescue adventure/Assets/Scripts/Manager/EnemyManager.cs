@@ -355,14 +355,15 @@ public class EnemyManager : MonoBehaviour
             //}
             #endregion
             #region Darkelf
-            //if (this.gameObject.name == "DarkElf1" || this.gameObject.name == "DarkElf2" || this.gameObject.name == "DarkElf3")
-            //{
-            //    Quaternion rot = new Quaternion(0, 90, 0, 0);
-            //    GameObject rune = Instantiate(RuneReference, transform.position, rot);
-            //    rune.GetComponent<RuneDarkElf>().enabled = false;
-            //GameObject shadow1 = Instantiate(shadow, new Vector3(transform.position.x, 0.1f, transform.position.z), Quaternion.identity);
-            //shadow1.transform.parent = rune.transform;
-            //}
+            if (this.gameObject.name == "DarkElf1" || this.gameObject.name == "DarkElf2" || this.gameObject.name == "DarkElf3")
+            {
+                Quaternion rot = new Quaternion(0, 90, 0, 0);
+                GameObject rune = Instantiate(RuneReference, transform.position, rot);
+                rune.GetComponent<RuneDarkElf>().enabled = false;
+                GameObject shadow1 = Instantiate(shadow, new Vector3(transform.position.x, 0.1f, transform.position.z), Quaternion.identity);
+                shadow1.transform.parent = rune.transform;
+                //DarkElfFound = 1;
+            }
             #endregion
             #region Draugr
             //if (this.gameObject.name == "Draugr1" || this.gameObject.name == "Draugr2" || this.gameObject.name == "Draugr3"|| this.gameObject.name == "Draugr4" || this.gameObject.name == "Draugr5")

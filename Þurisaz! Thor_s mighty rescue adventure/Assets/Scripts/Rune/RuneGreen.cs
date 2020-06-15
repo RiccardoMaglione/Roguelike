@@ -31,24 +31,26 @@ public class RuneGreen : MonoBehaviour
     void Update()
     {
 
-        if (InventorySystem.tempIWow == 0)
+        if (InventorySystem.tempIGreen == 0)
         {
             if ((Input.GetKeyDown(ControlsManager.CM.runeOne) || Input.GetKeyDown(KeyCode.JoystickButton2)) && SpellReady == true)
             {
+                PlayerManager.CanMove = false;
                 SpawnSpike();
-                Ammo.AmmoW--;
-                Ammo.NumAmmoW0.text = Ammo.AmmoW.ToString();
+                Ammo.AmmoGreen--;
+                Ammo.NumAmmoGreen0.text = Ammo.AmmoGreen.ToString();
                 SpellReady = false;
                 StartCoroutine(cooldown());
             }
         }
-        if (InventorySystem.tempIWow == 1)
+        if (InventorySystem.tempIGreen == 1)
         {
             if ((Input.GetKeyDown(ControlsManager.CM.runeTwo) || Input.GetKeyDown(KeyCode.JoystickButton1)) && SpellReady == true)
             {
+                PlayerManager.CanMove = false;
                 SpawnSpike();
-                Ammo.AmmoW--;
-                Ammo.NumAmmoW1.text = Ammo.AmmoW.ToString();
+                Ammo.AmmoGreen--;
+                Ammo.NumAmmoGreen1.text = Ammo.AmmoGreen.ToString();
                 SpellReady = false;
                 StartCoroutine(cooldown());
             }
@@ -71,7 +73,6 @@ public class RuneGreen : MonoBehaviour
                 Destroy(go, 3f);
             }
         }
-
     }
     #endregion
 
@@ -80,21 +81,27 @@ public class RuneGreen : MonoBehaviour
     #endregion
     public IEnumerator cooldown()
     {
-        if (InventorySystem.tempIWow == 0)
+        if (InventorySystem.tempIGreen == 0)
         {
             //Ammo.RuneRawImageWilloWisp0.enabled = false;
             //Ammo.RuneRawImageCooldownWilloWisp0.enabled = true;
+            PlayerContainer.GetComponent<Ammo>().SlotRuneOne.texture = PlayerContainer.GetComponent<Ammo>().RuneGreenTexture[1];
             yield return new WaitForSeconds(CooldownAttack);
+            PlayerManager.CanMove = true;
             SpellReady = true;
+            PlayerContainer.GetComponent<Ammo>().SlotRuneOne.texture = PlayerContainer.GetComponent<Ammo>().RuneGreenTexture[0];
             //Ammo.RuneRawImageCooldownWilloWisp0.enabled = false;
             //Ammo.RuneRawImageWilloWisp0.enabled = true;
         }
-        if (InventorySystem.tempIWow == 1)
+        if (InventorySystem.tempIGreen == 1)
         {
             //Ammo.RuneRawImageWilloWisp1.enabled = false;
             //Ammo.RuneRawImageCooldownWilloWisp1.enabled = true;
+            PlayerContainer.GetComponent<Ammo>().SlotRuneTwo.texture = PlayerContainer.GetComponent<Ammo>().RuneGreenTexture[1];
             yield return new WaitForSeconds(CooldownAttack);
+            PlayerManager.CanMove = true;
             SpellReady = true;
+            PlayerContainer.GetComponent<Ammo>().SlotRuneTwo.texture = PlayerContainer.GetComponent<Ammo>().RuneGreenTexture[0];
             //Ammo.RuneRawImageCooldownWilloWisp1.enabled = false;
             //Ammo.RuneRawImageWilloWisp1.enabled = true;
         }

@@ -24,13 +24,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7026262959804871937}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6860774001503270151}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!120 &8809882221543391232
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -244,6 +244,8 @@ MonoBehaviour:
   GraphicsRuneDeerGreen: {fileID: 0}
   GraphicsRuneDeerYellow: {fileID: 0}
   GraphicsRuneDeerOrange: {fileID: 0}
+  GraphicsRuneDarkElf: {fileID: 0}
+  GraphicsRuneDraugr: {fileID: 0}
 --- !u!114 &-8521907887866203398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,6 +258,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbd10cd1741270e4da301a13be583b8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player:
+  - {fileID: 0}
   a: {fileID: 8809882221543391232}
   laser: {fileID: 7026262959804871937}
   laserTime: 0.5
+  CooldownAttack: 6
