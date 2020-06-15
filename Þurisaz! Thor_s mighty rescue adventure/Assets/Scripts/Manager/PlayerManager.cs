@@ -440,7 +440,7 @@ public class PlayerManager : MonoBehaviour
         {
             transform.rotation = Quaternion.LookRotation(Vector3.left, Vector3.up); //guarda w
             timerW += Time.deltaTime;
-            timerS = 0; timerA = 0; timerD = 0;
+            //timerS = 0; timerA = 0; timerD = 0;
             Look = 1;
             DirectionA = 0;
             DirectionS = 0;
@@ -459,7 +459,7 @@ public class PlayerManager : MonoBehaviour
         {
              transform.rotation = Quaternion.LookRotation(Vector3.right, Vector3.up); //guarda s
              timerS += Time.deltaTime;
-             timerW = 0; timerA = 0; timerD = 0;
+             //timerW = 0; timerA = 0; timerD = 0;
              Look = 2;
              DirectionW = 0;
              DirectionA = 0;
@@ -478,7 +478,7 @@ public class PlayerManager : MonoBehaviour
         {
              transform.rotation = Quaternion.LookRotation(Vector3.back, Vector3.up); //guarda a
              timerA += Time.deltaTime;
-             timerW = 0; timerS = 0; timerD = 0;
+             //timerW = 0; timerS = 0; timerD = 0;
              Look = 3;
              DirectionW = 0;
              DirectionA = 1;
@@ -497,7 +497,7 @@ public class PlayerManager : MonoBehaviour
         {
             transform.rotation = Quaternion.LookRotation(Vector3.forward, Vector3.up); //guarda d
             timerD += Time.deltaTime;
-            timerW = 0; timerS = 0; timerA = 0;
+            //timerW = 0; timerS = 0; timerA = 0;
             Look = 4;
             DirectionW = 0;
             DirectionS = 0;
