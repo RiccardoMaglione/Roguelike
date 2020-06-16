@@ -394,6 +394,8 @@ public class InventorySystem : MonoBehaviour
                     Ammo.AmmoW += 10;
                     Ammo.NumAmmoW0.text = Ammo.AmmoW.ToString();
                     tempIImageWow = 0;
+                    InventorySlotsEnemy[0].GetComponent<RuneToPlayer>().Particle.SetActive(false);
+                    InventorySlotsEnemy[0].GetComponent<RuneToPlayer>().Shadow.SetActive(false);
                 }
                 if (other.gameObject.tag == "RuneValvran")
                 {
@@ -412,6 +414,8 @@ public class InventorySystem : MonoBehaviour
                     Ammo.AmmoV += 10;
                     Ammo.NumAmmoV0.text = Ammo.AmmoV.ToString();
                     tempIImageValvran = 0;
+                    InventorySlotsEnemy[0].GetComponent<RuneToPlayer>().Particle.SetActive(false);
+                    InventorySlotsEnemy[0].GetComponent<RuneToPlayer>().Shadow.SetActive(false);
                 }
                 if (other.gameObject.tag == "RuneEye")
                 {
@@ -430,6 +434,8 @@ public class InventorySystem : MonoBehaviour
                     Ammo.AmmoEye += 10;
                     Ammo.NumAmmoEye0.text = Ammo.AmmoEye.ToString();
                     tempIImageEye = 0;
+                    InventorySlotsEnemy[0].GetComponent<RuneToPlayer>().Particle.SetActive(false);
+                    InventorySlotsEnemy[0].GetComponent<RuneToPlayer>().Shadow.SetActive(false);
                 }
                 if (other.gameObject.tag == "RuneBlue")
                 {
@@ -457,6 +463,8 @@ public class InventorySystem : MonoBehaviour
                     Ammo.AmmoGreen += 10;
                     Ammo.NumAmmoGreen0.text = Ammo.AmmoGreen.ToString();
                     tempIImageGreen = 0;
+                    InventorySlotsEnemy[0].GetComponent<RuneToPlayer>().Particle.SetActive(false);
+                    InventorySlotsEnemy[0].GetComponent<RuneToPlayer>().Shadow.SetActive(false);
                 }
                 if (other.gameObject.tag == "RuneYellow")
                 {
@@ -494,6 +502,8 @@ public class InventorySystem : MonoBehaviour
                     Ammo.AmmoDarkElf += 10;
                     Ammo.NumAmmoDarkElf0.text = Ammo.AmmoDarkElf.ToString();
                     tempIImageDarkElf = 0;
+                    InventorySlotsEnemy[0].GetComponent<RuneToPlayer>().Particle.SetActive(false);
+                    InventorySlotsEnemy[0].GetComponent<RuneToPlayer>().Shadow.SetActive(false);
                 }
                 if (other.gameObject.tag == "RuneDraugr")
                 {
@@ -533,6 +543,8 @@ public class InventorySystem : MonoBehaviour
                     Ammo.AmmoW += 10;
                     Ammo.NumAmmoW1.text = Ammo.AmmoW.ToString();
                     tempIImageWow = 1;
+                    InventorySlotsEnemy[1].GetComponent<RuneToPlayer>().Particle.SetActive(false);
+                    InventorySlotsEnemy[1].GetComponent<RuneToPlayer>().Shadow.SetActive(false);
                 }
                 if (other.gameObject.tag == "RuneValvran")
                 {
@@ -550,6 +562,8 @@ public class InventorySystem : MonoBehaviour
                     Ammo.AmmoV += 10;
                     Ammo.NumAmmoV1.text = Ammo.AmmoV.ToString();
                     tempIImageValvran = 1;
+                    InventorySlotsEnemy[1].GetComponent<RuneToPlayer>().Particle.SetActive(false);
+                    InventorySlotsEnemy[1].GetComponent<RuneToPlayer>().Shadow.SetActive(false);
                 }
                 if (other.gameObject.tag == "RuneEye")
                 {
@@ -567,6 +581,8 @@ public class InventorySystem : MonoBehaviour
                     Ammo.AmmoEye += 10;
                     Ammo.NumAmmoEye1.text = Ammo.AmmoEye.ToString();
                     tempIImageEye = 1;
+                    InventorySlotsEnemy[1].GetComponent<RuneToPlayer>().Particle.SetActive(false);
+                    InventorySlotsEnemy[1].GetComponent<RuneToPlayer>().Shadow.SetActive(false);
                 }
                 if (other.gameObject.tag == "RuneBlue")
                 {
@@ -594,6 +610,8 @@ public class InventorySystem : MonoBehaviour
                     Ammo.AmmoGreen += 10;
                     Ammo.NumAmmoGreen1.text = Ammo.AmmoGreen.ToString();
                     tempIImageGreen = 1;
+                    InventorySlotsEnemy[1].GetComponent<RuneToPlayer>().Particle.SetActive(false);
+                    InventorySlotsEnemy[1].GetComponent<RuneToPlayer>().Shadow.SetActive(false);
                 }
                 if (other.gameObject.tag == "RuneYellow")
                 {
@@ -631,6 +649,8 @@ public class InventorySystem : MonoBehaviour
                     Ammo.AmmoDarkElf += 10;
                     Ammo.NumAmmoDarkElf1.text = Ammo.AmmoDarkElf.ToString();
                     tempIImageDarkElf = 1;
+                    InventorySlotsEnemy[1].GetComponent<RuneToPlayer>().Particle.SetActive(false);
+                    InventorySlotsEnemy[1].GetComponent<RuneToPlayer>().Shadow.SetActive(false);
                 }
                 if (other.gameObject.tag == "RuneDraugr")
                 {

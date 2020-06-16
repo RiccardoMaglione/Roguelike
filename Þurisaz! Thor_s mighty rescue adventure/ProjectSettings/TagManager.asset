@@ -41,6 +41,7 @@ TagManager:
   - RuneOrange
   - Obstacle
   - RuneDarkElf
+  - Shadow
   layers:
   - Default
   - TransparentFX
