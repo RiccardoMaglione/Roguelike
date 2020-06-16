@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class PatternEye : MonoBehaviour
 {
-
-
-
+    public GameObject AnimationSheet;
     public GameObject EyeContainer;
     public Material MaterialStandard;
     public Material MaterialChange;
@@ -30,6 +28,7 @@ public class PatternEye : MonoBehaviour
 
     void attack()
     {
+        
         bool ray = Physics.Raycast(transform.position, transform.forward, out hit, 15f);
         if (ray == true)
         {
@@ -48,20 +47,23 @@ public class PatternEye : MonoBehaviour
             a.SetPosition(1, new Vector3(0, 0, 15));
             Debug.Log("Mancato");
         }
-
+        
     }
 
     void UpdateFermo()
     {
+        AnimationSheet.SetActive(true);
         timer += Time.deltaTime;
         if (timer >= 1)
         {
             laser.SetActive(true);
             attack();
+            
         }
 
         if (timer >= 2)
         {
+            AnimationSheet.SetActive(false);
             rotateTo = Quaternion.Euler(0, 90, 0) * transform.rotation;
             timer = 0;
             statoCorrente = Stato.Rotazione;
@@ -84,8 +86,9 @@ public class PatternEye : MonoBehaviour
         }
     }
 
-    private void Awake()
+    private void Start()
     {
+        AnimationSheet.SetActive(false);
     }
 
     void Update()

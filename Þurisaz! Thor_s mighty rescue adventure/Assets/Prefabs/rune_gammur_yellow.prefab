@@ -5002,7 +5002,7 @@ MonoBehaviour:
   GraphicsRuneDeerOrange: {fileID: 0}
   GraphicsRuneDarkElf: {fileID: 0}
   GraphicsRuneDraugr: {fileID: 0}
-  Particle: {fileID: 0}
+  Particle: {fileID: 4471174991769763937}
   Shadow: {fileID: 3098077435228226697}
 --- !u!114 &5581915705694769042
 MonoBehaviour:
