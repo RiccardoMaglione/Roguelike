@@ -391,7 +391,7 @@ public class InventorySystem : MonoBehaviour
                     Ammo.NumAmmoEye0.gameObject.SetActive(false);
                     Ammo.NumAmmoGreen0.gameObject.SetActive(false);
                     Ammo.NumAmmoDarkElf0.gameObject.SetActive(false);
-                    Ammo.AmmoW += 10;
+                    Ammo.AmmoW = 10;
                     Ammo.NumAmmoW0.text = Ammo.AmmoW.ToString();
                     tempIImageWow = 0;
                     InventorySlotsEnemy[0].GetComponent<RuneToPlayer>().Particle.SetActive(false);
@@ -411,7 +411,7 @@ public class InventorySystem : MonoBehaviour
                     Ammo.NumAmmoEye0.gameObject.SetActive(false);
                     Ammo.NumAmmoGreen0.gameObject.SetActive(false);
                     Ammo.NumAmmoDarkElf0.gameObject.SetActive(false);
-                    Ammo.AmmoV += 10;
+                    Ammo.AmmoV = 10;
                     Ammo.NumAmmoV0.text = Ammo.AmmoV.ToString();
                     tempIImageValvran = 0;
                     InventorySlotsEnemy[0].GetComponent<RuneToPlayer>().Particle.SetActive(false);
@@ -431,7 +431,7 @@ public class InventorySystem : MonoBehaviour
                     Ammo.NumAmmoW0.gameObject.SetActive(false);
                     Ammo.NumAmmoGreen0.gameObject.SetActive(false);
                     Ammo.NumAmmoDarkElf0.gameObject.SetActive(false);
-                    Ammo.AmmoEye += 10;
+                    Ammo.AmmoEye = 10;
                     Ammo.NumAmmoEye0.text = Ammo.AmmoEye.ToString();
                     tempIImageEye = 0;
                     InventorySlotsEnemy[0].GetComponent<RuneToPlayer>().Particle.SetActive(false);
@@ -460,7 +460,7 @@ public class InventorySystem : MonoBehaviour
                     Ammo.NumAmmoEye0.gameObject.SetActive(false);
                     Ammo.NumAmmoW0.gameObject.SetActive(false);
                     Ammo.NumAmmoDarkElf0.gameObject.SetActive(false);
-                    Ammo.AmmoGreen += 10;
+                    Ammo.AmmoGreen = 10;
                     Ammo.NumAmmoGreen0.text = Ammo.AmmoGreen.ToString();
                     tempIImageGreen = 0;
                     InventorySlotsEnemy[0].GetComponent<RuneToPlayer>().Particle.SetActive(false);
@@ -499,7 +499,7 @@ public class InventorySystem : MonoBehaviour
                     Ammo.NumAmmoEye0.gameObject.SetActive(false);
                     Ammo.NumAmmoGreen0.gameObject.SetActive(false);
                     Ammo.NumAmmoW0.gameObject.SetActive(false);
-                    Ammo.AmmoDarkElf += 10;
+                    Ammo.AmmoDarkElf = 10;
                     Ammo.NumAmmoDarkElf0.text = Ammo.AmmoDarkElf.ToString();
                     tempIImageDarkElf = 0;
                     InventorySlotsEnemy[0].GetComponent<RuneToPlayer>().Particle.SetActive(false);
@@ -540,7 +540,7 @@ public class InventorySystem : MonoBehaviour
                     Ammo.NumAmmoEye1.gameObject.SetActive(false);
                     Ammo.NumAmmoGreen1.gameObject.SetActive(false);
                     Ammo.NumAmmoDarkElf1.gameObject.SetActive(false);
-                    Ammo.AmmoW += 10;
+                    Ammo.AmmoW = 10;
                     Ammo.NumAmmoW1.text = Ammo.AmmoW.ToString();
                     tempIImageWow = 1;
                     InventorySlotsEnemy[1].GetComponent<RuneToPlayer>().Particle.SetActive(false);
@@ -559,7 +559,7 @@ public class InventorySystem : MonoBehaviour
                     Ammo.NumAmmoEye1.gameObject.SetActive(false);
                     Ammo.NumAmmoGreen1.gameObject.SetActive(false);
                     Ammo.NumAmmoDarkElf1.gameObject.SetActive(false);
-                    Ammo.AmmoV += 10;
+                    Ammo.AmmoV = 10;
                     Ammo.NumAmmoV1.text = Ammo.AmmoV.ToString();
                     tempIImageValvran = 1;
                     InventorySlotsEnemy[1].GetComponent<RuneToPlayer>().Particle.SetActive(false);
@@ -578,7 +578,7 @@ public class InventorySystem : MonoBehaviour
                     Ammo.NumAmmoW1.gameObject.SetActive(false);
                     Ammo.NumAmmoGreen1.gameObject.SetActive(false);
                     Ammo.NumAmmoDarkElf1.gameObject.SetActive(false);
-                    Ammo.AmmoEye += 10;
+                    Ammo.AmmoEye = 10;
                     Ammo.NumAmmoEye1.text = Ammo.AmmoEye.ToString();
                     tempIImageEye = 1;
                     InventorySlotsEnemy[1].GetComponent<RuneToPlayer>().Particle.SetActive(false);
@@ -607,7 +607,7 @@ public class InventorySystem : MonoBehaviour
                     Ammo.NumAmmoEye1.gameObject.SetActive(false);
                     Ammo.NumAmmoW1.gameObject.SetActive(false);
                     Ammo.NumAmmoDarkElf1.gameObject.SetActive(false);
-                    Ammo.AmmoGreen += 10;
+                    Ammo.AmmoGreen = 10;
                     Ammo.NumAmmoGreen1.text = Ammo.AmmoGreen.ToString();
                     tempIImageGreen = 1;
                     InventorySlotsEnemy[1].GetComponent<RuneToPlayer>().Particle.SetActive(false);
@@ -646,7 +646,7 @@ public class InventorySystem : MonoBehaviour
                     Ammo.NumAmmoEye1.gameObject.SetActive(false);
                     Ammo.NumAmmoGreen1.gameObject.SetActive(false);
                     Ammo.NumAmmoW1.gameObject.SetActive(false);
-                    Ammo.AmmoDarkElf += 10;
+                    Ammo.AmmoDarkElf = 10;
                     Ammo.NumAmmoDarkElf1.text = Ammo.AmmoDarkElf.ToString();
                     tempIImageDarkElf = 1;
                     InventorySlotsEnemy[1].GetComponent<RuneToPlayer>().Particle.SetActive(false);

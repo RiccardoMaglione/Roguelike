@@ -24,9 +24,10 @@ public class PatternWoW : MonoBehaviour
     bool isFirstActivate = true;
     bool isSecondActivate = true;
     bool isThirdActivate = true;
-    bool isFourActivate = true;
-    bool isFour2Activate = true;
-
+    //bool isFourActivate = true;
+    //bool isFour2Activate = true;
+    bool isSeven1Activate = true;
+    bool isSeven2Activate = true;
     float sfx;
 
     public LayerMask PlayerlayerMask;
@@ -172,27 +173,46 @@ public class PatternWoW : MonoBehaviour
                 ActivateEnemy.isRoom5 = false;
             }
         }
-
-        if (ActivateEnemy.isroom4Wow4IceLevel == true && isFourActivate == true)
+        if (ActivateEnemy.isRoom7Wow1 == true && isSeven1Activate == true)
         {
             if (this.name == "WillOfWispScript4")
             {
-                isFourActivate = false;
+                isSeven1Activate = false;
                 this.GetComponent<PatternWoW>().enabled = true;
                 StartCoroutine(WowAttack());
-                ActivateEnemy.isroom4Wow4IceLevel = false;
+                ActivateEnemy.isRoom7Wow1 = false;
             }
         }
-        if (ActivateEnemy.isroom4Wow5IceLevel == true && isFour2Activate == true)
+        if (ActivateEnemy.isRoom7Wow2 == true && isSeven2Activate == true)
         {
             if (this.name == "WillOfWispScript5")
             {
-                isFour2Activate = false;
+                isSeven2Activate = false;
                 this.GetComponent<PatternWoW>().enabled = true;
                 StartCoroutine(WowAttack());
-                ActivateEnemy.isroom4Wow5IceLevel = false;
+                ActivateEnemy.isRoom7Wow2 = false;
             }
         }
+        //if (ActivateEnemy.isroom4Wow4IceLevel == true && isFourActivate == true)
+        //{
+        //    if (this.name == "WillOfWispScript4")
+        //    {
+        //        isFourActivate = false;
+        //        this.GetComponent<PatternWoW>().enabled = true;
+        //        StartCoroutine(WowAttack());
+        //        ActivateEnemy.isroom4Wow4IceLevel = false;
+        //    }
+        //}
+        //if (ActivateEnemy.isroom4Wow5IceLevel == true && isFour2Activate == true)
+        //{
+        //    if (this.name == "WillOfWispScript5")
+        //    {
+        //        isFour2Activate = false;
+        //        this.GetComponent<PatternWoW>().enabled = true;
+        //        StartCoroutine(WowAttack());
+        //        ActivateEnemy.isroom4Wow5IceLevel = false;
+        //    }
+        //}
         #endregion
     }
 

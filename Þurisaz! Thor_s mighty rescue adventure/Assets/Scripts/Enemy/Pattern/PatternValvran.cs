@@ -26,6 +26,9 @@ public class PatternValvran : MonoBehaviour
     bool isFirstActivate = true;            //Inizializzo la variabile che indica se il primo valravn è attivo
     bool isSecondActivate = true;           //Inizializzo la variabile che indica se il secondo valravn è attivo
     bool isThirdActivate = true;            //Inizializzo la variabile che indica se il terzo valravn è attivo
+    bool isSixNewActivate = true;
+
+
 
     float sfx;
 
@@ -182,6 +185,16 @@ public class PatternValvran : MonoBehaviour
                 this.GetComponent<PatternValvran>().enabled = true;                     //Attivo lo script
                 StartCoroutine(TornadoAttack());                                           //Faccio partire la corutine dell'attacco
                 ActivateEnemy.isRoom4Valravn3 = false;                                  //Setto a falso la variabile di entrata per non farlo ciclare
+            }
+        }
+        if (ActivateEnemy.isRoom6NewValravn1 == true && isSixNewActivate == true)           //Se isRoom4Valravn3 è vero e isThirdActivate è vero
+        {
+            if (this.name == "ValvranScript4")                                          //Se il nome dell'oggetto, cioè il proprio, è ValvranScript1
+            {
+                isSixNewActivate = false;                                                //Setto isThirdActivate a falso
+                this.GetComponent<PatternValvran>().enabled = true;                     //Attivo lo script
+                StartCoroutine(TornadoAttack());                                           //Faccio partire la corutine dell'attacco
+                ActivateEnemy.isRoom6NewValravn1 = false;                                  //Setto a falso la variabile di entrata per non farlo ciclare
             }
         }
         #endregion

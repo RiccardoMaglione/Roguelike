@@ -16,6 +16,9 @@ public class PatternDarkElf : MonoBehaviour
     public float CooldownAttack = 20f;
     public float CooldownFlash = 0.5f;
 
+    bool isFirstActivate = true;
+    bool isSecondActivate = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +29,26 @@ public class PatternDarkElf : MonoBehaviour
     void Update()
     {
         anim.speed = desiredSpeed;
+        if (ActivateEnemy.isRoom8DarkElf1 == true && isFirstActivate == true)            //Se isRoom3Valravn è vero e isFirstActivate è vero
+        {
+            if (this.name == "ValvranScript1")                                          //Se il nome dell'oggetto, cioè il proprio, è ValvranScript1
+            {
+                isFirstActivate = false;                                                //Setto isFirstActivate a falso
+                this.GetComponent<PatternDarkElf>().enabled = true;                     //Attivo lo script
+                StartCoroutine(AttackLance());                                           //Faccio partire la corutine dell'attacco
+                ActivateEnemy.isRoom8DarkElf1 = false;                                   //Setto a falso la variabile di entrata per non farlo ciclare
+            }
+        }
+        if (ActivateEnemy.isRoom8DarkElf2 == true && isSecondActivate == true)          //Se isRoom4Valravn2 è vero e isSecondActivate è vero
+        {
+            if (this.name == "ValvranScript2")                                          //Se il nome dell'oggetto, cioè il proprio, è ValvranScript1
+            {
+                isSecondActivate = false;                                               //Setto isSecondActivate a falso
+                this.GetComponent<PatternDarkElf>().enabled = true;                     //Attivo lo script
+                StartCoroutine(AttackLance());                                           //Faccio partire la corutine dell'attacco
+                ActivateEnemy.isRoom8DarkElf2 = false;                                  //Setto a falso la variabile di entrata per non farlo ciclare
+            }
+        }
     }
 
     public IEnumerator AttackLance()

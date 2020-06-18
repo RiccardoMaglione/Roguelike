@@ -35,6 +35,7 @@ public class PlayerManager : MonoBehaviour
     public Renderer GraphicsPlayer;
     public Renderer GraphicsBase;
     public Renderer GraphicsHammer;
+    public Renderer GraphicsBelt;
     public static int tempHealth = 6;
     public static int debugHealth;
 
@@ -97,7 +98,7 @@ public class PlayerManager : MonoBehaviour
 
     public static int Look = 1;
 
-
+    public static bool Frame = false;
 
     Material MaterialAlpha;
 
@@ -698,7 +699,14 @@ public class PlayerManager : MonoBehaviour
         matArrayChange[1] = MaterialChange;
         matArrayChange[2] = MaterialChange;
 
-
+        Material[] matArrayStandardBelt = GraphicsBelt.materials;
+        matArrayStandardBelt[0] = MaterialStandard;
+        matArrayStandardBelt[1] = MaterialStandard1;
+        matArrayStandardBelt[2] = MaterialStandard2;
+        Material[] matArrayChangeBelt = GraphicsBelt.materials;
+        matArrayChangeBelt[0] = MaterialChange;
+        matArrayChangeBelt[1] = MaterialChange;
+        matArrayChangeBelt[2] = MaterialChange;
 
         Material[] matArrayStandardHammer = GraphicsHammer.materials;
         matArrayStandardHammer[0] = MaterialStandardHammer;
@@ -718,16 +726,19 @@ public class PlayerManager : MonoBehaviour
 
             GraphicsPlayer.materials = matArrayStandard;
             GraphicsHammer.materials = matArrayStandardHammer;
+            GraphicsBelt.materials = matArrayStandardBelt;
             GraphicsBase.material = MaterialStandardBase;
             yield return new WaitForSeconds(0.2f);
             GraphicsPlayer.materials = matArrayChangeHammer;
             GraphicsHammer.materials = matArrayChange;
+            GraphicsBelt.materials = matArrayChangeBelt;
             GraphicsBase.material = MaterialChange;
             //GraphicsPlayer.material = MaterialChange;
             yield return new WaitForSeconds(0.2f);
         }
         GraphicsPlayer.materials = matArrayStandard;
         GraphicsHammer.materials = matArrayStandardHammer;
+        GraphicsBelt.materials = matArrayStandardBelt;
         GraphicsBase.material = MaterialStandardBase;
     }
 
@@ -740,17 +751,18 @@ public class PlayerManager : MonoBehaviour
 
     IEnumerator HammerAttack()
     {
+        yield return new WaitForSeconds(0.5f);
         if (attack == false)
         {
             FindObjectOfType<AudioManager>().Play("PlayerHit", sfx);
-            Hammer.transform.Rotate(0, 0, -75);
+            //Hammer.transform.Rotate(0, 0, -75);
             Hammer.gameObject.tag = "Weapon";
             attack = true;
         }
-        yield return new WaitForSeconds(CooldownDownHammer);
+        yield return new WaitForSeconds(CooldownDownHammer+1f);
         if (attack == true)
         {
-            Hammer.transform.Rotate(0, 0, 75);
+            //Hammer.transform.Rotate(0, 0, 75);
             Hammer.gameObject.tag = "NotWeapon";
             yield return new WaitForSeconds(CooldownHammer);
             attack = false;

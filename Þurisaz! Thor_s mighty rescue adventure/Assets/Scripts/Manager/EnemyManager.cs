@@ -252,7 +252,7 @@ public class EnemyManager : MonoBehaviour
             #region Uccisione del mostro corrispondente
 
             #region WillOWisp
-            if (this.gameObject.name == "WillOfWisp1" || this.gameObject.name == "WillOfWisp2" || this.gameObject.name == "WillOfWisp3")
+            if (this.gameObject.name == "WillOfWisp1" || this.gameObject.name == "WillOfWisp2" || this.gameObject.name == "WillOfWisp3" || this.gameObject.name == "WillOfWisp4" || this.gameObject.name == "WillOfWisp5")
             {
                 if(this.gameObject.name == "WillOfWisp1")
                 {
@@ -276,7 +276,7 @@ public class EnemyManager : MonoBehaviour
             }
             #endregion
             #region Valvran
-            if (this.gameObject.name == "NavMeshValvran1" || this.gameObject.name == "Valvran2" || this.gameObject.name == "Valvran3")
+            if (this.gameObject.name == "NavMeshValvran1" || this.gameObject.name == "Valvran2" || this.gameObject.name == "Valvran3" || this.gameObject.name == "Valvran4")
             {
                 if (this.gameObject.name == "Valvran2")
                 {
@@ -296,7 +296,7 @@ public class EnemyManager : MonoBehaviour
             }
             #endregion
             #region Odin's Eye
-            if (this.gameObject.name == "Eye1" || this.gameObject.name == "Eye2" || this.gameObject.name == "Eye3" || this.gameObject.name == "Eye4")
+            if (this.gameObject.name == "Eye1" || this.gameObject.name == "Eye2"/* || this.gameObject.name == "Eye3" || this.gameObject.name == "Eye4"*/)
             {
                 Quaternion rot = new Quaternion(0, 90, 0, 0);
                 GameObject rune = Instantiate(RuneReference, transform.position, rot);
@@ -316,7 +316,7 @@ public class EnemyManager : MonoBehaviour
                 //shadow1.transform.parent = rune.transform;
                 BlueFound = 1;
             }
-            if (this.gameObject.name == "DeerGreen1")
+            if (this.gameObject.name == "DeerGreen1" || this.gameObject.name == "DeerGreen2")
             {
                 Quaternion rot = new Quaternion(0, 90, 0, 0);
                 GameObject rune = Instantiate(RuneReference, transform.position, rot);
@@ -355,7 +355,7 @@ public class EnemyManager : MonoBehaviour
             //}
             #endregion
             #region Darkelf
-            if (this.gameObject.name == "DarkElf1" || this.gameObject.name == "DarkElf2" || this.gameObject.name == "DarkElf3")
+            if (this.gameObject.name == "DarkElf1" || this.gameObject.name == "DarkElf2"/* || this.gameObject.name == "DarkElf3"*/)
             {
                 Quaternion rot = new Quaternion(0, 90, 0, 0);
                 GameObject rune = Instantiate(RuneReference, transform.position, rot);
