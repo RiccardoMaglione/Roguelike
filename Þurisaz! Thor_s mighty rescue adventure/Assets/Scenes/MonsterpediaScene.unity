@@ -346,7 +346,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1293510671}
   m_Direction: 2
   m_Value: 1.0000026
-  m_Size: 0.4676019
+  m_Size: 0.46760187
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3278,7 +3278,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: V.1.4.0 - alpha
+  m_Text: V.1.4.6 - alpha
 --- !u!222 &549776936
 CanvasRenderer:
   m_ObjectHideFlags: 0

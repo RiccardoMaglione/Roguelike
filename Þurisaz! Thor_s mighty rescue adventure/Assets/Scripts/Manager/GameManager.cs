@@ -256,7 +256,7 @@ public class GameManager : MonoBehaviour
         {
             float progress = Mathf.Clamp01(operation.progress / 0.9f);          //Calcola il progresso della barra e blocca il valore tra 0 e 1
             slider.value = progress;                                            //Sincronizza il valore dello slider con il valore numerico del testo
-            progressText.text = progress * 100 + "%";                           //Trasforma il valore in percentuale e aggiorna sullo schermo
+            progressText.text = (int)(progress * 100) + "%";                           //Trasforma il valore in percentuale e aggiorna sullo schermo
             yield return null;
         }
     }
