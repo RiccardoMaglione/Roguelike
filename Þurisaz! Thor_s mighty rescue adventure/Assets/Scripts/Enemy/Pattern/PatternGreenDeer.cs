@@ -21,7 +21,9 @@ public class PatternGreenDeer : MonoBehaviour
 
     Transform target;
 
-    bool isFirstActivate = true;
+    bool isSix2Activate = true;
+    bool isNineActivate = true;
+
 
     float sfx;
     #endregion
@@ -39,16 +41,26 @@ public class PatternGreenDeer : MonoBehaviour
     {
         transform.LookAt(target);
         #region Enemy Control Room
-        //if (ActivateEnemy.isRoom2 == true && isFirstActivate == true)
-        //{
-        //    if (this.name == "WillOfWispScript1")
-        //    {
-        //        isFirstActivate = false;
-        //        this.GetComponent<PatternGreenDeer>().enabled = true;
-        //        StartCoroutine(SpineAttack());
-        //        ActivateEnemy.isRoom2 = false;
-        //    }
-        //}
+        if (ActivateEnemy.isRoom9Green1 == true && isNineActivate == true)
+        {
+            if (this.name == "GreenScript1")
+            {
+                isNineActivate = false;
+                this.GetComponent<PatternGreenDeer>().enabled = true;
+                StartCoroutine(SpineAttack());
+                ActivateEnemy.isRoom9Green1 = false;
+            }
+        }
+        if (ActivateEnemy.isRoom6NewGreen1 == true && isSix2Activate == true)
+        {
+            if (this.name == "GreenScript1")
+            {
+                isSix2Activate = false;
+                this.GetComponent<PatternGreenDeer>().enabled = true;
+                StartCoroutine(SpineAttack());
+                ActivateEnemy.isRoom6NewGreen1 = false;
+            }
+        }
         #endregion
     }
 

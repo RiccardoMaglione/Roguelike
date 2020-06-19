@@ -20,6 +20,24 @@ public class ActivateEnemy : MonoBehaviour
 
     Scene CurrentScene;
 
+
+
+
+
+
+    public static bool isRoom7Wow1 = false;
+    public static bool isRoom7Wow2 = false;
+    public static bool isRoom8DarkElf1 = false;
+    public static bool isRoom8DarkElf2 = false;
+    public static bool isRoom9Eye1 = false;
+    public static bool isRoom9Eye2 = false;
+    public static bool isRoom9Green1 = false;
+    public static bool isRoom6NewGreen1 = false;
+    public static bool isRoom6NewValravn1 = false;
+
+
+
+
     private void Start()
     {
         CurrentScene = SceneManager.GetActiveScene();
@@ -64,103 +82,169 @@ public class ActivateEnemy : MonoBehaviour
                 {
                     isRoom5 = true;
                 }
-            }
-        }
-        if (CurrentScene.name == "ThirdLevel")              //Se la scena corrente è Third Level
-        {
-            if (other.gameObject.tag == "Player")
-            {
-                if (this.name == "1Trigger")
-                {
 
-                }
-                if (this.name == "2Trigger")
-                {
 
-                }
-                if (this.name == "3Trigger")
-                {
 
-                }
-                if (this.name == "4Trigger")
+                //if (this.name == "9Trigger")
+                //{
+                //
+                //}
+                //if (this.name == "10Trigger")
+                //{
+                //
+                //}
+                //if (this.name == "11Trigger")   //Entro nella stanza 3 dalla 7
+                //{
+                //
+                //}
+                if (this.name == "12Trigger")   //Entro nella stanza 7 dalla 3
                 {
-
+                    //Attivo nemici will o wisp
+                    isRoom7Wow1 = true;
+                    isRoom7Wow2 = true;
                 }
-                if (this.name == "5Trigger")
+                //if (this.name == "13Trigger")   //Entro nella stanza 4 dalla 8
+                //{
+                //    
+                //}
+                if (this.name == "14Trigger")   //Entro nella stanza 8 dalla 4
                 {
-
+                    //Attivo nemici Dark Elf
+                    isRoom8DarkElf1 = true;
+                    isRoom8DarkElf2 = true;
                 }
-                if (this.name == "6Trigger")
+                //if (this.name == "15Trigger")   //Entro nella stanza 8 dalla 9
+                //{
+                //
+                //}
+                if (this.name == "16Trigger")   //Entro nella stanza 9 dalla 8
                 {
-                    //Quarta stanza wisp4 e wisp5
-                    isroom4Wow4IceLevel = true;
-                    isroom4Wow5IceLevel = true;
+                    //Attivo occhi e cervo
+                    isRoom9Eye1 = true;
+                    isRoom9Eye2 = true;
+                    isRoom9Green1 = true;
                 }
-                if (this.name == "7Trigger")
+                if (this.name == "17Trigger")   //Entro nella stanza 6 (New) dalla 5
                 {
-
+                    //Attivo cervo e valravn
+                    isRoom6NewGreen1 = true;
+                    isRoom6NewValravn1 = true;
                 }
-                if (this.name == "8Trigger")
+                //if (this.name == "18Trigger")   //Entro nella stanza 5 dalla 6 (New)
+                //{
+                //
+                //}
+                if (this.name == "19Trigger")   //Entro nella stanza 7 dalla 8
                 {
-
+                    //Attivo will o wisp
+                    isRoom7Wow1 = true;
+                    isRoom7Wow2 = true;
                 }
-                if (this.name == "9Trigger")
+                if (this.name == "20Trigger")   //Entro nella stanza 8 dalla 7
                 {
-
-                }
-                if (this.name == "10Trigger")
-                {
-
-                }
-                if (this.name == "11Trigger")
-                {
-
-                }
-                if (this.name == "12Trigger")
-                {
-
-                }
-                if (this.name == "13Trigger")
-                {
-
-                }
-                if (this.name == "14Trigger")
-                {
-
-                }
-                if (this.name == "15Trigger")
-                {
-
-                }
-                if (this.name == "16Trigger")
-                {
-
-                }
-                if (this.name == "17Trigger")
-                {
-
-                }
-                if (this.name == "18Trigger")
-                {
-
-                }
-                if (this.name == "19Trigger")
-                {
-
-                }
-                if (this.name == "20Trigger")
-                {
-
-                }
-                if (this.name == "21Trigger")
-                {
-
-                }
-                if (this.name == "22Trigger")
-                {
-
+                    //Attivo dark elf
+                    isRoom8DarkElf1 = true;
+                    isRoom8DarkElf2 = true;
                 }
             }
         }
+        #region Piano Ghiacciato
+        //if (CurrentScene.name == "ThirdLevel")              //Se la scena corrente è Third Level
+        //{
+        //    if (other.gameObject.tag == "Player")
+        //    {
+        //        if (this.name == "1Trigger")
+        //        {
+        //
+        //        }
+        //        if (this.name == "2Trigger")
+        //        {
+        //
+        //        }
+        //        if (this.name == "3Trigger")
+        //        {
+        //
+        //        }
+        //        if (this.name == "4Trigger")
+        //        {
+        //
+        //        }
+        //        if (this.name == "5Trigger")
+        //        {
+        //
+        //        }
+        //        if (this.name == "6Trigger")
+        //        {
+        //            //Quarta stanza wisp4 e wisp5
+        //            isroom4Wow4IceLevel = true;
+        //            isroom4Wow5IceLevel = true;
+        //        }
+        //        if (this.name == "7Trigger")
+        //        {
+        //
+        //        }
+        //        if (this.name == "8Trigger")
+        //        {
+        //
+        //        }
+        //        if (this.name == "9Trigger")
+        //        {
+        //
+        //        }
+        //        if (this.name == "10Trigger")
+        //        {
+        //
+        //        }
+        //        if (this.name == "11Trigger")
+        //        {
+        //
+        //        }
+        //        if (this.name == "12Trigger")
+        //        {
+        //
+        //        }
+        //        if (this.name == "13Trigger")
+        //        {
+        //
+        //        }
+        //        if (this.name == "14Trigger")
+        //        {
+        //
+        //        }
+        //        if (this.name == "15Trigger")
+        //        {
+        //
+        //        }
+        //        if (this.name == "16Trigger")
+        //        {
+        //
+        //        }
+        //        if (this.name == "17Trigger")
+        //        {
+        //
+        //        }
+        //        if (this.name == "18Trigger")
+        //        {
+        //
+        //        }
+        //        if (this.name == "19Trigger")
+        //        {
+        //
+        //        }
+        //        if (this.name == "20Trigger")
+        //        {
+        //
+        //        }
+        //        if (this.name == "21Trigger")
+        //        {
+        //
+        //        }
+        //        if (this.name == "22Trigger")
+        //        {
+        //
+        //        }
+        //    }
+        //}
+        #endregion
     }
 }

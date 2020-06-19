@@ -252,7 +252,7 @@ public class EnemyManager : MonoBehaviour
             #region Uccisione del mostro corrispondente
 
             #region WillOWisp
-            if (this.gameObject.name == "WillOfWisp1" || this.gameObject.name == "WillOfWisp2" || this.gameObject.name == "WillOfWisp3")
+            if (this.gameObject.name == "WillOfWisp1" || this.gameObject.name == "WillOfWisp2" || this.gameObject.name == "WillOfWisp3" || this.gameObject.name == "WillOfWisp4" || this.gameObject.name == "WillOfWisp5")
             {
                 if(this.gameObject.name == "WillOfWisp1")
                 {
@@ -270,13 +270,13 @@ public class EnemyManager : MonoBehaviour
                 GameObject rune = Instantiate(RuneReference, transform.position, rot);
                 FindObjectOfType<AudioManager>().Play("BaseRuneDrop", sfx);
                 rune.GetComponent<RuneWow>().enabled = false;
-                GameObject shadow1 = Instantiate(shadow, new Vector3(transform.position.x, 0.1f, transform.position.z), Quaternion.identity);
-                shadow1.transform.parent = rune.transform;
+                //GameObject shadow1 = Instantiate(shadow, new Vector3(transform.position.x, 0.1f, transform.position.z), Quaternion.identity);
+                //shadow1.transform.parent = rune.transform;
                 WowFound = 1;
             }
             #endregion
             #region Valvran
-            if (this.gameObject.name == "NavMeshValvran1" || this.gameObject.name == "Valvran2" || this.gameObject.name == "Valvran3")
+            if (this.gameObject.name == "NavMeshValvran1" || this.gameObject.name == "Valvran2" || this.gameObject.name == "Valvran3" || this.gameObject.name == "Valvran4")
             {
                 if (this.gameObject.name == "Valvran2")
                 {
@@ -290,19 +290,19 @@ public class EnemyManager : MonoBehaviour
                 GameObject rune = Instantiate(RuneReference, transform.position, rot);
                 FindObjectOfType<AudioManager>().Play("BaseRuneDrop", sfx);
                 rune.GetComponent<RuneValravn>().enabled = false;
-                GameObject shadow1 = Instantiate(shadow, new Vector3(transform.position.x, 0.1f, transform.position.z), Quaternion.identity);
-                shadow1.transform.parent = rune.transform;
+                //GameObject shadow1 = Instantiate(shadow, new Vector3(transform.position.x, 0.1f, transform.position.z), Quaternion.identity);
+                //shadow1.transform.parent = rune.transform;
                 ValravnFound = 1;
             }
             #endregion
             #region Odin's Eye
-            if (this.gameObject.name == "Eye1" || this.gameObject.name == "Eye2" || this.gameObject.name == "Eye3" || this.gameObject.name == "Eye4")
+            if (this.gameObject.name == "Eye1" || this.gameObject.name == "Eye2"/* || this.gameObject.name == "Eye3" || this.gameObject.name == "Eye4"*/)
             {
                 Quaternion rot = new Quaternion(0, 90, 0, 0);
                 GameObject rune = Instantiate(RuneReference, transform.position, rot);
                 rune.GetComponent<RuneEye>().enabled = false;
-                GameObject shadow1 = Instantiate(shadow, new Vector3(transform.position.x, 0.1f, transform.position.z), Quaternion.identity);
-                shadow1.transform.parent = rune.transform;
+                //GameObject shadow1 = Instantiate(shadow, new Vector3(transform.position.x, 0.1f, transform.position.z), Quaternion.identity);
+                //shadow1.transform.parent = rune.transform;
                 OdinEyeFound = 1;
             }
             #endregion
@@ -312,17 +312,17 @@ public class EnemyManager : MonoBehaviour
                 Quaternion rot = new Quaternion(0, 90, 0, 0);
                 GameObject rune = Instantiate(RuneReference, transform.position, rot);
                 rune.GetComponent<RuneBlue>().enabled = false;
-                GameObject shadow1 = Instantiate(shadow, new Vector3(transform.position.x, 0.1f, transform.position.z), Quaternion.identity);
-                shadow1.transform.parent = rune.transform;
+                //GameObject shadow1 = Instantiate(shadow, new Vector3(transform.position.x, 0.1f, transform.position.z), Quaternion.identity);
+                //shadow1.transform.parent = rune.transform;
                 BlueFound = 1;
             }
-            if (this.gameObject.name == "DeerGreen1")
+            if (this.gameObject.name == "DeerGreen1" || this.gameObject.name == "DeerGreen2")
             {
                 Quaternion rot = new Quaternion(0, 90, 0, 0);
                 GameObject rune = Instantiate(RuneReference, transform.position, rot);
                 rune.GetComponent<RuneGreen>().enabled = false;
-                GameObject shadow1 = Instantiate(shadow, new Vector3(transform.position.x, 0.1f, transform.position.z), Quaternion.identity);
-                shadow1.transform.parent = rune.transform;
+                //GameObject shadow1 = Instantiate(shadow, new Vector3(transform.position.x, 0.1f, transform.position.z), Quaternion.identity);
+                //shadow1.transform.parent = rune.transform;
                 GreenFound = 1;
             }
             if (this.gameObject.name == "DeerYellow1")
@@ -330,8 +330,8 @@ public class EnemyManager : MonoBehaviour
                 Quaternion rot = new Quaternion(0, 90, 0, 0);
                 GameObject rune = Instantiate(RuneReference, transform.position, rot);
                 rune.GetComponent<RuneYellow>().enabled = false;
-                GameObject shadow1 = Instantiate(shadow, new Vector3(transform.position.x, 0.1f, transform.position.z), Quaternion.identity);
-                shadow1.transform.parent = rune.transform;
+                //GameObject shadow1 = Instantiate(shadow, new Vector3(transform.position.x, 0.1f, transform.position.z), Quaternion.identity);
+                //shadow1.transform.parent = rune.transform;
                 YellowFound = 1;
             }
             if (this.gameObject.name == "DeerRed1")
@@ -339,8 +339,8 @@ public class EnemyManager : MonoBehaviour
                 Quaternion rot = new Quaternion(0, 90, 0, 0);
                 GameObject rune = Instantiate(RuneReference, transform.position, rot);
                 rune.GetComponent<RuneOrange>().enabled = false;
-                GameObject shadow1 = Instantiate(shadow, new Vector3(transform.position.x, 0.1f, transform.position.z), Quaternion.identity);
-                shadow1.transform.parent = rune.transform;
+                //GameObject shadow1 = Instantiate(shadow, new Vector3(transform.position.x, 0.1f, transform.position.z), Quaternion.identity);
+                //shadow1.transform.parent = rune.transform;
                 RedFound = 1;
             }
             #endregion
@@ -355,14 +355,15 @@ public class EnemyManager : MonoBehaviour
             //}
             #endregion
             #region Darkelf
-            //if (this.gameObject.name == "DarkElf1" || this.gameObject.name == "DarkElf2" || this.gameObject.name == "DarkElf3")
-            //{
-            //    Quaternion rot = new Quaternion(0, 90, 0, 0);
-            //    GameObject rune = Instantiate(RuneReference, transform.position, rot);
-            //    rune.GetComponent<RuneDarkElf>().enabled = false;
-            //GameObject shadow1 = Instantiate(shadow, new Vector3(transform.position.x, 0.1f, transform.position.z), Quaternion.identity);
-            //shadow1.transform.parent = rune.transform;
-            //}
+            if (this.gameObject.name == "DarkElf1" || this.gameObject.name == "DarkElf2"/* || this.gameObject.name == "DarkElf3"*/)
+            {
+                Quaternion rot = new Quaternion(0, 90, 0, 0);
+                GameObject rune = Instantiate(RuneReference, transform.position, rot);
+                rune.GetComponent<RuneDarkElf>().enabled = false;
+                //GameObject shadow1 = Instantiate(shadow, new Vector3(transform.position.x, 0.1f, transform.position.z), Quaternion.identity);
+                //shadow1.transform.parent = rune.transform;
+                //DarkElfFound = 1;
+            }
             #endregion
             #region Draugr
             //if (this.gameObject.name == "Draugr1" || this.gameObject.name == "Draugr2" || this.gameObject.name == "Draugr3"|| this.gameObject.name == "Draugr4" || this.gameObject.name == "Draugr5")

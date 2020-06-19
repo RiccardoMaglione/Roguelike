@@ -30,7 +30,8 @@ public class PatternGammur : MonoBehaviour
 
     float sfx;
     #endregion
-
+    public GameObject AnimationDust;
+    Vector3 newPos;
     private void Awake()
     {
         sfx = PlayerPrefs.GetFloat("SfxVolume");
@@ -55,7 +56,7 @@ public class PatternGammur : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             float angle = i * Mathf.PI * 2f / 3;
-            Vector3 newPos = new Vector3(Player.transform.position.x + Mathf.Cos(angle) * radius, 10, Player.transform.position.z + Mathf.Sin(angle) * radius);
+            newPos = new Vector3(Player.transform.position.x + Mathf.Cos(angle) * radius, 10, Player.transform.position.z + Mathf.Sin(angle) * radius);
             GameObject go = Instantiate(Egg, newPos, Quaternion.identity);
             GameObject shadow1 = Instantiate(shadowEgg, new Vector3(newPos.x, 0.1f, newPos.z), Quaternion.identity);
             FindObjectOfType<AudioManager>().Play("EggCrackerSound", sfx);
@@ -63,6 +64,8 @@ public class PatternGammur : MonoBehaviour
             shadow1.transform.SetParent(GammurTransformParent);
             shadow1.transform.parent = go.transform;
             Rigidbody rg = go.AddComponent<Rigidbody>();
+            GameObject Dust = Instantiate(AnimationDust, new Vector3(newPos.x, 0.1f, newPos.z), transform.rotation);
+            Destroy(Dust, 3);
         }
     }
     void SpawnMinion()
@@ -97,7 +100,6 @@ public class PatternGammur : MonoBehaviour
             yield return new WaitForSeconds((float)3f);
         }
     }
-    
     public IEnumerator Scream()
     {
         FindObjectOfType<AudioManager>().Play("GammurSound", sfx);

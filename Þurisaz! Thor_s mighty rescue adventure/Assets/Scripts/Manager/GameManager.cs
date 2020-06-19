@@ -96,7 +96,7 @@ public class GameManager : MonoBehaviour
         InventorySystem.i = 0;
         InventorySystem.j = 0;
         InventorySystem.isFirsPresentRuneGammur = false;
-        InventorySystem.isFirsPresentRuneProva = false;
+        //InventorySystem.isFirsPresentRuneProva = false;
         InventorySystem.isFirsPresentRuneValvran = false;
         InventorySystem.isFirsPresentRuneWow = false;
 
@@ -147,6 +147,8 @@ public class GameManager : MonoBehaviour
         Ammo.AmmoEye = 0;
         Ammo.AmmoDarkElf = 0;
         Ammo.AmmoDraugr = 0;
+
+        RuneToPlayer.NumberRuneEnemyCatch = 0;
         #endregion
     }
     public void GoToLoading()
@@ -254,7 +256,7 @@ public class GameManager : MonoBehaviour
         {
             float progress = Mathf.Clamp01(operation.progress / 0.9f);          //Calcola il progresso della barra e blocca il valore tra 0 e 1
             slider.value = progress;                                            //Sincronizza il valore dello slider con il valore numerico del testo
-            progressText.text = progress * 100 + "%";                           //Trasforma il valore in percentuale e aggiorna sullo schermo
+            progressText.text = (int)(progress * 100) + "%";                           //Trasforma il valore in percentuale e aggiorna sullo schermo
             yield return null;
         }
     }

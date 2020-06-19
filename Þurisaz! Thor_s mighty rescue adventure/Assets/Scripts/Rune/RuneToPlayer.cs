@@ -40,7 +40,9 @@ public class RuneToPlayer : MonoBehaviour
     public MeshRenderer GraphicsRuneDarkElf;
     public MeshRenderer GraphicsRuneDraugr;
     #endregion
+    public GameObject Particle;
 
+    public GameObject Shadow;
     private void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player").gameObject;
@@ -75,16 +77,16 @@ public class RuneToPlayer : MonoBehaviour
                         InventorySystem.isFirsPresentRuneValvran = true;
                     }
                 }
-                if (InventorySystem.isFirsPresentRuneProva == false)
-                {
-                    if (gameObject.tag == "RuneProva")
-                    {
-                        print("Questa è il numero delle rune prese " + NumberRuneEnemyCatch);
-                        transform.parent = Player.transform;
-                        NumberRuneEnemyCatch++;
-                        InventorySystem.isFirsPresentRuneProva = true;
-                    }
-                }
+                //if (InventorySystem.isFirsPresentRuneProva == false)
+                //{
+                //    if (gameObject.tag == "RuneProva")
+                //    {
+                //        print("Questa è il numero delle rune prese " + NumberRuneEnemyCatch);
+                //        transform.parent = Player.transform;
+                //        NumberRuneEnemyCatch++;
+                //        InventorySystem.isFirsPresentRuneProva = true;
+                //    }
+                //}
 
                 #region Inventario rune nuove
                 if (InventorySystem.isFirsPresentRuneEye == false)
@@ -177,13 +179,17 @@ public class RuneToPlayer : MonoBehaviour
             #region Rune Wow
             if (gameObject.tag == "RuneWow" && InventorySystem.isFirsPresentRuneWow == true)
             {
-                if(isTimeToWow == false)
+                Debug.Log("Almeno qua?");
+                if (isTimeToWow == false)
                 {
+                    Debug.Log("Entro qui dentro");
                     transform.parent = Player.transform;
                     transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
                     GetComponent<RuneWow>().enabled = true;
                     isTimeToWow = true;
                     GraphicsRuneWow.enabled = false;
+                    Particle.SetActive(false);
+                    Shadow.SetActive(false);
                 }
             }
             #endregion
@@ -197,6 +203,8 @@ public class RuneToPlayer : MonoBehaviour
                     GetComponent<RuneValravn>().enabled = true;
                     isTimeToValvran = true;
                     GraphicsRuneValravn.enabled = false;
+                    Particle.SetActive(false);
+                    Shadow.SetActive(false);
                 }
             }
             #endregion
@@ -210,6 +218,8 @@ public class RuneToPlayer : MonoBehaviour
                     GetComponent<RuneGammurOne>().enabled = true;
                     RuneRawImageGammur1.enabled = true;
                     GraphicsRuneGammur1.enabled = false;
+                    Particle.SetActive(false);
+                    Shadow.SetActive(false);
                 }
                 if (EnemyManager.rangeGammur == 2)
                 {
@@ -218,6 +228,8 @@ public class RuneToPlayer : MonoBehaviour
                     GetComponent<RuneGammurTwo>().enabled = true;
                     RuneRawImageGammur2.enabled = true;
                     GraphicsRuneGammur2.enabled = false;
+                    Particle.SetActive(false);
+                    Shadow.SetActive(false);
                 }
                 if (EnemyManager.rangeGammur == 3)
                 {
@@ -226,6 +238,8 @@ public class RuneToPlayer : MonoBehaviour
                     GetComponent<RuneGammurThree>().enabled = true;
                     RuneRawImageGammur3.enabled = true;
                     GraphicsRuneGammur3.enabled = false;
+                    Particle.SetActive(false);
+                    Shadow.SetActive(false);
                 }
             }
             #endregion
@@ -245,6 +259,8 @@ public class RuneToPlayer : MonoBehaviour
                     GetComponent<BoxCollider>().enabled = false;
                     isTimeToEye = true;
                     GraphicsRuneEye.enabled = false;
+                    Particle.SetActive(false);
+                    Shadow.SetActive(false);
                 }
             }
             #endregion
@@ -258,6 +274,8 @@ public class RuneToPlayer : MonoBehaviour
                     GetComponent<RuneBlue>().enabled = true;
                     isTimeToBlue = true;
                     GraphicsRuneDeerBlue.enabled = false;
+                    Particle.SetActive(false);
+                    Shadow.SetActive(false);
                 }
             }
             #endregion
@@ -271,6 +289,8 @@ public class RuneToPlayer : MonoBehaviour
                     GetComponent<RuneGreen>().enabled = true;
                     isTimeToGreen = true;
                     GraphicsRuneDeerGreen.enabled = false;
+                    Particle.SetActive(false);
+                    Shadow.SetActive(false);
                 }
             }
             #endregion
@@ -284,6 +304,8 @@ public class RuneToPlayer : MonoBehaviour
                     GetComponent<RuneYellow>().enabled = true;
                     isTimeToYellow = true;
                     GraphicsRuneDeerYellow.enabled = false;
+                    Particle.SetActive(false);
+                    Shadow.SetActive(false);
                 }
             }
             #endregion
@@ -297,6 +319,8 @@ public class RuneToPlayer : MonoBehaviour
                     GetComponent<RuneOrange>().enabled = true;
                     isTimeToOrange = true;
                     GraphicsRuneDeerOrange.enabled = false;
+                    Particle.SetActive(false);
+                    Shadow.SetActive(false);
                 }
             }
             #endregion
@@ -310,6 +334,8 @@ public class RuneToPlayer : MonoBehaviour
                     GetComponent<RuneDarkElf>().enabled = true;
                     isTimeToDarkElf = true;
                     GraphicsRuneDarkElf.enabled = false;
+                    Particle.SetActive(false);
+                    Shadow.SetActive(false);
                 }
             }
             #endregion
@@ -323,6 +349,8 @@ public class RuneToPlayer : MonoBehaviour
                     GetComponent<RuneDraugr>().enabled = true;
                     isTimeToDraugr = true;
                     GraphicsRuneDraugr.enabled = false;
+                    Particle.SetActive(false);
+                    Shadow.SetActive(false);
                 }
             }
             #endregion
@@ -335,5 +363,10 @@ public class RuneToPlayer : MonoBehaviour
             #endregion
 
         }
+    }
+
+    private void Update()
+    {
+        Debug.Log("saddddddddddddddddddddddddd "+NumberRuneEnemyCatch);
     }
 }

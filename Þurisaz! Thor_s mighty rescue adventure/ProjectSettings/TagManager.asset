@@ -40,6 +40,8 @@ TagManager:
   - RuneYellow
   - RuneOrange
   - Obstacle
+  - RuneDarkElf
+  - Shadow
   layers:
   - Default
   - TransparentFX

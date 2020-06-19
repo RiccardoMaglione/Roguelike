@@ -35,6 +35,7 @@ public class PlayerManager : MonoBehaviour
     public Renderer GraphicsPlayer;
     public Renderer GraphicsBase;
     public Renderer GraphicsHammer;
+    public Renderer GraphicsBelt;
     public static int tempHealth = 6;
     public static int debugHealth;
 
@@ -97,7 +98,7 @@ public class PlayerManager : MonoBehaviour
 
     public static int Look = 1;
 
-
+    public static bool Frame = false;
 
     Material MaterialAlpha;
 
@@ -106,7 +107,7 @@ public class PlayerManager : MonoBehaviour
 
     public static bool ColpitoPlayer = false;
 
-
+    static public bool CanMove = true;
     #region Variabili Movemente Definito
 
     [Header("Nuovo Movimento")]
@@ -117,6 +118,11 @@ public class PlayerManager : MonoBehaviour
     //public float TempoPrimaDiAndareD = 0f;
     //public bool ResetT = false;
 
+
+    static public int DirectionW = 0;
+    static public int DirectionA = 0;
+    static public int DirectionS = 0;
+    static public int DirectionD = 0;
 
     #endregion
 
@@ -421,75 +427,244 @@ public class PlayerManager : MonoBehaviour
         #endregion
 
         #region Update Movement
-        float v = Input.GetAxis("Vertical");
-        float h = Input.GetAxis("Horizontal");
-        if (moving && (transform.position == endpos))
+        if(CanMove == true)
         {
-            moving = false;
-            speed = speedInitial;
-        }
-        #region Movement W
-        if (!moving && (Input.GetKey(ControlsManager.CM.forward) || Input.GetAxis("Vertical") > 0))      //w
-        {
-            transform.rotation = Quaternion.LookRotation(Vector3.left, Vector3.up); //guarda w
-            timerW += Time.deltaTime;
-            timerS = 0; timerA = 0; timerD = 0;
-            Look = 1;
-            if (timerW > Delay)
+            #region Move Vecchio
+            //        float v = Input.GetAxis("Vertical");
+            //        float h = Input.GetAxis("Horizontal");
+            //        if (moving && (transform.position == endpos))
+            //        {
+            //            moving = false;
+            //            speed = speedInitial;
+            //        }
+            //        #region Movement W
+            //    if (!moving && (Input.GetKey(ControlsManager.CM.forward) || Input.GetAxis("Vertical") > 0))      //w
+            //    {
+            //        transform.rotation = Quaternion.LookRotation(Vector3.left, Vector3.up); //guarda w
+            //        timerW += Time.deltaTime;
+            //        //timerS = 0; timerA = 0; timerD = 0;
+            //        Look = 1;
+            //        DirectionA = 0;
+            //        DirectionS = 0;
+            //        DirectionD = 0;
+            //        DirectionW = 1;
+            //        if (timerW > Delay)
+            //        {   
+            //            moving = true;
+            //            speed += (acceleration - speed * friction) * Time.deltaTime * -Mathf.Abs(v);
+            //            endpos = new Vector3((int)transform.position.x, transform.position.y, (int)transform.position.z) + Vector3.forward * WallTrigger.WallW * EnemyTriggerW * ObstacleW;
+            //        } 
+            //    }
+            //        #endregion
+            //        #region Movement S
+            //        if (!moving && (Input.GetKey(ControlsManager.CM.backward) || Input.GetAxis("Vertical") < 0))     //s
+            //        {
+            //         transform.rotation = Quaternion.LookRotation(Vector3.right, Vector3.up); //guarda s
+            //         timerS += Time.deltaTime;
+            //         //timerW = 0; timerA = 0; timerD = 0;
+            //         Look = 2;
+            //         DirectionW = 0;
+            //         DirectionA = 0;
+            //         DirectionS = 1;
+            //         DirectionD = 0;
+            //        if (timerS > Delay)
+            //        {
+            //            moving = true;
+            //            speed += (acceleration - speed * friction) * Time.deltaTime * -Mathf.Abs(v);
+            //            endpos = new Vector3((int)transform.position.x, transform.position.y, (int)transform.position.z) + Vector3.back * WallTrigger.WallS * EnemyTriggerS * ObstacleS;
+            //        }
+            //    }
+            //        #endregion
+            //        #region Movement A
+            //        if (!moving && (Input.GetKey(ControlsManager.CM.left) || Input.GetAxis("Horizontal") < 0))     //a
+            //    {
+            //         transform.rotation = Quaternion.LookRotation(Vector3.back, Vector3.up); //guarda a
+            //         timerA += Time.deltaTime;
+            //         //timerW = 0; timerS = 0; timerD = 0;
+            //         Look = 3;
+            //         DirectionW = 0;
+            //         DirectionA = 1;
+            //         DirectionS = 0;
+            //         DirectionD = 0;
+            //        if (timerA > Delay)
+            //         {
+            //             moving = true;
+            //             speed += (acceleration - speed * friction) * Time.deltaTime * -Mathf.Abs(h);
+            //             endpos = new Vector3((int)transform.position.x, transform.position.y, (int)transform.position.z) + Vector3.left * WallTrigger.WallA * EnemyTriggerA * ObstacleA;
+            //         }
+            //    }
+            //        #endregion
+            //        #region Movement D
+            //        if (!moving && (Input.GetKey(ControlsManager.CM.right) || Input.GetAxis("Horizontal") > 0))  //d
+            //    {
+            //        transform.rotation = Quaternion.LookRotation(Vector3.forward, Vector3.up); //guarda d
+            //        timerD += Time.deltaTime;
+            //        //timerW = 0; timerS = 0; timerA = 0;
+            //        Look = 4;
+            //        DirectionW = 0;
+            //        DirectionS = 0;
+            //        DirectionA = 0;
+            //        DirectionD = 1;
+            //        if (timerD > Delay)
+            //        {
+            //            moving = true;
+            //            speed += (acceleration - speed * friction) * Time.deltaTime * -Mathf.Abs(h);
+            //            endpos = new Vector3((int)transform.position.x, transform.position.y, (int)transform.position.z) + Vector3.right * WallTrigger.WallD * EnemyTriggerD * ObstacleD;
+            //        }
+            //    }
+            //        #endregion
+            #endregion
+            #region Move Nuovo
+            float v = Input.GetAxis("Vertical");
+            float h = Input.GetAxis("Horizontal");
+            if (moving && (transform.position == endpos))
             {
-                  moving = true;
-                  speed += (acceleration - speed * friction) * Time.deltaTime * -Mathf.Abs(v);
-                  endpos = new Vector3((int)transform.position.x, transform.position.y, (int)transform.position.z) + Vector3.forward * WallTrigger.WallW * EnemyTriggerW * ObstacleW;
+                moving = false;
             }
-        }
-        #endregion
-        #region Movement S
-        if (!moving && (Input.GetKey(ControlsManager.CM.backward) || Input.GetAxis("Vertical") < 0))     //s
-        {
-             transform.rotation = Quaternion.LookRotation(Vector3.right, Vector3.up); //guarda s
-             timerS += Time.deltaTime;
-             timerW = 0; timerA = 0; timerD = 0;
-             Look = 2;
-             if (timerS > Delay)
-             {
-                 moving = true;
-                 speed += (acceleration - speed * friction) * Time.deltaTime * -Mathf.Abs(v);
-                 endpos = new Vector3((int)transform.position.x, transform.position.y, (int)transform.position.z) + Vector3.back * WallTrigger.WallS * EnemyTriggerS * ObstacleS;;
-             }
-        }
-        #endregion
-        #region Movement A
-        if (!moving && (Input.GetKey(ControlsManager.CM.left) || Input.GetAxis("Horizontal") < 0))     //a
-        {
-             transform.rotation = Quaternion.LookRotation(Vector3.back, Vector3.up); //guarda a
-             timerA += Time.deltaTime;
-             timerW = 0; timerS = 0; timerD = 0;
-             Look = 3;
-             if (timerA > Delay)
-             {
-                 moving = true;
-                 speed += (acceleration - speed * friction) * Time.deltaTime * -Mathf.Abs(h);
-                 endpos = new Vector3((int)transform.position.x, transform.position.y, (int)transform.position.z) + Vector3.left * WallTrigger.WallA * EnemyTriggerA * ObstacleA;
-             }
-        }
-        #endregion
-        #region Movement D
-        if (!moving && (Input.GetKey(ControlsManager.CM.right) || Input.GetAxis("Horizontal") > 0))  //d
-        {
-            transform.rotation = Quaternion.LookRotation(Vector3.forward, Vector3.up); //guarda d
-            timerD += Time.deltaTime;
-            timerW = 0; timerS = 0; timerA = 0;
-            Look = 4;
-            if (timerD > Delay)
+            #region Movement W
+            if (!moving && (Input.GetKey(ControlsManager.CM.forward) || Input.GetAxis("Vertical") > 0))      //w
             {
-                moving = true;
-                speed += (acceleration - speed * friction) * Time.deltaTime * -Mathf.Abs(h);
-                endpos = new Vector3((int)transform.position.x, transform.position.y, (int)transform.position.z) + Vector3.right * WallTrigger.WallD * EnemyTriggerD * ObstacleD;
+                speed = speedInitial;
+                transform.rotation = Quaternion.LookRotation(Vector3.left, Vector3.up); //guarda w
+                timerW += Time.deltaTime;
+                Look = 1;
+                DirectionA = 0;
+                DirectionS = 0;
+                DirectionD = 0;
+                DirectionW = 1;
+                if (timerW > Delay)
+                {
+                    if ((Input.GetKey(ControlsManager.CM.forward) || Input.GetAxis("Vertical") > 0))
+                    {
+                        timerW = 0.1f; timerS = 0; timerA = 0; timerD = 0;
+                    }
+                    if ((Input.GetKey(ControlsManager.CM.backward) || Input.GetAxis("Vertical") < 0))
+                    {
+                        timerW = 0; timerA = 0; timerD = 0; timerS = 0.1f;
+                    }
+                    if ((Input.GetKey(ControlsManager.CM.right) || Input.GetAxis("Horizontal") > 0))
+                    {
+                        timerW = 0; timerS = 0; timerA = 0; timerD = 0.1f;
+                    }
+                    if ((Input.GetKey(ControlsManager.CM.left) || Input.GetAxis("Horizontal") < 0))
+                    {
+                        timerW = 0; timerS = 0; timerD = 0; timerA = 0.1f;
+                    }
+                    moving = true;
+                    speed += (acceleration - speed * friction) * Time.deltaTime * -Mathf.Abs(v);
+                    endpos = new Vector3((int)transform.position.x, transform.position.y, (int)transform.position.z) + Vector3.forward * WallTrigger.WallW * EnemyTriggerW * ObstacleW;
+                } 
             }
+            #endregion
+            #region Movement S
+            if (!moving && (Input.GetKey(ControlsManager.CM.backward) || Input.GetAxis("Vertical") < 0))     //s
+            {
+                speed = speedInitial;
+                transform.rotation = Quaternion.LookRotation(Vector3.right, Vector3.up); //guarda s
+                timerS += Time.deltaTime;
+                Look = 2;
+                DirectionW = 0;
+                DirectionA = 0;
+                DirectionS = 1;
+                DirectionD = 0;
+                if (timerS > Delay)
+                {
+                    if ((Input.GetKey(ControlsManager.CM.forward) || Input.GetAxis("Vertical") > 0))
+                    {
+                        timerW = 0.1f; timerS = 0; timerA = 0; timerD = 0;
+                    }
+                    if ((Input.GetKey(ControlsManager.CM.backward) || Input.GetAxis("Vertical") < 0))
+                    {
+                        timerW = 0; timerA = 0; timerD = 0; timerS = 0.1f;
+                    }
+                    if ((Input.GetKey(ControlsManager.CM.right) || Input.GetAxis("Horizontal") > 0))
+                    {
+                        timerW = 0; timerS = 0; timerA = 0; timerD = 0.1f;
+                    }
+                    if ((Input.GetKey(ControlsManager.CM.left) || Input.GetAxis("Horizontal") < 0))
+                    {
+                        timerW = 0; timerS = 0; timerD = 0; timerA = 0.1f;
+                    }
+                    moving = true;
+                    speed += (acceleration - speed * friction) * Time.deltaTime * -Mathf.Abs(v);
+                    endpos = new Vector3((int)transform.position.x, transform.position.y, (int)transform.position.z) + Vector3.back * WallTrigger.WallS * EnemyTriggerS * ObstacleS;
+                }
+            }
+            #endregion
+            #region Movement A
+            if (!moving && (Input.GetKey(ControlsManager.CM.left) || Input.GetAxis("Horizontal") < 0))     //a
+            {
+                speed = speedInitial;
+                transform.rotation = Quaternion.LookRotation(Vector3.back, Vector3.up); //guarda a
+                timerA += Time.deltaTime;
+                Look = 3;
+                DirectionW = 0;
+                DirectionA = 1;
+                DirectionS = 0;
+                DirectionD = 0;
+                if (timerA > Delay)
+                {
+                    if ((Input.GetKey(ControlsManager.CM.forward) || Input.GetAxis("Vertical") > 0))
+                    {
+                        timerW = 0.1f; timerS = 0; timerA = 0; timerD = 0;
+                    }
+                    if ((Input.GetKey(ControlsManager.CM.backward) || Input.GetAxis("Vertical") < 0))
+                    {
+                        timerW = 0; timerA = 0; timerD = 0; timerS = 0.1f;
+                    }
+                    if ((Input.GetKey(ControlsManager.CM.right) || Input.GetAxis("Horizontal") > 0))
+                    {
+                        timerW = 0; timerS = 0; timerA = 0; timerD = 0.1f;
+                    }
+                    if ((Input.GetKey(ControlsManager.CM.left) || Input.GetAxis("Horizontal") < 0))
+                    {
+                        timerW = 0; timerS = 0; timerD = 0; timerA = 0.1f;
+                    }
+                    moving = true;
+                    speed += (acceleration - speed * friction) * Time.deltaTime * -Mathf.Abs(h);
+                    endpos = new Vector3((int)transform.position.x, transform.position.y, (int)transform.position.z) + Vector3.left * WallTrigger.WallA * EnemyTriggerA * ObstacleA;
+                }
+            }
+            #endregion
+            #region Movement D
+            if (!moving && (Input.GetKey(ControlsManager.CM.right) || Input.GetAxis("Horizontal") > 0))  //d
+            {
+                speed = speedInitial;
+                transform.rotation = Quaternion.LookRotation(Vector3.forward, Vector3.up); //guarda d
+                timerD += Time.deltaTime;
+                Look = 4;
+                DirectionW = 0;
+                DirectionS = 0;
+                DirectionA = 0;
+                DirectionD = 1;
+                if (timerD > Delay)
+                {
+                    if ((Input.GetKey(ControlsManager.CM.forward) || Input.GetAxis("Vertical") > 0))
+                    {
+                        timerW = 0.1f; timerS = 0; timerA = 0; timerD = 0;
+                    }
+                    if ((Input.GetKey(ControlsManager.CM.backward) || Input.GetAxis("Vertical") < 0))
+                    {
+                        timerW = 0; timerA = 0; timerD = 0; timerS = 0.1f;
+                    }
+                    if ((Input.GetKey(ControlsManager.CM.right) || Input.GetAxis("Horizontal") > 0))
+                    {
+                        timerW = 0; timerS = 0; timerA = 0; timerD = 0.1f;
+                    }
+                    if ((Input.GetKey(ControlsManager.CM.left) || Input.GetAxis("Horizontal") < 0))
+                    {
+                        timerW = 0; timerS = 0; timerD = 0; timerA = 0.1f;
+                    }
+                    moving = true;
+                    speed += (acceleration - speed * friction) * Time.deltaTime * -Mathf.Abs(h);
+                    endpos = new Vector3((int)transform.position.x, transform.position.y, (int)transform.position.z) + Vector3.right * WallTrigger.WallD * EnemyTriggerD * ObstacleD;
+                }
+            }
+            #endregion
+            #endregion
+            transform.position = Vector3.MoveTowards(transform.position, endpos, Time.deltaTime * speed);
+            endpos = new Vector3((int)endpos.x, endpos.y, (int)endpos.z);
         }
-        #endregion
-        transform.position = Vector3.MoveTowards(transform.position, endpos, Time.deltaTime * speed);
-        endpos = new Vector3((int)endpos.x, endpos.y, (int)endpos.z);
         #endregion
     }
 
@@ -524,7 +699,14 @@ public class PlayerManager : MonoBehaviour
         matArrayChange[1] = MaterialChange;
         matArrayChange[2] = MaterialChange;
 
-
+        Material[] matArrayStandardBelt = GraphicsBelt.materials;
+        matArrayStandardBelt[0] = MaterialStandard;
+        matArrayStandardBelt[1] = MaterialStandard1;
+        matArrayStandardBelt[2] = MaterialStandard2;
+        Material[] matArrayChangeBelt = GraphicsBelt.materials;
+        matArrayChangeBelt[0] = MaterialChange;
+        matArrayChangeBelt[1] = MaterialChange;
+        matArrayChangeBelt[2] = MaterialChange;
 
         Material[] matArrayStandardHammer = GraphicsHammer.materials;
         matArrayStandardHammer[0] = MaterialStandardHammer;
@@ -544,16 +726,19 @@ public class PlayerManager : MonoBehaviour
 
             GraphicsPlayer.materials = matArrayStandard;
             GraphicsHammer.materials = matArrayStandardHammer;
+            GraphicsBelt.materials = matArrayStandardBelt;
             GraphicsBase.material = MaterialStandardBase;
             yield return new WaitForSeconds(0.2f);
             GraphicsPlayer.materials = matArrayChangeHammer;
             GraphicsHammer.materials = matArrayChange;
+            GraphicsBelt.materials = matArrayChangeBelt;
             GraphicsBase.material = MaterialChange;
             //GraphicsPlayer.material = MaterialChange;
             yield return new WaitForSeconds(0.2f);
         }
         GraphicsPlayer.materials = matArrayStandard;
         GraphicsHammer.materials = matArrayStandardHammer;
+        GraphicsBelt.materials = matArrayStandardBelt;
         GraphicsBase.material = MaterialStandardBase;
     }
 
@@ -566,17 +751,18 @@ public class PlayerManager : MonoBehaviour
 
     IEnumerator HammerAttack()
     {
+        yield return new WaitForSeconds(0.5f);
         if (attack == false)
         {
             FindObjectOfType<AudioManager>().Play("PlayerHit", sfx);
-            Hammer.transform.Rotate(0, 0, -75);
+            //Hammer.transform.Rotate(0, 0, -75);
             Hammer.gameObject.tag = "Weapon";
             attack = true;
         }
-        yield return new WaitForSeconds(CooldownDownHammer);
+        yield return new WaitForSeconds(CooldownDownHammer+1f);
         if (attack == true)
         {
-            Hammer.transform.Rotate(0, 0, 75);
+            //Hammer.transform.Rotate(0, 0, 75);
             Hammer.gameObject.tag = "NotWeapon";
             yield return new WaitForSeconds(CooldownHammer);
             attack = false;

@@ -50,34 +50,6 @@ public class LoopDoor : MonoBehaviour
                     GraphicsDoor7.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
                     GraphicsDoor8.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
                     GraphicsDoor9.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
-                }
-                if (CurrentScene.name == "FirstLevelV2" )           //Se la scena corrente è FirstLevelV2
-                {
-                    yield return new WaitForSeconds((float)0.1);    //Aspetto 0.1
-                    GraphicsDoor1.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
-                    GraphicsDoor2.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
-                    GraphicsDoor3.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
-                    GraphicsDoor4.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
-                    GraphicsDoor5.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
-                    GraphicsDoor6.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
-                    GraphicsDoor7.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
-                    GraphicsDoor8.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
-                    GraphicsDoor9.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
-                    GraphicsDoor10.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
-                    //GraphicsDoor11.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
-                }
-                if (CurrentScene.name == "ThirdLevel")           //Se la scena corrente è FirstLevelV2
-                {
-                    yield return new WaitForSeconds((float)0.1);    //Aspetto 0.1
-                    GraphicsDoor1.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
-                    GraphicsDoor2.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
-                    GraphicsDoor3.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
-                    GraphicsDoor4.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
-                    GraphicsDoor5.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
-                    GraphicsDoor6.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
-                    GraphicsDoor7.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
-                    GraphicsDoor8.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
-                    GraphicsDoor9.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
                     GraphicsDoor10.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
                     GraphicsDoor11.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
                     GraphicsDoor12.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
@@ -88,6 +60,43 @@ public class LoopDoor : MonoBehaviour
                     GraphicsDoor17.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
                     GraphicsDoor18.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
                 }
+                //if (CurrentScene.name == "FirstLevelV2" )           //Se la scena corrente è FirstLevelV2
+                //{
+                //    yield return new WaitForSeconds((float)0.1);    //Aspetto 0.1
+                //    GraphicsDoor1.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
+                //    GraphicsDoor2.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
+                //    GraphicsDoor3.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
+                //    GraphicsDoor4.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
+                //    GraphicsDoor5.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
+                //    GraphicsDoor6.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
+                //    GraphicsDoor7.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
+                //    GraphicsDoor8.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
+                //    GraphicsDoor9.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
+                //    GraphicsDoor10.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
+                //    //GraphicsDoor11.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
+                //}
+                //if (CurrentScene.name == "ThirdLevel")           //Se la scena corrente è FirstLevelV2
+                //{
+                //    yield return new WaitForSeconds((float)0.1);    //Aspetto 0.1
+                //    GraphicsDoor1.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
+                //    GraphicsDoor2.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
+                //    GraphicsDoor3.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
+                //    GraphicsDoor4.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
+                //    GraphicsDoor5.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
+                //    GraphicsDoor6.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
+                //    GraphicsDoor7.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
+                //    GraphicsDoor8.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
+                //    GraphicsDoor9.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
+                //    GraphicsDoor10.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
+                //    GraphicsDoor11.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
+                //    GraphicsDoor12.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
+                //    GraphicsDoor13.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
+                //    GraphicsDoor14.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
+                //    GraphicsDoor15.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
+                //    GraphicsDoor16.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
+                //    GraphicsDoor17.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
+                //    GraphicsDoor18.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
+                //}
                 if (i>=48)                                      //Se i è maggiore o uguale a 48
                 {
                     i = 0;                                      //Setto la i uguale a 0

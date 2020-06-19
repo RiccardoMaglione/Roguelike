@@ -6,6 +6,17 @@ public class ArrowMove : MonoBehaviour
 {
     void Update()
     {
-        transform.Translate(Vector3.forward * 10 * Time.deltaTime);     //Muove la freccia nella direzione in cui sta guardando
+        if(this.gameObject.name == "ArrowE0(Clone)")
+        {
+            transform.Translate(Vector3.left * 10 * Time.deltaTime);     //Muove la freccia nella direzione in cui sta guardando
+        }
+        else if (this.gameObject.name == "ArrowOE(Clone)")
+        {
+            transform.Translate(Vector3.right * 10 * Time.deltaTime);     //Muove la freccia nella direzione in cui sta guardando
+        }
+        else
+        {
+            transform.Translate(Vector3.forward * 10 * Time.deltaTime);     //Muove la freccia nella direzione in cui sta guardando
+        }
     }
 }
