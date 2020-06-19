@@ -57,7 +57,8 @@ public class ArrowTrap : MonoBehaviour
         {
             Quaternion rot = new Quaternion(0, 180, 0, 0);                                                  //Definisco la rotazione
             GameObject stalactite = Instantiate(Arrow9, transform.localPosition, Quaternion.identity);      //Istanzio la freccia
-            if (ActivateEnemy.isRoom4ArrowSound == true)                                                    //Se isRoom3ArrowSound è vero
+            //if (ActivateEnemy.isRoom4ArrowSound == true)                                                    //Se isRoom3ArrowSound è vero
+            if (ActivateEnemy.isRoom3ArrowSound == true)
             {
                 FindObjectOfType<AudioManager>().Play("ArrowTrap", sfx);                                    //Faccio partire l'audio della freccia
             }
@@ -71,10 +72,10 @@ public class ArrowTrap : MonoBehaviour
         {
             Quaternion rot = new Quaternion(0, 0, 0, 0);                          //Definisco la rotazione
             GameObject stalactite = Instantiate(ArrowOE, transform.position, rot);   //Istanzio la freccia
-            //if (ActivateEnemy.isRoom3ArrowSound == true)                            //Se isRoom3ArrowSound è vero
-            //{
-            //    FindObjectOfType<AudioManager>().Play("ArrowTrap", sfx);            //Faccio partire l'audio della freccia
-            //}
+            if (ActivateEnemy.isRoom3ArrowSound == true)                            //Se isRoom3ArrowSound è vero
+            {
+                FindObjectOfType<AudioManager>().Play("ArrowTrap", sfx);            //Faccio partire l'audio della freccia
+            }
             yield return new WaitForSeconds(1);                                     //Aspetto 1 secondo
         }
     }
@@ -84,10 +85,10 @@ public class ArrowTrap : MonoBehaviour
         {
             Quaternion rot = new Quaternion(0, 0, 0, 0);                          //Definisco la rotazione
             GameObject stalactite = Instantiate(ArrowEO, transform.position, rot);   //Istanzio la freccia
-            //if (ActivateEnemy.isRoom3ArrowSound == true)                            //Se isRoom3ArrowSound è vero
-            //{
-            //    FindObjectOfType<AudioManager>().Play("ArrowTrap", sfx);            //Faccio partire l'audio della freccia
-            //}
+            if (ActivateEnemy.isRoom3ArrowSound == true)                            //Se isRoom3ArrowSound è vero
+            {
+                FindObjectOfType<AudioManager>().Play("ArrowTrap", sfx);            //Faccio partire l'audio della freccia
+            }
             yield return new WaitForSeconds(1);                                     //Aspetto 1 secondo
         }
     }

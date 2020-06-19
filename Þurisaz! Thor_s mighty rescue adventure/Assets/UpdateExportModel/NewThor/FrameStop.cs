@@ -5,7 +5,7 @@ using UnityEngine;
 public class FrameStop : MonoBehaviour
 {
     Animator Anim;
-    bool isIdle = false;
+    static public bool isIdle = false;
 
     void Start()
     {
@@ -30,9 +30,9 @@ public class FrameStop : MonoBehaviour
     public IEnumerator AttackCiccia()
     {            
         PlayerManager.Frame = true;
-        Anim.speed = 3f;
+        Anim.speed = 9f;
         Anim.SetBool("StartAttack", true);
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.5f);
         Anim.SetBool("StartAttack", false);
         isIdle = true;
     }

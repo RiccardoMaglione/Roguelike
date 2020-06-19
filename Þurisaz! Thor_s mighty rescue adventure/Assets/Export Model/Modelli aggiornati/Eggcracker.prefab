@@ -41,6 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6402938398573372954}
   - component: {fileID: 8506322885664827503}
+  - component: {fileID: -1813857701247885361}
   m_Layer: 0
   m_Name: Eggcracker
   m_TagString: Eggcracker
@@ -77,6 +78,44 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.8, y: 1.25, z: 0.8}
   m_Center: {x: 0, y: 0.1, z: 0}
+--- !u!114 &-1813857701247885361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5153676870163001590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7427716251bd6b44f8ae3c11722a2bb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hole: {fileID: 0}
+  RuneReference: {fileID: 0}
+  RuneBossGammur1: {fileID: 0}
+  RuneBossGammur2: {fileID: 0}
+  RuneBossGammur3: {fileID: 0}
+  Player: {fileID: 0}
+  MaterialStandardEnemy: {fileID: 0}
+  MaterialStandardBase: {fileID: 0}
+  MaterialChange: {fileID: 0}
+  GraphicsEnemy: {fileID: 0}
+  GraphicsBase: {fileID: 0}
+  BossContainer: {fileID: 0}
+  DoorCollider: {fileID: 0}
+  PrecedentCollider: {fileID: 0}
+  AltoStatuaCollider: {fileID: 0}
+  BassoStatuaCollider: {fileID: 0}
+  DestraGammurCollider: {fileID: 0}
+  SinistraGammurCollider: {fileID: 0}
+  health: 2147483647
+  shadow: {fileID: 0}
+  isBoss: 0
+  currentHealth: 0
+  healthBar: {fileID: 0}
+  ColpitoDalVento: 0
+  ColpitoDalLaser: 0
+  Move: 1
 --- !u!1001 &2577402116079100364
 PrefabInstance:
   m_ObjectHideFlags: 0

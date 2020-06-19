@@ -76,7 +76,7 @@ public class PatternGammur : MonoBehaviour
             float angle = i * Mathf.PI * 2f / 6;
             Vector3 newPos = new Vector3(GammurTransformParent.transform.position.x + Mathf.Cos(angle) * radius, GammurTransformParent.transform.position.y, GammurTransformParent.transform.position.z + Mathf.Sin(angle) * radius);
             GameObject go = Instantiate(ChickenMinion, newPos, Quaternion.identity);
-            go.transform.SetParent(GammurTransformParent);
+            //go.transform.SetParent(GammurTransformParent);
             go.AddComponent<MinionLookAt>();
         }
     }

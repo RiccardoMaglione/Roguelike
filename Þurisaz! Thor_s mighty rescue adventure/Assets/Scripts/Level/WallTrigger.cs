@@ -13,11 +13,11 @@ public class WallTrigger : MonoBehaviour
     public GameObject go2;
     public GameObject go3;
     public GameObject go4;
-
+    
     public GameObject go6;
     public GameObject go7;
     public GameObject go8;
-
+    
     public GameObject go9;
     public GameObject go10;
     public GameObject go11;
@@ -366,95 +366,95 @@ public class WallTrigger : MonoBehaviour
 
     private void Update()
     {
-        if (EnemyManager.WallWow2 == true)
-        {
-            StartCoroutine(WallEnemyWow2());
-        }
-        if (EnemyManager.WallWow3 == true)
-        {
-            StartCoroutine(WallEnemyWow3());
-        }
-        if (EnemyManager.WallValravn2 == true)
-        {
-            StartCoroutine(WallEnemyValravn2());
-        }
-        if (EnemyManager.WallValravn3 == true)
-        {
-            StartCoroutine(WallEnemyValravn3());
-        }
+    //    if (EnemyManager.WallWow2 == true)
+    //    {
+    //        StartCoroutine(WallEnemyWow2());
+    //    }
+    //    if (EnemyManager.WallWow3 == true)
+    //    {
+    //        StartCoroutine(WallEnemyWow3());
+    //    }
+    //    if (EnemyManager.WallValravn2 == true)
+    //    {
+    //        StartCoroutine(WallEnemyValravn2());
+    //    }
+    //    if (EnemyManager.WallValravn3 == true)
+    //    {
+    //        StartCoroutine(WallEnemyValravn3());
+    //    }
         if (EnemyManager.GammurDeath == true)
         {
             StartCoroutine(WallEnemyGammur());
         }
     }
-
-    IEnumerator WallEnemyWow2()
-    {
-        if (EnemyManager.WallWow2 == true)
-        {
-            print("funziona? aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 2");
-            WallW = 1;
-            WallS = 1;
-            WallA = 1;
-            WallD = 1;
-            yield return new WaitForSeconds(0.2f);
-            Destroy(go1);
-            Destroy(go2);
-            Destroy(go3);
-            Destroy(go4);
-            EnemyManager.WallWow2 = false;
-        }
-    }
-    IEnumerator WallEnemyWow3()
-    {
-        if (EnemyManager.WallWow3 == true)
-        {
-            print("funziona? aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 3");
-            WallW = 1;
-            WallS = 1;
-            WallA = 1;
-            WallD = 1;
-            yield return new WaitForSeconds(0.2f);
-            Destroy(go6);
-            Destroy(go7);
-            Destroy(go8);
-            EnemyManager.WallWow3 = false;
-        }
-    }
-    IEnumerator WallEnemyValravn2()
-    {
-        if (EnemyManager.WallValravn2 == true)
-        {
-            print("funziona? aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 4");
-            WallW = 1;
-            WallS = 1;
-            WallA = 1;
-            WallD = 1;
-            yield return new WaitForSeconds(0.2f);
-            Destroy(go9);
-            Destroy(go10);
-            Destroy(go11);
-            Destroy(go12);
-            EnemyManager.WallValravn2 = false;
-        }
-    }
-    IEnumerator WallEnemyValravn3()
-    {
-        if (EnemyManager.WallValravn3 == true)
-        {
-            print("funziona? aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 5");
-            WallW = 1;
-            WallS = 1;
-            WallA = 1;
-            WallD = 1;
-            yield return new WaitForSeconds(0.2f);
-            Destroy(go13);
-            Destroy(go14);
-            Destroy(go15);
-            Destroy(go16);
-            EnemyManager.WallValravn3 = false;
-        }
-    }
+    //
+    //IEnumerator WallEnemyWow2()
+    //{
+    //    if (EnemyManager.WallWow2 == true)
+    //    {
+    //        print("funziona? aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 2");
+    //        WallW = 1;
+    //        WallS = 1;
+    //        WallA = 1;
+    //        WallD = 1;
+    //        yield return new WaitForSeconds(0.2f);
+    //        Destroy(go1);
+    //        Destroy(go2);
+    //        Destroy(go3);
+    //        Destroy(go4);
+    //        EnemyManager.WallWow2 = false;
+    //    }
+    //}
+    //IEnumerator WallEnemyWow3()
+    //{
+    //    if (EnemyManager.WallWow3 == true)
+    //    {
+    //        print("funziona? aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 3");
+    //        WallW = 1;
+    //        WallS = 1;
+    //        WallA = 1;
+    //        WallD = 1;
+    //        yield return new WaitForSeconds(0.2f);
+    //        Destroy(go6);
+    //        Destroy(go7);
+    //        Destroy(go8);
+    //        EnemyManager.WallWow3 = false;
+    //    }
+    //}
+    //IEnumerator WallEnemyValravn2()
+    //{
+    //    if (EnemyManager.WallValravn2 == true)
+    //    {
+    //        print("funziona? aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 4");
+    //        WallW = 1;
+    //        WallS = 1;
+    //        WallA = 1;
+    //        WallD = 1;
+    //        yield return new WaitForSeconds(0.2f);
+    //        Destroy(go9);
+    //        Destroy(go10);
+    //        Destroy(go11);
+    //        Destroy(go12);
+    //        EnemyManager.WallValravn2 = false;
+    //    }
+    //}
+    //IEnumerator WallEnemyValravn3()
+    //{
+    //    if (EnemyManager.WallValravn3 == true)
+    //    {
+    //        print("funziona? aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 5");
+    //        WallW = 1;
+    //        WallS = 1;
+    //        WallA = 1;
+    //        WallD = 1;
+    //        yield return new WaitForSeconds(0.2f);
+    //        Destroy(go13);
+    //        Destroy(go14);
+    //        Destroy(go15);
+    //        Destroy(go16);
+    //        EnemyManager.WallValravn3 = false;
+    //    }
+    //}
 
 
 

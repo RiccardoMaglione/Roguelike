@@ -751,18 +751,18 @@ public class PlayerManager : MonoBehaviour
 
     IEnumerator HammerAttack()
     {
-        yield return new WaitForSeconds(0.5f);
+        //yield return new WaitForSeconds(0.5f);
         if (attack == false)
         {
             FindObjectOfType<AudioManager>().Play("PlayerHit", sfx);
-            //Hammer.transform.Rotate(0, 0, -75);
+            Hammer.transform.Rotate(0, 0, -75);
             Hammer.gameObject.tag = "Weapon";
             attack = true;
         }
-        yield return new WaitForSeconds(CooldownDownHammer+1f);
+        yield return new WaitForSeconds(CooldownDownHammer);
         if (attack == true)
         {
-            //Hammer.transform.Rotate(0, 0, 75);
+            Hammer.transform.Rotate(0, 0, 75);
             Hammer.gameObject.tag = "NotWeapon";
             yield return new WaitForSeconds(CooldownHammer);
             attack = false;

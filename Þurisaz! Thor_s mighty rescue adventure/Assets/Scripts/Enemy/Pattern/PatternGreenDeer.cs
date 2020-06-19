@@ -35,7 +35,7 @@ public class PatternGreenDeer : MonoBehaviour
     private void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
-        StartCoroutine(SpineAttack());
+        //StartCoroutine(SpineAttack());
     }
     private void Update()
     {
@@ -45,6 +45,7 @@ public class PatternGreenDeer : MonoBehaviour
         {
             if (this.name == "GreenScript1")
             {
+                Debug.Log("Cervo 1 attivo");
                 isNineActivate = false;
                 this.GetComponent<PatternGreenDeer>().enabled = true;
                 StartCoroutine(SpineAttack());
@@ -53,8 +54,9 @@ public class PatternGreenDeer : MonoBehaviour
         }
         if (ActivateEnemy.isRoom6NewGreen1 == true && isSix2Activate == true)
         {
-            if (this.name == "GreenScript1")
+            if (this.name == "GreenScript2")
             {
+                Debug.Log("Cervo 2 attivo");
                 isSix2Activate = false;
                 this.GetComponent<PatternGreenDeer>().enabled = true;
                 StartCoroutine(SpineAttack());

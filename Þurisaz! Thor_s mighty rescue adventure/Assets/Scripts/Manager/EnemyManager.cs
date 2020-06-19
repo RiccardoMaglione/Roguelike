@@ -191,8 +191,9 @@ public class EnemyManager : MonoBehaviour
 
             StartCoroutine(EnemyHit());
 
-            if(gameObject.tag == "Boss")
+            if(this.gameObject.tag == "Boss")
             {
+                Debug.Log("Sto togliendo vita al boss");
                 isBoss = true;
                 currentHealth--;
                 healthBar.SetHealth(currentHealth);

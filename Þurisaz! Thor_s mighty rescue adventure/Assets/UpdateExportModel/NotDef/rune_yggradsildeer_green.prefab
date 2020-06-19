@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 074041428f1a26b4ba07f545277d5679, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Spine: {fileID: 3626778206258664521, guid: fdf192afd5556d843966b71ba94c677a, type: 3}
+  Spine: {fileID: 734893130593121439, guid: f6415b2a955bf8245880072abd8c23f4, type: 3}
   PlayerContainer: {fileID: 0}
   shadow: {fileID: 0}
   CooldownAttack: 3
