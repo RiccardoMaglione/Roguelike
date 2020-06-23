@@ -40,9 +40,9 @@ public class NextIntro : MonoBehaviour
         }
         if (press == 2)
         {
+            SceneManager.LoadScene("StartingScreen");
             Image3.SetActive(false);
             Description3.SetActive(false);
-            SceneManager.LoadScene("StartingScreen");
         }
     }
 }
