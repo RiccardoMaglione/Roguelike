@@ -160,7 +160,6 @@ public class PatternGammur : MonoBehaviour
             yield return new WaitForSeconds((float)2f);
         }
     }
-    
     public IEnumerator Flash()
     {
         GraphicsBase.material = MaterialChange;

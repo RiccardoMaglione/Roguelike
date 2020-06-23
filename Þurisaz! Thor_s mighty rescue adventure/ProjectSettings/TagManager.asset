@@ -42,6 +42,7 @@ TagManager:
   - Obstacle
   - RuneDarkElf
   - Shadow
+  - Explosion
   layers:
   - Default
   - TransparentFX

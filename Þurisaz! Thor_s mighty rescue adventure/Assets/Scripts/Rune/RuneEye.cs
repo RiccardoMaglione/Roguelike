@@ -130,7 +130,7 @@ public class RuneEye : MonoBehaviour
 
     bool isActive = false;
 
-    float timer = 0;
+    public float timer = 0;
 
     [Header("DESIGN")]
     [Tooltip("Durata del laser")]
@@ -142,7 +142,8 @@ public class RuneEye : MonoBehaviour
     private void Start()
     {
         player[0] = GameObject.FindGameObjectWithTag("Player");
-    }
+        laser.SetActive(false);
+}
 
     void attack()
     {
@@ -156,11 +157,11 @@ public class RuneEye : MonoBehaviour
             if (hit.collider.gameObject.tag == "Enemy")
             {
                 hit.transform.gameObject.GetComponent<EnemyManager>().ColpitoDalLaser = true;
-                Debug.Log("AHIA!");
+                Debug.Log("AHIA!Ciao");
             }
 
             if (hit.collider.gameObject.tag != "Enemy")
-                Debug.Log("Muro");
+                Debug.Log("MuroCiao");
         }
 
         if (ray == false)
@@ -194,9 +195,10 @@ public class RuneEye : MonoBehaviour
         }
         if (InventorySystem.tempIEye == 1)
         {
-            if ((Input.GetKeyDown(ControlsManager.CM.runeTwo) || Input.GetKeyDown(KeyCode.JoystickButton1)) && SpellReady == true)
+            Debug.Log("Entra e togli ammo runa eye slot due perché non entri");
+            if ((Input.GetKeyDown(ControlsManager.CM.runeTwo) || Input.GetKeyDown(KeyCode.JoystickButton1)) && SpellReady == true || isActive)
             {
-
+                Debug.Log("Entra e togli ammo runa eye slot due perché non entri ciao");
                 isActive = true;
                 attack();
                 timer += Time.deltaTime;
@@ -206,8 +208,10 @@ public class RuneEye : MonoBehaviour
                     isActive = false;
                     timer = 0;
                     laser.SetActive(false);
+                    Debug.Log("Entra e togli ammo runa eye slot due perché non entri topolino");
                     Ammo.AmmoEye--;
                     Ammo.NumAmmoEye1.text = Ammo.AmmoEye.ToString();
+                    Debug.Log("Entra e togli ammo runa eye slot due perché non entri ciccia");
                 }
                 SpellReady = false;
                 StartCoroutine(cooldown());
@@ -234,27 +238,19 @@ public class RuneEye : MonoBehaviour
     {
         if (InventorySystem.tempIEye == 0)
         {
-            //Ammo.RuneRawImageWilloWisp0.enabled = false;
-            //Ammo.RuneRawImageCooldownWilloWisp0.enabled = true;
             player[0].GetComponent<Ammo>().SlotRuneOne.texture = player[0].GetComponent<Ammo>().RuneEyeTexture[1];
             Debug.Log("Entra qui dentro 0");
             yield return new WaitForSeconds(CooldownAttack);
             SpellReady = true;
             player[0].GetComponent<Ammo>().SlotRuneOne.texture = player[0].GetComponent<Ammo>().RuneEyeTexture[0];
-            //Ammo.RuneRawImageCooldownWilloWisp0.enabled = false;
-            //Ammo.RuneRawImageWilloWisp0.enabled = true;
         }
         if (InventorySystem.tempIEye == 1)
         {
-            //Ammo.RuneRawImageWilloWisp1.enabled = false;
-            //Ammo.RuneRawImageCooldownWilloWisp1.enabled = true;
-            Debug.Log("Entra qui dentro 1");
             player[0].GetComponent<Ammo>().SlotRuneTwo.texture = player[0].GetComponent<Ammo>().RuneEyeTexture[1];
+            Debug.Log("Entra qui dentro 1");
             yield return new WaitForSeconds(CooldownAttack);
             SpellReady = true;
             player[0].GetComponent<Ammo>().SlotRuneTwo.texture = player[0].GetComponent<Ammo>().RuneEyeTexture[0];
-            //Ammo.RuneRawImageCooldownWilloWisp1.enabled = false;
-            //Ammo.RuneRawImageWilloWisp1.enabled = true;
         }
     }
 

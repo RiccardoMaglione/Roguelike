@@ -35,7 +35,10 @@ public class PatternEye : MonoBehaviour
             a.SetPosition(1, new Vector3(0, 0, hit.distance));
 
             if (hit.collider.gameObject.tag == "Player")
+            {
+                PlayerManager.ColpitoPlayer = true;
                 Debug.Log("AHIA!");
+            }
 
             if (hit.collider.gameObject.tag != "Player")
 

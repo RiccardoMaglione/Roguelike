@@ -49,6 +49,10 @@ public class ActivateEnemy : MonoBehaviour
         {
             if (other.gameObject.tag == "Player")
             {
+                if(this.name == "Room1CameraTrigger")
+                {
+                    isRoom3ArrowSound = false;
+                }
                 if (this.name == "2Trigger")
                 {
                     isRoom2 = true;
@@ -105,6 +109,8 @@ public class ActivateEnemy : MonoBehaviour
                 }
                 if (this.name == "13Trigger")   //Entro nella stanza 4 dalla 8
                 {
+                    isRoom4Valravn2 = true;
+                    isRoom4Valravn3 = true;
                     isRoom3ArrowSound = false;
                 }
                 if (this.name == "14Trigger")   //Entro nella stanza 8 dalla 4

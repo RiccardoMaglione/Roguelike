@@ -10,7 +10,7 @@ public class FrameStop : MonoBehaviour
     void Start()
     {
         Anim = GetComponent<Animator>();
-        Anim.Play("Idle", 0, 17);
+        Anim.Play("Idle", 0, 172);
     }
 
     void Update()
@@ -23,7 +23,7 @@ public class FrameStop : MonoBehaviour
         if (this.Anim.GetCurrentAnimatorStateInfo(0).IsName("Idle") && isIdle == true)
         {
             isIdle = false;
-            Anim.Play("Idle", 0, 21);
+            Anim.Play("Idle", 0, 172);
         }
     }
 

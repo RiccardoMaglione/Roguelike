@@ -8,16 +8,16 @@ public class Ammo : MonoBehaviour
 {
 
     #region GameObject riferimento all'oggetto runa nella UI
-    GameObject RuneWoW;
-    GameObject RuneValvran;
+    public static GameObject RuneWoW;
+    public static GameObject RuneValvran;
 
-    GameObject RuneBlue;
-    GameObject RuneGreen;
-    GameObject RuneYellow;
-    GameObject RuneRed;
-    GameObject RuneEye;
-    GameObject RuneDarkElf;
-    GameObject RuneDraugr;
+    public static GameObject RuneBlue;
+    public static GameObject RuneGreen;
+    public static GameObject RuneYellow;
+    public static GameObject RuneRed;
+    public static GameObject RuneEye;
+    public static GameObject RuneDarkElf;
+    public static GameObject RuneDraugr;
     #endregion
 
     #region Intero riferimento al numero delle ammo dei singoli mostri
@@ -410,6 +410,7 @@ public class Ammo : MonoBehaviour
         {
             if (InventorySystem.tempIImageGreen == 0 && (isActivateWow == false && isActivateValvran == false && isActivateBlue == false && isActivateRed == false && isActivateYellow == false && isActivateEye == false && isActivateDarkElf == false && isActivateDraugr == false))            //Slot runa uno
             {
+                Debug.Log("La prima parte si attiva");
                 //RuneRawImageWilloWisp0.enabled = true;
                 SlotRuneOne.texture = RuneGreenTexture[0];    //Sostituisce la texture della runa uno con la texture del green
                 NumAmmoGreen0.gameObject.SetActive(true);     //Attiva le ammo del green nello slots uno
@@ -425,6 +426,7 @@ public class Ammo : MonoBehaviour
             //if (isActivateWow == true || isActivateValvran == true || isActivateBlue == true || isActivateRed == true || isActivateYellow == true || isActivateEye == true || isActivateDarkElf == true || isActivateDraugr == true)                  //Vede che la runa uno è occupata dal valravn o dalle altre in questione quindi mette la runa due
             if(SlotRuneTwo.texture == AlphaTexture && isSlotOneOccupiedGreen == false)
             {
+                Debug.Log("La seconda parte si attiva");
                 //RuneRawImageWilloWisp1.enabled = true;
                 SlotRuneTwo.texture = RuneGreenTexture[0];    //Sostituisce la texture della runa due
                 NumAmmoGreen1.gameObject.SetActive(true);     //Attiva le ammo del green nello slots due
@@ -437,6 +439,7 @@ public class Ammo : MonoBehaviour
         }
         else if (other.gameObject.tag == "RuneGreen" && isFirstRuneGreen == true)    //Se ho già raccolto la runa
         {
+            Debug.Log("Qui Verde");
             AmmoGreen += 10;
             if (InventorySystem.tempIImageGreen == 0)            //Se la runa sta nello slot 0
             {
@@ -543,6 +546,7 @@ public class Ammo : MonoBehaviour
         #region Rune Eye
         if (other.gameObject.tag == "RuneEye" && isFirstRuneEye == false)   //Se non ho già raccolto la runa
         {
+            Debug.Log("Qui Occhio falso" + isSlotOneOccupiedEye);
             if (InventorySystem.tempIImageEye == 0 && (isActivateWow == false && isActivateValvran == false && isActivateBlue == false && isActivateGreen == false && isActivateRed == false && isActivateYellow == false && isActivateDarkElf == false && isActivateDraugr == false))            //Slot runa uno
             {
                 Debug.Log("La prima parte si attiva");
@@ -573,6 +577,7 @@ public class Ammo : MonoBehaviour
         }
         else if (other.gameObject.tag == "RuneEye" && isFirstRuneEye == true)    //Se ho già raccolto la runa
         {
+            Debug.Log("Qui Occhio");
             AmmoEye += 10;
             if (InventorySystem.tempIImageEye == 0)                 //Se la runa sta nello slot 0
             {
@@ -810,16 +815,21 @@ public class Ammo : MonoBehaviour
         #region Ammo Green
         if (AmmoGreen <= 0)
         {
-            if (CurrentScene.name == "ThirdLevel")
+            Debug.Log("verdeddeeeeeeeeeeeeeee");
+            if (CurrentScene.name == "FirstLevel")
             {
-                Destroy(InventorySystem.RuneGreen.gameObject);
+                Debug.Log("Dovresti togliere la texture dalla runa 1, vediamo, verdeddeeeeeeeeeeeeeee");
+                Destroy(RuneGreen.gameObject);
                 isFirstRuneGreen = false;
+                Debug.Log("temp i image green "+ InventorySystem.tempIImageGreen);
                 if (InventorySystem.tempIImageGreen == 0)
                 {
+                    Debug.Log("Dovresti togliere la texture dalla runa 1, vediamo, 11111111111111111111111111");
                     SlotRuneOne.texture = AlphaTexture;
                 }
                 if (InventorySystem.tempIImageGreen == 1)
                 {
+                    Debug.Log("Dovresti togliere la texture dalla runa 1, vediamo, 22222222222222222222");
                     SlotRuneTwo.texture = AlphaTexture;
                 }
                 NumAmmoGreen0.gameObject.SetActive(false);
@@ -873,9 +883,10 @@ public class Ammo : MonoBehaviour
         #region Ammo Eye
         if (AmmoEye <= 0)
         {
-            if (CurrentScene.name == "ThirdLevel")
+            if (CurrentScene.name == "FirstLevel")
             {
-                Destroy(InventorySystem.RuneEye.gameObject);
+                Debug.Log("Dovresti togliere la texture dalla runa 1, vediamo");
+                Destroy(RuneEye.gameObject);
                 isFirstRuneEye = false;
                 if (InventorySystem.tempIImageEye == 0)
                 {
@@ -894,9 +905,10 @@ public class Ammo : MonoBehaviour
         #region Ammo Dark Elf
         if (AmmoDarkElf <= 0)
         {
-            if (CurrentScene.name == "ThirdLevel")
+            if (CurrentScene.name == "FirstLevel")
             {
-                Destroy(InventorySystem.RuneDarkElf.gameObject);
+                Debug.Log("Dovresti togliere la texture dalla runa 1, vediamo");
+                Destroy(RuneDarkElf.gameObject);
                 isFirstRuneDarkElf = false;
                 if (InventorySystem.tempIImageDarkElf == 0)
                 {
