@@ -371,41 +371,51 @@ public class InventorySystem : MonoBehaviour
             {
                 if (other.gameObject.tag == "RuneWow" || other.gameObject.tag == "RuneValvran" || other.gameObject.tag == "RuneProva" || other.gameObject.tag == "RuneEye" || other.gameObject.tag == "RuneBlue" || other.gameObject.tag == "RuneGreen" || other.gameObject.tag == "RuneYellow" || other.gameObject.tag == "RuneOrange" || other.gameObject.tag == "RuneDarkElf" || other.gameObject.tag == "RuneDraugr")                  //Se l'altro oggetto è uno di quelli proposti
                 {
-                    /*if (InventorySlotsEnemy[0].gameObject.tag == "RuneWow")
+                    if (InventorySlotsEnemy[0].gameObject.tag == "RuneWow")
                     {
-                        isPresentWow = false;
                         GetComponent<Ammo>().isFirstRuneWow = false;
+                        GetComponent<Ammo>().isSlotOneOccupiedWow = false;
+                        GetComponent<Ammo>().isActivateWow = false;
+                        isPresentWow = false;
                         isFirsPresentRuneWow = false;
                         RuneToPlayer.isTimeToWow = false;
                     }
                     if (InventorySlotsEnemy[0].gameObject.tag == "RuneValvran")
                     {
-                        isPresentValvran = false;
                         GetComponent<Ammo>().isFirstRuneValvran = false;
+                        GetComponent<Ammo>().isSlotOneOccupiedValravn = false;
+                        GetComponent<Ammo>().isActivateValvran = false;
+                        isPresentValvran = false;
                         isFirsPresentRuneValvran = false;
                         RuneToPlayer.isTimeToValvran = false;
                     }
                     if (InventorySlotsEnemy[0].gameObject.tag == "RuneEye")
                     {
-                        isPresentEye = false;
                         GetComponent<Ammo>().isFirstRuneEye = false;
+                        GetComponent<Ammo>().isSlotOneOccupiedEye = false;
+                        GetComponent<Ammo>().isActivateEye = false;
+                        isPresentEye = false;
                         isFirsPresentRuneEye = false;
                         RuneToPlayer.isTimeToEye = false;
                     }
                     if (InventorySlotsEnemy[0].gameObject.tag == "RuneGreen")
                     {
-                        isPresentGreen = false;
                         GetComponent<Ammo>().isFirstRuneGreen = false;
+                        GetComponent<Ammo>().isSlotOneOccupiedGreen = false;
+                        GetComponent<Ammo>().isActivateGreen = false;
+                        isPresentGreen = false;
                         isFirsPresentRuneGreen = false;
                         RuneToPlayer.isTimeToGreen = false;
                     }
                     if (InventorySlotsEnemy[0].gameObject.tag == "RuneDarkElf")
                     {
-                        isPresentDarkElf = false;
                         GetComponent<Ammo>().isFirstRuneDarkElf = false;
+                        GetComponent<Ammo>().isSlotOneOccupiedDarkElf = false;
+                        GetComponent<Ammo>().isActivateDarkElf = false;
+                        isPresentDarkElf = false;
                         isFirsPresentRuneDarkElf = false;
                         RuneToPlayer.isTimeToDarkElf = false;
-                    }*/
+                    }
                     Destroy(InventorySlotsEnemy[0]);                                                                                                    //Distruggi l'oggetto nell'invetario Enemy alla posizione 0
                     InventorySlotsEnemy[0] = other.gameObject;                                                                                          //Setta l'altro oggetto nell'inventario Enemy alla posizione 0
                     InventorySlotsEnemy[0].transform.parent = Player.transform;                                                                         //Setta come parent il player
@@ -420,6 +430,7 @@ public class InventorySystem : MonoBehaviour
                         Debug.Log("Ciccia");
                         isPresentWow = true;
                         InventorySlotsEnemy[0].GetComponent<RuneWow>().enabled = true;
+                        GetComponent<Ammo>().isActivateWow = true;
                         //EyeChange = true;
                         GetComponent<Ammo>().SlotRuneOne.texture = GetComponent<Ammo>().RuneWowTexture[0];
                         tempIWow = 0;
@@ -441,6 +452,7 @@ public class InventorySystem : MonoBehaviour
                         Debug.Log("Ciccia");
                         isPresentValvran = true;
                         InventorySlotsEnemy[0].GetComponent<RuneValravn>().enabled = true;
+                        GetComponent<Ammo>().isActivateValvran = true;
                         //EyeChange = true;
                         GetComponent<Ammo>().SlotRuneOne.texture = GetComponent<Ammo>().RuneValravnTexture[0];
                         tempIValvran = 0;
@@ -462,6 +474,7 @@ public class InventorySystem : MonoBehaviour
                         Debug.Log("Ciccia");
                         isPresentEye = true;
                         InventorySlotsEnemy[0].GetComponent<RuneEye>().enabled = true;
+                        GetComponent<Ammo>().isActivateEye = true;
                         //EyeChange = true;
                         GetComponent<Ammo>().SlotRuneOne.texture = GetComponent<Ammo>().RuneEyeTexture[0];
                         tempIEye = 0;
@@ -494,6 +507,7 @@ public class InventorySystem : MonoBehaviour
                         Ammo.RuneGreen = other.gameObject;
                         isPresentGreen = true;
                         InventorySlotsEnemy[0].GetComponent<RuneGreen>().enabled = true;
+                        GetComponent<Ammo>().isActivateGreen = true;
                         //GreenChange = true;
                         GetComponent<Ammo>().SlotRuneOne.texture = GetComponent<Ammo>().RuneGreenTexture[0];
                         tempIGreen = 0;
@@ -535,6 +549,7 @@ public class InventorySystem : MonoBehaviour
                         Ammo.RuneDarkElf = other.gameObject;
                         isPresentDarkElf = true;
                         InventorySlotsEnemy[0].GetComponent<RuneDarkElf>().enabled = true;
+                        GetComponent<Ammo>().isActivateDarkElf = true;
                         //DarkElfChange = true;
                         GetComponent<Ammo>().SlotRuneOne.texture = GetComponent<Ammo>().RuneDarkElfTexture[0];
                         tempIDarkElf = 0;
@@ -569,41 +584,46 @@ public class InventorySystem : MonoBehaviour
             {
                 if (other.gameObject.tag == "RuneWow" || other.gameObject.tag == "RuneValvran" || other.gameObject.tag == "RuneProva" || other.gameObject.tag == "RuneEye" || other.gameObject.tag == "RuneBlue" || other.gameObject.tag == "RuneGreen" || other.gameObject.tag == "RuneYellow" || other.gameObject.tag == "RuneOrange" || other.gameObject.tag == "RuneDarkElf" || other.gameObject.tag == "RuneDraugr")                  //Se l'altro oggetto è uno di quelli proposti
                 {
-                    /*if (InventorySlotsEnemy[1].gameObject.tag == "RuneWow")
+                    if (InventorySlotsEnemy[1].gameObject.tag == "RuneWow")
                     {
-                        isPresentWow = false;
                         GetComponent<Ammo>().isFirstRuneWow = false;
+                        GetComponent<Ammo>().isSlotOneOccupiedWow = false;
+                        isPresentWow = false;
                         isFirsPresentRuneWow = false;
                         RuneToPlayer.isTimeToWow = false;
                     }
                     if (InventorySlotsEnemy[1].gameObject.tag == "RuneValvran")
                     {
-                        isPresentValvran = false;
                         GetComponent<Ammo>().isFirstRuneValvran = false;
+                        GetComponent<Ammo>().isSlotOneOccupiedValravn = false;
+                        isPresentValvran = false;
                         isFirsPresentRuneValvran = false;
                         RuneToPlayer.isTimeToValvran = false;
                     }
                     if (InventorySlotsEnemy[1].gameObject.tag == "RuneEye")
                     {
-                        isPresentEye = false;
                         GetComponent<Ammo>().isFirstRuneEye = false;
+                        GetComponent<Ammo>().isSlotOneOccupiedEye = false;
+                        isPresentEye = false;
                         isFirsPresentRuneEye = false;
                         RuneToPlayer.isTimeToEye = false;
                     }
                     if (InventorySlotsEnemy[1].gameObject.tag == "RuneGreen")
                     {
-                        isPresentGreen = false;
                         GetComponent<Ammo>().isFirstRuneGreen = false;
+                        GetComponent<Ammo>().isSlotOneOccupiedGreen = false;
+                        isPresentGreen = false;
                         isFirsPresentRuneGreen = false;
                         RuneToPlayer.isTimeToGreen = false;
                     }
                     if (InventorySlotsEnemy[1].gameObject.tag == "RuneDarkElf")
                     {
-                        isPresentDarkElf = false;
                         GetComponent<Ammo>().isFirstRuneDarkElf = false;
+                        GetComponent<Ammo>().isSlotOneOccupiedDarkElf = false;
+                        isPresentDarkElf = false;
                         isFirsPresentRuneDarkElf = false;
                         RuneToPlayer.isTimeToDarkElf = false;
-                    }*/
+                    }
                     Destroy(InventorySlotsEnemy[1]);                                                                                                    //Distruggi l'oggetto nell'invetario Enemy alla posizione 1
                     InventorySlotsEnemy[1] = other.gameObject;                                                                                          //Setta l'altro oggetto nell'inventario Enemy alla posizione 1
                     InventorySlotsEnemy[1].transform.parent = Player.transform;                                                                         //Setta come parent il player

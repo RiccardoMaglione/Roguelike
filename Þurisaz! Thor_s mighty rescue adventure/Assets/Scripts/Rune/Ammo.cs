@@ -132,15 +132,15 @@ public class Ammo : MonoBehaviour
 
     public Texture AlphaTexture;
 
-    bool isSlotOneOccupiedWow = false;
-    bool isSlotOneOccupiedValravn = false;
-    bool isSlotOneOccupiedEye = false;
-    bool isSlotOneOccupiedGreen = false;
-    bool isSlotOneOccupiedBlue = false;
-    bool isSlotOneOccupiedRed = false;
-    bool isSlotOneOccupiedYellow = false;
-    bool isSlotOneOccupiedDraugr = false;
-    bool isSlotOneOccupiedDarkElf = false;
+    public bool isSlotOneOccupiedWow = false;
+    public bool isSlotOneOccupiedValravn = false;
+    public bool isSlotOneOccupiedEye = false;
+    public bool isSlotOneOccupiedGreen = false;
+    public bool isSlotOneOccupiedBlue = false;
+    public bool isSlotOneOccupiedRed = false;
+    public bool isSlotOneOccupiedYellow = false;
+    public bool isSlotOneOccupiedDraugr = false;
+    public bool isSlotOneOccupiedDarkElf = false;
 
 
     Scene CurrentScene;
