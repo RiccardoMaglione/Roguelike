@@ -12,22 +12,7 @@ public class NavAgents : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        if(this.gameObject.name == "WillOfWisp4")
-        {
-            StartCoroutine(PathWow());
-        }
-        else if (this.gameObject.name == "WillOfWisp5")
-        {
-            StartCoroutine(PathWow());
-        }
-        else if (this.gameObject.name == "Valvran4")
-        {
-            StartCoroutine(PathWow());
-        }
-        else
-        {
-            StartCoroutine(Path());
-        }
+        StartCoroutine(Path());
     }
     IEnumerator Path()
     {
@@ -35,22 +20,12 @@ public class NavAgents : MonoBehaviour
         {
             yield return new WaitForSeconds((float)4f);
             agent.destination = goal1.position;
-            yield return new WaitForSeconds((float)5f);
+            yield return new WaitForSeconds((float)4f);
             agent.destination = goal2.position;
             yield return new WaitForSeconds((float)4f);
             agent.destination = goal3.position;
-            yield return new WaitForSeconds((float)5f);
+            yield return new WaitForSeconds((float)4f);
             agent.destination = goal4.position;
-        }
-    }
-    IEnumerator PathWow()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds((float)4f);
-            agent.destination = goal1.position;
-            yield return new WaitForSeconds((float)4f);
-            agent.destination = goal2.position;
         }
     }
 }

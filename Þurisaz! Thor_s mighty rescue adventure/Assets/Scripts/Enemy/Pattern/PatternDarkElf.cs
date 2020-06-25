@@ -22,7 +22,7 @@ public class PatternDarkElf : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //StartCoroutine(AttackLance());
+        StartCoroutine(AttackLance());
     }
 
     // Update is called once per frame
@@ -31,7 +31,7 @@ public class PatternDarkElf : MonoBehaviour
         anim.speed = desiredSpeed;
         if (ActivateEnemy.isRoom8DarkElf1 == true && isFirstActivate == true)            //Se isRoom3Valravn è vero e isFirstActivate è vero
         {
-            if (this.name == "DarkElfScript1")                                          //Se il nome dell'oggetto, cioè il proprio, è ValvranScript1
+            if (this.name == "ValvranScript1")                                          //Se il nome dell'oggetto, cioè il proprio, è ValvranScript1
             {
                 isFirstActivate = false;                                                //Setto isFirstActivate a falso
                 this.GetComponent<PatternDarkElf>().enabled = true;                     //Attivo lo script
@@ -41,7 +41,7 @@ public class PatternDarkElf : MonoBehaviour
         }
         if (ActivateEnemy.isRoom8DarkElf2 == true && isSecondActivate == true)          //Se isRoom4Valravn2 è vero e isSecondActivate è vero
         {
-            if (this.name == "DarkElfScript2")                                          //Se il nome dell'oggetto, cioè il proprio, è ValvranScript1
+            if (this.name == "ValvranScript2")                                          //Se il nome dell'oggetto, cioè il proprio, è ValvranScript1
             {
                 isSecondActivate = false;                                               //Setto isSecondActivate a falso
                 this.GetComponent<PatternDarkElf>().enabled = true;                     //Attivo lo script

@@ -3,9 +3,7 @@ guid: dfd919c11883e0b47988d13641fbc06b
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - target: {instanceID: 0}
-  - ExplosionEggCracker: {instanceID: 0}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -5,12 +5,12 @@ using UnityEngine;
 public class FrameStop : MonoBehaviour
 {
     Animator Anim;
-    static public bool isIdle = false;
+    bool isIdle = false;
 
     void Start()
     {
         Anim = GetComponent<Animator>();
-        Anim.Play("Idle", 0, 172);
+        Anim.Play("Idle", 0, 17);
     }
 
     void Update()
@@ -23,16 +23,16 @@ public class FrameStop : MonoBehaviour
         if (this.Anim.GetCurrentAnimatorStateInfo(0).IsName("Idle") && isIdle == true)
         {
             isIdle = false;
-            Anim.Play("Idle", 0, 172);
+            Anim.Play("Idle", 0, 21);
         }
     }
 
     public IEnumerator AttackCiccia()
     {            
         PlayerManager.Frame = true;
-        Anim.speed = 9f;
+        Anim.speed = 3f;
         Anim.SetBool("StartAttack", true);
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1.5f);
         Anim.SetBool("StartAttack", false);
         isIdle = true;
     }

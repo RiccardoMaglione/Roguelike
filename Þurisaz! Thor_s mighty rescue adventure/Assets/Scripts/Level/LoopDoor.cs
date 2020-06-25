@@ -23,7 +23,6 @@ public class LoopDoor : MonoBehaviour
     public Renderer GraphicsDoor16;                              //Instanzio la variabile renderer riferita alla graphics door corrispondente
     public Renderer GraphicsDoor17;                              //Instanzio la variabile renderer riferita alla graphics door corrispondente
     public Renderer GraphicsDoor18;                              //Instanzio la variabile renderer riferita alla graphics door corrispondente
-    public Renderer GraphicsDoor19;                              //Instanzio la variabile renderer riferita alla graphics door corrispondente
     public Material[] MaterialChange = new Material[48];        //Instanzio un array di 48 elementi, cioè i materiali per creare il loop della porta
     int i = 0;                                                  //Instanzio la i uguale a 0
     Scene CurrentScene;
@@ -60,7 +59,6 @@ public class LoopDoor : MonoBehaviour
                     GraphicsDoor16.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
                     GraphicsDoor17.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
                     GraphicsDoor18.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
-                    GraphicsDoor19.material = MaterialChange[i];     //Setto il nuovo materiale alla posizione i
                 }
                 //if (CurrentScene.name == "FirstLevelV2" )           //Se la scena corrente è FirstLevelV2
                 //{

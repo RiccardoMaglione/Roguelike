@@ -6,12 +6,10 @@ public class MinionLookAt : MonoBehaviour
 {
     public Transform target;
     private float speed = 1f;
-    public GameObject ExplosionEggCracker;
-    public float timer;
+
     void Start()
     {
-        ExplosionEggCracker = GameObject.FindGameObjectWithTag("Explosion");
-        if (gameObject.tag == "Eggcracker")
+        if(gameObject.tag == "Eggcracker")
         {
             target = GameObject.FindGameObjectWithTag("Player").transform;
             Destroy(gameObject, 10);
@@ -57,22 +55,6 @@ public class MinionLookAt : MonoBehaviour
         if (gameObject.tag == "EggcrackerPlayer")
         {
             MoveEggcrackerPlayer("Enemy");
-        }
-
-        timer += Time.deltaTime;
-        if (gameObject.tag == "Eggcracker" && timer > 9.9)
-        {
-            GameObject GoExplosion = Instantiate(ExplosionEggCracker, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z), transform.rotation);
-            GoExplosion.SetActive(true);
-            Destroy(GoExplosion, 1);
-            timer = 0;
-        }
-        if (gameObject.tag == "EggcrackerPlayer" && timer > 9.9)
-        {
-            GameObject GoExplosion = Instantiate(ExplosionEggCracker, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z), transform.rotation);
-            GoExplosion.SetActive(true);
-            Destroy(GoExplosion, 1);
-            timer = 0;
         }
     }
 }

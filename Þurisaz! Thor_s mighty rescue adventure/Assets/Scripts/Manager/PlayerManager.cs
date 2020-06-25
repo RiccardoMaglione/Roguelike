@@ -125,7 +125,8 @@ public class PlayerManager : MonoBehaviour
     static public int DirectionD = 0;
 
     #endregion
-    public GameObject ExplosionEggCracker;
+
+
     private void OnTriggerEnter(Collider other)
     {
         #region Trigger Health
@@ -133,13 +134,9 @@ public class PlayerManager : MonoBehaviour
         {
             if (other.gameObject.tag == "Shot" || other.gameObject.tag == "Scream" || other.gameObject.tag == "Stalactite" || other.gameObject.tag == "Egg" || other.gameObject.tag == "Eggcracker")
             {
-                if(other.gameObject.tag == "Egg" || other.gameObject.tag == "Eggcracker")
-                {
-                    GameObject GoExplosion = Instantiate(ExplosionEggCracker, new Vector3(other.gameObject.transform.position.x, other.gameObject.transform.position.y, other.gameObject.transform.position.z), transform.rotation);
-                    Destroy(GoExplosion,1);
-                }
                 Destroy(other.gameObject);
             }
+
             randSoundHealth = Random.Range(1, 4);
             if (randSoundHealth == 1)
                 FindObjectOfType<AudioManager>().Play("ThorDamage1", sfx);
@@ -242,7 +239,7 @@ public class PlayerManager : MonoBehaviour
     }
     private void Update()
     {
-        if(ColpitoPlayer == true && damage == true)
+        if(ColpitoPlayer == true)
         {
             health--;
             ColpitoPlayer = false;
@@ -754,18 +751,18 @@ public class PlayerManager : MonoBehaviour
 
     IEnumerator HammerAttack()
     {
-        //yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.5f);
         if (attack == false)
         {
             FindObjectOfType<AudioManager>().Play("PlayerHit", sfx);
-            Hammer.transform.Rotate(0, 0, -75);
+            //Hammer.transform.Rotate(0, 0, -75);
             Hammer.gameObject.tag = "Weapon";
             attack = true;
         }
-        yield return new WaitForSeconds(CooldownDownHammer);
+        yield return new WaitForSeconds(CooldownDownHammer+1f);
         if (attack == true)
         {
-            Hammer.transform.Rotate(0, 0, 75);
+            //Hammer.transform.Rotate(0, 0, 75);
             Hammer.gameObject.tag = "NotWeapon";
             yield return new WaitForSeconds(CooldownHammer);
             attack = false;

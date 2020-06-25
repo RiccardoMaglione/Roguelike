@@ -259,10 +259,8 @@ public class RuneToPlayer : MonoBehaviour
                     GetComponent<BoxCollider>().enabled = false;
                     isTimeToEye = true;
                     GraphicsRuneEye.enabled = false;
-                    GetComponent<RotateParticle>().enabled = false;
                     Particle.SetActive(false);
                     Shadow.SetActive(false);
-                    transform.rotation = Quaternion.Euler(-90, 0, 90);
                 }
             }
             #endregion

@@ -270,14 +270,14 @@ public class RuneDarkElf : MonoBehaviour
 
 	public IEnumerator cooldown()
 	{
-		if (InventorySystem.tempIDarkElf == 0)
+		if (InventorySystem.tempIWow == 0)
 		{
 			player[0].GetComponent<Ammo>().SlotRuneOne.texture = player[0].GetComponent<Ammo>().RuneDarkElfTexture[1];
 			yield return new WaitForSeconds(CooldownRune);
 			SpellReady = true;
 			player[0].GetComponent<Ammo>().SlotRuneOne.texture = player[0].GetComponent<Ammo>().RuneDarkElfTexture[0];
 		}
-		if (InventorySystem.tempIDarkElf == 1)
+		if (InventorySystem.tempIWow == 1)
 		{
 			player[0].GetComponent<Ammo>().SlotRuneTwo.texture = player[0].GetComponent<Ammo>().RuneDarkElfTexture[1];
 			yield return new WaitForSeconds(CooldownRune);

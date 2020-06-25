@@ -91,12 +91,6 @@ public class EnemyManager : MonoBehaviour
     public static int GammurFound = 0;
     public static int LokiFound = 0;
 
-
-    public static int CountEnemyWin = 0;
-    public int TempCountEnemyWin = 0;
-
-    public GameObject ExplosionEggCrackerPlayer;
-
     private void OnTriggerEnter(Collider other)
     {
 
@@ -109,8 +103,6 @@ public class EnemyManager : MonoBehaviour
         {
             if(other.gameObject.tag == "EggPlayer" || other.gameObject.tag == "EggcrackerPlayer")
             {
-                GameObject GoExplosion = Instantiate(ExplosionEggCrackerPlayer, new Vector3(other.gameObject.transform.position.x, other.gameObject.transform.position.y, other.gameObject.transform.position.z), transform.rotation);
-                Destroy(GoExplosion, 1);
                 Destroy(other.gameObject);
             }
             health--;           //Diminuisce la vita del nemico di 1, serve un if se si vuole che i diversi attacchi facciano più o meno danno
@@ -199,9 +191,8 @@ public class EnemyManager : MonoBehaviour
 
             StartCoroutine(EnemyHit());
 
-            if(this.gameObject.tag == "Boss")
+            if(gameObject.tag == "Boss")
             {
-                Debug.Log("Sto togliendo vita al boss");
                 isBoss = true;
                 currentHealth--;
                 healthBar.SetHealth(currentHealth);
@@ -221,8 +212,6 @@ public class EnemyManager : MonoBehaviour
     }
     private void Update()
     {
-        TempCountEnemyWin = CountEnemyWin;
-        Debug.Log("Count enemy win " + CountEnemyWin);
         #region Tornado Valravn
         if (ColpitoDalVento == true)
         {
@@ -242,7 +231,6 @@ public class EnemyManager : MonoBehaviour
         {
             health--;
             ColpitoDalLaser = false;
-            Debug.Log("Entra e togli vita all'occhio dai");
             StartCoroutine(EnemyHit());
             if (gameObject.tag == "Boss")
             {
@@ -285,10 +273,6 @@ public class EnemyManager : MonoBehaviour
                 //GameObject shadow1 = Instantiate(shadow, new Vector3(transform.position.x, 0.1f, transform.position.z), Quaternion.identity);
                 //shadow1.transform.parent = rune.transform;
                 WowFound = 1;
-                for (int i = 0; i < 1; i++)
-                {
-                    CountEnemyWin++;
-                }
             }
             #endregion
             #region Valvran
@@ -309,10 +293,6 @@ public class EnemyManager : MonoBehaviour
                 //GameObject shadow1 = Instantiate(shadow, new Vector3(transform.position.x, 0.1f, transform.position.z), Quaternion.identity);
                 //shadow1.transform.parent = rune.transform;
                 ValravnFound = 1;
-                for (int i = 0; i < 1; i++)
-                {
-                    CountEnemyWin++;
-                }
             }
             #endregion
             #region Odin's Eye
@@ -324,10 +304,6 @@ public class EnemyManager : MonoBehaviour
                 //GameObject shadow1 = Instantiate(shadow, new Vector3(transform.position.x, 0.1f, transform.position.z), Quaternion.identity);
                 //shadow1.transform.parent = rune.transform;
                 OdinEyeFound = 1;
-                for (int i = 0; i < 1; i++)
-                {
-                    CountEnemyWin++;
-                }
             }
             #endregion
             #region Yggdrasil Deer
@@ -348,10 +324,6 @@ public class EnemyManager : MonoBehaviour
                 //GameObject shadow1 = Instantiate(shadow, new Vector3(transform.position.x, 0.1f, transform.position.z), Quaternion.identity);
                 //shadow1.transform.parent = rune.transform;
                 GreenFound = 1;
-                for (int i = 0; i < 1; i++)
-                {
-                    CountEnemyWin++;
-                }
             }
             if (this.gameObject.name == "DeerYellow1")
             {
@@ -391,10 +363,6 @@ public class EnemyManager : MonoBehaviour
                 //GameObject shadow1 = Instantiate(shadow, new Vector3(transform.position.x, 0.1f, transform.position.z), Quaternion.identity);
                 //shadow1.transform.parent = rune.transform;
                 //DarkElfFound = 1;
-                for (int i = 0; i < 1; i++)
-                {
-                    CountEnemyWin++;
-                }
             }
             #endregion
             #region Draugr

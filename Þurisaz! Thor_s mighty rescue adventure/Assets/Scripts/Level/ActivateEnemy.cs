@@ -49,38 +49,34 @@ public class ActivateEnemy : MonoBehaviour
         {
             if (other.gameObject.tag == "Player")
             {
-                if(this.name == "Room1CameraTrigger")
-                {
-                    isRoom3ArrowSound = false;
-                }
                 if (this.name == "2Trigger")
                 {
                     isRoom2 = true;
                 }
                 if (this.name == "3Trigger")
                 {
-                    //isRoom3ArrowSound = false;
+                    isRoom3ArrowSound = false;
                 }
                 if (this.name == "4Trigger")
                 {
                     isRoom3Wow = true;
                     isRoom3Valravn = true;
-                    //isRoom3ArrowSound = true;
+                    isRoom3ArrowSound = true;
                 }
                 if (this.name == "5Trigger")
                 {
-                    //isRoom4ArrowSound = false;
+                    isRoom4ArrowSound = false;
                 }
                 if (this.name == "6Trigger")
                 {
                     isRoom3ArrowSound = false;
                     isRoom4Valravn2 = true;
                     isRoom4Valravn3 = true;
-                    //isRoom4ArrowSound = true;
+                    isRoom4ArrowSound = true;
                 }
                 if (this.name == "7Trigger")
                 {
-                    //isRoom4ArrowSound = false;
+                    isRoom4ArrowSound = false;
                 }
                 if (this.name == "8Trigger")
                 {
@@ -107,55 +103,48 @@ public class ActivateEnemy : MonoBehaviour
                     isRoom7Wow1 = true;
                     isRoom7Wow2 = true;
                 }
-                if (this.name == "13Trigger")   //Entro nella stanza 4 dalla 8
-                {
-                    isRoom4Valravn2 = true;
-                    isRoom4Valravn3 = true;
-                    isRoom3ArrowSound = false;
-                }
+                //if (this.name == "13Trigger")   //Entro nella stanza 4 dalla 8
+                //{
+                //    
+                //}
                 if (this.name == "14Trigger")   //Entro nella stanza 8 dalla 4
                 {
                     //Attivo nemici Dark Elf
                     isRoom8DarkElf1 = true;
                     isRoom8DarkElf2 = true;
-                    isRoom3ArrowSound = true;
                 }
-                if (this.name == "15Trigger")   //Entro nella stanza 8 dalla 9
-                {
-                    isRoom3ArrowSound = true;
-                }
+                //if (this.name == "15Trigger")   //Entro nella stanza 8 dalla 9
+                //{
+                //
+                //}
                 if (this.name == "16Trigger")   //Entro nella stanza 9 dalla 8
                 {
                     //Attivo occhi e cervo
                     isRoom9Eye1 = true;
                     isRoom9Eye2 = true;
                     isRoom9Green1 = true;
-                    isRoom3ArrowSound = false;
                 }
                 if (this.name == "17Trigger")   //Entro nella stanza 6 (New) dalla 5
                 {
                     //Attivo cervo e valravn
                     isRoom6NewGreen1 = true;
                     isRoom6NewValravn1 = true;
-                    isRoom3ArrowSound = true;
                 }
-                if (this.name == "18Trigger")   //Entro nella stanza 5 dalla 6 (New)
-                {
-                    isRoom3ArrowSound = false;
-                }
+                //if (this.name == "18Trigger")   //Entro nella stanza 5 dalla 6 (New)
+                //{
+                //
+                //}
                 if (this.name == "19Trigger")   //Entro nella stanza 7 dalla 8
                 {
                     //Attivo will o wisp
                     isRoom7Wow1 = true;
                     isRoom7Wow2 = true;
-                    isRoom3ArrowSound = false;
                 }
                 if (this.name == "20Trigger")   //Entro nella stanza 8 dalla 7
                 {
                     //Attivo dark elf
                     isRoom8DarkElf1 = true;
                     isRoom8DarkElf2 = true;
-                    isRoom3ArrowSound = true;
                 }
             }
         }
