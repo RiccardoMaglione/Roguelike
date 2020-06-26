@@ -440,7 +440,7 @@ public class InventorySystem : MonoBehaviour
                         Ammo.NumAmmoEye0.gameObject.SetActive(false);
                         Ammo.NumAmmoGreen0.gameObject.SetActive(false);
                         Ammo.NumAmmoDarkElf0.gameObject.SetActive(false);
-                        Ammo.AmmoW = 10;
+                        Ammo.AmmoW = 5;
                         Ammo.NumAmmoW0.text = Ammo.AmmoW.ToString();
                         tempIImageWow = 0;
                         InventorySlotsEnemy[0].GetComponent<RuneToPlayer>().Particle.SetActive(false);
@@ -462,7 +462,7 @@ public class InventorySystem : MonoBehaviour
                         Ammo.NumAmmoEye0.gameObject.SetActive(false);
                         Ammo.NumAmmoGreen0.gameObject.SetActive(false);
                         Ammo.NumAmmoDarkElf0.gameObject.SetActive(false);
-                        Ammo.AmmoV = 10;
+                        Ammo.AmmoV = 7;
                         Ammo.NumAmmoV0.text = Ammo.AmmoV.ToString();
                         tempIImageValvran = 0;
                         InventorySlotsEnemy[0].GetComponent<RuneToPlayer>().Particle.SetActive(false);
@@ -491,6 +491,7 @@ public class InventorySystem : MonoBehaviour
                         InventorySlotsEnemy[0].GetComponent<RuneToPlayer>().Shadow.SetActive(false);
                         InventorySlotsEnemy[0].GetComponent<RotateParticle>().enabled = false;
                         InventorySlotsEnemy[0].transform.rotation = Quaternion.Euler(-90, 0, 90);
+                        InventorySlotsEnemy[0].transform.position = new Vector3(transform.position.x, transform.position.y + 0.3f, transform.position.z);
                     }
                     if (other.gameObject.tag == "RuneBlue")
                     {
@@ -644,7 +645,7 @@ public class InventorySystem : MonoBehaviour
                         Ammo.NumAmmoEye1.gameObject.SetActive(false);
                         Ammo.NumAmmoGreen1.gameObject.SetActive(false);
                         Ammo.NumAmmoDarkElf1.gameObject.SetActive(false);
-                        Ammo.AmmoW = 10;
+                        Ammo.AmmoW = 5;
                         Ammo.NumAmmoW1.text = Ammo.AmmoW.ToString();
                         tempIImageWow = 1;
                         InventorySlotsEnemy[1].GetComponent<RuneToPlayer>().Particle.SetActive(false);
@@ -664,7 +665,7 @@ public class InventorySystem : MonoBehaviour
                         Ammo.NumAmmoEye1.gameObject.SetActive(false);
                         Ammo.NumAmmoGreen1.gameObject.SetActive(false);
                         Ammo.NumAmmoDarkElf1.gameObject.SetActive(false);
-                        Ammo.AmmoV = 10;
+                        Ammo.AmmoV = 7;
                         Ammo.NumAmmoV1.text = Ammo.AmmoV.ToString();
                         tempIImageValvran = 1;
                         Debug.Log("Ci arrivi qua nella verde image1");
@@ -693,6 +694,7 @@ public class InventorySystem : MonoBehaviour
                         Debug.Log("ciaociaocicciacicciaentra");
                         InventorySlotsEnemy[1].GetComponent<RotateParticle>().enabled = false;
                         InventorySlotsEnemy[1].transform.rotation = Quaternion.Euler(-90, 0, 90);
+                        InventorySlotsEnemy[1].transform.position = new Vector3(transform.position.x, transform.position.y + 0.3f, transform.position.z);
                     }
                     if (other.gameObject.tag == "RuneBlue")
                     {

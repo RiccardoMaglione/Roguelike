@@ -30,6 +30,7 @@ public class PatternEye : MonoBehaviour
     {
         
         bool ray = Physics.Raycast(transform.position, transform.forward, out hit, 15f);
+
         if (ray == true)
         {
             a.SetPosition(1, new Vector3(0, 0, hit.distance));

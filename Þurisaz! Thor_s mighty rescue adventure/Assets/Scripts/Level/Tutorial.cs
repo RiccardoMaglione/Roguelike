@@ -16,7 +16,7 @@ public class Tutorial : MonoBehaviour
 
     private void Start()
     {
-        InitialPosition = new Vector3(-33, transform.position.y, transform.position.z);
+        InitialPosition = new Vector3(-34, transform.position.y, transform.position.z);
 
         TwoPosition = new Vector3(-34, transform.position.y, transform.position.z);
         ThreePosition = new Vector3(-34, transform.position.y, 1);

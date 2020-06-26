@@ -11,11 +11,6 @@ public class RuneValravn : MonoBehaviour
 
     public GameObject shadow;               //Inizializzo l'oggetto che farà da ombra all'attacco
 
-
-
-
-
-
     public GameObject[] see;
     public Vector3 go;
     bool move = false;
@@ -23,11 +18,8 @@ public class RuneValravn : MonoBehaviour
 
     public float CooldownAttack = 0.70f;
 
-
-
-
-
-
+    public GameObject AnimationSheetValravn;
+    public float TimeTornado = 1;
 
     private void Start()
     {
@@ -60,6 +52,34 @@ public class RuneValravn : MonoBehaviour
                 Ammo.AmmoV--;                                           //Diminuisco di 1 le ammo del valravn
                 Ammo.NumAmmoV1.text = Ammo.AmmoV.ToString();            //Aggiorno il testo nella ui
                 SpellReady = false;                                     //Setto speel ready a falso
+
+                #region Animation Sheet Tornado
+                GameObject Go1 = Instantiate(AnimationSheetValravn, new Vector3(player[0].transform.position.x + 1, player[0].transform.position.y, player[0].transform.position.z), transform.rotation);
+                GameObject Go2 = Instantiate(AnimationSheetValravn, new Vector3(player[0].transform.position.x - 1, player[0].transform.position.y, player[0].transform.position.z), transform.rotation);
+                GameObject Go3 = Instantiate(AnimationSheetValravn, new Vector3(player[0].transform.position.x, player[0].transform.position.y, player[0].transform.position.z + 1), transform.rotation);
+                GameObject Go4 = Instantiate(AnimationSheetValravn, new Vector3(player[0].transform.position.x, player[0].transform.position.y, player[0].transform.position.z - 1), transform.rotation);
+                GameObject Go5 = Instantiate(AnimationSheetValravn, new Vector3(player[0].transform.position.x + 1, player[0].transform.position.y, player[0].transform.position.z + 1), transform.rotation);
+                GameObject Go6 = Instantiate(AnimationSheetValravn, new Vector3(player[0].transform.position.x + 1, player[0].transform.position.y, player[0].transform.position.z - 1), transform.rotation);
+                GameObject Go7 = Instantiate(AnimationSheetValravn, new Vector3(player[0].transform.position.x - 1, player[0].transform.position.y, player[0].transform.position.z + 1), transform.rotation);
+                GameObject Go8 = Instantiate(AnimationSheetValravn, new Vector3(player[0].transform.position.x - 1, player[0].transform.position.y, player[0].transform.position.z - 1), transform.rotation);
+                Go1.SetActive(true);
+                Go2.SetActive(true);
+                Go3.SetActive(true);
+                Go4.SetActive(true);
+                Go5.SetActive(true);
+                Go6.SetActive(true);
+                Go7.SetActive(true);
+                Go8.SetActive(true);
+                Destroy(Go1, TimeTornado);
+                Destroy(Go2, TimeTornado);
+                Destroy(Go3, TimeTornado);
+                Destroy(Go4, TimeTornado);
+                Destroy(Go5, TimeTornado);
+                Destroy(Go6, TimeTornado);
+                Destroy(Go7, TimeTornado);
+                Destroy(Go8, TimeTornado);
+                #endregion
+
                 //Ammo.RuneRawImageValvran1.enabled = false;              //Setto a falso la componente raw image della runa nell'ui
                 //Ammo.RuneRawImageCooldownValvran1.enabled = true;       //Setto a vero la componente raw image della runa cooldown nell'ui
                 //player[0].GetComponent<Ammo>().SlotRuneTwo.texture = player[0].GetComponent<Ammo>().RuneValravnTexture[1];

@@ -47,7 +47,7 @@ public class ArrowTrap : MonoBehaviour
             {
                 FindObjectOfType<AudioManager>().Play("ArrowTrap", sfx);            //Faccio partire l'audio della freccia
             }
-            yield return new WaitForSeconds(1);                                     //Aspetto 1 secondo
+            yield return new WaitForSeconds(1.5f);                                     //Aspetto 1 secondo
         }
     }
 
@@ -62,7 +62,7 @@ public class ArrowTrap : MonoBehaviour
             {
                 FindObjectOfType<AudioManager>().Play("ArrowTrap", sfx);                                    //Faccio partire l'audio della freccia
             }
-            yield return new WaitForSeconds(1);                                                             //Aspetto 1 secondo
+            yield return new WaitForSeconds(1.5f);                                                             //Aspetto 1 secondo
         }
     }
 
@@ -76,7 +76,7 @@ public class ArrowTrap : MonoBehaviour
             {
                 FindObjectOfType<AudioManager>().Play("ArrowTrap", sfx);            //Faccio partire l'audio della freccia
             }
-            yield return new WaitForSeconds(1);                                     //Aspetto 1 secondo
+            yield return new WaitForSeconds(1.5f);                                     //Aspetto 1 secondo
         }
     }
     IEnumerator shotEstOvest()     // Da W a S
@@ -89,7 +89,7 @@ public class ArrowTrap : MonoBehaviour
             {
                 FindObjectOfType<AudioManager>().Play("ArrowTrap", sfx);            //Faccio partire l'audio della freccia
             }
-            yield return new WaitForSeconds(1);                                     //Aspetto 1 secondo
+            yield return new WaitForSeconds(1.5f);                                     //Aspetto 1 secondo
         }
     }
 }

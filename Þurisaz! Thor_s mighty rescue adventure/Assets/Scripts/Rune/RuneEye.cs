@@ -149,7 +149,7 @@ public class RuneEye : MonoBehaviour
     {
         laser.SetActive(true);
         bool ray = Physics.Raycast(transform.position, transform.right, out hit, 15f);
-
+        Debug.Log("AHIA!Ciaosda" +ray);
         if (ray == true)
         {
             a.SetPosition(1, new Vector3(0, 0, hit.distance));

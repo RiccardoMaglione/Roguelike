@@ -61,6 +61,7 @@ public class RuneToPlayer : MonoBehaviour
                 {
                     if (gameObject.tag == "RuneWow")
                     {
+                        Ammo.RestartWow = true;
                         print("Questa è il numero delle rune prese " + NumberRuneEnemyCatch);
                         transform.parent = Player.transform;
                         NumberRuneEnemyCatch++;
@@ -71,6 +72,7 @@ public class RuneToPlayer : MonoBehaviour
                 {
                     if (gameObject.tag == "RuneValvran")
                     {
+                        Ammo.RestartValravn = true;
                         print("Questa è il numero delle rune prese " + NumberRuneEnemyCatch);
                         transform.parent = Player.transform;
                         NumberRuneEnemyCatch++;
@@ -93,6 +95,7 @@ public class RuneToPlayer : MonoBehaviour
                 {
                     if (gameObject.tag == "RuneEye")
                     {
+                        Ammo.RestartEye = true;
                         print("Questa è il numero delle rune prese " + NumberRuneEnemyCatch);
                         transform.parent = Player.transform;
                         NumberRuneEnemyCatch++;
@@ -113,6 +116,7 @@ public class RuneToPlayer : MonoBehaviour
                 {
                     if (gameObject.tag == "RuneGreen")
                     {
+                        Ammo.RestartGreen = true;
                         print("Questa è il numero delle rune prese " + NumberRuneEnemyCatch);
                         transform.parent = Player.transform;
                         NumberRuneEnemyCatch++;
@@ -143,6 +147,7 @@ public class RuneToPlayer : MonoBehaviour
                 {
                     if (gameObject.tag == "RuneDarkElf")
                     {
+                        Ammo.RestartDarkElf = true;
                         print("Questa è il numero delle rune prese " + NumberRuneEnemyCatch);
                         transform.parent = Player.transform;
                         NumberRuneEnemyCatch++;

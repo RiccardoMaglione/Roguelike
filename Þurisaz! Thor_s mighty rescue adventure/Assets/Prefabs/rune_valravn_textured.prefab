@@ -5021,6 +5021,8 @@ MonoBehaviour:
   see: []
   go: {x: 0, y: 0, z: 0}
   CooldownAttack: 0.7
+  AnimationSheetValravn: {fileID: 5444157409056856478, guid: 173faf851687d1d4a87dbbcfe63edc6e,
+    type: 3}
 --- !u!65 &3009588597694871649
 BoxCollider:
   m_ObjectHideFlags: 0

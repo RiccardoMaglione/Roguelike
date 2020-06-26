@@ -144,6 +144,13 @@ public class Ammo : MonoBehaviour
 
 
     Scene CurrentScene;
+
+    public static bool RestartWow = true;
+    public static bool RestartValravn = true;
+    public static bool RestartEye = true;
+    public static bool RestartGreen = true;
+    public static bool RestartDarkElf = true;
+
     private void Start()
     {
         CurrentScene = SceneManager.GetActiveScene();
@@ -270,7 +277,7 @@ public class Ammo : MonoBehaviour
                 //RuneRawImageWilloWisp0.enabled = true;
                 SlotRuneOne.texture = RuneWowTexture[0];    //Sostituisce la texture della runa uno con la texture del wow
                 NumAmmoW0.gameObject.SetActive(true);       //Attiva le ammo del wisp nello slots uno
-                AmmoW = 10;                                 //Setta le ammo del wow a 10
+                AmmoW = 5;                                 //Setta le ammo del wow a 10
                 RuneWoW = other.gameObject;                 //Mette in runa wow in una variabile
                 isFirstRuneWow = true;                      //Segna che la prima runa del wow è stata presa
                 tempIsFirstRuneWow = true;
@@ -286,7 +293,7 @@ public class Ammo : MonoBehaviour
                 //RuneRawImageWilloWisp1.enabled = true;
                 SlotRuneTwo.texture = RuneWowTexture[0];    //Sostituisce la texture della runa due
                 NumAmmoW1.gameObject.SetActive(true);       //Attiva le ammo del wisp nello slots due
-                AmmoW = 10;                                 //Setta le ammo del wow a 10
+                AmmoW = 5;                                 //Setta le ammo del wow a 10
                 RuneWoW = other.gameObject;                 //Mette in runa wow in una variabile
                 isFirstRuneWow = true;                      //Segna che la prima runa del wow è stata presa
                 tempIsFirstRuneWow = true;
@@ -296,7 +303,7 @@ public class Ammo : MonoBehaviour
         }
         else if(other.gameObject.tag == "RuneWow" && isFirstRuneWow == true)    //Se ho già raccolto la runa
         {
-            AmmoW += 10;
+            AmmoW += 5;
             Debug.Log("Aumenta");
             if (InventorySystem.tempIImageWow == 0) //Se la runa sta nello slot 0
             {
@@ -319,7 +326,7 @@ public class Ammo : MonoBehaviour
                 Debug.Log("Lo stai mettendo qua?");
                 SlotRuneOne.texture = RuneValravnTexture[0];    //Sostituisce la texture della runa uno con la texture del valravn
                 NumAmmoV0.gameObject.SetActive(true);           //Attiva le ammo del valravn nello slots uno
-                AmmoV = 10;                                     //Setta le ammo del valravn a 10
+                AmmoV = 7;                                     //Setta le ammo del valravn a 10
                 RuneValvran = other.gameObject;                 //Mette in runa valravn in una variabile
                 isFirstRuneValvran = true;                      //Segna che la prima runa del valravn è stata presa
                 tempIsFirstRuneValvran = true;
@@ -335,7 +342,7 @@ public class Ammo : MonoBehaviour
                 //RuneRawImageValvran1.enabled = true;
                 SlotRuneTwo.texture = RuneValravnTexture[0];
                 NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 10;
+                AmmoV = 7;
                 RuneValvran = other.gameObject;
                 isFirstRuneValvran = true;
                 tempIsFirstRuneValvran = true;
@@ -345,7 +352,7 @@ public class Ammo : MonoBehaviour
         }
         else if (other.gameObject.tag == "RuneValvran" && isFirstRuneValvran == true)
         {
-            AmmoV += 10;
+            AmmoV += 7;
             if (InventorySystem.tempIImageValvran == 0)
             {
                 NumAmmoV0.text = AmmoV.ToString();
@@ -722,7 +729,14 @@ public class Ammo : MonoBehaviour
                     //RuneRawImageWilloWisp1.enabled = false;
                     //RuneRawImageCooldownWilloWisp1.enabled = false;
                     NumAmmoW1.gameObject.SetActive(false);
-                    
+                    InventorySystem.isFirsPresentRuneWow = false;
+                    RuneToPlayer.isTimeToWow = false;
+                    if (RestartWow == true)
+                    {
+                        RuneToPlayer.NumberRuneEnemyCatch--;
+                        RestartWow = false;
+                    }
+                    Debug.Log("Vacci "+ RuneToPlayer.NumberRuneEnemyCatch);
                 }
                 if (CurrentScene.name == "ThirdLevel")
                 {
@@ -768,6 +782,14 @@ public class Ammo : MonoBehaviour
                     //RuneRawImageValvran1.enabled = false;
                     //RuneRawImageCooldownValvran1.enabled = false;
                     NumAmmoV1.gameObject.SetActive(false);
+                    InventorySystem.isFirsPresentRuneValvran = false;
+                    RuneToPlayer.isTimeToValvran = false;
+                    if (RestartValravn == true)
+                    {
+                        RuneToPlayer.NumberRuneEnemyCatch--;
+                        RestartValravn = false;
+                    }
+                    Debug.Log("Vacci " + RuneToPlayer.NumberRuneEnemyCatch);
                 }
                 if (CurrentScene.name == "ThirdLevel")
                 {
@@ -834,6 +856,14 @@ public class Ammo : MonoBehaviour
                 }
                 NumAmmoGreen0.gameObject.SetActive(false);
                 NumAmmoGreen1.gameObject.SetActive(false);
+                InventorySystem.isFirsPresentRuneGreen = false;
+                RuneToPlayer.isTimeToGreen = false;
+                if (RestartGreen == true)
+                {
+                    RuneToPlayer.NumberRuneEnemyCatch--;
+                    RestartGreen = false;
+                }
+                Debug.Log("Vacci " + RuneToPlayer.NumberRuneEnemyCatch);
             }
         }
         #endregion
@@ -898,6 +928,14 @@ public class Ammo : MonoBehaviour
                 }
                 NumAmmoEye0.gameObject.SetActive(false);
                 NumAmmoEye1.gameObject.SetActive(false);
+                InventorySystem.isFirsPresentRuneEye = false;
+                RuneToPlayer.isTimeToEye = false;
+                if (RestartEye == true)
+                {
+                    RuneToPlayer.NumberRuneEnemyCatch--;
+                    RestartEye = false;
+                }
+                Debug.Log("Vacci " + RuneToPlayer.NumberRuneEnemyCatch);
             }
         }
         #endregion
@@ -920,6 +958,14 @@ public class Ammo : MonoBehaviour
                 }
                 NumAmmoDarkElf0.gameObject.SetActive(false);
                 NumAmmoDarkElf1.gameObject.SetActive(false);
+                InventorySystem.isFirsPresentRuneDarkElf = false;
+                RuneToPlayer.isTimeToDarkElf = false;
+                if (RestartDarkElf == true)
+                {
+                    RuneToPlayer.NumberRuneEnemyCatch--;
+                    RestartDarkElf = false;
+                }
+                Debug.Log("Vacci " + RuneToPlayer.NumberRuneEnemyCatch);
             }
         }
         #endregion
