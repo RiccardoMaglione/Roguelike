@@ -43,8 +43,8 @@ public class PatternValvran : MonoBehaviour
 
 
     public GameObject AnimationSheet;
+    public Animator anim;
     #endregion
-
     void Awake()
     {
         sfx = PlayerPrefs.GetFloat("SfxVolume");//Setto l'audio del Valravn come sfx
@@ -224,10 +224,12 @@ public class PatternValvran : MonoBehaviour
     {
         while(true)
         {
+            anim.SetBool("Active", true);
             AnimationSheet.SetActive(true);
             yield return new WaitForSeconds(1);
             Attack(transform.position, 3f);
             AnimationSheet.SetActive(false);
+            anim.SetBool("Active", false);
             yield return new WaitForSeconds(CooldownAttack);
             #region Old Attack
             //GameObject newShot1 = Instantiate(PeckReference, ValvranContainer.transform.localPosition + (transform.forward * 0.6f), transform.rotation * Quaternion.Euler(0, 45, 0));
