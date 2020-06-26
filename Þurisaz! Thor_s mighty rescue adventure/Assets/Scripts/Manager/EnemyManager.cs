@@ -83,13 +83,14 @@ public class EnemyManager : MonoBehaviour
     public static int ValravnFound = 0;
     public static int OdinEyeFound = 0;
     public static int GreenFound = 0;
-    public static int YellowFound = 0;
-    public static int RedFound = 0;
-    public static int BlueFound = 0;
-    public static int GullinburstiFound = 0;
-    public static int DraugrFound = 0;
+    //public static int YellowFound = 0;
+    //public static int RedFound = 0;
+    //public static int BlueFound = 0;
+    //public static int GullinburstiFound = 0;
+    //public static int DraugrFound = 0;
     public static int GammurFound = 0;
-    public static int LokiFound = 0;
+    public static int DarkElfFound = 0;
+    //public static int LokiFound = 0;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -314,7 +315,7 @@ public class EnemyManager : MonoBehaviour
                 rune.GetComponent<RuneBlue>().enabled = false;
                 //GameObject shadow1 = Instantiate(shadow, new Vector3(transform.position.x, 0.1f, transform.position.z), Quaternion.identity);
                 //shadow1.transform.parent = rune.transform;
-                BlueFound = 1;
+                //BlueFound = 1;
             }
             if (this.gameObject.name == "DeerGreen1" || this.gameObject.name == "DeerGreen2")
             {
@@ -332,7 +333,7 @@ public class EnemyManager : MonoBehaviour
                 rune.GetComponent<RuneYellow>().enabled = false;
                 //GameObject shadow1 = Instantiate(shadow, new Vector3(transform.position.x, 0.1f, transform.position.z), Quaternion.identity);
                 //shadow1.transform.parent = rune.transform;
-                YellowFound = 1;
+                //YellowFound = 1;
             }
             if (this.gameObject.name == "DeerRed1")
             {
@@ -341,7 +342,7 @@ public class EnemyManager : MonoBehaviour
                 rune.GetComponent<RuneOrange>().enabled = false;
                 //GameObject shadow1 = Instantiate(shadow, new Vector3(transform.position.x, 0.1f, transform.position.z), Quaternion.identity);
                 //shadow1.transform.parent = rune.transform;
-                RedFound = 1;
+                //RedFound = 1;
             }
             #endregion
             #region Gullinbursti
@@ -362,7 +363,7 @@ public class EnemyManager : MonoBehaviour
                 rune.GetComponent<RuneDarkElf>().enabled = false;
                 //GameObject shadow1 = Instantiate(shadow, new Vector3(transform.position.x, 0.1f, transform.position.z), Quaternion.identity);
                 //shadow1.transform.parent = rune.transform;
-                //DarkElfFound = 1;
+                DarkElfFound = 1;
             }
             #endregion
             #region Draugr

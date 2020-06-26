@@ -2,9 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using XInputDotNetPure;
 
 public class PlayerManager : MonoBehaviour
 {
+    #region Vibration
+    float vibrationTimer = 0;
+
+    //design
+    [Header("VIBRATION")]
+    [Tooltip("Intensità vibrazione sinistra")] [Range(0f, 1f)] public float leftIntensity;
+    [Tooltip("Intensità vibrazione destra")] [Range(0f, 1f)] public float rightIntensity;
+    [Tooltip("durata vibrazione")] public float vibrationDuration;
+
+    PlayerIndex playerIndex;
+    #endregion
     #region Variables Health
     public int health;
 
@@ -126,7 +139,6 @@ public class PlayerManager : MonoBehaviour
 
     #endregion
 
-
     private void OnTriggerEnter(Collider other)
     {
         #region Trigger Health
@@ -136,7 +148,7 @@ public class PlayerManager : MonoBehaviour
             {
                 Destroy(other.gameObject);
             }
-
+            
             randSoundHealth = Random.Range(1, 4);
             if (randSoundHealth == 1)
                 FindObjectOfType<AudioManager>().Play("ThorDamage1", sfx);
@@ -146,8 +158,14 @@ public class PlayerManager : MonoBehaviour
             
             if (randSoundHealth == 3)
                 FindObjectOfType<AudioManager>().Play("ThorDamage3", sfx);
-                                  
+
             health--;
+            if (health > 0)
+            {
+                GamePad.SetVibration(playerIndex, leftIntensity, rightIntensity);
+                vibrationTimer += Time.deltaTime;
+            }
+            
             damage = false;
             StartCoroutine(invincibility());
             StartCoroutine(flash());
@@ -278,6 +296,15 @@ public class PlayerManager : MonoBehaviour
             }
         }
 
+        if (vibrationTimer > 0)
+        {
+            vibrationTimer += Time.deltaTime;
+            if (vibrationTimer >= vibrationDuration)
+            {
+                GamePad.SetVibration(playerIndex, 0, 0);
+                vibrationTimer = 0;
+            }
+        }
 
         //Non servono più i muri intorno ai nemici
         #region Detect Enemy
