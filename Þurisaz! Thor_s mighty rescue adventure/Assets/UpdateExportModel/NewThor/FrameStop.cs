@@ -9,8 +9,8 @@ public class FrameStop : MonoBehaviour
 
     void Start()
     {
-        Anim = GetComponent<Animator>();
-        Anim.Play("Idle", 0, 172);
+//        Anim = GetComponent<Animator>();
+//        Anim.Play("Idle", 0, 172);
     }
 
     void Update()
@@ -20,11 +20,11 @@ public class FrameStop : MonoBehaviour
             isIdle = false;
             StartCoroutine(AttackCiccia());
         }
-        if (this.Anim.GetCurrentAnimatorStateInfo(0).IsName("Idle") && isIdle == true)
-        {
-            isIdle = false;
-            Anim.Play("Idle", 0, 172);
-        }
+//        if (this.Anim.GetCurrentAnimatorStateInfo(0).IsName("Idle") && isIdle == true)
+//        {
+//            isIdle = false;
+//            Anim.Play("Idle", 0, 172);
+//        }
     }
 
     public IEnumerator AttackCiccia()
