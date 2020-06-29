@@ -89,8 +89,8 @@ public class EnemyManager : MonoBehaviour
     public static int GullinburstiFound = 0;
     public static int DraugrFound = 0;
     public static int GammurFound = 0;
-    public static int LokiFound = 0;
-
+    public static int LokiFound = 0; 
+    public static int DarkElfFound = 0;
 
     public static int CountEnemyWin = 0;
     public int TempCountEnemyWin = 0;
@@ -390,7 +390,7 @@ public class EnemyManager : MonoBehaviour
                 rune.GetComponent<RuneDarkElf>().enabled = false;
                 //GameObject shadow1 = Instantiate(shadow, new Vector3(transform.position.x, 0.1f, transform.position.z), Quaternion.identity);
                 //shadow1.transform.parent = rune.transform;
-                //DarkElfFound = 1;
+                DarkElfFound = 1;
                 for (int i = 0; i < 1; i++)
                 {
                     CountEnemyWin++;
