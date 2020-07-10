@@ -143,86 +143,24 @@ public class InventorySystem : MonoBehaviour
             isPresentWow = false;                                               //Setta la variabile booleana "Se è presente la runa del Will o Wisp" a false
             isPresentValvran = false;                                           //Setta la variabile booleana "Se è presente la runa del Valravn" a false
             isPresentEye = false;
-            isPresentBlue = false;
             isPresentGreen = false;
-            isPresentYellow = false;
-            isPresentOrange = false;
-
             isPresentDarkElf = false;
-            isPresentDraugr = false;
 
-            isPresentProve = false;
-            
+            WoWChange = false;
+            ValravnChange = false;
+            EyeChange = false;
+            BlueChange = false;
+            GreenChange = false;
+            RedChange = false;
+            YellowChange = false;
+            DarkElfChange = false;
+            DraugrChange = false;
+
             Array.Clear(InventorySlotsEnemy, 0, InventorySlotsEnemy.Length);    //Svuota l'array dell'inventario enemy
             Array.Clear(InventorySlotsBoss, 0, InventorySlotsBoss.Length);      //Svuota l'array dell'inventario Boss
         }
         #endregion
-
-        #region ThirdLevel Passaggio di valori
-        if (CurrentScene.name == "ThirdLevel")                                                              //Se il nome della scena corrente è Third Level
-        {
-            tempRawImageRuneGammur1 = GameObject.Find("RuneGammur1RawImage").GetComponent<RawImage>();      //Trova l'oggetto con un determinato nome e lo setta in una variabile dedicata
-            tempRawImageRuneGammur2 = GameObject.Find("RuneGammur2RawImage").GetComponent<RawImage>();      //Trova l'oggetto con un determinato nome e lo setta in una variabile dedicata
-            tempRawImageRuneGammur3 = GameObject.Find("RuneGammur3RawImage").GetComponent<RawImage>();      //Trova l'oggetto con un determinato nome e lo setta in una variabile dedicata
-            #region Passaggio rune mostri comuni presenti nel primo piano
-            if (tempIsPresentWow == true)                                   //Se la variabile temporanea "Se è presente la runa del Will o Wisp" è vera
-            {
-                isPresentWow = true;                                        //Setta la variabile "Se è presente la runa del Will o Wisp" a vero
-                RuneWow = Instantiate(TempRuneWow);                         //Instanzia nel nuovo piano la runa del will o wisp
-                RuneWow.transform.parent = Player.transform;                //Setta la parentela al Player
-                InventorySlotsEnemy[tempIWow] = RuneWow;                    //Inserisco l'oggetto nell'invetario degli enemy
-                RuneWow.GetComponent<MeshRenderer>().enabled = false;       //Setto il MeshRenderer a falso per renderlo invisibile
-            }
-            if (tempIsPresentValvran == true)                               //Se la variabile temporanea "Se è presente la runa del Valravn" è vera
-            {
-                isPresentValvran = true;                                    //Setta la variabile "Se è presente la runa del Valravn" a vero
-                RuneValravn = Instantiate(TempRuneValravn);                 //Instanzia nel nuovo piano la runa del Valravn
-                RuneValravn.transform.parent = Player.transform;            //Setta la parentela al Player
-                InventorySlotsEnemy[tempIValvran] = RuneValravn;            //Inserisco l'oggetto nell'invetario degli enemy
-                RuneValravn.GetComponent<MeshRenderer>().enabled = false;   //Setto il MeshRenderer a falso per renderlo invisibile
-            }
-            #endregion
-            #region Passaggio rune boss presenti nel primo piano
-            if (tempIsPresentGammur == true)                                        //Se la variabile temporanea "Se è presente la runa di Gammur" è vera
-            {
-                isPresentGammur = true;                                             //Setta la variabile "Se è presente la runa di Gammur" a vero
-                if (EnemyManager.rangeGammur == 1)                                  //Se la runa spawnata è contrassegnata con 1
-                {
-                    GameObject RuneGammur1 = Instantiate(TempRuneGammur1);          //Instanzia la runa di Gammur corrispondente all'urlo
-                    RuneGammur1.transform.parent = Player.transform;                //Setta la parentela al Player
-                    RuneGammur1.GetComponent<RuneGammurOne>().enabled = true;       //Attiva lo script del primo attacco
-                    RuneGammur1.GetComponent<RuneGammurTwo>().enabled = false;      //Disattiva lo script del secondo attacco
-                    RuneGammur1.GetComponent<RuneGammurThree>().enabled = false;    //Disattiva lo script del terzo attacco
-                    RuneGammur1.GetComponent<MeshRenderer>().enabled = false;       //Setto il MeshRenderer a falso per renderlo invisibile
-                    InventorySlotsBoss[tempJGammur] = RuneGammur1;                  //Inserisco l'oggetto nell'invetario dei boss
-                    tempRawImageRuneGammur1.enabled = true;                         //Attivo la raw image presente nella ui che indica al player quale runa ha delle tre di Gammur
-                }
-                if (EnemyManager.rangeGammur == 2)                                  //Se la runa spawnata è contrassegnata con 2
-                {
-                    GameObject RuneGammur2 = Instantiate(TempRuneGammur2);          //Instanzia la runa di Gammur corrispondente alle uova che cadono dal cielo
-                    RuneGammur2.transform.parent = Player.transform;                //Setta la parentela al Player
-                    RuneGammur2.GetComponent<RuneGammurOne>().enabled = false;      //Disattiva lo script del primo attacco
-                    RuneGammur2.GetComponent<RuneGammurTwo>().enabled = true;       //Attiva lo script del seocndo attacco
-                    RuneGammur2.GetComponent<RuneGammurThree>().enabled = false;    //Disattiva lo script del terzo attacco
-                    RuneGammur2.GetComponent<MeshRenderer>().enabled = false;       //Setto il MeshRenderer a falso per renderlo invisibile
-                    InventorySlotsBoss[tempJGammur] = RuneGammur2;                  //Inserisco l'oggetto nell'invetario dei boss
-                    tempRawImageRuneGammur2.enabled = true;                         //Attivo la raw image presente nella ui che indica al player quale runa ha delle tre di Gammur
-                }
-                if (EnemyManager.rangeGammur == 3)                                  //Se la runa spawnata è contrassegnata con 3
-                {
-                    GameObject RuneGammur3 = Instantiate(TempRuneGammur3);          //Instanzia la runa di Gammur corrispondente ai minion esplosivi
-                    RuneGammur3.transform.parent = Player.transform;                //Setta la parentela al Player
-                    RuneGammur3.GetComponent<RuneGammurOne>().enabled = false;      //Disattiva lo script del primo attacco
-                    RuneGammur3.GetComponent<RuneGammurTwo>().enabled = false;      //Disattiva lo script del secondo attacco
-                    RuneGammur3.GetComponent<RuneGammurThree>().enabled = true;     //Attiva lo script del terzo attacco
-                    RuneGammur3.GetComponent<MeshRenderer>().enabled = false;       //Setto il MeshRenderer a falso per renderlo invisibile
-                    InventorySlotsBoss[tempJGammur] = RuneGammur3;                  //Inserisco l'oggetto nell'invetario dei boss
-                    tempRawImageRuneGammur3.enabled = true;                         //Attivo la raw image presente nella ui che indica al player quale runa ha delle tre di Gammur
-                }
-            }
-            #endregion
-        }
-        #endregion
+        RuneToPlayer.NumberRuneEnemyCatch = 0;
     }
 
     private void Update()
@@ -245,6 +183,7 @@ public class InventorySystem : MonoBehaviour
                 i++;                                                                    //Aumenta i di 1
                 isPresentWow = true;                                                    //Setta a vero la presenza della runa del will o wisp
                 tempIsPresentWow = true;                                                //Setta a vero la presenza della runa del will o wisp nella variabile temporanea
+                Debug.Log("Eseguo Inventory System 1");
             }
             if (other.gameObject.tag == "RuneValvran" && isPresentValvran == false)     //Se l'altro oggetto è la runa del valravn ed è la runa non è già presente nell'inventario
             {
@@ -255,26 +194,8 @@ public class InventorySystem : MonoBehaviour
                 i++;                                                                    //Aumenta i di 1
                 isPresentValvran = true;                                                //Setta a vero la presenza della runa del valravn
                 tempIsPresentValvran = true;                                            //Setta a vero la presenza della runa del valravn nella variabile temporanea
+                Debug.Log("Eseguo Inventory System 2");
             }
-
-
-
-
-
-
-            if (other.gameObject.tag == "RuneProva" && isPresentProve == false)
-            {
-                InventorySlotsEnemy[i] = other.gameObject;
-                i++;
-                isPresentProve = true;
-            }
-
-
-
-
-
-            #region Nuove rune con inventario
-
             if (other.gameObject.tag == "RuneEye" && isPresentEye == false)             //Se l'altro oggetto è la runa del will o wisp ed è la runa non è già presente nell'inventario
             {
                 tempIEye = i;                                                           //Setta la variabile temporanea tempI del will o wisp uguale a i
@@ -283,15 +204,7 @@ public class InventorySystem : MonoBehaviour
                 i++;                                                                    //Aumenta i di 1
                 isPresentEye = true;                                                    //Setta a vero la presenza della runa del will o wisp
                 tempIsPresentEye = true;                                                //Setta a vero la presenza della runa del will o wisp nella variabile temporanea
-            }
-            if (other.gameObject.tag == "RuneBlue" && isPresentBlue == false)             //Se l'altro oggetto è la runa del will o wisp ed è la runa non è già presente nell'inventario
-            {
-                tempIBlue = i;                                                           //Setta la variabile temporanea tempI del will o wisp uguale a i
-                tempIImageBlue = i;                                                      //Setta la variabile temporanea tempI relativa alla ui del will o wisp uguale a i
-                InventorySlotsEnemy[i] = other.gameObject;                              //Assegna alla posizione i l'oggetto appena raccolto
-                i++;                                                                    //Aumenta i di 1
-                isPresentBlue = true;                                                    //Setta a vero la presenza della runa del will o wisp
-                tempIsPresentBlue = true;                                                //Setta a vero la presenza della runa del will o wisp nella variabile temporanea
+                Debug.Log("Eseguo Inventory System 3");
             }
             if (other.gameObject.tag == "RuneGreen" && isPresentGreen == false)             //Se l'altro oggetto è la runa del will o wisp ed è la runa non è già presente nell'inventario
             {
@@ -301,24 +214,7 @@ public class InventorySystem : MonoBehaviour
                 i++;                                                                    //Aumenta i di 1
                 isPresentGreen = true;                                                    //Setta a vero la presenza della runa del will o wisp
                 tempIsPresentGreen = true;                                                //Setta a vero la presenza della runa del will o wisp nella variabile temporanea
-            }
-            if (other.gameObject.tag == "RuneYellow" && isPresentYellow == false)             //Se l'altro oggetto è la runa del will o wisp ed è la runa non è già presente nell'inventario
-            {
-                tempIYellow = i;                                                           //Setta la variabile temporanea tempI del will o wisp uguale a i
-                tempIImageYellow = i;                                                      //Setta la variabile temporanea tempI relativa alla ui del will o wisp uguale a i
-                InventorySlotsEnemy[i] = other.gameObject;                              //Assegna alla posizione i l'oggetto appena raccolto
-                i++;                                                                    //Aumenta i di 1
-                isPresentYellow = true;                                                    //Setta a vero la presenza della runa del will o wisp
-                tempIsPresentYellow = true;                                                //Setta a vero la presenza della runa del will o wisp nella variabile temporanea
-            }
-            if (other.gameObject.tag == "RuneOrange" && isPresentOrange == false)             //Se l'altro oggetto è la runa del will o wisp ed è la runa non è già presente nell'inventario
-            {
-                tempIOrange = i;                                                           //Setta la variabile temporanea tempI del will o wisp uguale a i
-                tempIImageOrange = i;                                                      //Setta la variabile temporanea tempI relativa alla ui del will o wisp uguale a i
-                InventorySlotsEnemy[i] = other.gameObject;                              //Assegna alla posizione i l'oggetto appena raccolto
-                i++;                                                                    //Aumenta i di 1
-                isPresentOrange = true;                                                    //Setta a vero la presenza della runa del will o wisp
-                tempIsPresentOrange = true;                                                //Setta a vero la presenza della runa del will o wisp nella variabile temporanea
+                Debug.Log("Eseguo Inventory System 4");
             }
             if (other.gameObject.tag == "RuneDarkElf" && isPresentDarkElf == false)             //Se l'altro oggetto è la runa del will o wisp ed è la runa non è già presente nell'inventario
             {
@@ -328,22 +224,8 @@ public class InventorySystem : MonoBehaviour
                 i++;                                                                    //Aumenta i di 1
                 isPresentDarkElf = true;                                                    //Setta a vero la presenza della runa del will o wisp
                 tempIsPresentDarkElf = true;                                                //Setta a vero la presenza della runa del will o wisp nella variabile temporanea
+                Debug.Log("Eseguo Inventory System 5");
             }
-            if (other.gameObject.tag == "RuneDraugr" && isPresentDraugr == false)             //Se l'altro oggetto è la runa del will o wisp ed è la runa non è già presente nell'inventario
-            {
-                tempIDraugr = i;                                                           //Setta la variabile temporanea tempI del will o wisp uguale a i
-                tempIImageDraugr = i;                                                      //Setta la variabile temporanea tempI relativa alla ui del will o wisp uguale a i
-                InventorySlotsEnemy[i] = other.gameObject;                              //Assegna alla posizione i l'oggetto appena raccolto
-                i++;                                                                    //Aumenta i di 1
-                isPresentDraugr = true;                                                    //Setta a vero la presenza della runa del will o wisp
-                tempIsPresentDraugr = true;                                                //Setta a vero la presenza della runa del will o wisp nella variabile temporanea
-            }
-
-            #endregion
-
-
-
-
 
         }
         if (j < 1 && other.gameObject.tag == "RuneGammur")                              //Se j<1 e l'altro oggetto ha un particolare tag
@@ -356,6 +238,7 @@ public class InventorySystem : MonoBehaviour
                 j++;                                                                    //Aumenta j di 1
                 isPresentGammur = true;                                                 //Setta a vero la presenza della runa di Gammur
                 tempIsPresentGammur = true;                                             //Setta a vero la presenza della runa di Gammur nella variabile temporanea
+                Debug.Log("Eseguo Inventory System 6");
             }
         }
     }
@@ -367,7 +250,7 @@ public class InventorySystem : MonoBehaviour
         #region Change rune
         if (Input.GetKey(KeyCode.F))                                                                                                                //Se schiaccio B (da cambiare poi in F + LeftArrow)
         {
-            if (Input.GetKey(KeyCode.LeftArrow))                                                                                                                //Se schiaccio B (da cambiare poi in F + LeftArrow)
+            if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.JoystickButton2))                                                                                                                //Se schiaccio B (da cambiare poi in F + LeftArrow)
             {
                 if (other.gameObject.tag == "RuneWow" || other.gameObject.tag == "RuneValvran" || other.gameObject.tag == "RuneProva" || other.gameObject.tag == "RuneEye" || other.gameObject.tag == "RuneBlue" || other.gameObject.tag == "RuneGreen" || other.gameObject.tag == "RuneYellow" || other.gameObject.tag == "RuneOrange" || other.gameObject.tag == "RuneDarkElf" || other.gameObject.tag == "RuneDraugr")                  //Se l'altro oggetto è uno di quelli proposti
                 {
@@ -379,6 +262,7 @@ public class InventorySystem : MonoBehaviour
                         isPresentWow = false;
                         isFirsPresentRuneWow = false;
                         RuneToPlayer.isTimeToWow = false;
+                        Debug.Log("Eseguo Inventory System 7"); ;
                     }
                     if (InventorySlotsEnemy[0].gameObject.tag == "RuneValvran")
                     {
@@ -388,6 +272,7 @@ public class InventorySystem : MonoBehaviour
                         isPresentValvran = false;
                         isFirsPresentRuneValvran = false;
                         RuneToPlayer.isTimeToValvran = false;
+                        Debug.Log("Eseguo Inventory System 8");
                     }
                     if (InventorySlotsEnemy[0].gameObject.tag == "RuneEye")
                     {
@@ -397,6 +282,7 @@ public class InventorySystem : MonoBehaviour
                         isPresentEye = false;
                         isFirsPresentRuneEye = false;
                         RuneToPlayer.isTimeToEye = false;
+                        Debug.Log("Eseguo Inventory System 9");
                     }
                     if (InventorySlotsEnemy[0].gameObject.tag == "RuneGreen")
                     {
@@ -406,6 +292,7 @@ public class InventorySystem : MonoBehaviour
                         isPresentGreen = false;
                         isFirsPresentRuneGreen = false;
                         RuneToPlayer.isTimeToGreen = false;
+                        Debug.Log("Eseguo Inventory System 10");
                     }
                     if (InventorySlotsEnemy[0].gameObject.tag == "RuneDarkElf")
                     {
@@ -415,7 +302,9 @@ public class InventorySystem : MonoBehaviour
                         isPresentDarkElf = false;
                         isFirsPresentRuneDarkElf = false;
                         RuneToPlayer.isTimeToDarkElf = false;
+                        Debug.Log("Eseguo Inventory System 11");
                     }
+
                     Destroy(InventorySlotsEnemy[0]);                                                                                                    //Distruggi l'oggetto nell'invetario Enemy alla posizione 0
                     InventorySlotsEnemy[0] = other.gameObject;                                                                                          //Setta l'altro oggetto nell'inventario Enemy alla posizione 0
                     InventorySlotsEnemy[0].transform.parent = Player.transform;                                                                         //Setta come parent il player
@@ -445,6 +334,7 @@ public class InventorySystem : MonoBehaviour
                         tempIImageWow = 0;
                         InventorySlotsEnemy[0].GetComponent<RuneToPlayer>().Particle.SetActive(false);
                         InventorySlotsEnemy[0].GetComponent<RuneToPlayer>().Shadow.SetActive(false);
+                        Debug.Log("Eseguo Inventory System 12");
                     }
                     if (other.gameObject.tag == "RuneValvran")
                     {
@@ -467,6 +357,7 @@ public class InventorySystem : MonoBehaviour
                         tempIImageValvran = 0;
                         InventorySlotsEnemy[0].GetComponent<RuneToPlayer>().Particle.SetActive(false);
                         InventorySlotsEnemy[0].GetComponent<RuneToPlayer>().Shadow.SetActive(false);
+                        Debug.Log("Eseguo Inventory System 13");
                     }
                     if (other.gameObject.tag == "RuneEye")
                     {
@@ -492,16 +383,7 @@ public class InventorySystem : MonoBehaviour
                         InventorySlotsEnemy[0].GetComponent<RotateParticle>().enabled = false;
                         InventorySlotsEnemy[0].transform.rotation = Quaternion.Euler(-90, 0, 90);
                         InventorySlotsEnemy[0].transform.position = new Vector3(transform.position.x, transform.position.y + 0.3f, transform.position.z);
-                    }
-                    if (other.gameObject.tag == "RuneBlue")
-                    {
-                        isPresentBlue = true;
-                        InventorySlotsEnemy[0].GetComponent<RuneBlue>().enabled = true;
-                        //BlueChange = true;
-                        GetComponent<Ammo>().SlotRuneOne.texture = GetComponent<Ammo>().RuneBlueTexture[0];
-                        tempIBlue = 1;
-                        GetComponent<Ammo>().isFirstRuneBlue = true;
-                        Ammo.NumAmmoBlue0.gameObject.SetActive(true);
+                        Debug.Log("Eseguo Inventory System 14");
                     }
                     if (other.gameObject.tag == "RuneGreen")
                     {
@@ -524,26 +406,7 @@ public class InventorySystem : MonoBehaviour
                         InventorySlotsEnemy[0].GetComponent<RuneToPlayer>().Particle.SetActive(false);
                         InventorySlotsEnemy[0].GetComponent<RuneToPlayer>().Shadow.SetActive(false);
                         Debug.Log("Ci arrivi qua nella verde image");
-                    }
-                    if (other.gameObject.tag == "RuneYellow")
-                    {
-                        isPresentYellow = true;
-                        InventorySlotsEnemy[0].GetComponent<RuneYellow>().enabled = true;
-                        //YellowChange = true;
-                        GetComponent<Ammo>().SlotRuneOne.texture = GetComponent<Ammo>().RuneYellowTexture[0];
-                        tempIYellow = 0;
-                        GetComponent<Ammo>().isFirstRuneYellow = true;
-                        Ammo.NumAmmoYellow0.gameObject.SetActive(true);
-                    }
-                    if (other.gameObject.tag == "RuneOrange")
-                    {
-                        isPresentOrange = true;
-                        InventorySlotsEnemy[0].GetComponent<RuneOrange>().enabled = true;
-                        //RedChange = true;
-                        GetComponent<Ammo>().SlotRuneOne.texture = GetComponent<Ammo>().RuneRedTexture[0];
-                        tempIOrange = 0;
-                        GetComponent<Ammo>().isFirstRuneRed = true;
-                        Ammo.NumAmmoRed0.gameObject.SetActive(true);
+                        Debug.Log("Eseguo Inventory System 15");
                     }
                     if (other.gameObject.tag == "RuneDarkElf")
                     {
@@ -565,23 +428,14 @@ public class InventorySystem : MonoBehaviour
                         tempIImageDarkElf = 0;
                         InventorySlotsEnemy[0].GetComponent<RuneToPlayer>().Particle.SetActive(false);
                         InventorySlotsEnemy[0].GetComponent<RuneToPlayer>().Shadow.SetActive(false);
-                    }
-                    if (other.gameObject.tag == "RuneDraugr")
-                    {
-                        isPresentDraugr = true;
-                        InventorySlotsEnemy[0].GetComponent<RuneDraugr>().enabled = true;
-                        //DraugrChange = true;
-                        GetComponent<Ammo>().SlotRuneOne.texture = GetComponent<Ammo>().RuneDraugrTexture[0];
-                        tempIDraugr = 0;
-                        GetComponent<Ammo>().isFirstRuneDraugr = true;
-                        Ammo.NumAmmoDraugr0.gameObject.SetActive(true);
+                        Debug.Log("Eseguo Inventory System 16");
                     }
                 }
             }
         }
         if (Input.GetKey(KeyCode.F))                                                                                                                //Se schiaccio N (da cambiare poi in F + RightArrow)
         {
-            if (Input.GetKey(KeyCode.RightArrow))                                                                                                                //Se schiaccio B (da cambiare poi in F + LeftArrow)
+            if (Input.GetKey(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.JoystickButton1))                                                                                                                //Se schiaccio B (da cambiare poi in F + LeftArrow)
             {
                 if (other.gameObject.tag == "RuneWow" || other.gameObject.tag == "RuneValvran" || other.gameObject.tag == "RuneProva" || other.gameObject.tag == "RuneEye" || other.gameObject.tag == "RuneBlue" || other.gameObject.tag == "RuneGreen" || other.gameObject.tag == "RuneYellow" || other.gameObject.tag == "RuneOrange" || other.gameObject.tag == "RuneDarkElf" || other.gameObject.tag == "RuneDraugr")                  //Se l'altro oggetto è uno di quelli proposti
                 {
@@ -592,6 +446,7 @@ public class InventorySystem : MonoBehaviour
                         isPresentWow = false;
                         isFirsPresentRuneWow = false;
                         RuneToPlayer.isTimeToWow = false;
+                        Debug.Log("Eseguo Inventory System 17");
                     }
                     if (InventorySlotsEnemy[1].gameObject.tag == "RuneValvran")
                     {
@@ -600,6 +455,7 @@ public class InventorySystem : MonoBehaviour
                         isPresentValvran = false;
                         isFirsPresentRuneValvran = false;
                         RuneToPlayer.isTimeToValvran = false;
+                        Debug.Log("Eseguo Inventory System 18");
                     }
                     if (InventorySlotsEnemy[1].gameObject.tag == "RuneEye")
                     {
@@ -608,6 +464,7 @@ public class InventorySystem : MonoBehaviour
                         isPresentEye = false;
                         isFirsPresentRuneEye = false;
                         RuneToPlayer.isTimeToEye = false;
+                        Debug.Log("Eseguo Inventory System 19");
                     }
                     if (InventorySlotsEnemy[1].gameObject.tag == "RuneGreen")
                     {
@@ -616,6 +473,7 @@ public class InventorySystem : MonoBehaviour
                         isPresentGreen = false;
                         isFirsPresentRuneGreen = false;
                         RuneToPlayer.isTimeToGreen = false;
+                        Debug.Log("Eseguo Inventory System 20");
                     }
                     if (InventorySlotsEnemy[1].gameObject.tag == "RuneDarkElf")
                     {
@@ -624,7 +482,9 @@ public class InventorySystem : MonoBehaviour
                         isPresentDarkElf = false;
                         isFirsPresentRuneDarkElf = false;
                         RuneToPlayer.isTimeToDarkElf = false;
+                        Debug.Log("Eseguo Inventory System 21");
                     }
+
                     Destroy(InventorySlotsEnemy[1]);                                                                                                    //Distruggi l'oggetto nell'invetario Enemy alla posizione 1
                     InventorySlotsEnemy[1] = other.gameObject;                                                                                          //Setta l'altro oggetto nell'inventario Enemy alla posizione 1
                     InventorySlotsEnemy[1].transform.parent = Player.transform;                                                                         //Setta come parent il player
@@ -650,6 +510,7 @@ public class InventorySystem : MonoBehaviour
                         tempIImageWow = 1;
                         InventorySlotsEnemy[1].GetComponent<RuneToPlayer>().Particle.SetActive(false);
                         InventorySlotsEnemy[1].GetComponent<RuneToPlayer>().Shadow.SetActive(false);
+                        Debug.Log("Eseguo Inventory System 22");
                     }
                     if (other.gameObject.tag == "RuneValvran")
                     {
@@ -671,6 +532,7 @@ public class InventorySystem : MonoBehaviour
                         Debug.Log("Ci arrivi qua nella verde image1");
                         InventorySlotsEnemy[1].GetComponent<RuneToPlayer>().Particle.SetActive(false);
                         InventorySlotsEnemy[1].GetComponent<RuneToPlayer>().Shadow.SetActive(false);
+                        Debug.Log("Eseguo Inventory System 23");
                     }
                     if (other.gameObject.tag == "RuneEye")
                     {
@@ -695,16 +557,7 @@ public class InventorySystem : MonoBehaviour
                         InventorySlotsEnemy[1].GetComponent<RotateParticle>().enabled = false;
                         InventorySlotsEnemy[1].transform.rotation = Quaternion.Euler(-90, 0, 90);
                         InventorySlotsEnemy[1].transform.position = new Vector3(transform.position.x, transform.position.y + 0.3f, transform.position.z);
-                    }
-                    if (other.gameObject.tag == "RuneBlue")
-                    {
-                        isPresentBlue = true;
-                        InventorySlotsEnemy[1].GetComponent<RuneBlue>().enabled = true;
-                        //BlueChange = true;
-                        GetComponent<Ammo>().SlotRuneTwo.texture = GetComponent<Ammo>().RuneBlueTexture[0];
-                        tempIBlue = 1;
-                        GetComponent<Ammo>().isFirstRuneBlue = true;
-                        Ammo.NumAmmoBlue1.gameObject.SetActive(true);
+                        Debug.Log("Eseguo Inventory System 24");
                     }
                     if (other.gameObject.tag == "RuneGreen")
                     {
@@ -725,26 +578,7 @@ public class InventorySystem : MonoBehaviour
                         tempIImageGreen = 1;
                         InventorySlotsEnemy[1].GetComponent<RuneToPlayer>().Particle.SetActive(false);
                         InventorySlotsEnemy[1].GetComponent<RuneToPlayer>().Shadow.SetActive(false);
-                    }
-                    if (other.gameObject.tag == "RuneYellow")
-                    {
-                        isPresentYellow = true;
-                        InventorySlotsEnemy[1].GetComponent<RuneYellow>().enabled = true;
-                        //YellowChange = true;
-                        GetComponent<Ammo>().SlotRuneTwo.texture = GetComponent<Ammo>().RuneYellowTexture[0];
-                        tempIYellow = 1;
-                        GetComponent<Ammo>().isFirstRuneYellow = true;
-                        Ammo.NumAmmoYellow1.gameObject.SetActive(true);
-                    }
-                    if (other.gameObject.tag == "RuneOrange")
-                    {
-                        isPresentOrange = true;
-                        InventorySlotsEnemy[1].GetComponent<RuneOrange>().enabled = true;
-                        //RedChange = true;
-                        GetComponent<Ammo>().SlotRuneTwo.texture = GetComponent<Ammo>().RuneRedTexture[0];
-                        tempIOrange = 1;
-                        GetComponent<Ammo>().isFirstRuneRed = true;
-                        Ammo.NumAmmoRed1.gameObject.SetActive(true);
+                        Debug.Log("Eseguo Inventory System 25");
                     }
                     if (other.gameObject.tag == "RuneDarkElf")
                     {
@@ -765,28 +599,20 @@ public class InventorySystem : MonoBehaviour
                         tempIImageDarkElf = 1;
                         InventorySlotsEnemy[1].GetComponent<RuneToPlayer>().Particle.SetActive(false);
                         InventorySlotsEnemy[1].GetComponent<RuneToPlayer>().Shadow.SetActive(false);
-                    }
-                    if (other.gameObject.tag == "RuneDraugr")
-                    {
-                        isPresentDraugr = true;
-                        InventorySlotsEnemy[1].GetComponent<RuneDraugr>().enabled = true;
-                        DraugrChange = true;
-                        GetComponent<Ammo>().SlotRuneTwo.texture = GetComponent<Ammo>().RuneDraugrTexture[0];
-                        tempIDraugr = 1;
-                        GetComponent<Ammo>().isFirstRuneDraugr = true;
-                        Ammo.NumAmmoDraugr1.gameObject.SetActive(true);
+                        Debug.Log("Eseguo Inventory System 26");
                     }
                 }
             }
         }
         if (Input.GetKey(KeyCode.M))                                                                                                                //Se schiaccio B (da cambiare poi in F + UpArrow)
         {
-            if (other.gameObject.tag == "RuneWow" || other.gameObject.tag == "RuneValvran" || other.gameObject.tag == "RuneProva")                  //Se l'altro oggetto è uno di quelli proposti
+            if (other.gameObject.tag == "RuneGammur")                  //Se l'altro oggetto è uno di quelli proposti
             {
                 Destroy(InventorySlotsBoss[0]);                                                                                                     //Distruggi l'oggetto nell'invetario Boss alla posizione 0
                 InventorySlotsBoss[0] = other.gameObject;                                                                                           //Setta l'altro oggetto nell'inventario Boss alla posizione 0
                 InventorySlotsBoss[0].transform.parent = Player.transform;                                                                          //Setta come parent il player
                 InventorySlotsBoss[0].transform.position = new Vector3(transform.position.x, transform.position.y + 30, transform.position.z);      //Setta la posizione dell'oggetto appena scambiato
+                Debug.Log("Eseguo Inventory System 27");
             }
         }
         #endregion

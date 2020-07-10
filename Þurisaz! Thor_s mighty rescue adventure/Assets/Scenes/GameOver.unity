@@ -253,7 +253,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Texture: {fileID: 2800000, guid: bb827786214189245a59d4b509b800bb, type: 3}
+  m_Texture: {fileID: 2800000, guid: f477dc13a988ef649a3e442fabfa5b2f, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -302,8 +302,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 89.1}
-  m_SizeDelta: {x: 542.4, y: 149.3}
+  m_AnchoredPosition: {x: 0, y: 50}
+  m_SizeDelta: {x: 788, y: 307}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &768267111
 MonoBehaviour:
@@ -325,7 +325,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Texture: {fileID: 2800000, guid: 9001a05119de4b741a2c4ee6a01e3f14, type: 3}
+  m_Texture: {fileID: 2800000, guid: e4f1d91a41f1aea4ebc1090d693fa311, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -410,7 +410,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: V.1.4.0 - alpha
+  m_Text: V.1.5.2 - alpha
 --- !u!222 &882132929
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -658,7 +658,7 @@ RectTransform:
   m_GameObject: {fileID: 1576826838}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 1418026086}
   m_Father: {fileID: 1213048126}
@@ -666,7 +666,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -220, y: -170}
+  m_AnchoredPosition: {x: 0, y: -287}
   m_SizeDelta: {x: 300, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1576826840
@@ -809,7 +809,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 1576826838}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1633481555

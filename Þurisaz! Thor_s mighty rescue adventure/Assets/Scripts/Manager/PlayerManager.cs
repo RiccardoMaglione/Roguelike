@@ -436,7 +436,7 @@ public class PlayerManager : MonoBehaviour
         //Attack();
 
 
-        if (Input.GetKeyDown(KeyCode.Space) && attack == false)
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.JoystickButton0)) && attack == false)
         {
             StartCoroutine(HammerAttack());
         }

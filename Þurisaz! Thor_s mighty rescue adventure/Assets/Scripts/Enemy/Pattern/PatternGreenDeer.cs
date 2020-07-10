@@ -75,7 +75,7 @@ public class PatternGreenDeer : MonoBehaviour
         {
             for (int j = -2; j < 3; j++)
             {
-                GameObject go = Instantiate(Spine, new Vector3(transform.position.x + i, /*transform.position.y*/0, transform.position.z + j), Quaternion.identity);
+                GameObject go = Instantiate(Spine, new Vector3(transform.position.x + i, transform.position.y/*0*/, transform.position.z + j), Quaternion.identity);
                 go.transform.parent = DeerGreenContainer.transform;
                 if (go.transform.position.x == DeerGreenContainer.transform.position.x && go.transform.position.z == DeerGreenContainer.transform.position.z)
                     Destroy(go);
