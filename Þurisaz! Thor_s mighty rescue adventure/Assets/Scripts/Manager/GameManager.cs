@@ -128,6 +128,18 @@ public class GameManager : MonoBehaviour
         InventorySystem.tempIDarkElf = 0;
         InventorySystem.tempIDraugr = 0;
 
+        InventorySystem.tempIsPresentWow = false;
+        InventorySystem.tempIsPresentValvran = false;
+        InventorySystem.tempIsPresentEye = false;
+        InventorySystem.tempIsPresentDarkElf = false;
+        InventorySystem.tempIsPresentGreen = false;
+
+        InventorySystem.tempIWow = 0;
+        InventorySystem.tempIValvran = 0;
+        InventorySystem.tempIEye = 0;
+        InventorySystem.tempIDarkElf = 0;
+        InventorySystem.tempIGreen = 0;
+
         RuneToPlayer.isTimeToWow = false;
         RuneToPlayer.isTimeToValvran = false;
         RuneToPlayer.isTimeToBlue = false;
@@ -138,17 +150,37 @@ public class GameManager : MonoBehaviour
         RuneToPlayer.isTimeToDarkElf = false;
         RuneToPlayer.isTimeToDraugr = false;
 
-        Ammo.AmmoW = 0;
-        Ammo.AmmoV = 0;
-        Ammo.AmmoBlue = 0;
-        Ammo.AmmoGreen = 0;
-        Ammo.AmmoRed = 0;
-        Ammo.AmmoYellow = 0;
-        Ammo.AmmoEye = 0;
-        Ammo.AmmoDarkElf = 0;
-        Ammo.AmmoDraugr = 0;
+        Ammo.AmmoW = 1;
+        Ammo.AmmoV = 1;
+        Ammo.AmmoBlue = 1;
+        Ammo.AmmoGreen = 1;
+        Ammo.AmmoRed = 1;
+        Ammo.AmmoYellow = 1;
+        Ammo.AmmoEye = 1;
+        Ammo.AmmoDarkElf = 1;
+        Ammo.AmmoDraugr = 1;
 
         RuneToPlayer.NumberRuneEnemyCatch = 0;
+
+        Ammo.RestartWow = true;
+        Ammo.RestartValravn = true;
+        Ammo.RestartEye = true;
+        Ammo.RestartGreen = true;
+        Ammo.RestartDarkElf = true;
+
+        Ammo.tempIsActiveWow = false;
+        Ammo.tempIsActiveValravn = false;
+        Ammo.tempIsActiveGreen = false;
+        Ammo.tempIsActiveDarkElf = false;
+        Ammo.tempIsActiveEye = false;
+
+        Ammo.tempIsFirstRuneWow = false;
+        Ammo.tempIsFirstRuneValvran = false;
+        Ammo.tempIsFirstRuneGreen = false;
+        Ammo.tempIsFirstRuneEye = false;
+        Ammo.tempIsFirstRuneDarkElf = false;
+        
+        EnemyManager.CountEnemyWin = 0;
         #endregion
     }
     public void GoToLoading()
@@ -261,6 +293,5 @@ public class GameManager : MonoBehaviour
         }
     }
     #endregion
-    
     #endregion
 }

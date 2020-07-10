@@ -10,8 +10,23 @@ PrefabInstance:
     - target: {fileID: 1341061659733669302, guid: a3462666843a81d4ebc4d2b897e83301,
         type: 3}
       propertyPath: m_Name
-      value: EggcrackerParticle
+      value: EggcrackerParticle Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 1341061659733669300, guid: a3462666843a81d4ebc4d2b897e83301,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1341061659733669301, guid: a3462666843a81d4ebc4d2b897e83301,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1cfadb56bef8faf458a4aedb0bb21095, type: 2}
+    - target: {fileID: 1341061659733669301, guid: a3462666843a81d4ebc4d2b897e83301,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1cfadb56bef8faf458a4aedb0bb21095, type: 2}
     - target: {fileID: 1341061659733669299, guid: a3462666843a81d4ebc4d2b897e83301,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -67,15 +82,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1341061659733669301, guid: a3462666843a81d4ebc4d2b897e83301,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 1cfadb56bef8faf458a4aedb0bb21095, type: 2}
-    - target: {fileID: 1341061659733669301, guid: a3462666843a81d4ebc4d2b897e83301,
-        type: 3}
-      propertyPath: m_Materials.Array.data[1]
-      value: 
-      objectReference: {fileID: 2100000, guid: 1cfadb56bef8faf458a4aedb0bb21095, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3462666843a81d4ebc4d2b897e83301, type: 3}

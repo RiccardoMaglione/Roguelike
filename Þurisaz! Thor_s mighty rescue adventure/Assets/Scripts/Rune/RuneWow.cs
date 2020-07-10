@@ -76,6 +76,7 @@ public class RuneWow : MonoBehaviour
             player[0].GetComponent<Ammo>().SlotRuneOne.texture = player[0].GetComponent<Ammo>().RuneWowTexture[0];
             //Ammo.RuneRawImageCooldownWilloWisp0.enabled = false;
             //Ammo.RuneRawImageWilloWisp0.enabled = true;
+            Debug.Log("Eseguo Rune wow 1");
         }
         if (InventorySystem.tempIWow == 1)
         {
@@ -87,6 +88,7 @@ public class RuneWow : MonoBehaviour
             player[0].GetComponent<Ammo>().SlotRuneTwo.texture = player[0].GetComponent<Ammo>().RuneWowTexture[0];
             //Ammo.RuneRawImageCooldownWilloWisp1.enabled = false;
             //Ammo.RuneRawImageWilloWisp1.enabled = true;
+            Debug.Log("Eseguo Rune wow 2");
         }
     }
 }

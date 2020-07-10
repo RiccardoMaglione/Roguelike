@@ -9,17 +9,10 @@ public class MonsterpediaManager : MonoBehaviour
     public GameObject ButtonWowPedia;
     public GameObject ButtonValravnPedia;
     public GameObject ButtonGammurPedia;
-
     public GameObject ButtonEyePedia;
     public GameObject ButtonDáinnPedia;
-    public GameObject ButtonDvalinnPedia;
-    public GameObject ButtonDuneyrrPedia;
-    public GameObject ButtonDuraþrórPedia;
-
-    public GameObject ButtonGullinburstiPedia;
-    public GameObject ButtonDraugrPedia;
-
-    public GameObject ButtonLokiPedia;
+    public GameObject ButtonDarkElfPedia;
+    
     #endregion
     #region QM
     public GameObject WowQM;
@@ -28,33 +21,27 @@ public class MonsterpediaManager : MonoBehaviour
     
     public GameObject OdinQM;
     public GameObject GreenQM;
+    public GameObject DarkElfQM;
+    
     public GameObject YellowQM;
     public GameObject RedQM;
     public GameObject BlueQM;
-
     public GameObject GullinburstiQM;
     public GameObject DraugrQM;
-
     public GameObject LokiQM;
     #endregion
     #region Act
     public GameObject WowAct;
     public GameObject ValravnAct;
     public GameObject GammurAct;
-
     public GameObject OdinAct;
     public GameObject GreenAct;
-    public GameObject YellowAct;
-    public GameObject RedAct;
-    public GameObject BlueAct;
+    public GameObject DarkElfAct;
 
-    public GameObject GullinburstiAct;
-    public GameObject DraugrAct;
-
-    public GameObject LokiAct;
     #endregion
     public MonsterpediaManager monsterManager;
     #endregion
+    
     private void Start()
     {
         #region Distattivo
@@ -88,41 +75,12 @@ public class MonsterpediaManager : MonoBehaviour
             ButtonDáinnPedia.SetActive(false);
             GreenAct.SetActive(false);
         }
-        if (EnemyManager.YellowFound == 0)
+      
+        if (EnemyManager.DarkElfFound == 0)
         {
-            YellowQM.SetActive(true);
-            ButtonDvalinnPedia.SetActive(false);
-            YellowAct.SetActive(false);
-        }
-        if (EnemyManager.RedFound == 0)
-        {
-            RedQM.SetActive(true);
-            ButtonDuneyrrPedia.SetActive(false);
-            RedAct.SetActive(false);
-        }
-        if (EnemyManager.BlueFound == 0)
-        {
-            BlueQM.SetActive(true);
-            ButtonDuraþrórPedia.SetActive(false);
-            BlueAct.SetActive(false);
-        }
-        if (EnemyManager.GullinburstiFound == 0)
-        {
-            GullinburstiQM.SetActive(true);
-            ButtonGullinburstiPedia.SetActive(false);
-            GullinburstiAct.SetActive(false);
-        }
-        if (EnemyManager.DraugrFound == 0)
-        {
-            DraugrQM.SetActive(true);
-            ButtonDraugrPedia.SetActive(false);
-            DraugrAct.SetActive(false);
-        }
-        if (EnemyManager.LokiFound == 0)
-        {
-            LokiQM.SetActive(true);
-            ButtonLokiPedia.SetActive(false);
-            LokiAct.SetActive(false);
+            DarkElfQM.SetActive(true);
+            ButtonDarkElfPedia.SetActive(false);
+            DarkElfAct.SetActive(false);
         }
         #endregion
 
@@ -157,47 +115,14 @@ public class MonsterpediaManager : MonoBehaviour
             ButtonDáinnPedia.SetActive(false);
             GreenAct.SetActive(true);
         }
-        if (EnemyManager.YellowFound == 1)
+        
+        if (EnemyManager.DarkElfFound == 1)
         {
-            YellowQM.SetActive(false);
-            ButtonDvalinnPedia.SetActive(false);
-            YellowAct.SetActive(true);
-        }
-        if (EnemyManager.RedFound == 1)
-        {
-            RedQM.SetActive(false);
-            ButtonDuneyrrPedia.SetActive(false);
-            RedAct.SetActive(true);
-        }
-        if (EnemyManager.BlueFound == 1)
-        {
-            BlueQM.SetActive(false);
-            ButtonDuraþrórPedia.SetActive(false);
-            BlueAct.SetActive(true);
-        }
-        if (EnemyManager.GullinburstiFound == 1)
-        {
-            GullinburstiQM.SetActive(false);
-            ButtonGullinburstiPedia.SetActive(false);
-            GullinburstiAct.SetActive(true);
-        }
-        if (EnemyManager.DraugrFound == 1)
-        {
-            DraugrQM.SetActive(false);
-            ButtonDraugrPedia.SetActive(false);
-            DraugrAct.SetActive(true);
-        }
-        if (EnemyManager.LokiFound == 1)
-        {
-            LokiQM.SetActive(false);
-            ButtonLokiPedia.SetActive(false);
-            LokiAct.SetActive(true);
+            DarkElfQM.SetActive(false);
+            ButtonDarkElfPedia.SetActive(false);
+            DarkElfAct.SetActive(true);
         }
         #endregion
-
-
-
-
     }
     public void WillOWispPedia()
     {
@@ -206,11 +131,7 @@ public class MonsterpediaManager : MonoBehaviour
         ButtonGammurPedia.SetActive(false);
         ButtonEyePedia.SetActive(false);
         ButtonDáinnPedia.SetActive(false);
-        ButtonDvalinnPedia.SetActive(false);
-        ButtonDuneyrrPedia.SetActive(false);
-        ButtonDuraþrórPedia.SetActive(false);
-        ButtonGullinburstiPedia.SetActive(false);
-        ButtonDraugrPedia.SetActive(false);
+        ButtonDarkElfPedia.SetActive(false);
     }
     public void ValravnPedia()
     {
@@ -219,11 +140,7 @@ public class MonsterpediaManager : MonoBehaviour
         ButtonGammurPedia.SetActive(false);
         ButtonEyePedia.SetActive(false);
         ButtonDáinnPedia.SetActive(false);
-        ButtonDvalinnPedia.SetActive(false);
-        ButtonDuneyrrPedia.SetActive(false);
-        ButtonDuraþrórPedia.SetActive(false);
-        ButtonGullinburstiPedia.SetActive(false);
-        ButtonDraugrPedia.SetActive(false);
+        ButtonDarkElfPedia.SetActive(false);
 
     }
     public void GammurPedia()
@@ -233,11 +150,7 @@ public class MonsterpediaManager : MonoBehaviour
         ButtonGammurPedia.SetActive(true);
         ButtonEyePedia.SetActive(false);
         ButtonDáinnPedia.SetActive(false);
-        ButtonDvalinnPedia.SetActive(false);
-        ButtonDuneyrrPedia.SetActive(false);
-        ButtonDuraþrórPedia.SetActive(false);
-        ButtonGullinburstiPedia.SetActive(false);
-        ButtonDraugrPedia.SetActive(false);
+        ButtonDarkElfPedia.SetActive(false);
     }
     public void EyePedia()
     {
@@ -246,11 +159,7 @@ public class MonsterpediaManager : MonoBehaviour
         ButtonGammurPedia.SetActive(false);
         ButtonEyePedia.SetActive(true);
         ButtonDáinnPedia.SetActive(false);
-        ButtonDvalinnPedia.SetActive(false);
-        ButtonDuneyrrPedia.SetActive(false);
-        ButtonDuraþrórPedia.SetActive(false);
-        ButtonGullinburstiPedia.SetActive(false);
-        ButtonDraugrPedia.SetActive(false);
+        ButtonDarkElfPedia.SetActive(false);
     }
     public void DáinnPedia()
     {
@@ -259,92 +168,15 @@ public class MonsterpediaManager : MonoBehaviour
         ButtonGammurPedia.SetActive(false);
         ButtonEyePedia.SetActive(false);
         ButtonDáinnPedia.SetActive(true);
-        ButtonDvalinnPedia.SetActive(false);
-        ButtonDuneyrrPedia.SetActive(false);
-        ButtonDuraþrórPedia.SetActive(false);
-        ButtonGullinburstiPedia.SetActive(false);
-        ButtonDraugrPedia.SetActive(false);
+        ButtonDarkElfPedia.SetActive(false);
     }   //verde
-    public void DvalinnPedia()
+    public void DarkElfPedia()
     {
         ButtonWowPedia.SetActive(false);
         ButtonValravnPedia.SetActive(false);
         ButtonGammurPedia.SetActive(false);
         ButtonEyePedia.SetActive(false);
         ButtonDáinnPedia.SetActive(false);
-        ButtonDvalinnPedia.SetActive(true);
-        ButtonDuneyrrPedia.SetActive(false);
-        ButtonDuraþrórPedia.SetActive(false);
-        ButtonGullinburstiPedia.SetActive(false);
-        ButtonDraugrPedia.SetActive(false);
-    }   //giallo
-    public void DuneyrrPedia()
-    {
-        ButtonWowPedia.SetActive(false);
-        ButtonValravnPedia.SetActive(false);
-        ButtonGammurPedia.SetActive(false);
-        ButtonEyePedia.SetActive(false);
-        ButtonDáinnPedia.SetActive(false);
-        ButtonDvalinnPedia.SetActive(false);
-        ButtonDuneyrrPedia.SetActive(true);
-        ButtonDuraþrórPedia.SetActive(false);
-        ButtonGullinburstiPedia.SetActive(false);
-        ButtonDraugrPedia.SetActive(false);
-    }   //rosso
-    public void DuraþrórPedia()
-    {
-        ButtonWowPedia.SetActive(false);
-        ButtonValravnPedia.SetActive(false);
-        ButtonGammurPedia.SetActive(false);
-        ButtonEyePedia.SetActive(false);
-        ButtonDáinnPedia.SetActive(false);
-        ButtonDvalinnPedia.SetActive(false);
-        ButtonDuneyrrPedia.SetActive(false);
-        ButtonDuraþrórPedia.SetActive(true);
-        ButtonGullinburstiPedia.SetActive(false);
-        ButtonDraugrPedia.SetActive(false);
-    }   //blu
-
-    public void GullinburstiPedia()
-    {
-        ButtonWowPedia.SetActive(false);
-        ButtonValravnPedia.SetActive(false);
-        ButtonGammurPedia.SetActive(false);
-        ButtonEyePedia.SetActive(false);
-        ButtonDáinnPedia.SetActive(false);
-        ButtonDvalinnPedia.SetActive(false);
-        ButtonDuneyrrPedia.SetActive(false);
-        ButtonDuraþrórPedia.SetActive(false);
-        ButtonGullinburstiPedia.SetActive(true);
-        ButtonDraugrPedia.SetActive(false);
-    }
-
-    public void DraugrPedia()
-    {
-        ButtonWowPedia.SetActive(false);
-        ButtonValravnPedia.SetActive(false);
-        ButtonGammurPedia.SetActive(false);
-        ButtonEyePedia.SetActive(false);
-        ButtonDáinnPedia.SetActive(false);
-        ButtonDvalinnPedia.SetActive(false);
-        ButtonDuneyrrPedia.SetActive(false);
-        ButtonDuraþrórPedia.SetActive(false);
-        ButtonGullinburstiPedia.SetActive(false);
-        ButtonDraugrPedia.SetActive(true);
-    }
-
-    public void LokiPedia()
-    {
-        ButtonWowPedia.SetActive(false);
-        ButtonValravnPedia.SetActive(false);
-        ButtonGammurPedia.SetActive(false);
-        ButtonEyePedia.SetActive(false);
-        ButtonDáinnPedia.SetActive(false);
-        ButtonDvalinnPedia.SetActive(false);
-        ButtonDuneyrrPedia.SetActive(false);
-        ButtonDuraþrórPedia.SetActive(false);
-        ButtonGullinburstiPedia.SetActive(false);
-        ButtonDraugrPedia.SetActive(false);
-        ButtonLokiPedia.SetActive(true);
+        ButtonDarkElfPedia.SetActive(true);
     }
 }

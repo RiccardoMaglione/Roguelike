@@ -43,8 +43,8 @@ public class PatternValvran : MonoBehaviour
 
 
     public GameObject AnimationSheet;
+    public Animator anim;
     #endregion
-
     void Awake()
     {
         sfx = PlayerPrefs.GetFloat("SfxVolume");//Setto l'audio del Valravn come sfx
@@ -203,11 +203,11 @@ public class PatternValvran : MonoBehaviour
     #region Pattern
     void Attack(Vector3 center, float radius)                                                                  //metodo dell'attacco del valravn
     {
-        Collider[] hitColliders = Physics.OverlapSphere(center, radius);                                       //il nemico spara il tornado
+        Collider[] hitColliders = Physics.OverlapSphere(center, radius);                                      //il nemico spara il tornado
         foreach (Collider detectedCollider in hitColliders)
         {
             if (detectedCollider.tag == "Player")                                                              //controlla se dentero all'area del tornado c'è il giocatore
-            {
+            {               
                 player = detectedCollider.transform;
                 dist = Vector3.Distance(new Vector3((int)detectedCollider.transform.position.x, detectedCollider.transform.position.y, (int)detectedCollider.transform.position.z), new Vector3((int)transform.position.x, transform.position.y, (int)transform.position.z));              //calcola la distanza del giocatore dal valravn                                              
                 go = new Vector3((int)detectedCollider.transform.position.x, detectedCollider.transform.position.y, (int)detectedCollider.transform.position.z) + transform.forward * (4 - dist);
@@ -224,10 +224,13 @@ public class PatternValvran : MonoBehaviour
     {
         while(true)
         {
+            FindObjectOfType<AudioManager>().Play("ValravnSound", sfx);
+            anim.SetBool("Active", true);
             AnimationSheet.SetActive(true);
             yield return new WaitForSeconds(1);
             Attack(transform.position, 3f);
             AnimationSheet.SetActive(false);
+            anim.SetBool("Active", false);
             yield return new WaitForSeconds(CooldownAttack);
             #region Old Attack
             //GameObject newShot1 = Instantiate(PeckReference, ValvranContainer.transform.localPosition + (transform.forward * 0.6f), transform.rotation * Quaternion.Euler(0, 45, 0));

@@ -61,105 +61,62 @@ public class RuneToPlayer : MonoBehaviour
                 {
                     if (gameObject.tag == "RuneWow")
                     {
+                        Ammo.RestartWow = true;
                         print("Questa è il numero delle rune prese " + NumberRuneEnemyCatch);
                         transform.parent = Player.transform;
                         NumberRuneEnemyCatch++;
                         InventorySystem.isFirsPresentRuneWow = true;
+                        Debug.Log("Eseguo Rune to Player 1");
                     }
                 }
                 if (InventorySystem.isFirsPresentRuneValvran == false)
                 {
                     if (gameObject.tag == "RuneValvran")
                     {
+                        Ammo.RestartValravn = true;
                         print("Questa è il numero delle rune prese " + NumberRuneEnemyCatch);
                         transform.parent = Player.transform;
                         NumberRuneEnemyCatch++;
                         InventorySystem.isFirsPresentRuneValvran = true;
+                        Debug.Log("Eseguo Rune to Player 2");
                     }
                 }
-                //if (InventorySystem.isFirsPresentRuneProva == false)
-                //{
-                //    if (gameObject.tag == "RuneProva")
-                //    {
-                //        print("Questa è il numero delle rune prese " + NumberRuneEnemyCatch);
-                //        transform.parent = Player.transform;
-                //        NumberRuneEnemyCatch++;
-                //        InventorySystem.isFirsPresentRuneProva = true;
-                //    }
-                //}
-
-                #region Inventario rune nuove
                 if (InventorySystem.isFirsPresentRuneEye == false)
                 {
                     if (gameObject.tag == "RuneEye")
                     {
+                        Ammo.RestartEye = true;
                         print("Questa è il numero delle rune prese " + NumberRuneEnemyCatch);
                         transform.parent = Player.transform;
                         NumberRuneEnemyCatch++;
                         InventorySystem.isFirsPresentRuneEye = true;
-                    }
-                }
-                if (InventorySystem.isFirsPresentRuneBlue == false)
-                {
-                    if (gameObject.tag == "RuneBlue")
-                    {
-                        print("Questa è il numero delle rune prese " + NumberRuneEnemyCatch);
-                        transform.parent = Player.transform;
-                        NumberRuneEnemyCatch++;
-                        InventorySystem.isFirsPresentRuneBlue = true;
+                        Debug.Log("Eseguo Rune to Player 3");
                     }
                 }
                 if (InventorySystem.isFirsPresentRuneGreen == false)
                 {
                     if (gameObject.tag == "RuneGreen")
                     {
+                        Ammo.RestartGreen = true;
                         print("Questa è il numero delle rune prese " + NumberRuneEnemyCatch);
                         transform.parent = Player.transform;
                         NumberRuneEnemyCatch++;
                         InventorySystem.isFirsPresentRuneGreen = true;
-                    }
-                }
-                if (InventorySystem.isFirsPresentRuneYellow == false)
-                {
-                    if (gameObject.tag == "RuneYellow")
-                    {
-                        print("Questa è il numero delle rune prese " + NumberRuneEnemyCatch);
-                        transform.parent = Player.transform;
-                        NumberRuneEnemyCatch++;
-                        InventorySystem.isFirsPresentRuneYellow = true;
-                    }
-                }
-                if (InventorySystem.isFirsPresentRuneOrange == false)
-                {
-                    if (gameObject.tag == "RuneOrange")
-                    {
-                        print("Questa è il numero delle rune prese " + NumberRuneEnemyCatch);
-                        transform.parent = Player.transform;
-                        NumberRuneEnemyCatch++;
-                        InventorySystem.isFirsPresentRuneOrange = true;
+                        Debug.Log("Eseguo Rune to Player 4");
                     }
                 }
                 if (InventorySystem.isFirsPresentRuneDarkElf == false)
                 {
                     if (gameObject.tag == "RuneDarkElf")
                     {
+                        Ammo.RestartDarkElf = true;
                         print("Questa è il numero delle rune prese " + NumberRuneEnemyCatch);
                         transform.parent = Player.transform;
                         NumberRuneEnemyCatch++;
                         InventorySystem.isFirsPresentRuneDarkElf = true;
+                        Debug.Log("Eseguo Rune to Player 5");
                     }
                 }
-                if (InventorySystem.isFirsPresentRuneDraugr == false)
-                {
-                    if (gameObject.tag == "RuneDraugr")
-                    {
-                        print("Questa è il numero delle rune prese " + NumberRuneEnemyCatch);
-                        transform.parent = Player.transform;
-                        NumberRuneEnemyCatch++;
-                        InventorySystem.isFirsPresentRuneDraugr = true;
-                    }
-                }
-                #endregion
             }
             if (NumberRuneBossCatch < 1)
             {
@@ -171,6 +128,7 @@ public class RuneToPlayer : MonoBehaviour
                         transform.parent = Player.transform;
                         NumberRuneBossCatch++;
                         InventorySystem.isFirsPresentRuneGammur = true;
+                        Debug.Log("Eseguo Rune to Player 6");
                     }
                 }
             }
@@ -190,6 +148,7 @@ public class RuneToPlayer : MonoBehaviour
                     GraphicsRuneWow.enabled = false;
                     Particle.SetActive(false);
                     Shadow.SetActive(false);
+                    Debug.Log("Eseguo Rune to Player 7");
                 }
             }
             #endregion
@@ -205,6 +164,7 @@ public class RuneToPlayer : MonoBehaviour
                     GraphicsRuneValravn.enabled = false;
                     Particle.SetActive(false);
                     Shadow.SetActive(false);
+                    Debug.Log("Eseguo Rune to Player 8");
                 }
             }
             #endregion
@@ -220,6 +180,7 @@ public class RuneToPlayer : MonoBehaviour
                     GraphicsRuneGammur1.enabled = false;
                     Particle.SetActive(false);
                     Shadow.SetActive(false);
+                    Debug.Log("Eseguo Rune to Player 9");
                 }
                 if (EnemyManager.rangeGammur == 2)
                 {
@@ -230,6 +191,7 @@ public class RuneToPlayer : MonoBehaviour
                     GraphicsRuneGammur2.enabled = false;
                     Particle.SetActive(false);
                     Shadow.SetActive(false);
+                    Debug.Log("Eseguo Rune to Player 10");
                 }
                 if (EnemyManager.rangeGammur == 3)
                 {
@@ -240,14 +202,10 @@ public class RuneToPlayer : MonoBehaviour
                     GraphicsRuneGammur3.enabled = false;
                     Particle.SetActive(false);
                     Shadow.SetActive(false);
+                    Debug.Log("Eseguo Rune to Player 11");
                 }
             }
             #endregion
-            //Rune wow
-            //rune valravn
-            //rune gammur
-            #region Rune da sistemare
-            
             #region Eye
             if (gameObject.tag == "RuneEye" && InventorySystem.isFirsPresentRuneEye == true)
             {
@@ -259,23 +217,11 @@ public class RuneToPlayer : MonoBehaviour
                     GetComponent<BoxCollider>().enabled = false;
                     isTimeToEye = true;
                     GraphicsRuneEye.enabled = false;
+                    GetComponent<RotateParticle>().enabled = false;
                     Particle.SetActive(false);
                     Shadow.SetActive(false);
-                }
-            }
-            #endregion
-            #region Blue Deer
-            if (gameObject.tag == "RuneBlue" && InventorySystem.isFirsPresentRuneBlue == true)
-            {
-                if (isTimeToBlue == false)
-                {
-                    transform.parent = Player.transform;
-                    transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
-                    GetComponent<RuneBlue>().enabled = true;
-                    isTimeToBlue = true;
-                    GraphicsRuneDeerBlue.enabled = false;
-                    Particle.SetActive(false);
-                    Shadow.SetActive(false);
+                    transform.rotation = Quaternion.Euler(-90, 0, 90);
+                    Debug.Log("Eseguo Rune to Player 12");
                 }
             }
             #endregion
@@ -291,36 +237,7 @@ public class RuneToPlayer : MonoBehaviour
                     GraphicsRuneDeerGreen.enabled = false;
                     Particle.SetActive(false);
                     Shadow.SetActive(false);
-                }
-            }
-            #endregion
-            #region Yellow Deer
-            if (gameObject.tag == "RuneYellow" && InventorySystem.isFirsPresentRuneYellow == true)
-            {
-                if (isTimeToYellow == false)
-                {
-                    transform.parent = Player.transform;
-                    transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
-                    GetComponent<RuneYellow>().enabled = true;
-                    isTimeToYellow = true;
-                    GraphicsRuneDeerYellow.enabled = false;
-                    Particle.SetActive(false);
-                    Shadow.SetActive(false);
-                }
-            }
-            #endregion
-            #region Orange Deer
-            if (gameObject.tag == "RuneOrange" && InventorySystem.isFirsPresentRuneOrange == true)
-            {
-                if (isTimeToOrange == false)
-                {
-                    transform.parent = Player.transform;
-                    transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
-                    GetComponent<RuneOrange>().enabled = true;
-                    isTimeToOrange = true;
-                    GraphicsRuneDeerOrange.enabled = false;
-                    Particle.SetActive(false);
-                    Shadow.SetActive(false);
+                    Debug.Log("Eseguo Rune to Player 13");
                 }
             }
             #endregion
@@ -336,32 +253,10 @@ public class RuneToPlayer : MonoBehaviour
                     GraphicsRuneDarkElf.enabled = false;
                     Particle.SetActive(false);
                     Shadow.SetActive(false);
+                    Debug.Log("Eseguo Rune to Player 14");
                 }
             }
             #endregion
-            #region Draugr
-            if (gameObject.tag == "RuneDraugr" && InventorySystem.isFirsPresentRuneDraugr == true)
-            {
-                if (isTimeToDraugr == false)
-                {
-                    transform.parent = Player.transform;
-                    transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
-                    GetComponent<RuneDraugr>().enabled = true;
-                    isTimeToDraugr = true;
-                    GraphicsRuneDraugr.enabled = false;
-                    Particle.SetActive(false);
-                    Shadow.SetActive(false);
-                }
-            }
-            #endregion
-            //rune eye
-            //rune deer blue
-            //rune deer green
-            //rune deer yellow
-            //rune deer orange
-
-            #endregion
-
         }
     }
 

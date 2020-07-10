@@ -35,7 +35,7 @@ public class PatternGreenDeer : MonoBehaviour
     private void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
-        //StartCoroutine(SpineAttack());
+        StartCoroutine(SpineAttack());
     }
     private void Update()
     {
@@ -45,22 +45,22 @@ public class PatternGreenDeer : MonoBehaviour
         {
             if (this.name == "GreenScript1")
             {
-                Debug.Log("Cervo 1 attivo");
                 isNineActivate = false;
                 this.GetComponent<PatternGreenDeer>().enabled = true;
                 StartCoroutine(SpineAttack());
                 ActivateEnemy.isRoom9Green1 = false;
+                Debug.Log("Cervo 1 attivo");
             }
         }
         if (ActivateEnemy.isRoom6NewGreen1 == true && isSix2Activate == true)
         {
             if (this.name == "GreenScript2")
             {
-                Debug.Log("Cervo 2 attivo");
                 isSix2Activate = false;
                 this.GetComponent<PatternGreenDeer>().enabled = true;
                 StartCoroutine(SpineAttack());
                 ActivateEnemy.isRoom6NewGreen1 = false;
+                Debug.Log("Cervo 2 attivo");
             }
         }
         #endregion
@@ -70,7 +70,7 @@ public class PatternGreenDeer : MonoBehaviour
     void SpawnSpike()
     {
         StartCoroutine(Flash());
-        //FindObjectOfType<AudioManager>().Play("InsertNameSound", sfx);
+        //FindObjectOfType<AudioManager>().Play("DeerSound", sfx);
         for (int i = -2; i < 3; i++)
         {
             for (int j = -2; j < 3; j++)
@@ -80,6 +80,7 @@ public class PatternGreenDeer : MonoBehaviour
                 if (go.transform.position.x == DeerGreenContainer.transform.position.x && go.transform.position.z == DeerGreenContainer.transform.position.z)
                     Destroy(go);
                 Destroy(go, 3f);
+                Debug.Log("Cervo attacca");
             }
         }
         
@@ -91,6 +92,7 @@ public class PatternGreenDeer : MonoBehaviour
     {
         while (true)
         {
+            Debug.Log("Cervo attacca1");
             yield return new WaitForSeconds(CooldownAttack);
             SpawnSpike();
         }
@@ -98,6 +100,7 @@ public class PatternGreenDeer : MonoBehaviour
 
     public IEnumerator Flash()
     {
+        Debug.Log("Cervo attacca2");
         GraphicsBase.material = MaterialChange;
         yield return new WaitForSeconds(CooldownFlash);
         GraphicsBase.material = MaterialStandard;

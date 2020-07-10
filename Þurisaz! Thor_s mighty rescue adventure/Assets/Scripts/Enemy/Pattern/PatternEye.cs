@@ -30,22 +30,20 @@ public class PatternEye : MonoBehaviour
     {
         
         bool ray = Physics.Raycast(transform.position, transform.forward, out hit, 15f);
+
         if (ray == true)
         {
             a.SetPosition(1, new Vector3(0, 0, hit.distance));
 
             if (hit.collider.gameObject.tag == "Player")
-                Debug.Log("AHIA!");
-
-            if (hit.collider.gameObject.tag != "Player")
-
-                Debug.Log("Muro");
+            {
+                PlayerManager.ColpitoPlayer = true;
+            }
         }
 
         if (ray == false)
         {
             a.SetPosition(1, new Vector3(0, 0, 15));
-            Debug.Log("Mancato");
         }
         
     }
@@ -57,8 +55,7 @@ public class PatternEye : MonoBehaviour
         if (timer >= 1)
         {
             laser.SetActive(true);
-            attack();
-            
+            attack();         
         }
 
         if (timer >= 2)

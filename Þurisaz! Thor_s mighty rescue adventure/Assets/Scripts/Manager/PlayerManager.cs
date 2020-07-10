@@ -2,9 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using XInputDotNetPure;
 
 public class PlayerManager : MonoBehaviour
 {
+    #region Vibration
+    float vibrationTimer = 0;
+
+    //design
+    [Header("VIBRATION")]
+    [Tooltip("Intensità vibrazione sinistra")] [Range(0f, 1f)] public float leftIntensity;
+    [Tooltip("Intensità vibrazione destra")] [Range(0f, 1f)] public float rightIntensity;
+    [Tooltip("durata vibrazione")] public float vibrationDuration;
+
+    PlayerIndex playerIndex;
+    #endregion
     #region Variables Health
     public int health;
 
@@ -125,8 +137,7 @@ public class PlayerManager : MonoBehaviour
     static public int DirectionD = 0;
 
     #endregion
-
-
+    public GameObject ExplosionEggCracker;
     private void OnTriggerEnter(Collider other)
     {
         #region Trigger Health
@@ -134,9 +145,13 @@ public class PlayerManager : MonoBehaviour
         {
             if (other.gameObject.tag == "Shot" || other.gameObject.tag == "Scream" || other.gameObject.tag == "Stalactite" || other.gameObject.tag == "Egg" || other.gameObject.tag == "Eggcracker")
             {
+                if(other.gameObject.tag == "Egg" || other.gameObject.tag == "Eggcracker")
+                {
+                    GameObject GoExplosion = Instantiate(ExplosionEggCracker, new Vector3(other.gameObject.transform.position.x, other.gameObject.transform.position.y, other.gameObject.transform.position.z), transform.rotation);
+                    Destroy(GoExplosion,1);
+                }
                 Destroy(other.gameObject);
             }
-
             randSoundHealth = Random.Range(1, 4);
             if (randSoundHealth == 1)
                 FindObjectOfType<AudioManager>().Play("ThorDamage1", sfx);
@@ -148,6 +163,11 @@ public class PlayerManager : MonoBehaviour
                 FindObjectOfType<AudioManager>().Play("ThorDamage3", sfx);
                                   
             health--;
+            if (health > 0)
+            {
+                GamePad.SetVibration(playerIndex, leftIntensity, rightIntensity);
+                vibrationTimer += Time.deltaTime;
+            }
             damage = false;
             StartCoroutine(invincibility());
             StartCoroutine(flash());
@@ -239,7 +259,7 @@ public class PlayerManager : MonoBehaviour
     }
     private void Update()
     {
-        if(ColpitoPlayer == true)
+        if(ColpitoPlayer == true && damage == true)
         {
             health--;
             ColpitoPlayer = false;
@@ -416,7 +436,7 @@ public class PlayerManager : MonoBehaviour
         //Attack();
 
 
-        if (Input.GetKeyDown(KeyCode.Space) && attack == false)
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.JoystickButton0)) && attack == false)
         {
             StartCoroutine(HammerAttack());
         }

@@ -12,6 +12,8 @@ public class CameraTrigger : MonoBehaviour
 
     public static GameObject TempHead;
 
+    public GameObject CameraMinimap;
+
     private void Start()
     {
         fog.SetActive(true);                //Attivo la fog
@@ -25,6 +27,7 @@ public class CameraTrigger : MonoBehaviour
             nextCamera.SetActive(true);         //Setto l'oggetto vero
             HeadThorPrevious.SetActive(false);
             HeadThorNext.SetActive(true);
+            CameraMinimap.transform.position = new Vector3(HeadThorNext.transform.position.x, CameraMinimap.transform.position.y, HeadThorNext.transform.position.z);
             TempHead = HeadThorNext;
             fog.SetActive(false);               //Setto l'oggetto falso
             if(this.name == "22Trigger")
@@ -44,6 +47,7 @@ public class CameraTrigger : MonoBehaviour
                 previousCamera.SetActive(false);    //Setto l'oggetto falso
                 nextCamera.SetActive(true);         //Setto l'oggetto vero
                 HeadThorNext.SetActive(true);
+                CameraMinimap.transform.position = new Vector3(HeadThorNext.transform.position.x, CameraMinimap.transform.position.y, HeadThorNext.transform.position.z);
             }
         }
     }

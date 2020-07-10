@@ -116,6 +116,8 @@ MonoBehaviour:
   ColpitoDalVento: 0
   ColpitoDalLaser: 0
   Move: 1
+  TempCountEnemyWin: 0
+  ExplosionEggCrackerPlayer: {fileID: 0}
 --- !u!1001 &2577402116079100364
 PrefabInstance:
   m_ObjectHideFlags: 0
