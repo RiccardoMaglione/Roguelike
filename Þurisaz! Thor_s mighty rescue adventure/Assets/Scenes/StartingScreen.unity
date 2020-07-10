@@ -800,7 +800,7 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: ValravnSound
-    clip: {fileID: 8300000, guid: 628056c195bb13e42b45e215e8141d8a, type: 3}
+    clip: {fileID: 8300000, guid: eb7fc2442b9941444a13f5f2b81ab06a, type: 3}
     volume: 0.5
     loop: 0
     source: {fileID: 0}
@@ -820,7 +820,7 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: PlayerHit
-    clip: {fileID: 8300000, guid: fc881919b9cf9bb4a9dfe924fb0464f7, type: 3}
+    clip: {fileID: 8300000, guid: 15e03ff1aee854d48813d80700d3decf, type: 3}
     volume: 0.5
     loop: 0
     source: {fileID: 0}

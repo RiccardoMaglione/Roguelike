@@ -179,6 +179,8 @@ public class GameManager : MonoBehaviour
         Ammo.tempIsFirstRuneGreen = false;
         Ammo.tempIsFirstRuneEye = false;
         Ammo.tempIsFirstRuneDarkElf = false;
+        
+        EnemyManager.CountEnemyWin = 0;
         #endregion
     }
     public void GoToLoading()

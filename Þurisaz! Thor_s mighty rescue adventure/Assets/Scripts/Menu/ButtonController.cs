@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class ButtonController : MonoBehaviour
 {
@@ -19,8 +20,15 @@ public class ButtonController : MonoBehaviour
     {
         transform.localScale = new Vector3(1, 1, 1);  // assuming you want it to return to its original size when your mouse leaves it.
     }
+    
     public void PopMouseEnter()
     {
         FindObjectOfType<AudioManager>().Play("MoveMenu", sfx);
+    }
+
+    public void SelectThis()
+    {
+        //set selected this one
+        EventSystem.current.SetSelectedGameObject(gameObject);
     }
 }

@@ -38,18 +38,12 @@ public class PatternEye : MonoBehaviour
             if (hit.collider.gameObject.tag == "Player")
             {
                 PlayerManager.ColpitoPlayer = true;
-                Debug.Log("AHIA!");
             }
-
-            if (hit.collider.gameObject.tag != "Player")
-
-                Debug.Log("Muro");
         }
 
         if (ray == false)
         {
             a.SetPosition(1, new Vector3(0, 0, 15));
-            Debug.Log("Mancato");
         }
         
     }
@@ -61,8 +55,7 @@ public class PatternEye : MonoBehaviour
         if (timer >= 1)
         {
             laser.SetActive(true);
-            attack();
-            
+            attack();         
         }
 
         if (timer >= 2)

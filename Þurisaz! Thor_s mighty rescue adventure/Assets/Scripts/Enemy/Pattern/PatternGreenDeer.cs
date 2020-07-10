@@ -70,7 +70,7 @@ public class PatternGreenDeer : MonoBehaviour
     void SpawnSpike()
     {
         StartCoroutine(Flash());
-        //FindObjectOfType<AudioManager>().Play("InsertNameSound", sfx);
+        //FindObjectOfType<AudioManager>().Play("DeerSound", sfx);
         for (int i = -2; i < 3; i++)
         {
             for (int j = -2; j < 3; j++)
