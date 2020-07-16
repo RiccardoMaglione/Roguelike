@@ -131,6 +131,12 @@ public class InventorySystem : MonoBehaviour
     static public bool DarkElfChange = false;
     static public bool DraugrChange = false;
 
+
+    public bool hereWow = false;
+    public bool hereValravn = false;
+    public bool hereGreen = false;
+    public bool hereEye = false;
+    public bool hereDarkElf = false;
     #endregion
 
     private void Start()
@@ -176,6 +182,13 @@ public class InventorySystem : MonoBehaviour
         {
             if (other.gameObject.tag == "RuneWow" && isPresentWow == false)             //Se l'altro oggetto è la runa del will o wisp ed è la runa non è già presente nell'inventario
             {
+                if(InventorySlotsEnemy[i] != null)
+                {
+                    i = 0;
+                    hereWow = true;
+                }
+
+
                 tempIWow = i;                                                           //Setta la variabile temporanea tempI del will o wisp uguale a i
                 tempIImageWow = i;                                                      //Setta la variabile temporanea tempI relativa alla ui del will o wisp uguale a i
                 InventorySlotsEnemy[i] = other.gameObject;                              //Assegna alla posizione i l'oggetto appena raccolto
@@ -184,9 +197,19 @@ public class InventorySystem : MonoBehaviour
                 isPresentWow = true;                                                    //Setta a vero la presenza della runa del will o wisp
                 tempIsPresentWow = true;                                                //Setta a vero la presenza della runa del will o wisp nella variabile temporanea
                 Debug.Log("Eseguo Inventory System 1");
+                if(hereWow == true)
+                {
+                    i = 2;
+                    hereWow = false;
+                }
             }
             if (other.gameObject.tag == "RuneValvran" && isPresentValvran == false)     //Se l'altro oggetto è la runa del valravn ed è la runa non è già presente nell'inventario
             {
+                if (InventorySlotsEnemy[i] != null)
+                {
+                    i = 0;
+                    hereValravn = true;
+                }
                 tempIValvran = i;                                                       //Setta la variabile temporanea tempI del valravn uguale a i
                 tempIImageValvran = i;                                                  //Setta la variabile temporanea tempI relativa alla ui del valravn uguale a i
                 InventorySlotsEnemy[i] = other.gameObject;                              //Assegna alla posizione i l'oggetto appena raccolto
@@ -195,9 +218,19 @@ public class InventorySystem : MonoBehaviour
                 isPresentValvran = true;                                                //Setta a vero la presenza della runa del valravn
                 tempIsPresentValvran = true;                                            //Setta a vero la presenza della runa del valravn nella variabile temporanea
                 Debug.Log("Eseguo Inventory System 2");
+                if (hereValravn == true)
+                {
+                    i = 2;
+                    hereValravn = false;
+                }
             }
             if (other.gameObject.tag == "RuneEye" && isPresentEye == false)             //Se l'altro oggetto è la runa del will o wisp ed è la runa non è già presente nell'inventario
             {
+                if (InventorySlotsEnemy[i] != null)
+                {
+                    i = 0;
+                    hereEye = true;
+                }
                 tempIEye = i;                                                           //Setta la variabile temporanea tempI del will o wisp uguale a i
                 tempIImageEye = i;                                                      //Setta la variabile temporanea tempI relativa alla ui del will o wisp uguale a i
                 InventorySlotsEnemy[i] = other.gameObject;                              //Assegna alla posizione i l'oggetto appena raccolto
@@ -205,9 +238,19 @@ public class InventorySystem : MonoBehaviour
                 isPresentEye = true;                                                    //Setta a vero la presenza della runa del will o wisp
                 tempIsPresentEye = true;                                                //Setta a vero la presenza della runa del will o wisp nella variabile temporanea
                 Debug.Log("Eseguo Inventory System 3");
+                if (hereEye == true)
+                {
+                    i = 2;
+                    hereEye = false;
+                }
             }
             if (other.gameObject.tag == "RuneGreen" && isPresentGreen == false)             //Se l'altro oggetto è la runa del will o wisp ed è la runa non è già presente nell'inventario
             {
+                if (InventorySlotsEnemy[i] != null)
+                {
+                    i = 0;
+                    hereGreen = true;
+                }
                 tempIGreen = i;                                                           //Setta la variabile temporanea tempI del will o wisp uguale a i
                 tempIImageGreen = i;                                                      //Setta la variabile temporanea tempI relativa alla ui del will o wisp uguale a i
                 InventorySlotsEnemy[i] = other.gameObject;                              //Assegna alla posizione i l'oggetto appena raccolto
@@ -215,9 +258,19 @@ public class InventorySystem : MonoBehaviour
                 isPresentGreen = true;                                                    //Setta a vero la presenza della runa del will o wisp
                 tempIsPresentGreen = true;                                                //Setta a vero la presenza della runa del will o wisp nella variabile temporanea
                 Debug.Log("Eseguo Inventory System 4");
+                if (hereGreen == true)
+                {
+                    i = 2;
+                    hereGreen = false;
+                }
             }
             if (other.gameObject.tag == "RuneDarkElf" && isPresentDarkElf == false)             //Se l'altro oggetto è la runa del will o wisp ed è la runa non è già presente nell'inventario
             {
+                if (InventorySlotsEnemy[i] != null)
+                {
+                    i = 0;
+                    hereDarkElf = true;
+                }
                 tempIDarkElf = i;                                                           //Setta la variabile temporanea tempI del will o wisp uguale a i
                 tempIImageDarkElf = i;                                                      //Setta la variabile temporanea tempI relativa alla ui del will o wisp uguale a i
                 InventorySlotsEnemy[i] = other.gameObject;                              //Assegna alla posizione i l'oggetto appena raccolto
@@ -225,6 +278,11 @@ public class InventorySystem : MonoBehaviour
                 isPresentDarkElf = true;                                                    //Setta a vero la presenza della runa del will o wisp
                 tempIsPresentDarkElf = true;                                                //Setta a vero la presenza della runa del will o wisp nella variabile temporanea
                 Debug.Log("Eseguo Inventory System 5");
+                if (hereDarkElf == true)
+                {
+                    i = 2;
+                    hereDarkElf = false;
+                }
             }
 
         }
@@ -248,7 +306,7 @@ public class InventorySystem : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         #region Change rune
-        if (Input.GetKey(KeyCode.F))                                                                                                                //Se schiaccio B (da cambiare poi in F + LeftArrow)
+        if (Input.GetKey(KeyCode.F) || Input.GetKeyDown(KeyCode.JoystickButton5))                                                                                                                //Se schiaccio B (da cambiare poi in F + LeftArrow)
         {
             if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.JoystickButton2))                                                                                                                //Se schiaccio B (da cambiare poi in F + LeftArrow)
             {
@@ -329,7 +387,7 @@ public class InventorySystem : MonoBehaviour
                         Ammo.NumAmmoEye0.gameObject.SetActive(false);
                         Ammo.NumAmmoGreen0.gameObject.SetActive(false);
                         Ammo.NumAmmoDarkElf0.gameObject.SetActive(false);
-                        Ammo.AmmoW = 5;
+                        Ammo.AmmoW = 4;
                         Ammo.NumAmmoW0.text = Ammo.AmmoW.ToString();
                         tempIImageWow = 0;
                         InventorySlotsEnemy[0].GetComponent<RuneToPlayer>().Particle.SetActive(false);
@@ -352,7 +410,7 @@ public class InventorySystem : MonoBehaviour
                         Ammo.NumAmmoEye0.gameObject.SetActive(false);
                         Ammo.NumAmmoGreen0.gameObject.SetActive(false);
                         Ammo.NumAmmoDarkElf0.gameObject.SetActive(false);
-                        Ammo.AmmoV = 7;
+                        Ammo.AmmoV = 5;
                         Ammo.NumAmmoV0.text = Ammo.AmmoV.ToString();
                         tempIImageValvran = 0;
                         InventorySlotsEnemy[0].GetComponent<RuneToPlayer>().Particle.SetActive(false);
@@ -433,7 +491,7 @@ public class InventorySystem : MonoBehaviour
                 }
             }
         }
-        if (Input.GetKey(KeyCode.F))                                                                                                                //Se schiaccio N (da cambiare poi in F + RightArrow)
+        if (Input.GetKey(KeyCode.F) || Input.GetKeyDown(KeyCode.JoystickButton5))                                                                                                                //Se schiaccio N (da cambiare poi in F + RightArrow)
         {
             if (Input.GetKey(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.JoystickButton1))                                                                                                                //Se schiaccio B (da cambiare poi in F + LeftArrow)
             {
@@ -505,7 +563,7 @@ public class InventorySystem : MonoBehaviour
                         Ammo.NumAmmoEye1.gameObject.SetActive(false);
                         Ammo.NumAmmoGreen1.gameObject.SetActive(false);
                         Ammo.NumAmmoDarkElf1.gameObject.SetActive(false);
-                        Ammo.AmmoW = 5;
+                        Ammo.AmmoW = 4;
                         Ammo.NumAmmoW1.text = Ammo.AmmoW.ToString();
                         tempIImageWow = 1;
                         InventorySlotsEnemy[1].GetComponent<RuneToPlayer>().Particle.SetActive(false);
@@ -526,7 +584,7 @@ public class InventorySystem : MonoBehaviour
                         Ammo.NumAmmoEye1.gameObject.SetActive(false);
                         Ammo.NumAmmoGreen1.gameObject.SetActive(false);
                         Ammo.NumAmmoDarkElf1.gameObject.SetActive(false);
-                        Ammo.AmmoV = 7;
+                        Ammo.AmmoV = 5;
                         Ammo.NumAmmoV1.text = Ammo.AmmoV.ToString();
                         tempIImageValvran = 1;
                         Debug.Log("Ci arrivi qua nella verde image1");

@@ -21,7 +21,7 @@ public class WinCondition : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.F))
             {
-                if (EnemyManager.CountEnemyWin == 15)
+                if (EnemyManager.CountEnemyWin == 14)
                 {
                     Debug.Log("Count enemy win scene"+EnemyManager.CountEnemyWin);
                     Popup.SetActive(false);

@@ -148,7 +148,7 @@ public class RuneEye : MonoBehaviour
     void attack()
     {
         laser.SetActive(true);
-        bool ray = Physics.Raycast(transform.position, transform.right, out hit, 15f);
+        bool ray = Physics.Raycast(transform.position, player[0].transform.right, out hit, 15f);
         Debug.Log("AHIA!Ciaosda" +ray);
         if (ray == true)
         {

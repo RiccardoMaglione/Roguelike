@@ -43,6 +43,7 @@ TagManager:
   - RuneDarkElf
   - Shadow
   - Explosion
+  - Hammer
   layers:
   - Default
   - TransparentFX

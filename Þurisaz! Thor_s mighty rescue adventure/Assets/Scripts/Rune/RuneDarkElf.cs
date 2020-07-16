@@ -39,10 +39,13 @@ public class RuneDarkElf : MonoBehaviour
 	public bool X = false;
 	public bool Z = false;
 
+	public GameObject Graphics;
+	public static bool OnlyOnceAmmo = true;
 	void Start()
 	{
 		player = GameObject.FindGameObjectsWithTag("Player");
-		Hammer = GameObject.FindGameObjectWithTag("Weapon");
+		Hammer = GameObject.FindGameObjectWithTag("NotWeapon");
+		Graphics = Hammer.transform.GetChild(0).gameObject;
 		//InitialPosition = Hammer.transform.position;
 		//InitialRotation = Hammer.transform.rotation;
 		//
@@ -58,11 +61,17 @@ public class RuneDarkElf : MonoBehaviour
 		{
 			if ((Input.GetKeyDown(ControlsManager.CM.runeOne) || Input.GetKeyDown(KeyCode.JoystickButton2)) && SpellReady == true && isStart == false)
 			{
+				Hammer.tag = "Weapon";
+				Graphics.transform.GetChild(0).gameObject.SetActive(true);
 				PlayerManager.CanMove = false;
 				InitialPosition = Hammer.transform.position;
 				InitialRotation = Hammer.transform.rotation;
 				startPos = Hammer.transform.position;
-				if(PlayerManager.DirectionD == 1)
+				WallTrigger.WallA = 0;
+				WallTrigger.WallW = 0;
+				WallTrigger.WallS = 0;
+				WallTrigger.WallD = 0;
+				if (PlayerManager.DirectionD == 1)
 				{
 					X = true;
 					//PlayerManager.DirectionD = 0;
@@ -87,7 +96,6 @@ public class RuneDarkElf : MonoBehaviour
 					targetPos = new Vector3(startPos.x, startPos.y, startPos.z - 6);
 				}
 				startPosFinale = targetPos;
-
 				if (PlayerManager.DirectionD == 1)
 				{
 					PlayerManager.DirectionD = 0;
@@ -108,12 +116,16 @@ public class RuneDarkElf : MonoBehaviour
 					PlayerManager.DirectionS = 0;
 					targetPosFinale = new Vector3(startPosFinale.x, startPosFinale.y, startPosFinale.z + 6);
 				}
-
 				//targetPosFinale = new Vector3(startPosFinale.x - 6, startPosFinale.y, startPosFinale.z);
 				isStart = true;
-				Ammo.AmmoW--;
-				Ammo.NumAmmoW0.text = Ammo.AmmoW.ToString();
+				if (OnlyOnceAmmo == true)
+				{
+					Ammo.AmmoDarkElf--;
+					OnlyOnceAmmo = false;
+				}
+				Ammo.NumAmmoDarkElf0.text = Ammo.AmmoW.ToString();
 				SpellReady = false;
+				Debug.Log("ciao 9");
 				StartCoroutine(cooldown());
 			}
 		}
@@ -121,13 +133,16 @@ public class RuneDarkElf : MonoBehaviour
 		{
 			if ((Input.GetKeyDown(ControlsManager.CM.runeTwo) || Input.GetKeyDown(KeyCode.JoystickButton1)) && SpellReady == true && isStart == false)
 			{
+				Hammer.tag = "Weapon";
+				Graphics.transform.GetChild(0).gameObject.SetActive(true);
+				PlayerManager.CanMove = false;
+				InitialPosition = Hammer.transform.position;
+				InitialRotation = Hammer.transform.rotation;
+				startPos = Hammer.transform.position;
 				WallTrigger.WallA = 0;
 				WallTrigger.WallW = 0;
 				WallTrigger.WallS = 0;
 				WallTrigger.WallD = 0;
-				InitialPosition = Hammer.transform.position;
-				InitialRotation = Hammer.transform.rotation;
-				startPos = Hammer.transform.position;
 				if (PlayerManager.DirectionD == 1)
 				{
 					X = true;
@@ -174,9 +189,14 @@ public class RuneDarkElf : MonoBehaviour
 					targetPosFinale = new Vector3(startPosFinale.x, startPosFinale.y, startPosFinale.z + 6);
 				}
 				isStart = true;
-				Ammo.AmmoW--;
-				Ammo.NumAmmoW1.text = Ammo.AmmoW.ToString();
+				if(OnlyOnceAmmo == true)
+				{
+					Ammo.AmmoDarkElf--;
+					OnlyOnceAmmo = false;
+				}
+				Ammo.NumAmmoDarkElf1.text = Ammo.AmmoW.ToString();
 				SpellReady = false;
+				Debug.Log("ciao 10");
 				StartCoroutine(cooldown());
 			}
 		}
@@ -194,6 +214,7 @@ public class RuneDarkElf : MonoBehaviour
 				nextPos = new Vector3(nextX, baseY + arc, Hammer.transform.position.z);
 				Hammer.transform.rotation = LookAt2D(nextPos - Hammer.transform.position);
 				Hammer.transform.position = nextPos;
+				Debug.Log("ciao 1");
 			}
 			if (Z == true)
 			{
@@ -206,13 +227,15 @@ public class RuneDarkElf : MonoBehaviour
 				nextPos = new Vector3(Hammer.transform.position.x, baseYZ + arcz, nextZ);
 				Hammer.transform.rotation = LookAt2DR(nextPos - Hammer.transform.position);
 				Hammer.transform.position = nextPos;
+				Debug.Log("ciao 2");
 			}
 		}
 		if (nextPos == targetPos && isStart == true)
 		{
 			isArrived = true;
 			Arrived();
-			
+			Debug.Log("ciao 3");
+
 		}
 	}
 
@@ -232,6 +255,7 @@ public class RuneDarkElf : MonoBehaviour
 				//X = false;
 				Hammer.transform.rotation = LookAt2D(nextPosFinale - Hammer.transform.position);
 				Hammer.transform.position = nextPosFinale;
+				Debug.Log("ciao 4");
 			}
 			if (Z == true)
 			{
@@ -245,6 +269,7 @@ public class RuneDarkElf : MonoBehaviour
 				//Z = false;
 				Hammer.transform.rotation = LookAt2DR(nextPosFinale - Hammer.transform.position);
 				Hammer.transform.position = nextPosFinale;
+				Debug.Log("ciao 5");
 			}
 
 		}
@@ -254,16 +279,22 @@ public class RuneDarkElf : MonoBehaviour
 			isStart = false;
 			Hammer.transform.position = InitialPosition;
 			Hammer.transform.rotation = InitialRotation;
+			Hammer.tag = "NotWeapon";
+			OnlyOnceAmmo = true;
 			PlayerManager.CanMove = true;
+			Graphics.transform.GetChild(0).gameObject.SetActive(false);
+			Debug.Log("ciao 6");
 		}
 	}
 
 	static Quaternion LookAt2D(Vector2 forward)
 	{
+		//Debug.Log("ciao 7");
 		return Quaternion.Euler(0, 0, Mathf.Atan2(forward.y, forward.x) * Mathf.Rad2Deg);
 	}
 	static Quaternion LookAt2DR(Vector2 forward)
 	{
+		//Debug.Log("ciao 8");
 		return Quaternion.Euler(0, 90, Mathf.Atan2(forward.y, forward.x) * Mathf.Rad2Deg);
 	}
 

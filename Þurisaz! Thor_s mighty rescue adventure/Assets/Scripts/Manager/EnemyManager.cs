@@ -107,6 +107,12 @@ public class EnemyManager : MonoBehaviour
 
         if (other.gameObject.tag == "Weapon" || other.gameObject.tag == "ShotPlayer" || other.gameObject.tag == "Spike" || other.gameObject.tag == "EggPlayer" || other.gameObject.tag == "EggcrackerPlayer")
         {
+
+            if(other.gameObject.tag == "ShotPlayer")
+            {
+                Destroy(other.gameObject);
+            }
+
             if(other.gameObject.tag == "EggPlayer" || other.gameObject.tag == "EggcrackerPlayer")
             {
                 GameObject GoExplosion = Instantiate(ExplosionEggCrackerPlayer, new Vector3(other.gameObject.transform.position.x, other.gameObject.transform.position.y, other.gameObject.transform.position.z), transform.rotation);
@@ -204,6 +210,10 @@ public class EnemyManager : MonoBehaviour
                 Debug.Log("Sto togliendo vita al boss");
                 isBoss = true;
                 currentHealth--;
+                if (other.gameObject.name == "FireballPlayerContainer(Clone)")
+                {
+                    currentHealth = currentHealth - 1;
+                }
                 healthBar.SetHealth(currentHealth);
             }
         }

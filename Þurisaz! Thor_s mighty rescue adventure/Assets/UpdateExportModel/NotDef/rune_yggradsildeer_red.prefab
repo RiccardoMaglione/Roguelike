@@ -118,6 +118,8 @@ MonoBehaviour:
   GraphicsRuneDeerOrange: {fileID: 1357921105958018715}
   GraphicsRuneDarkElf: {fileID: 0}
   GraphicsRuneDraugr: {fileID: 0}
+  Particle: {fileID: 0}
+  Shadow: {fileID: 0}
 --- !u!114 &-1510915587235661865
 MonoBehaviour:
   m_ObjectHideFlags: 0

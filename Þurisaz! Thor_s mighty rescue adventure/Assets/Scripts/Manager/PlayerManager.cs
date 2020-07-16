@@ -138,6 +138,10 @@ public class PlayerManager : MonoBehaviour
 
     #endregion
     public GameObject ExplosionEggCracker;
+
+
+    public static bool FinishAnimation = true;
+
     private void OnTriggerEnter(Collider other)
     {
         #region Trigger Health
@@ -436,8 +440,9 @@ public class PlayerManager : MonoBehaviour
         //Attack();
 
 
-        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.JoystickButton0)) && attack == false)
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.JoystickButton0)) && attack == false && FinishAnimation == true)
         {
+            FinishAnimation = false;
             StartCoroutine(HammerAttack());
         }
 
@@ -775,6 +780,7 @@ public class PlayerManager : MonoBehaviour
         if (attack == false)
         {
             FindObjectOfType<AudioManager>().Play("PlayerHit", sfx);
+            yield return new WaitForSeconds(0.1f);
             Hammer.transform.Rotate(0, 0, -75);
             Hammer.gameObject.tag = "Weapon";
             attack = true;
@@ -784,8 +790,9 @@ public class PlayerManager : MonoBehaviour
         {
             Hammer.transform.Rotate(0, 0, 75);
             Hammer.gameObject.tag = "NotWeapon";
-            yield return new WaitForSeconds(CooldownHammer);
+            yield return new WaitForSeconds(CooldownHammer+0.48f);
             attack = false;
+            //FinishAnimation = true;
         }
     }
 }

@@ -91,7 +91,8 @@ public class GameManager : MonoBehaviour
         WallTrigger.WallA = 1;                              //Setto il movimento dovuto ai muri a 1, quindi non viene bloccato, in direzione A
         WallTrigger.WallS = 1;                              //Setto il movimento dovuto ai muri a 1, quindi non viene bloccato, in direzione S
         Tutorial.open = false;
-
+        PlayerManager.CanMove = true;
+        RuneDarkElf.OnlyOnceAmmo = true;
         #region Reset Inventory
         InventorySystem.i = 0;
         InventorySystem.j = 0;

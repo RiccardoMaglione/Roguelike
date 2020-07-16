@@ -224,7 +224,7 @@ public class Ammo : MonoBehaviour
                 //RuneRawImageWilloWisp0.enabled = true;
                 SlotRuneOne.texture = RuneWowTexture[0];    //Sostituisce la texture della runa uno con la texture del wow
                 NumAmmoW0.gameObject.SetActive(true);       //Attiva le ammo del wisp nello slots uno
-                AmmoW = 5;                                 //Setta le ammo del wow a 10
+                AmmoW = 4;                                 //Setta le ammo del wow a 10
                 RuneWoW = other.gameObject;                 //Mette in runa wow in una variabile
                 isFirstRuneWow = true;                      //Segna che la prima runa del wow è stata presa
                 tempIsFirstRuneWow = true;
@@ -241,7 +241,7 @@ public class Ammo : MonoBehaviour
                 //RuneRawImageWilloWisp1.enabled = true;
                 SlotRuneTwo.texture = RuneWowTexture[0];    //Sostituisce la texture della runa due
                 NumAmmoW1.gameObject.SetActive(true);       //Attiva le ammo del wisp nello slots due
-                AmmoW = 5;                                 //Setta le ammo del wow a 10
+                AmmoW = 4;                                 //Setta le ammo del wow a 10
                 RuneWoW = other.gameObject;                 //Mette in runa wow in una variabile
                 isFirstRuneWow = true;                      //Segna che la prima runa del wow è stata presa
                 tempIsFirstRuneWow = true;
@@ -277,7 +277,7 @@ public class Ammo : MonoBehaviour
                 Debug.Log("Lo stai mettendo qua?");
                 SlotRuneOne.texture = RuneValravnTexture[0];    //Sostituisce la texture della runa uno con la texture del valravn
                 NumAmmoV0.gameObject.SetActive(true);           //Attiva le ammo del valravn nello slots uno
-                AmmoV = 7;                                     //Setta le ammo del valravn a 10
+                AmmoV = 5;                                     //Setta le ammo del valravn a 10
                 RuneValvran = other.gameObject;                 //Mette in runa valravn in una variabile
                 isFirstRuneValvran = true;                      //Segna che la prima runa del valravn è stata presa
                 tempIsFirstRuneValvran = true;
@@ -294,7 +294,7 @@ public class Ammo : MonoBehaviour
                 //RuneRawImageValvran1.enabled = true;
                 SlotRuneTwo.texture = RuneValravnTexture[0];
                 NumAmmoV1.gameObject.SetActive(true);
-                AmmoV = 7;
+                AmmoV = 5;
                 RuneValvran = other.gameObject;
                 isFirstRuneValvran = true;
                 tempIsFirstRuneValvran = true;
